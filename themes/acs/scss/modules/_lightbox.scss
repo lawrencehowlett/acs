@@ -1,0 +1,16 @@
+#imagelightbox {
+    position: fixed;
+    z-index: 9999;
+    -ms-touch-action: none;
+    touch-action: none;
+}
+#imagelightbox-overlay {display: block; position: fixed; left: 0; top: 0; z-index: 100; width: 100%; height: 100%; background: rgba(0,0,0,0.8);}
+#imagelightbox-close {display: block; position: fixed; right: 30px; top: 30px; z-index: 9999; width: 30px; height: 30px; padding: 0; background: $orange $iconXWhite 50% 50% no-repeat; background-size: 15px;
+	&:hover {background-color: $blue; border-radius: 50%;}
+}
+
+.imagelightbox-arrow {z-index: 99999; display: inline-block; position: fixed; top: 50%; z-index: 9999; width: 75px; height: 45px; padding: 0; background: $orange 50% 50% no-repeat; background-size: 24px 10px; font-size: 0;
+	&:hover {@include animation(infinite 0.5s more); background: $blue 50% 50% no-repeat; background-size: 24px 10px;}
+	&.imagelightbox-arrow-left {left: 10px; background-image: $arrowLeft;}
+	&.imagelightbox-arrow-right {right: 10px; background-image: $arrowRight;}
+}

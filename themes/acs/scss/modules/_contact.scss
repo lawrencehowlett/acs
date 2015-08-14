@@ -1,0 +1,62 @@
+.contact {padding: 30px 0;
+	.contact-form {font-size: 0;}
+	input, textarea {margin: 0; padding: 25px; border: 5px solid $lgray; color: #fff; font-size: 14px; vertical-align: top;}
+	textarea {width: 100%; max-width: 100%; border: 5px solid $lgray;}
+	button {width: 100%; border: 5px solid $lgray; vertical-align: top;}
+}
+
+.contact-content {font: 300 18px/1.5em $prelo;
+	h2 {margin-top: 0; color: #24465d; font: 300 30px/1.3em $prelo;}
+	.contact-data {color: #24465d;}
+}
+
+.address-section {padding: 60px 0 0; background: #24465d; color: #fff;
+	.address-box {position: relative; overflow: hidden; margin: 0; padding-bottom: 40px; background: #1d384a;
+		.slider-content {position: relative; list-style: none; margin: 0; padding: 0; font-size: 0; white-space: nowrap;}
+		.slider-item {overflow: hidden; display: inline-block; width: 100%; box-sizing: border-box; padding: 10px 30px; color: #fff; font: 300 14px/1.3em $prelo; white-space: normal; vertical-align: top; 
+			.address-title {font-weight: 400; font-size: 20px;}
+			h4 {font-weight: 400; font-size: 20px;}
+			a {color: #fff;}
+			a:hover {color: $orange;}
+		}
+	}
+
+	.slider-nav {display: block; position: absolute; bottom: 0; z-index: 2; width: 75px; height: 45px; background: $orange 50% 50% no-repeat; background-size: 24px 10px; font-size: 0;
+		&.prev {left: 0; background-image: $arrowLeft;}
+		&.next {right: 0; background-image: $arrowRight;}
+		&:hover {@include animation(infinite 0.5s more); background-color: $blue;}
+	}
+
+	.address-slider {display: none;}
+	.map-holder {clear: right; background-color: $lgray;}
+	.map {height: 650px; background: $lgray;}
+}
+
+.gm-style .gm-style-iw {color: #24465d;}
+@media (min-width: 800px) {
+	.contact {padding: 100px 0;
+		input {width: 50%;}
+	}
+	.address-section {
+		h2 {margin-bottom: 40px;}
+		.address-box {position: relative; z-index: 20; float: left; width: 50%; margin-top: 0; margin-bottom: -500px; padding-bottom: 0;
+			.slider-nav {display: none;}
+			.slider-item {font-size: 18px;}
+		}
+		.address-slider {display: block; float: right; position: relative; overflow: hidden; width: 50%;
+			.slider-content {position: relative; list-style: none; margin: 0; padding: 0; font-size: 0; white-space: nowrap;}
+			.slider-item {display: inline-block; width: 50%; height: 285px; box-sizing: border-box; padding: 30px; background: #234359; font-size: 18px; vertical-align: top; cursor: pointer; transition: background 0.3s; white-space: normal;
+				&:nth-of-type(2n-1) {background: #203f53;}
+				&:hover {background: #2f4f65;}
+				.slide-title {margin-top: 0; font: 400 20px/1.3em $prelo;}
+				a {color: $gray; font-weight: 200;
+					&:hover {color: #fff;}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1170px) {
+	.map-holder {padding-bottom: 190px;}
+}

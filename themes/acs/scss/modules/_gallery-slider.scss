@@ -1,0 +1,33 @@
+.gallery-slider {
+	.slider-wrapper {clear: both; margin: 40px 0 0;}
+	.slider-nav {display: block; width: 125px; height: 70px; background: $lgray 50% 50% no-repeat; background-size: 40px 17px;
+		&:hover {background-color: #fff;}
+		&.prev {float: left; background-image: url("../img/arrowGrayLeft.svg");
+			&:hover {background-position: 25% 50%;}
+		}
+		&.next {float: right; background-image: url("../img/arrowGrayRight.svg");
+			&:hover {background-position: 75% 50%;}
+		}
+	}
+		
+	.gallery-slider-items {clear: both; list-style: none; margin: 0; padding: 0; font-size: 0; white-space: nowrap;
+		li {display: inline-block; vertical-align: top; box-sizing: border-box; }
+		img {display: block;}
+	}
+}
+
+@media (min-width: 870px) {
+	.gallery-slider {position: relative;
+		.slider-wrapper {position: relative; width: 3800px; left: 50%; margin-left: -1900px;
+			.bx-wrapper {width: 3800px !important; margin: 0 auto; position: relative;}
+		}
+		&:before, &:after {display: block; position: absolute; top: 0; z-index: 2; width: 200%; height: 100%; background: rgba(255,255,255,0.75); content: " ";}
+		&:before {right: 50%; margin-right: 435px;}
+		&:after {left: 50%; margin-left: 435px;}
+		.slider-nav {float: none; position: absolute; top: 0; z-index: 30; height: 100%;
+			&.prev {left: 50%; margin-left: -435px;}
+			&.next {right: 50%; margin-right: -435px;}
+		}
+	}
+
+}

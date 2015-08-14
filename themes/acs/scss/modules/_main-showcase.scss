@@ -1,0 +1,60 @@
+.main-showcase {
+	.slider-navigation {position: relative; z-index: 10; list-style: none; margin: 0 auto; padding: 0 8px; font-size: 0;
+		li {display: inline-block; width: 50%; box-sizing: border-box; padding: 2px; vertical-align: top;}
+		a {display: block; background: rgba(53,68,79,0.6); color: #fff; font: 400 18px/70px $prelo; text-transform: uppercase; text-align: center; outline: none;
+			&:hover {background: rgba(53,68,79,0.9);}
+			&.active {background: $blue;}
+		}
+	}
+	.viewport {overflow: hidden; max-width: 1600px; margin: 0 auto;}
+	.slider-content {position: relative; font-size: 0; white-space: nowrap;}
+	.slide {display: inline-block; position: relative; width: 100%; color: #003459; font: 200 20px/1.3em $prelo; white-space: normal; text-align: center; vertical-align: top;
+		p {margin: 1em 0 15px; padding: 0; background: rgba(255,255,255,0.85); line-height: 1.75em;}
+		.more {margin-top: 0; padding: 0; background: none;
+			a {padding: 0 35px;}
+		}
+	}
+	.slide-background {display: none;}
+}
+
+@media (min-width: 800px) {
+	.main-showcase {
+		.slider-navigation {
+			li {width: 25%;}
+			a {position: relative;
+				&.active:after {display: block; position: absolute; left: 50%; top: 100%; width: 0; margin-left: -10px; border-style: solid; border-width: 10px; border-color: $blue transparent transparent transparent; content: " ";}
+			}
+		}
+		.slide {font-size: 36px; line-height: 1.5em; text-align: left;}
+	}
+}
+
+@media (min-width: 1000px) {
+	.main-showcase {position: relative; padding-bottom: 0;
+		.slider-navigation {position: absolute; right: 0; top: 50px; width: 285px; margin: 0;
+			li {display: block; width: 100%; margin: 0 0 5px; padding: 0;}
+			a {padding: 0 25px; line-height: 100px; text-align: left;
+				&.active {background: rgba(0,114,198,0.9);}
+				&.active:after {right: 100%; left: auto; top: 50%; margin-top: -10px; border-color: transparent rgba(0,114,198,0.9) transparent transparent;}
+				&:before {float: right; width: 55px; height: 50px; margin-left: 10px; margin-top: 25px; background: 50% 50% no-repeat; vertical-align: middle; content: " ";}
+				&.link-it:before {background-image: url("../img/it-solutions.svg"); background-size: 51px 30px;}
+				&.link-workplace:before {background-image: url("../img/workplace.svg"); background-size: 30px 38px;}
+				&.link-cloud:before {background-image: url("../img/cloud.svg"); background-size: 42px 30px;}
+				&.link-recruitment:before {background-image: url("../img/recruitment.svg"); background-size: 29px 44px;}
+			}
+		}
+		.slide {overflow: hidden; height: 500px; padding-top: 50px; box-sizing: border-box; 
+			p {margin-top: 2em; padding: 10px 30px;}
+		}
+		.slide-content {position: relative; z-index: 2; padding-right: 300px; box-sizing: border-box;}
+		.slide-background {display: block; position: absolute; left: 50%; top: 50%; z-index: 0; min-width: 100%; min-height: 100%; margin: -342px 0 0 -800px;}
+	}
+}
+
+@media (min-width: 1230px) {
+	.main-showcase {
+		.slider-navigation {top: 210px; right: auto; left: 50%; margin: 0 0 0 290px;}
+		.slide {height: 685px; padding-top: 210px;}
+		.slide-content {padding-right: 390px;}
+	}
+}

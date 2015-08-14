@@ -1,0 +1,95 @@
+.history {margin-top: 40px;
+	.slider {position: relative; margin: 0; outline: 0;}
+	.section-content {position: relative; left: 0; margin: 0 auto;}
+	.slider-controls {position: absolute; right: 0; top: 140px; z-index: 5; margin: 0; font-size: 0; text-align: center; white-space: nowrap;
+		a {display: inline-block; width: 75px; height: 45px; background: rgba(53, 68, 79, 0.6) 50% 50% no-repeat; background-size: 42px 17px; vertical-align: top; 
+			&:hover {background-color: $orange;}
+			&.prev {background-image: $arrowLeft;}
+			&.next {background-image: $arrowRight;}
+		}
+	}
+	.timeline {height: 140px; overflow: auto; height: 140px; 
+		.box {display: none; width: 1170px; height: 100%; position: relative; overflow-y: hidden;/* overflow-y: visible; overflow-x: auto; max-width: 1170px; height: 140px; */ margin: 0 auto; padding: 1px 0 0; box-sizing: border-box; &:focus {outline: 0;}}
+		.bar {position: relative; left: 0; top: 0; width: 100%; height: 4px; background: #c1d1de;
+			.fill {position: absolute; left: 0; top: 0; height: 4px; background: $blue; transition: width 0.3s;}
+		}
+		.months {background: #fff; outline: 0; position: relative; left: 0; z-index: 2; height: 115px; margin: 0; padding: 0; list-style: none; font-size: 0; white-space: nowrap; &:focus {outline: 0;}
+			.month {cursor:pointer; display: inline-block; position: relative; width: 65px; height: 40px;box-sizing: border-box; border-right: 1px solid #e6edf3; line-height: 1em; text-align: center; vertical-align: top; transition: all 0.3s;
+				&.full:before {display: block; position: absolute; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px 0 0 -2px; border-radius: 50%; background: #424e5a; content: " "; transition: all 0.3s;}
+				&.current {background: #e6edf3;
+					&:before {background: $blue;}
+				}
+				&.future {background: $lgray;}
+				.label {position: relative; top: 45px; left: -50%; font: 400 12px/1.2em "GentonaBold", sans-serif; text-transform: uppercase; text-align: center;
+					.year {position:relative; top: 20px; color: #424e5a; font-size: 20px; font-family: $prelo;}
+				}
+			}
+		}
+	}
+	.mCustomScrollBox {background: #fff; &:focus {outline: 0;}}
+	.slider-content {position: relative; left: 0; width: 100%; font-size: 0; white-space: nowrap;
+		.slider-item {display: inline-block; position: relative; overflow: hidden; width: 100%; margin-right: 30px; background: $lgray; font-size: 14px; line-height: 1.5em; vertical-align: top; white-space: normal;
+			.img {margin: 0;
+				img {display: block; max-width: 100%; margin: 0 auto;}
+			}
+			.slide-content {padding: 20px;}
+			.slide-date {margin-top: 0; color: $blue; font-size: 16px; font-weight: 700; line-height: 1.5em; text-transform: uppercase;
+				.year {color: #424e5a; font: 400 45px/1.3em $prelo;}
+			}
+			.slide-title {margin: 0.5em 0; color: #424e5a; font: 400 22px/1.3em $prelo;
+				a {color: #424e5a; 
+					&:hover {color: $blue;}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 800px) {
+	.history {
+		.timeline .box {padding-left: 0;}
+		.slider-controls {top: auto; bottom: 0;
+			a {width: 128px; height: 75px;}
+		}
+		.slider-content {
+			.slider-item {overflow: hidden; font-size: 13px;
+				.img {float: right; width: 63%; max-width: 733px;}
+				.slide-content {float: left; width: 37%; box-sizing: border-box;}
+				.slide-date .year {font-size: 30px}
+				.slide-title {font-size: 18px;}
+			}
+		}
+	}
+}
+
+@media (min-width: 1000px) {
+	.history {
+		.slider-content {
+			.slider-item {overflow: hidden; font-size: 14px;
+				.slide-date .year {font-size: 45px}
+				.slide-title {font-size: 22px;}
+			}
+		}
+	}
+}
+
+@media (min-width: 1170px) {
+	.history {
+		.slider {
+			&:before, &:after {display: block; position: absolute; top: 0; z-index: 2; width: 200%; height: 100%; background: rgba(255,255,255,0.75); content: " ";}
+			&:before {right: 50%; margin-right: 585px;}
+			&:after {left: 50%; margin-left: 585px;}	
+		}
+		.slider-content {
+			.slider-item {
+				.slide-content {padding: 60px 50px 0;}
+				.slide-date {margin-bottom: 60px;}
+			}
+		}
+	}
+}
+
+/* 
+@media (max-width: 768px) {
+	.history .timeline .box {overflow: hidden;}
+} */

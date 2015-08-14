@@ -1,0 +1,23 @@
+.article-teaser {background: #f7fafb;
+	img {display: block; max-width: 100%; margin: 0 auto;}
+	.article-teaser-text {box-sizing: border-box; padding: 20px; font-size: 14px;}
+	.article-teaser-title {color: #424e5a; font: 400 22px/1.3em $prelo;
+		a {color: #424e5a;
+			&:hover {color: $blue;}
+		}
+	}
+}
+
+.teaser-list {margin-top: 30px;}
+
+@media (min-width: 800px) {
+	.teaser-list {margin: 40px auto;}
+	.article-teaser {display: flex; align-items: center; align-content: stretch;
+		.article-teaser-text {width: 50%; padding: 45px;}
+		.article-teaser-img {width: 50%; }
+		&:nth-of-type(2n-1) {
+			.article-teaser-text {order: 0;}
+			.article-teaser-img {order: 1;}
+		}
+	}
+}

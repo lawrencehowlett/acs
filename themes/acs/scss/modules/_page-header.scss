@@ -1,0 +1,40 @@
+.page-header {position: relative; padding: 50px 0; background-size: cover; text-align: center; 
+	.page-title {display: block; margin: 0; padding: 15px 30px; background:rgba(53,68,79,0.6); color: #fff; font-size: 30px; text-transform: uppercase; white-space: normal;}
+	p {display: inline-block; clear: left; margin: 0 0 5px; padding: 10px 30px; background: rgba(255,255,255,0.85); color: #003459; font: 200 20px/1.5em $prelo; vertical-align: bottom;}
+	.page-title + p {margin-top: 12px;}
+}
+
+.page-header-nav {margin: 15px 0; font-size: 0; text-align: center; white-space: nowrap;
+	a {display: inline-block; width: 100px; height: 60px; background: rgba(53, 68, 79, 0.6) 50% 50% no-repeat; background-size: 42px 17px; vertical-align: top; 
+		&:hover {background-color: $orange;}
+		&.prev {background-image: $arrowLeft;}
+		&.next {background-image: $arrowRight;}
+	}
+}
+
+@media (min-width: 600px) {
+	.page-header {
+		.page-title {display: inline;margin-bottom: 15px;}
+		.page-title:after {content:"\A"; white-space:pre;}
+	}
+}
+
+@media (min-width: 800px) {
+	.page-header {background: 50% 0 no-repeat fixed; text-align: left;
+		.page-title {font-size: 60px;}
+		p {font-size: 36px;}
+	}
+	.page-header-nav {position: absolute; right: 0; bottom: 0; width: 256px; margin: 0; 
+		a {width: 128px; height: 75px;}
+	}
+}
+
+@media (min-width: 1230px) {
+	.page-header {padding: 280px 0 0; height: 685px; box-sizing: border-box;}
+}
+
+@media (min-width: 1600px) {
+	.page-header {background-size: cover; }
+	.page-header-nav {left: 50%; margin-left: 544px;}
+
+}

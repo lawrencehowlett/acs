@@ -3,15 +3,9 @@
 global $project;
 $project = 'mysite';
 
-global $databaseConfig;
-$databaseConfig = array(
-	"type" => 'MySQLDatabase',
-	"server" => 'localhost',
-	"username" => 'root',
-	"password" => 'password',
-	"database" => 'newedge_acs',
-	"path" => '',
-);
+global $database;
+$database = 'newedge_acs';
 
-// Set the site locale
+require_once("conf/ConfigureFromEnv.php");
+
 i18n::set_locale('en_GB');

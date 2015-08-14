@@ -1,0 +1,91 @@
+@charset "UTF-8"; // set charset
+
+// colors
+$gray: #838e96;
+$lgray: #f7fafb;
+$blue: #0072c6;
+$orange: #f6af16;
+
+// default properties
+$transAll: all 0.3s;
+
+// assets
+@import "assets/fonts";
+@import "assets/images";
+@import "assets/mixins";
+@import "assets/animations";
+
+// fonts
+$open: "OpenSans", sans-serif;
+$prelo: "Prelo", sans-serif;
+
+// BASE
+
+html {background: #fff;}
+body {position: relative; margin: 0 auto; padding: 0; color: $gray; font: 400 15px/1.5em $open; -webkit-text-size-adjust: 100%;} 
+
+h1 {font: 400 60px/1.5em $prelo;}
+h2 {font: 200 34px/1.5em $prelo;}
+
+a {color: $blue; text-decoration: none; transition: $transAll;}
+a:hover {color: $orange;}
+p {margin: 1.5em 0;}
+ul {padding-left: 0;}
+
+.cf:after {display: block; clear: both; overflow: hidden; height: 0; content: " ";}
+
+*::selection {background: $blue; color: #fff;}
+*::-moz-selection {background: $blue; color: #fff;}
+*::selection a {color: #fff;}
+*::-moz-selection a {color: #fff;}
+
+@import "base/forms";
+
+// LAYOUT
+
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sections";
+ 
+// MODULES
+
+@import "modules/text-styles";
+@import "modules/page-header";
+@import "modules/main-showcase";
+@import "modules/resources";
+@import "modules/big-slider";
+@import "modules/case-study-showcase";
+@import "modules/video-section";
+@import "modules/contact";
+@import "modules/jobs";
+@import "modules/item-boxes";
+@import "modules/accreditations";
+@import "modules/tabs";
+@import "modules/content-search";
+@import "modules/logo-slider";
+@import "modules/featured-projects";
+@import "modules/work";
+@import "modules/specialist";
+@import "modules/article-teaser";
+@import "modules/cta-boxes";
+@import "modules/case-study";
+@import "modules/lightbox";
+@import "modules/text-section";
+@import "modules/numbers";
+@import "modules/table";
+@import "modules/pricing";
+@import "modules/blog";
+@import "modules/media";
+@import "modules/gallery-slider";
+@import "modules/about-slider";
+@import "modules/team";
+@import "modules/history";
+@import "modules/testimonials";
+/* @import "modules/scrollbar"; */
+
+
+@import "modules/ebook";
+
+// THEMES
+
+@import "ie/ie";
