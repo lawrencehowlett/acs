@@ -10,3 +10,7 @@ SSViewer:
 SiteConfig:
   extensions:
     - SiteConfig_Extension
+
+SiteTree:
+  extensions:
+    - SiteTreeSetting
