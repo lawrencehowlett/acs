@@ -1,1 +1,0 @@
-<div id="block-droppable" class="ui-widget-header" style="background: #FFF; border: 1px solid #CCC; width: 90%; padding: 20px;"></div>

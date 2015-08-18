@@ -1,0 +1,7 @@
+Page:
+  extensions:
+    - PageBlockBuilder_Page_Extension
+
+CMSMain:
+  extensions:
+    - PageBlockBuilder_CMSMain_Extension

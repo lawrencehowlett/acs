@@ -14,3 +14,7 @@ SiteConfig:
 SiteTree:
   extensions:
     - SiteTreeSetting
+
+BlockWidget:
+  extensions:
+    - ResourceBlockWidget_Extension

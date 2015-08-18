@@ -1,24 +1,23 @@
 <?php
-class BlockWidgetGallery extends BlockWidget {
+class BlockWidgetSlider extends BlockWidget {
 
-	private static $has_many = array(
-		'Images' => 'BlockWidgetGalleryImage'
+	private static  $has_many = array(
+		'Items' => 'BlockWidgetSliderItem'
 	);
 
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
-		$fields->removeByName('Images');
+		$fields->removeByName('Items');
 
 		$fields->addFieldToTab(
 			'Root.Main', 
 			GridField::create(
-				'Images', 
-				'Images', 
-				$this->Images(), 
+				'Items', 
+				'Sliders', 
+				$this->Items(), 
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
-
 			)
 		);
 
@@ -26,6 +25,6 @@ class BlockWidgetGallery extends BlockWidget {
 	}
 
 	public function ComponentName() {
-		return 'Gallery widget';
+		return 'Slider widget';
 	}
 }

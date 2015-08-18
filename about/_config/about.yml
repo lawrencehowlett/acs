@@ -1,0 +1,3 @@
+BlockWidget:
+  extensions:
+    - AboutBlockWidget_Extension
