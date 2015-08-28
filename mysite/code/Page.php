@@ -89,4 +89,17 @@ class Page_Controller extends ContentController {
 		Requirements::javascript('https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false');
 		Requirements::javascript('themes/acs/js/min.js');
 	}
+
+	/**
+	 * Get the correct index of the list
+	 * 
+	 * @return int
+	 */
+	public function getListIndex($number) {
+		if ($number) {
+			return $number - 1;
+		}
+
+		return 0;
+	}	
 }

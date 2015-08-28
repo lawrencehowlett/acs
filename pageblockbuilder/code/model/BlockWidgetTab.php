@@ -1,31 +1,30 @@
 <?php
-class BlockWidgetTab extends DataObject {
+class BlockWidgetTab extends BlockWidget {
 
-	private static $db = array(
-		'Title' => 'Varchar',
-		'Content' => 'HTMLText',
-		'SortOrder' => 'Int'
-	);
-
-	private static $has_one = array(
-		'Page' => 'Page', 
-		'Image' => 'Image'
+	private static  $has_many = array(
+		'Items' => 'BlockWidgetTabItem'
 	);
 
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
-		$fields->removeFieldsFromTab(
+		$fields->removeByName('Items');
+
+		$fields->addFieldToTab(
 			'Root.Main', 
-			array('PageID', 'SortOrder')
+			GridField::create(
+				'Items', 
+				'Sliders', 
+				$this->Items(), 
+				GridFieldConfig_RecordEditor::create()
+					->addComponent(new GridFieldSortableRows('SortOrder'))
+			)
 		);
 
-		$fields->dataFieldByName('Content')
-			->setRows(20);
-
-		$fields->dataFieldByName('Image')
-			->setFolderName('Tabs/');
-
 		return $fields;
+	}
+
+	public function ComponentName() {
+		return 'Tab widget';
 	}
 }

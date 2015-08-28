@@ -15,6 +15,23 @@ SiteTree:
   extensions:
     - SiteTreeSetting
 
+Member:
+  extensions:
+    - Member_Extension
+
 BlockWidget:
   extensions:
     - ResourceBlockWidget_Extension
+
+Blog:
+  extensions:
+    - Blog_Extension
+Blog_Controller:
+  extensions:
+    - Blog_Controller_Extension
+BlogPost:
+  extensions:
+    - BlogPost_Extension
+BlogPost_Controller:
+  extensions:
+    - BlogPost_Controller_Extension

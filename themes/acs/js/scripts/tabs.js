@@ -2,6 +2,9 @@ $(".tab-section").each(function() {
 	var el = $(this);
 	var tabs = el.find(".tab a");
 	var tabContent = el.find(".tab-content");
+	tabs.each(function(){
+		$(this).attr('href', '#' + $(this).attr('data-criteria'));
+	});
 
 	tabs.click(function(event) {
 		event.preventDefault();

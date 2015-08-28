@@ -9,7 +9,8 @@ class BlockWidget extends DataObject {
 	);
 
 	private static $has_one = array(
-		'Page' => 'Page'
+		'Page' => 'Page', 
+		'BackgroundImage' => 'Image'
 	);
 
 	private static $singular_name = 'Widget';
@@ -26,7 +27,7 @@ class BlockWidget extends DataObject {
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('PageID', 'Title', 'Code', 'SortOrder', 'ExtraClass')
+			array('PageID', 'Title', 'Code', 'SortOrder', 'ExtraClass', 'BackgroundImage')
 		);
 
 		if (!$this->ID) {
@@ -48,10 +49,13 @@ class BlockWidget extends DataObject {
 				'Root.Main', 
 				TextField::create('ExtraClass', 'Extra class')
 			);
-			/*$fields->addFieldToTab(
+
+			$fields->addFieldToTab(
 				'Root.Main', 
-				TextField::create('Code', 'Code')
-			);*/
+				UploadField::create('BackgroundImage', 'Background Image')
+					->setFolderName('BackgroundImages/')
+			);
+
 		}
 
 		return $fields;

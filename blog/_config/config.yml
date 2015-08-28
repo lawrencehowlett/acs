@@ -1,0 +1,10 @@
+---
+Name: blogconfig
+---
+
+Page:
+  extensions:
+    - WidgetPageExtension
+Member:
+  extensions:
+    - BlogMemberExtension
