@@ -22,4 +22,8 @@ class BlockWidgetActionBox extends BlockWidget {
 
 		return $fields;
 	}
+
+	public function ComponentName() {
+		return 'Action box widget';
+	}
 }

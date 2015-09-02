@@ -117,4 +117,18 @@
 		</section>	
 
 	<% end_loop %>
+<% else %>
+	<section class="page-section">
+		<article class="inside cf">
+			<header class="text-section-header">
+				<h2 class="section-title">$Title</h2>
+			</header>
+			<div class="text-section-content">
+				$Content
+				$Form
+			</div>
+		</article>
+	</section>
 <% end_if %>
+
+<% include FeaturedResources %>

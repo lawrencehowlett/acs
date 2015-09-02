@@ -1,10 +1,65 @@
 <?php
+/**
+ * Represents the accreditation page
+ * 
+ * @author Julius <julius@greenbrainer.com>
+ * @copyright Copyright (c) 2015, Julius
+ */
 class AccreditationPage extends Page {
 
+	/**
+	 * Set has many
+	 * 
+	 * @var array
+	 */
+	private static $has_many = array(
+		'Partners' => 'AccreditationPartner'
+	);
+
+	/**
+	 * Set icon
+	 * 
+	 * @var string
+	 */
+	private static $icon = 'mysite/images/sign-check-icon.png';
+
+	/**
+	 * Get CMS fields
+	 * 
+	 * @return FieldList
+	 */
+	public function getCMSFields() {
+		$fields = parent::getCMSFields();
+
+		$fields->removeByName('Widgets');
+
+		$fields->addFieldToTab(
+			'Root.Partners', 
+			GridField::create(
+				'Partners', 
+				'Partners', 
+				$this->Partners(), 
+				GridFieldConfig_RecordEditor::create()
+					->addComponent(new GridFieldSortableRows('SortOrder'))
+			)
+		);
+
+		return $fields;
+	}
 }
 
-class AccreditationPage_Controller extends Page {
+/**
+ * Controls the accreditation page
+ * 
+ * @author Julius <julius@greenbrainer.com>
+ * @copyright Copyright (c) 2015, Julius
+ */
+class AccreditationPage_Controller extends Page_Controller {
 
-	private static $db = array(
-	);
+	/**
+	 * Initialise the controller
+	 */
+	public function init() {
+		parent::init();
+	}
 }

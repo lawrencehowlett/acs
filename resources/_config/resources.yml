@@ -1,0 +1,10 @@
+Page:
+  extensions:
+    - FeaturedResources_Page_Extension
+
+Blog:
+  extensions:
+    - Resources_Page_Extension
+BlogPost:
+  extensions:
+    - ResourcesPost_Page_Extension

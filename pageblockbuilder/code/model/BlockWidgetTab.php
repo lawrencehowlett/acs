@@ -14,7 +14,7 @@ class BlockWidgetTab extends BlockWidget {
 			'Root.Main', 
 			GridField::create(
 				'Items', 
-				'Sliders', 
+				'Items', 
 				$this->Items(), 
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))

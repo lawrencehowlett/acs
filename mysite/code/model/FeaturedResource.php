@@ -1,5 +1,5 @@
 <?php
-class FeaturedResource extends BlockWidget {
+/*class FeaturedResource extends BlockWidget {
 
 	private static  $has_many = array(
 		'Resources' => 'FeaturedResourceItem'
@@ -41,4 +41,4 @@ class FeaturedResource extends BlockWidget {
 	public function ComponentName() {
 		return 'Resources widget';
 	}
-}
+}*/

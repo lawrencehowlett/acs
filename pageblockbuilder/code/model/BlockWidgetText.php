@@ -50,6 +50,10 @@ class BlockWidgetText extends BlockWidget {
 		$fields = parent::getCMSFields();
 
 		$fields->removeFieldsFromTab('Root.Main', array('Title'));
+		$fields->insertBefore(
+			TextField::create('Title', 'Title'), 
+			'SectionTitle'
+		);
 		$fields->dataFieldByName('Content')
 			->setRows(20);
 		$fields->dataFieldByName('SectionTitle')

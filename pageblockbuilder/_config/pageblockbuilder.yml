@@ -5,3 +5,10 @@ Page:
 CMSMain:
   extensions:
     - PageBlockBuilder_CMSMain_Extension
+
+Image:
+  allowed_extensions:
+    - svg
+File:
+  allowed_extensions:
+    - svg

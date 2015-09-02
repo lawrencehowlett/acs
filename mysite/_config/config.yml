@@ -35,3 +35,11 @@ BlogPost:
 BlogPost_Controller:
   extensions:
     - BlogPost_Controller_Extension
+BlogCategory:
+  extensions:
+    - BlogCategory_Extension
+
+Image:
+  extensions:
+    - CaseStudyFeaturedImage_DataExtension
+    - CaseStudyGalleryImages_DataExtension

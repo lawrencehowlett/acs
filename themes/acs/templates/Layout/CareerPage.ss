@@ -149,3 +149,5 @@
 		<% end_if %>
 	</div>
 </section>
+
+<% include FeaturedResources %>

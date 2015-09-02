@@ -25,7 +25,15 @@ class ActionBox extends DataObject {
 	 */
 	private static $has_one = array(
 		'RedirectPage' => 'SiteTree', 
-		'Background' => 'Image', 
+		'Background' => 'Image'
+	);
+
+	/**
+	 * Set belongs many many
+	 * 
+	 * @var array
+	 */
+	private static $belongs_many_many = array(
 		'Page' => 'Page'
 	);
 
@@ -52,6 +60,8 @@ class ActionBox extends DataObject {
 	 */
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
+
+		$fields->removeByName('Page');
 
 		$fields->removeFieldsFromTab('Root.Main', array('SortOrder', 'PageID'));
 

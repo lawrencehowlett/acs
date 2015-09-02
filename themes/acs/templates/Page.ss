@@ -19,8 +19,11 @@
 </head>
 
 <body <% if $i18nScriptDirection %>dir="$i18nScriptDirection"<% end_if %>>
+
 <% include Header %>
+
 $Layout
+
 <% include Footer %>
 
 </body>

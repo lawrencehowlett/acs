@@ -1,0 +1,3 @@
+BlockWidget:
+  extensions:
+    - BlockWidgetSpinningBanner_Extension

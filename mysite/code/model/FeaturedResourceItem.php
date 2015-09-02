@@ -1,5 +1,5 @@
 <?php
-class FeaturedResourceItem extends DataObject {
+/*class FeaturedResourceItem extends DataObject {
 
 	private static $db = array(
 		'Title' => 'Text', 
@@ -51,4 +51,4 @@ class FeaturedResourceItem extends DataObject {
 			}
 		}
 	}
-}
+}*/

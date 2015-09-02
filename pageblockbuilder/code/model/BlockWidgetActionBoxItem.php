@@ -10,7 +10,7 @@ class BlockWidgetActionBoxItem extends DataObject {
 	private static $has_one = array(
 		'Parent' => 'BlockWidgetActionBox', 
 		'RedirectPage' => 'SiteTree',
-		'Image' => 'Image'
+		'Image' => 'File'
 	);
 
 	private static $singular_name = 'Action box';

@@ -30,9 +30,20 @@ class Page extends SiteTree {
 	 * 
 	 * @var array
 	 */
-	private static $has_many = array(
+	private static $many_many = array(
 		'ActionBoxes' => 'ActionBox'
 	);
+
+	/**
+	 * Set many many extra fields
+	 * 
+	 * @var array
+	 */
+    public static $many_many_extraFields=array(
+        'ActionBoxes' => array(
+            'SortColumn' => 'Int'
+        )
+    );		
 
 	/**
 	 * Get CMS fields
@@ -49,8 +60,13 @@ class Page extends SiteTree {
 		);
 
 		$fields->insertBefore(
-			HTMLEditorField::create('Description', 'Header description')
-				->setRows(20),
+			ToggleCompositeField::create(
+				'CustomHeaderImage', 
+				'Attach A Header Description', 
+				array(
+					HTMLEditorField::create('Description', 'Header description')->setRows(20)
+				)
+			),
 			'Content'
 		);
 
@@ -60,13 +76,17 @@ class Page extends SiteTree {
 				'ActionBoxes', 
 				'Action Boxes', 
 				$this->ActionBoxes(), 
-				GridFieldConfig_RecordEditor::create()
-					->addComponent(new GridFieldSortableRows('SortOrder'))
+				GridFieldConfig_RelationEditor::create()
+					->addComponent(new GridFieldSortableRows('SortColumn'))
 			)
 		);
 
 		return $fields;
 	}
+
+    public function ActionBoxes() {
+        return $this->getManyManyComponents('ActionBoxes')->sort('SortColumn');
+    }	
 }
 
 /**
