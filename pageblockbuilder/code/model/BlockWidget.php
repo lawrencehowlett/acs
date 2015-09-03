@@ -3,7 +3,7 @@ class BlockWidget extends DataObject {
 
 	private static $db = array(
 		'Title' => 'Text', 
-		'Code' => 'Varchar',
+		'Code' => 'Varchar', 
 		'ExtraClass' => 'Varchar',
 		'SortOrder' => 'Int'
 	);
@@ -55,7 +55,6 @@ class BlockWidget extends DataObject {
 				UploadField::create('BackgroundImage', 'Background Image')
 					->setFolderName('BackgroundImages/')
 			);
-
 		}
 
 		return $fields;

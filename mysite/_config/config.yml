@@ -43,3 +43,7 @@ Image:
   extensions:
     - CaseStudyFeaturedImage_DataExtension
     - CaseStudyGalleryImages_DataExtension
+
+BlockWidget:
+  extensions:
+    - BlockWidget_Extension

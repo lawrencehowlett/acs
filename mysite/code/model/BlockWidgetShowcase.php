@@ -1,8 +1,8 @@
 <?php
-class BlockWidgetSpinningBanner extends BlockWidgetTab {
+class BlockWidgetShowcase extends BlockWidgetTab {
 
-	private static  $has_many = array(
-		'SpinningBanners' => 'BlockWidgetSpinningBannerItem'
+	private static $has_many = array(
+		'ShowcaseItems' => 'BlockWidgetShowcaseItem'
 	);
 
 	public function getCMSFields() {
@@ -13,14 +13,14 @@ class BlockWidgetSpinningBanner extends BlockWidgetTab {
 			array('BackgroundImage', 'Items')
 		);
 
-		$fields->removeByName('SpinningBanners');
+		$fields->removeByName('ShowcaseItems');
 
 		$fields->addFieldToTab(
 			'Root.Main', 
 			GridField::create(
-				'SpinningBanners', 
-				'Spinning Banners', 
-				$this->SpinningBanners(), 
+				'ShowcaseItems', 
+				'Showcase', 
+				$this->ShowcaseItems(), 
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
 			)
@@ -31,6 +31,6 @@ class BlockWidgetSpinningBanner extends BlockWidgetTab {
 
 
 	public function ComponentName() {
-		return 'Spinning Banner Widget';
-	}	
+		return 'Showcase Widget';
+	}
 }

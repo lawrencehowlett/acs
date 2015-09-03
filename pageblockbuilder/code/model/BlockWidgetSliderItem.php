@@ -11,6 +11,7 @@ class BlockWidgetSliderItem extends DataObject {
 	private static $has_one = array(
 		'Parent' => 'BlockWidgetSlider', 
 		'RedirectPage' => 'SiteTree',
+		'Icon' => 'File', 
 		'Image' => 'Image'
 	);
 
@@ -21,7 +22,7 @@ class BlockWidgetSliderItem extends DataObject {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
-		$fields->removeFieldsFromTab('Root.Main', array('ParentID', 'Image', 'SortOrder'));
+		$fields->removeFieldsFromTab('Root.Main', array('ParentID', 'Image', 'Icon', 'SortOrder'));
 		$fields->replaceField('Title', TextField::create('Title', 'Title'));
 		$fields->dataFieldByName('Content')
 			->setRows(20);
@@ -33,9 +34,15 @@ class BlockWidgetSliderItem extends DataObject {
 
 		if ($this->ID) {
 			$fields->insertAfter(
+				UploadField::create('Icon', 'Icon')
+					->setFolderName($this->Parent()->Page()->Title . '/SliderIcons/'), 
+				'RedirectPageID'
+			);
+
+			$fields->insertAfter(
 				UploadField::create('Image', 'Image')
 					->setFolderName($this->Parent()->Page()->Title . '/SliderImages/'), 
-				'RedirectPageID'
+				'Icon'
 			);
 		}
 

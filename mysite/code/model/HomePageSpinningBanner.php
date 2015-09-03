@@ -10,7 +10,6 @@ class HomePageSpinningBanner extends DataObject {
 	);
 
 	private static $has_one = array(
-		'HomePage' => 'HomePage', 
 		'RedirectPage' => 'SiteTree',
 		'Image' => 'Image'
 	);
