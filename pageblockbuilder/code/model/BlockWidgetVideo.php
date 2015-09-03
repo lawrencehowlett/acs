@@ -73,8 +73,7 @@ class BlockWidgetVideo extends BlockWidget {
 		$fields->insertAfter($fields->dataFieldByName('Image'), 'Content');
 		$fields->insertBefore($fields->dataFieldByName('ButtonText'), 'Image');
 		$fields->insertBefore($fields->dataFieldByName('RedirectPageID'), 'Image');
-		$fields->insertAfter($fields->dataFieldByName('BackgroundImage'), 'Image');
-
+		$fields->insertAfter($fields->dataFieldByName('BackgroundImage')->setFolderName('BlockWidgetVideo/BackgrundImages/'), 'Image');
 
 		return $fields;
 	}

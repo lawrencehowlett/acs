@@ -21,7 +21,7 @@ class BlockWidgetCaseStudy extends BlockWidgetSliderItem {
 			$fields->dataFieldByName('Icon')
 				->setFolderName('BlockWidgetCaseStudies/Icons');
 			$fields->dataFieldByName('Image')
-				->setFolderName('BlockWidgetPartners/Images');
+				->setFolderName('BlockWidgetCaseStudies/Images');
 		}
 
 		return $fields;

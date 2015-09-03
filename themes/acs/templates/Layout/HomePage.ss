@@ -94,7 +94,7 @@
 					<ul class="slider-navigation">
 						<% loop $ShowcaseItems %>
 						<li>
-							<a href="javascript:void(0);" data-slide="$Top.getListIndex($Pos)" class="slide-link team <% if $First %>active<% end_if%>">$TabTitle</a>
+							<a href="javascript:void(0);" data-slide="$Top.getListIndex($Pos)" class="slide-link $ExtraClass <% if $First %>active<% end_if%>">$TabTitle</a>
 						</li>
 						<% end_loop %>
 					</ul>

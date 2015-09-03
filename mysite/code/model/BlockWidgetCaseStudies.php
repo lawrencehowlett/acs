@@ -13,7 +13,7 @@ class BlockWidgetCaseStudies extends BlockWidgetSlider {
 			array('BackgroundImage', 'Items')
 		);
 
-		$fields->removeByName('SpinningBanners');
+		$fields->removeByName('CaseStudies');
 
 		$fields->addFieldToTab(
 			'Root.Main', 
