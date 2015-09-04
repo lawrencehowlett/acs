@@ -4,7 +4,8 @@ class BlockWidgetActionBoxItem extends DataObject {
 	private static $db = array(
 		'Title' => 'Text', 
 		'Content' => 'HTMLText', 
-		'ButtonText' => 'Varchar'
+		'ButtonText' => 'Varchar', 
+		'SortOrder' => 'Int'
 	);	
 
 	private static $has_one = array(
@@ -22,7 +23,7 @@ class BlockWidgetActionBoxItem extends DataObject {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
-		$fields->removeFieldsFromTab('Root.Main', array('ParentID', 'Image'));
+		$fields->removeFieldsFromTab('Root.Main', array('ParentID', 'Image', 'SortOrder'));
 		$fields->replaceField('Title', TextField::create('Title', 'Title'));
 		$fields->dataFieldByName('Content')
 			->setRows(20);
