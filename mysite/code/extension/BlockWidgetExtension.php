@@ -6,5 +6,6 @@ class BlockWidget_Extension extends DataExtension {
 		$components['BlockWidgetShowcase'] = 'Showcase';
 		$components['BlockWidgetProjects'] = 'Projects';
 		$components['BlockWidgetWork'] = 'Works';
+		$components['BlockWidgetMultipleTextImageBlock'] = 'Multiple Text Image Block';
 	}	
 }
