@@ -17,6 +17,8 @@ class BlockWidgetActionBoxItem extends DataObject {
 
 	private static $plural_name = 'Action boxes';
 
+	private static $default_sort = 'SortOrder';
+
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
@@ -30,13 +32,11 @@ class BlockWidgetActionBoxItem extends DataObject {
 			TreedropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree')
 		);
 
-		if ($this->ID) {
-			$fields->insertAfter(
-				UploadField::create('Image', 'Image')
-					->setFolderName('ActionBoxes/Images'), 
-				'RedirectPageID'
-			);
-		}
+		$fields->insertAfter(
+			UploadField::create('Image', 'Image')
+				->setFolderName('ActionBoxes/Images'), 
+			'RedirectPageID'
+		);
 
 		return $fields;
 	}

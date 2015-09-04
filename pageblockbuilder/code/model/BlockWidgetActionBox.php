@@ -17,6 +17,7 @@ class BlockWidgetActionBox extends BlockWidget {
 				'Action Boxes', 
 				$this->Items(), 
 				GridFieldConfig_RecordEditor::create()
+					->addComponent(new GridFieldSortableRows('SortOrder'))
 			)
 		);
 
