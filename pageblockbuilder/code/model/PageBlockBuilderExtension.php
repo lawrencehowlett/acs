@@ -36,7 +36,13 @@ class PageBlockBuilder_Page_Extension extends DataExtension {
 		$fields = new FieldList(
 			new TabSet('Root', 
 				new Tab('BlockBuilder', 
-					GridField::create('Widgets', 'Widgets', $this->owner->Widgets(), GridFieldConfig_RecordEditor::create())
+					GridField::create(
+						'Widgets', 
+						'Widgets', 
+						$this->owner->Widgets(), 
+						GridFieldConfig_RecordEditor::create()
+							->addComponent(new GridFieldSortableRows('SortOrder'))
+					)
 				)
 			)
 		);

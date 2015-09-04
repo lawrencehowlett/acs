@@ -17,6 +17,8 @@ class BlockWidget extends DataObject {
 
 	private static $plural_name = 'Widgets';
 
+	private static $default_sort = 'SortOrder';
+
 	private static $summary_fields = array(
 		'ComponentName' => 'Component', 
 		'Title' => 'Title'

@@ -182,7 +182,7 @@
 					<h2 class="section-title">$Title</h2>
 					<ul class="work">
 						<% loop $Works %>
-							<li class="work-item work-brief">
+							<li class="work-item $ExtraClass">
 								<p class="number">$Pos</p>
 								<p class="work-item-img"></p>
 								<h3 class="work-title">$Title</h3>
