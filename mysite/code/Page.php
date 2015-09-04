@@ -71,10 +71,10 @@ class Page extends SiteTree {
 		);
 
 		$fields->addFieldToTab(
-			'Root.ActionBoxes', 
+			'Root.Teasers', 
 			GridField::create(
 				'ActionBoxes', 
-				'Action Boxes', 
+				'Teasers', 
 				$this->ActionBoxes(), 
 				GridFieldConfig_RelationEditor::create()
 					->addComponent(new GridFieldSortableRows('SortColumn'))

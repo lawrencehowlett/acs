@@ -53,6 +53,10 @@ class ActionBox extends DataObject {
 	 */
 	private static $default_sort = 'SortOrder';
 
+	private static $singular_name = 'Teaser';
+
+	private static $plural_name = 'Teasers';
+
 	/**
 	 * Get CMS fields
 	 * 
