@@ -4,7 +4,7 @@ global $project;
 $project = 'mysite';
 
 global $database;
-$database = 'newedge_acs';
+$database = 'acsstagi_db';
 
 require_once("conf/ConfigureFromEnv.php");
 
