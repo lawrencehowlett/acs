@@ -13,7 +13,9 @@
 				<% loop $PaginatedList %>
 					<article class="blog-content reading">
 						<h4 class="category">
-							<a href="#">Content marketing</a>
+							<% loop $Categories %>
+								<a href="$Link" title="$Title">$Title</a><% if not Last %>, <% else %> <% end_if %>
+							<% end_loop %>
 						</h4>
 						<h2 class="post-title">
 							<a href="$Link" title="Read more about $Title"><% if $MenuTitle %>$MenuTitle<% else %>$Title<% end_if %></a>
