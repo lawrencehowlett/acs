@@ -197,7 +197,7 @@ JS
 
 		$result = $MailChimp->call('lists/subscribe', $apiData);
 
-		if ($data['Newsletter']) {
+		if (isset($data['Newsletter'])) {
 			$newsletterApiData = array(
 				'id'                => $settings->MailChimpList()->filter(array('Code' => 'NEWSLETTER'))->First()->ListID,
 				'email'             => array('email' => $data['Email']),

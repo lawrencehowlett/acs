@@ -1,5 +1,6 @@
 <form $AttributesHTML>
 	<h2>$Controller.FormTitle</h2>
+	<p>$Controller.FormDescription</p>
 
 	<p class="field">
 		$Fields.dataFieldByName(Name)
