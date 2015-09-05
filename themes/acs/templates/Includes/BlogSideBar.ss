@@ -1,5 +1,3 @@
 <% if $SideBarView %>
-    <aside class="blog-sidebar">
-        $SideBarView
-    </aside>
+    $SideBarView
 <% end_if %>

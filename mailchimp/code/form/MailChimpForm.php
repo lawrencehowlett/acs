@@ -18,13 +18,10 @@ class MailChimpForm extends Form {
 		$fields = new FieldList(
 			TextField::create('Name', 'Name')
 				->setAttribute('required', 'required')
-				->setAttribute('placeholder', 'Name')
-				->addExtraClass('form-control'),
+				->setAttribute('placeholder', 'Your name'),
 			EmailField::create('Email', 'Email')
 				->setAttribute('required', 'required')
-				->setAttribute('placeholder', 'Email Address')
-				->addExtraClass('form-control'),
-			HiddenField::create('ListCode', false, $listCode)
+				->setAttribute('placeholder', 'Your e-mail')
 		);
 
 		if ($extendedFields) {
@@ -33,9 +30,9 @@ class MailChimpForm extends Form {
 
 		$this->extend('updateFields', $fields);
 		
-		$actions = new FieldList(
-			FormAction::create('subscribe')->setTitle('Subscribe')->addExtraClass('btn btn-primary')
-		);
+		$formAction = FormAction::create('subscribe')->setTitle('Sign Up');
+		$formAction->useButtonTag = true;
+		$actions = new FieldList($formAction);
 
 		$validator = new RequiredFields(
 			'Email'

@@ -45,4 +45,24 @@ class BlogPost_Extension extends DataExtension {
  */
 class BlogPost_Controller_Extension extends Extension {
 
+	public function onAfterInit() {
+		Requirements::customCSS(<<<CSS
+			.st_facebook_custom, .st_twitter_custom, .st_linkedin_custom, .st_googleplus_custom {
+				cursor: pointer;
+			}
+CSS
+		);
+
+		Requirements::javascript('http://w.sharethis.com/button/buttons.js');
+		Requirements::customScript(<<<JS
+			stLight.options({
+				publisher: "df062f19-5c0a-49cd-aa6c-241a45fa6d96", 
+				doNotHash: false, 
+				doNotCopy: false, 
+				hashAddressBar: false, 
+				servicePopup: true
+			});			
+JS
+		);
+	}
 }

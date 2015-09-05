@@ -21,7 +21,7 @@ class MailChimpPageControllerExtension extends Extension {
 	 */
 	public function MailChimpForm($listCode = null) {
 		$form = new MailChimpForm($this->owner, 'MailChimpForm', null, $listCode);
-
+		$form->addExtraClass('newsletter-form');
 		$form->loadDataFrom($this->owner->request->postVars());
 
 		return $form;

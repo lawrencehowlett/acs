@@ -66,18 +66,18 @@ if(class_exists("Widget")) {
 		public function BlogSearchForm() {
 			$fields = new FieldList(
 				TextField::create('Keyword', false)
-					->setAttribute('placeholder', 'Search the blog')
+					->setAttribute('placeholder', 'Type & search')
 			);
 
-			$formAction = FormAction::create('doSignUp')->setTitle('Sign Up');
+			$formAction = FormAction::create('doSearch');
 			$formAction->useButtonTag = true;
 			$actions = new FieldList($formAction);
 
-			$required = new RequiredFields('Name', 'Email');
+			$required = new RequiredFields('Keyword');
 
-			$form = new Form($this, 'BlogMailchimpForm', $fields, $actions, $required);
-			$form->addExtraClass('newsletter-form');
-			$form->setTemplate('BlogMailchimpForm');
+			$form = new Form($this, 'BlogSearchForm', $fields, $actions, $required);
+			$form->addExtraClass('blog-search');
+			$form->setTemplate('BlogSearchForm');
 
 			return $form;
 		}

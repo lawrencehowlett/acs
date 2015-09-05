@@ -23,7 +23,7 @@
 						<div class="additional">
 							<div class="date info">$PublishDate.Format('M d, Y') <span class="blue">/</span></div>
 							<div class="author info">By <a href="#">$Authors.First.FirstName $Authors.First.Surname</a> <span class="blue">/</span></div>
-							<div class="comments info">4 comments</div>
+							<!--<div class="comments info">4 comments</div>-->
 						</div>
 						
 						<% if $FeaturedImage %>
@@ -66,21 +66,7 @@
 		</section>
 
 		<aside class="blog-sidebar right">
-			<div class="widget newsletter">
-				<h3 class="newsletter-title">Sign Up to<br>get the latest posts</h3>
-				<form class="newsletter-form" method="post" action="#">
-					<input name="name" type="text" required placeholder="Your name">
-					<input name="email" type="email" required placeholder="Your e-mail">
-					<button type="submit" name="subscribe" value="1">Sign Up</button>
-				</form>
-			</div>
-
-			<div class="widget search">
-				<form class="blog-search" action="#" method="get">
-					<input type="text" name="search-phrase" placeholder="Type &amp; search">
-						<button type="submit" name="search-submit" value="1"></button>
-				</form>
-			</div>
+			<% include BlogSideBar %>
 
 			<% if $FeaturedAuthor %>
 				<div class="widget welcome">
@@ -91,7 +77,6 @@
 						<% end_if %>
 						<div class="text">
 							$FeaturedAuthor.BlogProfileSummary
-							<!--<a href="#" title="Read more about $FeaturedAuthor.FullName">Read more</a>-->
 						</div>
 					</div>
 				</div>
