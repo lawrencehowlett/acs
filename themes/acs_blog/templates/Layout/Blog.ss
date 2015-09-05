@@ -22,7 +22,7 @@
 						</h2>
 						<div class="additional">
 							<div class="date info">$PublishDate.Format('M d, Y') <span class="blue">/</span></div>
-							<div class="author info">By <a href="#">$Authors.First.FirstName $Authors.First.Surname</a> <span class="blue">/</span></div>
+							<div class="author info">By <a href="#">$Authors.First.FirstName $Authors.First.Surname</a> <span class="blue"></span></div>
 							<!--<div class="comments info">4 comments</div>-->
 						</div>
 						

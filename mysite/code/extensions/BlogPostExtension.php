@@ -29,11 +29,14 @@ class BlogPost_Extension extends DataExtension {
 			'Root.RelatedPosts', 
 			GridField::create(
 				'RelatedPosts', 
-				'RelatedPosts', 
+				'Related Posts', 
 				$this->owner->RelatedBlogPosts(), 
 				GridFieldConfig_RelationEditor::create()
 			)
 		);
+
+		$fields->dataFieldByName('FeaturedImage')
+			->setFolderName('BlogPosts/FeaturedImages');
 	}
 }
 

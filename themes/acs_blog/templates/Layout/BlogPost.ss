@@ -3,8 +3,8 @@
 		<p class="post-date">$PublishDate.Full</p>
 		$Description
 		<ul class="post-meta">
-			<li>Article by <a href="#">$Authors.First.FirstName $Authors.First.Surname</a></li>
-			<li>Posted in <% loop $Categories %><a href="$Link">$Title</a> <% end_loop %></li>
+			<% if $Authors %><li>Article by <a href="#">$Authors.First.FirstName $Authors.First.Surname</a></li><% end_if %>
+			<% if $Categories %><li>Posted in <% loop $Categories %><a href="$Link">$Title</a> <% end_loop %></li><% end_if %>
 		</ul>
 	</div>
 </section>
@@ -70,7 +70,7 @@
 								<article class="postlist-item">
 									<p class="post-item-date">$PublishDate.Full</p>
 									<h3 class="post-item-title">
-										<a href="#" title="Go to $Title.XML page">
+										<a href="$Link" title="Go to $Title.XML page">
 											<% if $MenuTitle %>
 												$MenuTitle.XML
 											<% else %>
