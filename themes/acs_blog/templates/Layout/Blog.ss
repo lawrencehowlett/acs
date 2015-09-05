@@ -25,7 +25,13 @@
 							<div class="author info">By <a href="#">$Authors.First.FirstName $Authors.First.Surname</a> <span class="blue">/</span></div>
 							<div class="comments info">4 comments</div>
 						</div>
-						<div class="post-image"><img src="$FeaturedImage.CroppedImage(584, 380).Link" alt="$FeaturedImage.Title"></div>
+						
+						<% if $FeaturedImage %>
+							<div class="post-image">
+								<img src="$FeaturedImage.CroppedImage(584, 380).Link" alt="$FeaturedImage.Title">
+							</div>
+						<% end_if %>
+
 						<p class="lead"><% if $Summary %>$Summary<% else %>$Excerpt<% end_if %></p>
 
 						<p class="more">
@@ -80,10 +86,12 @@
 				<div class="widget welcome">
 					<h3 class="widget-title">Welcome</h3>
 					<div class="widget-inner">
-						<img src="$FeaturedAuthor.BlogProfileImage.Link" alt="$FeaturedAuthor.BlogProfileImage.Title">
+						<% if $FeaturedAuthor %>
+							<img src="$FeaturedAuthor.BlogProfileImage.Link" alt="$FeaturedAuthor.BlogProfileImage.Title">
+						<% end_if %>
 						<div class="text">
 							$FeaturedAuthor.BlogProfileSummary
-							<a href="#" title="Read more about $FeaturedAuthor.FullName">Read more</a>
+							<!--<a href="#" title="Read more about $FeaturedAuthor.FullName">Read more</a>-->
 						</div>
 					</div>
 				</div>
@@ -108,9 +116,11 @@
 							<% loop $FeaturedBlogPosts %>
 								<li>
 									<a href="$Link" title="Go to $Title.XML page">
-										<div class="img">
-											<img src="$FeaturedImage.CroppedImage(570, 330).Link" alt="$FeaturedImage.Title">
-										</div>
+										<% if $FeaturedImage %>
+											<div class="img">
+												<img src="$FeaturedImage.CroppedImage(570, 330).Link" alt="$FeaturedImage.Title">
+											</div>
+										<% end_if %>
 										<div class="title">$Title.XML</div>
 									</a>
 								</li>
