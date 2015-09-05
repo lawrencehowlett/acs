@@ -1,0 +1,46 @@
+.pagination {
+  text-align: center;
+  ul {list-style-type: none;
+    li {
+      display: inline-block;
+      padding: 10px 20px; 
+      cursor: pointer;
+      background: #e6edf3;
+      vertical-align: middle;
+      transition: $transAll;
+      a {
+        color: #838e96;
+      }
+      &.active,
+      &:hover {
+        background: #838e96;
+        a {
+          color: #fff;
+        }
+      }
+      &.prev,
+      &.next {
+        overflow: hidden;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: 10px;
+        margin: 0;
+        height: 25px;
+
+        transition: $transAll;
+      }
+      &.prev {
+        background: url("../img/ie/res-slider-prev.svg") no-repeat left center;
+        &:hover {
+          @include transformation(translateX(-20px));
+        }
+      }
+      &.next {
+        background: url("../img/ie/res-slider-next.svg") no-repeat right center;
+        &:hover {
+          @include transformation(translateX(20px));
+        }
+      }
+    }
+  }
+}

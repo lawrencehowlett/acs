@@ -11,18 +11,4 @@ p {
     margin-bottom: 15px;	
 }
 
-.author-position {
-    color: #24465d;
-    font: 400 18px/1.5em "Prelo",sans-serif;
-    margin: 5px 0 25px;
-    text-transform: uppercase;
-}
-
-ul {
-    color: #000;
-    line-height: 22px;
-    margin-bottom: 23px;
-    margin-left: 0; 
-}
-
 ul li {font-size: 14px;}

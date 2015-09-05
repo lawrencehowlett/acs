@@ -51,5 +51,3 @@
 		</aside>
 	</div>
 </section>
-
-<% include FeaturedResources %>

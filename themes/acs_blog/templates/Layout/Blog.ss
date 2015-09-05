@@ -1,0 +1,123 @@
+<section class="page-section page-header" style='<% if $Banner %>background-image: url("$Banner.Link")<% end_if %>'>
+	<div class="inside">
+		<h1 class="page-title">$Title</h1>
+		$Description
+	</div>
+</section>
+
+<section class="page-section text-content blog posts">
+	<div class="inside cf">
+		<section class="blog-main left">
+
+			<% if $PaginatedList.Exists %>
+				<% loop $PaginatedList %>
+					<article class="blog-content reading">
+						<h4 class="category">
+							<a href="#">Content marketing</a>
+						</h4>
+						<h2 class="post-title">
+							<a href="$Link" title="Read more about $Title"><% if $MenuTitle %>$MenuTitle<% else %>$Title<% end_if %></a>
+						</h2>
+						<div class="additional">
+							<div class="date info">$PublishDate.Format('M d, Y') <span class="blue">/</span></div>
+							<div class="author info">By <a href="#">$Authors.First.FirstName $Authors.First.Surname</a> <span class="blue">/</span></div>
+							<div class="comments info">4 comments</div>
+						</div>
+						<div class="post-image"><img src="$FeaturedImage.CroppedImage(584, 380).Link" alt="$FeaturedImage.Title"></div>
+						<p class="lead"><% if $Summary %>$Summary<% else %>$Excerpt<% end_if %></p>
+
+						<p class="more">
+							<a href="$Link" title="Read more about $Title">Read more</a>
+						</p>
+					</article>
+				<% end_loop %>
+			<% end_if %>
+
+			<% with $PaginatedList %>
+				<% if $MoreThanOnePage %>
+					<div class="pagination">
+						<ul>
+							<% if $NotFirstPage %>
+								<li class="prev"><a href="{$PrevLink}" title="Go to previous posts">Previous</a></li>
+							<% end_if %>
+
+							<% loop $Pages %>
+								<li <% if $CurrentBool %>class="active"<% end_if %>>
+									<a href="$Link" title="Go to page $PageNum">$PageNum</a>
+								</li>
+							<% end_loop %>
+
+							<% if $NotLastPage %>
+								<li class="next"><a href="{$NextLink}" title="Go to next posts">Next</a></li>
+							<% end_if %>
+						</ul>
+					</div>
+				<% end_if %>
+			<% end_with %>
+
+		</section>
+
+		<aside class="blog-sidebar right">
+			<div class="widget newsletter">
+				<h3 class="newsletter-title">Sign Up to<br>get the latest posts</h3>
+				<form class="newsletter-form" method="post" action="#">
+					<input name="name" type="text" required placeholder="Your name">
+					<input name="email" type="email" required placeholder="Your e-mail">
+					<button type="submit" name="subscribe" value="1">Sign Up</button>
+				</form>
+			</div>
+
+			<div class="widget search">
+				<form class="blog-search" action="#" method="get">
+					<input type="text" name="search-phrase" placeholder="Type &amp; search">
+						<button type="submit" name="search-submit" value="1"></button>
+				</form>
+			</div>
+
+			<% if $FeaturedAuthor %>
+				<div class="widget welcome">
+					<h3 class="widget-title">Welcome</h3>
+					<div class="widget-inner">
+						<img src="$FeaturedAuthor.BlogProfileImage.Link" alt="$FeaturedAuthor.BlogProfileImage.Title">
+						<div class="text">
+							$FeaturedAuthor.BlogProfileSummary
+							<a href="#" title="Read more about $FeaturedAuthor.FullName">Read more</a>
+						</div>
+					</div>
+				</div>
+			<% end_if %>
+
+			<div class="widget guide">
+				<h3 class="widget-title">Secret guide</h3>
+				<div class="widget-inner">
+					<p class="lead">Discover the art of Online Marketing</p>
+					<div class="text">
+						How to write headlines that get results, spread the word about your business.
+						<a href="#"><button>Start here</button></a>
+					</div>
+				</div>
+			</div>
+
+			<% if $FeaturedBlogPosts %>
+				<div class="widget featured">
+					<h3 class="widget-title">Featured posts</h3>
+					<div class="widget-inner">
+						<ul class="post-list text">
+							<% loop $FeaturedBlogPosts %>
+								<li>
+									<a href="$Link" title="Go to $Title.XML page">
+										<div class="img">
+											<img src="$FeaturedImage.CroppedImage(570, 330).Link" alt="$FeaturedImage.Title">
+										</div>
+										<div class="title">$Title.XML</div>
+									</a>
+								</li>
+							<% end_loop %>
+						</ul>
+					</div>
+				</div>
+			<% end_if %>
+
+		</aside>
+	</div>
+</section>

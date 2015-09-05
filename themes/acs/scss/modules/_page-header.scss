@@ -1,6 +1,15 @@
 .page-header {position: relative; padding: 50px 0; background-size: cover; text-align: center; 
+	&.posts-header {    
+		h1 {
+			font: 400 50px "Prelo",sans-serif;
+	    margin: 0;
+	    color: white;			
+		}
+	}
 	.page-title {display: block; margin: 0; padding: 15px 30px; background:rgba(53,68,79,0.6); color: #fff; font-size: 30px; text-transform: uppercase; white-space: normal;}
-	p {display: inline-block; clear: left; margin: 0 0 5px; padding: 10px 30px; background: rgba(255,255,255,0.85); color: #003459; font: 200 20px/1.5em $prelo; vertical-align: bottom;}
+	p {display: inline-block; clear: left; margin: 0 0 5px; padding: 10px 30px; background: rgba(255,255,255,0.85); color: #003459; font: 200 20px/1.5em $prelo; vertical-align: bottom;
+	&.no-background {background: transparent;}
+	}
 	.page-title + p {margin-top: 12px;}
 }
 
@@ -30,11 +39,19 @@
 }
 
 @media (min-width: 1230px) {
+	.page-header.posts-header {height: 460px;}
 	.page-header {padding: 280px 0 0; height: 685px; box-sizing: border-box;}
 }
 
 @media (min-width: 1600px) {
-	.page-header {background-size: cover; }
-	.page-header-nav {left: 50%; margin-left: 544px;}
+	.page-header {background-size: cover; 
+		.with-box {margin-top: 0 !important;}
+	}
+	.page-header-nav {left: 50%; margin-left: 544px;}	
+}
 
+@media (max-width: 670px) {
+	.page-header {
+		.header-box {max-width: 100% !important;text-align: left !important;}
+	}
 }

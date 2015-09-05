@@ -121,5 +121,9 @@ class Page_Controller extends ContentController {
 		}
 
 		return 0;
-	}	
+	}
+
+	public function getAllResourcesPage() {
+		return ResourcesPage::get()->First()->Link();
+	}
 }

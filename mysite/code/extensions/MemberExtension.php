@@ -12,4 +12,8 @@ class Member_Extension extends DataExtension {
 			TextField::create('Twitter', 'Twitter')
 		);
 	}
+
+	public function FullName() {
+		return $this->owner->FirstName . ' ' . $this->owner->Surname;
+	}
 }

@@ -95,10 +95,15 @@
 				</div>
 			<% end_if %>
 
-			<% if $ClassName == 'FeaturedResource' %>
+			<% if $ClassName == 'BlockWidgetResources' %>
 				<div class="inside">
-					<h2 class="section-title">Resources</h2>
-					<p class="all"><a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML page">View all resources</a></p>
+					<h2 class="section-title">$Title</h2>
+
+					<% if $AllResourcesPage %>
+						<p class="all">
+							<a href="$AllResourcesPage.Link" title="Go to $AllResourcesPage.Title">View all resources</a>
+						</p>
+					<% end_if %>
 				</div>
 				<div class="res-slider double-slider inside">
 					<a href="javascript:void(0);" class="slider-nav next">Next</a>
@@ -107,14 +112,20 @@
 						<ul class="slider-items">
 							<% loop $Resources %>
 								<li class="resource slider-item">
-									<img src="" alt="" class="resource-thumbnail">
-									<h3 class="resource-title">$Title</h3>
-									$Content
-									<p class="resource-category">
-										<a href="javascript:void(0);">Eguide</a>
-									</p>
+									<img src="$RedirectPage.FeaturedImage.CroppedImage(220, 300).Link" alt="$RedirectPage.FeaturedImage.Title" class="resource-thumbnail">
+									<h3 class="resource-title">$RedirectPage.Title.XML</h3>
+									<% if $RedirectPage.Summary %>$RedirectPage.Summary<% else %>$RedirectPage.Excerpt<% end_if %>
+									
+									<% if $RedirectPage.DocumentTypes %>
+										<p class="resource-category">
+											<% loop $RedirectPage.DocumentTypes %>
+												<a href="javascript:void(0);">$RedirectPage.Title</a>
+											<% end_loop %>
+										</p>
+									<% end_if %>
+
 									<p class="more">
-										<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML page">More info</a>
+										<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML">More info</a>
 									</p>
 								</li>
 							<% end_loop %>
@@ -126,5 +137,3 @@
 		</section>
 	<% end_loop %>
 <% end_if %>
-
-<% include FeaturedResources %>

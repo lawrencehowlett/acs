@@ -8,7 +8,7 @@
 	
 	.dropdown-menu {display: none; }
 	.searchform {float: right; position: relative; width: 50px; height: 40px; margin: 5px 0 0; padding: 0;
-		.search-content {position: absolute; left: 0; top: 0; overflow: hidden; width: 40px; height: 40px; box-sizing: border-box; font-size: 0; line-height: 40px; white-space: nowrap; transition: all 0.3s;}
+		.search-content {z-index: 9999; position: absolute; left: 0; top: 0; overflow: hidden; width: 40px; height: 40px; box-sizing: border-box; font-size: 0; line-height: 40px; white-space: nowrap; transition: all 0.3s;}
 		.search-toggle {display: inline-block; width: 40px; height: 40px; background: $iconSearch 50% 50% no-repeat; font-size: 0; vertical-align: top;
 			&:hover {background-color: $lgray;}
 		}
@@ -47,7 +47,7 @@
 		a {display: block; padding: 5px 10px; color: #003459; font: 700 12px/1.3em $prelo; text-transform: uppercase;
 			&:hover {color: $orange;}
 		}
-		.dropdown-menu {width: 150%; top: 100%;
+		.dropdown-menu {width: 300px; top: 100%;
 			a {line-height: 40px;}
 		}
 	}

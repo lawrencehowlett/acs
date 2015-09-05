@@ -43,4 +43,8 @@ class BlockWidgetMultipleTextImageBlock extends BlockWidget {
 
 		return $fields;
 	}
+
+	public function ComponentName() {
+		return 'Multiple Text Image Block widget';
+	}
 }

@@ -3,7 +3,7 @@ class FeaturedResources extends DataObject {
 
 	private static $db = array(
 		'Title' => 'Text'
-		);
+	);
 
 	private static $has_one = array(
 		'Page' => 'Page',

@@ -26,7 +26,3 @@
 		</div>
 	</section>
 <% end_if %>
-
-<% include PageBlockBuilder %>
-
-<% include FeaturedResources %>

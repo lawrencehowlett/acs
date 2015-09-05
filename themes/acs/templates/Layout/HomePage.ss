@@ -125,5 +125,3 @@
 		</section>
 	<% end_loop %>
 <% end_if %>
-
-<% include FeaturedResources %>

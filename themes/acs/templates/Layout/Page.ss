@@ -130,5 +130,3 @@
 		</article>
 	</section>
 <% end_if %>
-
-<% include FeaturedResources %>
