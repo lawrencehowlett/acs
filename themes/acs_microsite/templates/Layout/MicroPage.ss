@@ -136,6 +136,35 @@
 				</div>			
 			<% end_if %>
 
+			<% if $ClassName == 'BlockWidgetTable' %>
+				<div class="inside">
+					<h2 class="section-title">$Title</h2>
+					<div class="table">
+						<table>
+							<!--<tr>
+								<th>Id</th>
+								<th>Column heading</th>
+								<th>Column heading</th>
+								<th>Column heading</th>
+							</tr>-->
+							<% if $Rows %>
+								<% loop $Rows %>
+									<tr>
+										<% loop $Columns %>
+											<% if $Up.IsHeading %>
+												<th>$Title</th>
+											<% else %>
+												<td>$Title</td>
+											<% end_if %>
+										<% end_loop %>
+									</tr>
+								<% end_loop %>
+							<% end_if %>
+						</table>
+					</div>
+				</div>			
+			<% end_if %>
+
 		</section>	
 
 	<% end_loop %>

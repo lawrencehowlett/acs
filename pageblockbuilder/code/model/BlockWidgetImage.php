@@ -55,7 +55,7 @@ class BlockWidgetImage extends BlockWidget {
 			->setRows(20);
 		$fields->replaceField(
 			'RedirectPageID', 
-			TreedropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree', 'ExtraClass')
+			TreeDropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree')
 		);		
 
 		if ($this->ID) {

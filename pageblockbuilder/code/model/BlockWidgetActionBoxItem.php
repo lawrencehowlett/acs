@@ -34,7 +34,7 @@ class BlockWidgetActionBoxItem extends DataObject {
 		);
 
 		$fields->insertAfter(
-			UploadField::create('Image', 'Image')
+			UploadField::create('Image', 'Featured Image')
 				->setFolderName('ActionBoxes/Images'), 
 			'RedirectPageID'
 		);

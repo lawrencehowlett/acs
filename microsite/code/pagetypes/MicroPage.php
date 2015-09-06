@@ -42,6 +42,6 @@ class MicroPage_Controller extends Page_Controller {
 	 * @return MicroPage
 	 */
 	public function getMicroHolder() {
-		return MicroPage::get()->First();
+		return MicroPage::get()->Last();
 	}
 }
