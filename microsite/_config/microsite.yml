@@ -1,0 +1,7 @@
+SiteTree:
+  extensions:
+    - MicroSiteTree_Extension
+
+SiteConfig:
+  extensions:
+    - MicroSiteConfig_Extension

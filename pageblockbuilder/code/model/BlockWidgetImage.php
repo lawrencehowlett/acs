@@ -55,18 +55,20 @@ class BlockWidgetImage extends BlockWidget {
 			->setRows(20);
 		$fields->replaceField(
 			'RedirectPageID', 
-			TreedropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree')
+			TreedropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree', 'ExtraClass')
 		);		
 
 		if ($this->ID) {
 			$fields->dataFieldByName('Image')
-				->setFolderName($this->Page()->Title . '/Images');
+				->setTitle('Featured Image')
+				->setFolderName('BlockWidgetImage/Images');
 		}
 
-		$fields->insertAfter($fields->dataFieldByName('Content'), 'ExtraClass');
+		$fields->insertAfter($fields->dataFieldByName('Content'), 'Title');
 		$fields->insertAfter($fields->dataFieldByName('Image'), 'Content');
 		$fields->insertBefore($fields->dataFieldByName('ButtonText'), 'Image');
-		$fields->insertBefore($fields->dataFieldByName('RedirectPageID'), 'Image');		
+		$fields->insertBefore($fields->dataFieldByName('RedirectPageID'), 'Image');	
+		$fields->insertBefore($fields->dataFieldByName('ExtraClass'), 'ButtonText');	
 
 		return $fields;
 	}

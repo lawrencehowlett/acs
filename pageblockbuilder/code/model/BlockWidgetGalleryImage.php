@@ -26,10 +26,11 @@ class BlockWidgetGalleryImage extends DataObject {
 		$fields->replaceField('Title', TextField::create('Title', 'Title'));
 		$fields->dataFieldByName('Content')
 			->setRows(20);
+
 		if ($this->ID) {
 			$fields->insertAfter(
 				UploadField::create('Image', 'Image')
-					->setFolderName($this->Gallery()->Page()->Title . '/GalleryImages/'), 
+					->setFolderName('GalleryImages/' . $this->ID), 
 				'Content'
 			);
 		}

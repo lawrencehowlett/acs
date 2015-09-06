@@ -1,0 +1,41 @@
+<?php
+class MicroFooterMenuPage extends DataObject {
+
+	private static $db = array(
+		'Title' => 'Text',
+		'SortOrder' => 'Int'
+	);
+
+	private static $has_one = array(
+		'Menu' => 'MicroFooterMenu',
+		'Page' => 'SiteTree'
+	);
+
+	private static $summary_fields = array(
+		'Page.Title' => 'Title'
+	);
+
+	private static $default_sort = 'SortOrder';
+
+	public function getCMSFields() {
+		$fields = parent::getCMSFields();
+
+		$fields->removeFieldsFromTab(
+			'Root.Main', 
+			array('SortOrder', 'MenuID', 'Title')
+		);
+
+		$fields->replaceField(
+			'PageID', 
+			TreeDropdownField::create("PageID", "Choose a page:", "SiteTree")
+		);
+
+		return $fields;
+	}
+
+	public function onBeforeWrite() {
+		parent::onBeforeWrite();
+
+		$this->Title = $this->Page()->Title;
+	}
+}
