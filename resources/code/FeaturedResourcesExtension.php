@@ -36,7 +36,7 @@ class FeaturedResources_Page_Extension extends DataExtension {
     );	
 
 	public function updateCMSFields(FieldList $fields) {
-		$fields->addFieldToTab(
+		/*$fields->addFieldToTab(
 			'Root.Resources', 
 			TextField::create('ResourcesTitle', 'Title')
 		);
@@ -60,7 +60,7 @@ class FeaturedResources_Page_Extension extends DataExtension {
 				GridFieldConfig_RelationEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
 			)
-		);		
+		);*/
 	}
 
     public function Resources() {
