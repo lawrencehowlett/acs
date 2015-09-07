@@ -16,6 +16,7 @@ class CareerOpportunity extends DataObject {
 		'Title' => 'Text', 
 		'Location' => 'Varchar', 
 		'Offer' => 'Varchar',
+		'ButtonText' => 'Varchar', 
 		'SortOrder' => 'Int'
 	);
 
@@ -55,7 +56,7 @@ class CareerOpportunity extends DataObject {
 		$fields->removeByName('Requirements');
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('PageID')
+			array('PageID', 'SortOrder')
 		);
 
 		$fields->replaceField('Title', TextField::create('Title', 'Title'));

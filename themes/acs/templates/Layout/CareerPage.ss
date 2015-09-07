@@ -25,31 +25,6 @@
 				</article>
 			<% end_if %>
 
-			<% if $ClassName == 'BlockWidgetGallery' %>
-				<div class="inside">
-					<h2 class="section-title">$Title</h2>
-				</div>
-
-				<% if $Images %>
-					<div class="gallery-slider">
-						<a href="javascript:void(0);" class="slider-nav prev"></a>
-						<a href="javascript:void(0);" class="slider-nav next"></a>
-						<div class="slider-wrapper">
-							<ul class="gallery-slider-items">
-								<% loop $Images %>
-									<li>
-										<a href="$Image.Link" class="image">
-											<img src="$Image.SetRatioSize(580, 400).Link" alt="$Image.Title">
-										</a>
-									</li>
-								<% end_loop %>
-							</ul>
-						</div>
-					</div>
-				<% end_if %>
-
-			<% end_if %>
-
 			<% if $ClassName == 'BlockWidgetVideo' %>
 				<div class="inside cf">
 					<div class="video-text">
@@ -89,30 +64,44 @@
 				</div>			
 			<% end_if %>
 
-			<% if $ClassName == 'BlockWidgetTab' %>
-				<div class="inside tab-section">
+			<% if $ClassName == 'BlockWidgetResources' %>
+				<div class="inside">
 					<h2 class="section-title">$Title</h2>
-					<% if $Items %>
-						<ul class="tabs" data-target="resourceList">
-							<% loop $Items %>
-								<li class="tab">
-									<a href="#tab{$ID}" class="<% if $First %>active<% end_if %>" data-criteria="tab{$ID}">$Title</a>
+
+					<% if $AllResourcesPage %>
+						<p class="all">
+							<a href="$AllResourcesPage.Link" title="Go to $AllResourcesPage.Title">View all resources</a>
+						</p>
+					<% end_if %>
+				</div>
+				<div class="res-slider double-slider inside">
+					<a href="javascript:void(0);" class="slider-nav next">Next</a>
+					<a href="javascript:void(0);" class="slider-nav prev">Previous</a>
+					<div class="slider-wrapper">
+						<ul class="slider-items">
+							<% loop $Resources %>
+								<li class="resource slider-item">
+									<img src="$RedirectPage.FeaturedImage.CroppedImage(220, 300).Link" alt="$RedirectPage.FeaturedImage.Title" class="resource-thumbnail">
+									<h3 class="resource-title">$RedirectPage.Title.XML</h3>
+									<% if $RedirectPage.Summary %>$RedirectPage.Summary<% else %>$RedirectPage.Excerpt<% end_if %>
+									
+									<% if $RedirectPage.DocumentTypes %>
+										<p class="resource-category">
+											<% loop $RedirectPage.DocumentTypes %>
+												<a href="javascript:void(0);">$RedirectPage.Title</a>
+											<% end_loop %>
+										</p>
+									<% end_if %>
+
+									<p class="more">
+										<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML">More info</a>
+									</p>
 								</li>
 							<% end_loop %>
 						</ul>
-						<% loop $Items %>
-							<div class="tab-content <% if $First %>active<% end_if %>" id="tab{$ID}">
-								$Content
-								<% if $RedirectPage %>
-									<p class="more">
-										<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">$ButtonText</a>
-									</p>
-								<% end_if %>
-							</div>
-						<% end_loop %>
-					<% end_if %>
+					</div>
 				</div>			
-			<% end_if %>
+			<% end_if %>			
 
 		</section>	
 
@@ -142,7 +131,7 @@
 						<% end_loop %>
 					</ul>
 					<% end_if %>
-					<p class="more"><a href="mailto:$Top.CareerOpportunityMailTo?subject=Referred via our website for $Title position" title="Send your CV to $Top.CareerOpportunityMailTo">Apply now</a></p>
+					<p class="more"><a href="mailto:$Top.CareerOpportunityMailTo?subject=Referred via our website for $Title position" title="Send your CV to $Top.CareerOpportunityMailTo">$ButtonText</a></p>
 				</li>
 			<% end_loop %>
 		</ul>
