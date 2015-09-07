@@ -1,5 +1,5 @@
 <?php
-class MicroPage extends Page {
+class MicroPage extends MicroSiteHolder {
 
 	/**
 	 * Set icon
@@ -27,7 +27,7 @@ class MicroPage extends Page {
 	}
 }
 
-class MicroPage_Controller extends Page_Controller {
+class MicroPage_Controller extends MicroSiteHolder_Controller {
 
 	/**
 	 * Initialise the controller
@@ -36,12 +36,24 @@ class MicroPage_Controller extends Page_Controller {
 		parent::init();
 	}
 
+	public function getMicroMenus() {
+		return MicroPage::get()->filter(array('ParentID' => $this->getMicroHolder()->ID));
+	}
+
 	/**
 	 * Get Micro holder page
 	 * 
 	 * @return MicroPage
 	 */
 	public function getMicroHolder() {
-		return MicroPage::get()->Last();
+		if ($this->Parent()->ClassName == 'MicroSiteHolder') {
+			return $this->Parent();
+		}
+
+		if ($this->Parent()->Parent()->ClassName == 'MicroSiteHolder') {
+			return $this->Parent()->Parent();
+		}
+
+		return null;
 	}
 }

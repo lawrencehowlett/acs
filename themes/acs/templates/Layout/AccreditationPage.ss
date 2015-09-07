@@ -14,9 +14,9 @@
 						<p class="acc-logo"><img src="$FeaturedImage.Link" alt="$FeaturedImage.Title"></p>
 						<div class="acc-content">
 							$Content
-							<% if $RedirectionPage %>
+							<% if $RedirectPage %>
 								<p class="more">
-									<a href="$RedirectionPage.Link" title="Go to $RedirectionPage.Title.XML">$ButtonText</a>
+									<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML">$ButtonText</a>
 								</p>
 							<% end_if %>
 						</div>

@@ -1,6 +1,11 @@
 <header id="top" class="header cf">
 	<section class="top cf">
-		<p class="call">Call us: <a href="call:$SiteConfig.ContactNumber">$SiteConfig.ContactNumber</a></p>
+		<p class="call">
+			Call us: 
+			<a href="call:<% if $ClassName == 'MicroPage' %>$MicroHolder.Telephone<% else %>$Telephone<% end_if %>">
+				<% if $ClassName == 'MicroPage' %>$MicroHolder.Telephone<% else %>$Telephone<% end_if %>
+			</a>
+		</p>
 		<nav class="sec-nav">
 			<a class="menu-toggle" href="#"></a>
 			<ul class="menu">
@@ -17,9 +22,9 @@
 		</p>
 
 		<nav class="main-nav">
-			<% if $MicrositePages %>
+			<% if $MicroMenus %>
 			<ul class="menu">
-				<% loop $MicrositePages %>
+				<% loop $MicroMenus %>
 					<li class="<% if $Children %>has-dropdown<% end_if %>">
 						<a href="$Link" title="Go to $Title.XML">$MenuTitle.XML</a>
 						<% if $Children %>

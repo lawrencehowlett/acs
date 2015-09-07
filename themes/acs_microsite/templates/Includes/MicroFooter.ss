@@ -1,18 +1,18 @@
 <footer class="footer">
 	
 	<div class="inside cf">
-		<% if $SiteConfig.MicroFooterMenus %>
+		<% if $MicroMenus %>
 			<nav class="footer-section cols footer-nav">
-				<% loop $SiteConfig.MicroFooterMenus %>
-					<div class="col footer-menu">
-						<h4 class="footer-menu-title">$Title</h4>
-						<ul class="menu">
-							<% loop $Pages %>
-								<li><a href="$Page.Link" title="Go to $Page.Title page">$Page.MenuTitle.XML</a></li>
-							<% end_loop %>
-						</ul>
-					</div>
-				<% end_loop %>
+				<div class="col footer-menu">
+					<h4 class="footer-menu-title">$Title</h4>
+					<% if $MicroMenus %>
+					<ul class="menu">
+						<% loop $MicroMenus %>
+							<li><a href="$Link" title="Go to $Title page">$MenuTitle.XML</a></li>
+						<% end_loop %>
+					</ul>
+					<% end_if %>
+				</div>
 			</nav>
 		<% end_if %>		
 		<!--<section class="footer-section">
@@ -31,7 +31,7 @@
 			<% if $SiteConfig.FooterLegalMenus %>
 				<ul class="menu legal">
 					<% loop $SiteConfig.FooterLegalMenus %>
-						<li><a href="$Link" title="Go to $Title.XML">$Title</a></li>
+						<li><a href="$Page.Link" title="Go to $Page.Title.XML">$Page.Title</a></li>
 					<% end_loop %>
 				</ul>
 			<% end_if %>

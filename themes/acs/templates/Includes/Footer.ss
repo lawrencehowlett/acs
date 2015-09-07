@@ -48,7 +48,7 @@
 			<% if $SiteConfig.FooterLegalMenus %>
 				<ul class="menu legal">
 					<% loop $SiteConfig.FooterLegalMenus %>
-						<li><a href="$Link" title="Go to $Title.XML">$Title</a></li>
+						<li><a href="$Page.Link" title="Go to $Page.Title.XML">$Page.Title</a></li>
 					<% end_loop %>
 				</ul>
 			<% end_if %>
