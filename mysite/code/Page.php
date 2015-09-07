@@ -103,7 +103,7 @@ class Page_Controller extends ContentController {
 	 * @var array
 	 */
 	private static $allowed_actions = array(
-		'SpecialistsForm'
+		'SpecialistsForm', 'SearchForm'
 	);
 
 	/**
@@ -142,6 +142,23 @@ CSS
 
 		Requirements::javascript('https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false');
 		Requirements::javascript('themes/acs/js/min.js');
+	}
+
+	/**
+	 * Extend the search form to add the extra class
+	 * 
+	 * @return Form
+	 */
+	public function SearchForm() {
+		$form = parent::SearchForm();
+		$form->addExtraClass('searchform');
+
+		$fields = $form->Fields();
+		$fields->dataFieldByName('Search')
+			->setAttribute('placeholder', 'Search')
+			->setValue('');
+
+		return $form;
 	}
 
 	/**

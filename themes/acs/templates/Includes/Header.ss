@@ -2,12 +2,7 @@
 	<section class="top cf">
 		<p class="call">Call us: <a href="call:$SiteConfig.FullContactNumber">$SiteConfig.ContactNumber</a></p>
 		
-		<form class="searchform" action="#" method="post">
-			<p class="search-content"><a href="#" class="search-toggle" title="Show/hide search form"></a><input type="text" name="criteria" placeholder="Search">
-				<button name="Search" value="1" type="submit">Search</button>
-			</p>
-		</form>
-
+		$SearchForm
 		<% if $TopMenus %>
 			<nav class="sec-nav">
 				<a class="menu-toggle" href="#"></a>
