@@ -98,6 +98,15 @@ class Page extends SiteTree {
 class Page_Controller extends ContentController {
 
 	/**
+	 * Set allowed actions
+	 * 
+	 * @var array
+	 */
+	private static $allowed_actions = array(
+		'SpecialistsForm'
+	);
+
+	/**
 	 * Initialise the controller
 	 */
 	public function init() {
@@ -108,6 +117,122 @@ class Page_Controller extends ContentController {
 
 		Requirements::javascript('https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false');
 		Requirements::javascript('themes/acs/js/min.js');
+	}
+
+	/**
+	 * Get specialist form
+	 *
+	 * @return Form
+	 */
+	public function SpecialistsForm() {
+		$fields = new FieldList(
+			TextField::create('CompanyName', false)
+				->setAttribute('placeholder', 'Company Name'), 
+			EmailField::create('Email', false)
+				->setAttribute('placeholder', 'E-mail'), 
+			TextField::create('Name', false)
+				->setAttribute('placeholder', 'Name'), 
+			TextField::create('Telephone', false)
+				->setAttribute('placeholder', 'Telephone'), 
+			TextField::create('BestTimeToCall', false)
+				->addExtraClass('double')
+				->setAttribute('placeholder', 'Best time to call?'), 
+			CheckboxField::create('Newsletter', 'Yes, I want your monthly newsletter with great tips to improve my business')
+		);
+
+		$formAction = FormAction::create('doCallSpecialist')
+			->setTitle($this->getCallSpecialistBlock()->ButtonText);
+		$formAction->useButtonTag = true;
+		$actions = new FieldList($formAction);
+
+		$required = new RequiredFields('CompanyName', 'Email', 'Name', 'Telephone');
+
+		$form = new Form($this, 'SpecialistsForm', $fields, $actions, $required);
+		$form->addExtraClass('contact-specialist cf');
+		$form->setTemplate('SpecialistsForm');
+
+		return $form;
+	}
+
+	/**
+	 * Submit call specialist form
+	 * 
+	 * @param  Array  $data
+	 * @param  Form   $form
+	 * @return SS_HTTPRequest
+	 */
+	public function doCallSpecialist(Array $data, Form $form) {
+		$callSpecialistBlock = $this->getCallSpecialistBlock();
+		$emailLead = new Email(
+			$callSpecialistBlock->MailFrom,
+			$data['Email'], 
+			$callSpecialistBlock->MailToSubject,
+			$callSpecialistBlock->MailToBody
+		);
+		$emailLead->send();
+
+        $arrData = array(
+            '$CompanyName' => $data['CompanyName'],
+            '$Name' => $data['Name'],
+            '$Email' => $data['Email'],
+            '$Telephone' => $data['Telephone'],
+            '$BestTimeToCall' => $data['BestTimeToCall']
+        );
+        $adminEmailMessage = str_replace(array_keys($arrData), array_values($arrData), $callSpecialistBlock->MailToAdminBody);
+
+		$adminGroup = Group::get()->filter(array('Code' => 'administrators'))->First();
+		if ($adminGroup) {
+			$admins = $adminGroup->DirectMembers();
+			foreach ($admins as $admin) {
+				$emailAdmin = new Email(
+					$callSpecialistBlock->MailFrom, 
+					$admin->Email, 
+					'Call request from ' . $data['CompanyName'],
+					$adminEmailMessage,
+					null,
+					null
+				);
+				$emailAdmin->addCustomHeader('Reply-To', $data['Email']);
+				$emailAdmin->send();
+			}
+		}		
+
+		if (isset($data['Newsletter'])) {
+			$settings = SiteConfig::current_site_config();
+			$MailChimp = new \Drewm\MailChimp($settings->APIKey);
+
+			$newsletterApiData = array(
+				'id'                => $settings->MailChimpList()->filter(array('Code' => 'NEWSLETTER'))->First()->ListID,
+				'email'             => array('email' => $data['Email']),
+				'merge_vars'        => array('Name' => $data['Name']),
+				'double_optin'      => false,
+				'update_existing'   => true,
+				'replace_interests' => false,
+				'send_welcome'      => false,
+			);
+
+			$newsLetterResult = $MailChimp->call('lists/subscribe', $newsletterApiData);
+		}
+
+		$this->redirect($callSpecialistBlock->RedirectPage()->Link());
+	}
+
+	/**
+	 * Get call specialist block
+	 * 
+	 * @return BlockWidget
+	 */
+	public function getCallSpecialistBlock() {
+		$widgets = $this->Widgets();
+		if ($widgets) {
+			foreach ($widgets as $widget) {
+				if ($widget->ClassName == 'BlockWidgetSpeakToSpecialist') {
+					return $widget;
+				}
+			}
+		}
+
+		return null;
 	}
 
 	/**
