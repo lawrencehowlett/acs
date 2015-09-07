@@ -1,0 +1,49 @@
+#html5-watermark {display: none !important;}
+#html5-close { height: 30px; width: 30px; cursor: pointer; background: #f6af16; position: relative; @include transition();
+	&:after, &:before {content: ''; position: absolute; background: #fff; height: 1px; width: 16px; top: 15px; left: 7px;}
+	&:before {@include transformation(rotate(-45deg));}
+	&:after {@include transformation(rotate(45deg));}
+	&:hover { background: #0072c6; border-radius: 50%;}
+	img {display: none;}
+}
+#html5-elem-box {background: #000 !important;}
+#html5-elem-wrap {background: transparent !important;}
+.video { position: fixed; z-index: 9999; -ms-touch-action: none;touch-action: none;}
+.video-movie {margin: 0 auto;
+	iframe {max-width: 100%;}
+}
+.video-section {position: relative; background-size: cover;
+	&:before {display: block; position: absolute; z-index: 0; left: 0; top: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.9); content: " ";}
+	.inside {position: relative; z-index: 2;}
+	.video-text {margin-bottom: 45px;
+		.more {text-align: center;}
+	}
+	.video-movie {max-width: 504px; }
+	
+}
+
+.video-placeholder {position: relative;
+	img {display: block; position: relative; z-index: 0; max-width: 100%;}
+	.play {display: block; position: absolute; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);
+		&:before {display: block; position: absolute; left: 50%; top: 50%; width: 100px; height: 100px; margin: -50px 0 0 -50px; border-radius: 50%; background: rgba(0,0,0,0.5); content: " "; transition: all 0.3s;}
+		&:after {display: block; position: absolute; left: 50%; top: 50%; width: 0; height: 0; margin: -16px 0 0 -8px; border-width: 16px 25px; border-style: solid; border-color: transparent transparent transparent #fff; content: " "; transition: all 0.3s;}
+		&:hover:before {background-color: #000;}
+		&:hover:after {border-left-color: $orange;}
+	}
+}
+
+@media (min-width: 800px) {
+	.video-section {padding-top: 60px; background-size: cover;
+		.video-text {float: left; width: 50%; padding-right: 35px; box-sizing: border-box;
+			.section-title {margin-top: 0;}
+			.more {margin-top: 2em; text-align: left;}
+		}
+		.video-movie {float: right; width: 50%; margin: 0;}
+	}
+}
+
+@media (min-width: 1200px) {
+	.video-section {padding: 150px 0; box-sizing: border-box; background: no-repeat 50% 0; background-size: cover;
+		.video-text {width: 66%; max-width: 660px; margin-bottom: 0;}
+	}
+}

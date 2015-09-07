@@ -1,0 +1,1 @@
+$(".old-posts-slider").bxSlider();

@@ -1,0 +1,78 @@
+.ebook {overflow-x: hidden;}
+.ebook-header {max-width: 1170px; padding: 30px 10px;}
+.ebook-footer {padding: 50px 0; border-top: 1px solid #e6e8ea;}
+
+.ebook-descr {padding: 50px 10px; color:#424e5a; font-size: 16px; line-height: 1.5em;
+	h1 {margin: 0 0 30px; font: 200 30px/1.3em $prelo; text-align: center;}
+	.ebook-cover {text-align: center;}
+	ul {list-style: none; padding: 0;
+		li {margin: 1em 0; padding-left: 40px; background: url("../img/bullet.png") 0 5px no-repeat; color: $gray; 
+		}
+	}
+}
+.ebook-form {padding: 50px 10px; background: $lgray; color: #424e5a; font-size: 14px;
+	h2 {margin-top: 0; margin-bottom: 30px; font: 400 30px/1.3em $prelo;}
+	input {width: 100%; padding: 27px 25px; border: 1px solid #e6e8ea; background: transparent; color: #424e5a; line-height: 20px;
+		&::-webkit-input-placeholder {color: #424e5a;}
+	   	&::-moz-placeholder {color: #424e5a;}
+	   	&:-ms-input-placeholder {color: #424e5a;}
+	   	&:-moz-placeholder {color: #424e5a;}
+	   	&:placeholder {color: #424e5a;}
+	   	&:focus {border-color: #424e5a;}
+	}
+
+	.select {display: block; position: relative; border: 1px solid #e6e8ea; background: transparent; color: #424e5a; line-height: 20px;
+		.value {display: block; position: relative; padding: 27px 25px;
+			&:after {position: absolute; right: 23px; top: 50%; width: 8px; height: 17px; margin-top: -8px; background: $selectArrow; content: " ";}
+		}
+		select {position: absolute; left: 0; top: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; -webkit-appearance: menulist-button;}
+	}
+
+	.check {position: relative; margin: 0; font-size: 13px; line-height: 1.3em;
+		input[type="checkbox"] {position: absolute; left: -50000px;}
+		input[type="checkbox"] + label {display: block; position: relative; padding: 15px 0; cursor: pointer; transition: all 0.3s;
+			&:before {float: left; width: 20px; height: 20px; margin-right: 15px; margin-top: 5px; border: 1px solid #e2e2e2; background: #fff $checkDark 50% 50% no-repeat; background-size: 0; vertical-align: middle;  content: " "; transition: all 0.3s;}			
+		}
+		input:checked + label:before {background-size: 9px;}	
+	}
+
+	button {width: 100%;}
+}
+
+.ebook-social {position: relative; z-index: 5; margin: 0; padding: 0; list-style: none; text-align: center;
+	li {position: relative; z-index: 5; display: inline-block; width: 60px; height: 60px; margin: 0 3px 10px 0; vertical-align: top;
+		.button-layer {position: absolute; left: 0; top: 0; z-index: 4; overflow: hidden; width: 0; height: 60px; padding: 0; background: #f7fafb; line-height: 60px; transition: all 0.3s; text-align: center;}
+		&:hover, &.active {z-index: 6;
+			.button-layer {top: -60px; left: 0; width: 125px; }
+		}
+	}
+	.social {display: block; position: relative; z-index: 5; width: 60px; height: 60px; font-size: 0;
+		&.facebook {background: #3e58a4 url("../img/blog-social.png") no-repeat 0 0;}
+		&.googleplus {background: #df4932 url("../img/blog-social.png") no-repeat -60px 0;}
+		&.twitter {background: #46abf3 url("../img/blog-social.png") no-repeat -120px 0;}
+		&.linkedin {background: #0079c2 url("../img/blog-social.png") no-repeat -180px 0;}
+		&.plus {background: #9ca5ab url("../img/blog-social.png") no-repeat -240px 0;}
+	}
+}
+
+
+@media (min-width: 900px) {
+	.ebook-social {text-align: left;}
+	.ebook-content {margin: 0 10px 50px;}
+	.ebook-descr {float: left; width: 60%; padding-right: 50px; box-sizing: border-box;
+		h1 {text-align: left;}
+	}
+	.ebook-form {float: right; width: 40%; padding-left: 50px; box-sizing: border-box;}
+	.ebook-descr {
+		.ebook-cover {float: right; margin: 0 0 0 40px;}
+	}
+}
+
+@media (min-width: 1170px) {
+	.ebook-header, .ebook-footer {max-width: 1170px; padding: 50px 0; margin: 0 auto; text-align: left;}
+	.ebook-content {max-width: 1170px; margin: 0 auto 50px;}
+	.ebook-form {position: relative;
+		&:after {display: block; position: absolute; left: 100%; top: 0; width: 1500px; height: 100%; background: $lgray; content: " ";}
+	}
+
+}

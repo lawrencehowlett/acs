@@ -1,0 +1,20 @@
+.tabs {margin: 0; padding: 0; list-style: none; font-size: 0; text-align: center;
+	.tab {display: inline-block; margin: 0 -1px 0 0; vertical-align: top;}
+	a {display: block; padding: 0 10px; border: 1px solid #e6e8ea; border-bottom: 0; color: $gray; font: 300 14px/50px $prelo; text-transform: uppercase;
+		&:hover {background: #e6e8ea;}
+		&.active {border-color: $gray; background: $gray; color: #fff;}
+	}
+}
+
+.page-section .inside > .tabs:first-child {margin-top: 40px;}
+
+.tab-content {display: none;}
+.tab-content.active {display: block;}
+
+@media (min-width: 500px) {
+	.tabs {text-align: left;}
+}
+
+@media (min-width: 600px) {
+	.tabs a {padding: 0 30px;}
+}

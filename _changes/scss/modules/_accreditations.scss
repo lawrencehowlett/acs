@@ -1,0 +1,27 @@
+.accreditations {list-style: none; margin: 40px 0 20px; padding: 0;}
+.acc {margin-bottom: 30px; font-size: 14px;
+	.acc-logo {box-sizing: border-box; margin: 0 0 10px; padding: 30px 0; border: 1px solid #e6e8ea; text-align: center;
+		img {display: block; max-width: 100%; margin: 0 auto;}
+	}
+	.acc-content {position: relative; box-sizing: border-box; padding: 10px 30px 45px; background: $lgray;
+		.more {position: absolute; right: 0; bottom: 0; margin: 0;
+			a {width: 160px; padding: 0; line-height: 45px; font-weight: 400; font-size: 14px; text-align: center;}
+		}
+	}
+}
+
+@media (min-width: 600px) {
+	.acc {display: flex; align-items: stretch; align-content: stretch; justify-content: center; margin-bottom: 10px;
+		.acc-logo {position: relative; width: 50%; margin: 0 10px 0 0;
+			img {position: absolute; left: 50%; top: 50%; @include transformation(translate(-50%, -50%))}
+		}
+		.acc-content {width: 50%;}
+	}
+}
+
+@media (min-width: 900px) {
+	.acc {
+		.acc-logo {width: 33.33%;}
+		.acc-content {width: 66.667%; padding: 25px 50px 50px;}
+	}
+}

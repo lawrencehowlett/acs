@@ -1,0 +1,14 @@
+.member {margin-top: 15px;
+	p {overflow: hidden; margin: 0; text-align: center; 
+		&.member-name {padding: 25px 5px; background: $lgray; font-size: 16px;
+			strong {color: #424e5a; font-size: 18px; text-transform: uppercase;}
+			a {color: $gray;
+				&:hover {color: $blue;
+					strong {color: $blue;}
+				}
+			}
+		}
+	}
+	img {display: block; max-width: 100%; margin: 0 auto; transition: all 0.3s;}
+	a:hover img {@include transformation(scale(1.05))}
+}

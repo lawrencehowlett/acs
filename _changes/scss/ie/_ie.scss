@@ -1,0 +1,57 @@
+.ie {
+	.header {
+		.searchform.expanded {
+			.search-toggle {background-image: url("../img/ie/x.svg");}
+		}	
+	}
+	
+	.res-slider {
+		.slider-nav {
+			&.prev {background-image: url("../img/ie/res-slider-prev.svg");}
+			&.next {background-image: url("../img/ie/res-slider-next.svg");}
+		}
+		.slider-item {
+			p {
+				&.more {
+					a {background-image: url("../img/ie/arrowWhiteRight.svg");}
+				}
+			}
+		}
+	}
+
+	.address-section {
+		.slider-nav {
+			&.prev {background-image: url("../img/ie/back.svg");}
+			&.next {background-image: url("../img/ie/more.svg");}
+		}
+	}
+
+	.about-slider .slider-nav {
+		&.next {background-image: url("../img/ie/arrowWhiteRight.svg");}
+		&.prev {background-image: url("../img/ie/arrowWhiteLeft.svg");}
+	}
+
+	.history .slider-controls {
+		a.next {background-image: url("../img/ie/arrowWhiteRight.svg");}
+		a.prev {background-image: url("../img/ie/arrowWhiteLeft.svg");}
+	}
+	.old-posts-slider .postlist-item .more a,
+	.featured-project .more a,
+	.item-boxes .item-box p.more a,
+	.resource p.more a
+	 {background-image: url("../img/ie/arrowWhiteRight.svg");}
+
+	.comments-toggle:before {margin-top: -2px; height: 40px;}
+	.blog-search input {height: 50px;}
+	.content-search .field input {height: 50px; padding: 0 50px 0 30px;}
+
+	.page-header {
+		.page-title {display: inline-block; margin-bottom: 0;}
+		.page-title:after {content: "";}
+	}
+
+	.featured-slider .slider-nav{
+		&.next {background-image: url("../img/ie/res-slider-next.svg");}
+		&.prev {background-image: url("../img/ie/res-slider-prev.svg");}
+	}
+}

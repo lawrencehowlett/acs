@@ -1,0 +1,39 @@
+.item-boxes {margin: 30px -5px 60px; 
+	.item-box {position: relative; overflow: hidden; padding: 0 30px 45px; border: 5px solid #fff; background: $lgray; font-size: 14px;
+		.item-title {margin: 0; padding: 25px 0 0; color: #424e5a; font: 300 22px/1.3em $prelo; 
+			a {color: #424e5a;
+				&:hover {color: $blue;}
+			}
+		}
+		.item-img {margin: 30px 0 0;
+			img {display: block; max-width: 100%; margin: 0 auto;}
+		}
+		p {overflow: hidden; margin: 1em 0;
+			&.more {position: absolute; right: 0; bottom: 0; margin: 0; padding: 0; text-align: right;
+				a {display: inline-block; width: 75px; height: 45px; padding: 0; background: $orange $arrowRight 50% 50% no-repeat; background-size: 24px 10px; font-size: 0;
+					&:hover {@include animation(infinite 0.5s more); background-color: $blue;}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 500px) {
+	.item-boxes {display: flex; align-items: stretch; align-content: stretch; justify-content: center; flex-wrap: wrap;}
+}
+
+@media (min-width: 800px) {
+	.item-boxes {
+		.item-box {
+			.item-img {float: left; max-width: 50%; min-width: 110px; margin: 30px 20px 30px 0;}
+		}
+	}
+}
+
+@media (min-width: 1000px) {
+	.item-boxes {
+		.item-box {padding: 10px 40px 45px;
+			.item-img {margin-right: 30px;}
+		}
+	}
+}

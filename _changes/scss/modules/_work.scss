@@ -1,0 +1,38 @@
+.work {margin: 60px 0 0; padding: 0; list-style: none;}
+.work-item {margin: 0; padding: 0 0 30px; font-size: 14px; cursor: pointer;
+	&:hover {
+		.work-item-img {background-color: #f7fafb; background-repeat: no-repeat; background-size: 47px 77px !important;}
+		.number {background-color: #0079C2; color: #fff; width: 100px; height: 100px; line-height: 100px;}
+	}
+	.work-title {margin: 0 0 20px; color: #424e5a; font: 400 22px/1.3em $prelo;}
+	.work-item-img {@include transition(); display: none; background-repeat: no-repeat; background-position: center center;}
+	.number {@include transition(); width: 50px; height: 50px; margin: 0 0 15px; background: #fff; border: 1px solid #e7eef4; border-radius: 50%; color: #424e5a; font: 400 22px/50px $prelo; text-align: center;}
+	.more {
+		a {padding: 0 25px; font-size: 14px; font-weight: 400; line-height: 40px;}
+	}
+}
+
+
+@media (min-width: 600px) {
+	.work-item {position: relative; overflow: hidden; padding-left: 150px;
+		&:before {display: block; position: absolute; left: 0; top: 0; z-index: 0; width: 120px; height: 45px; border-width: 0 1px 1px 0; border-style: solid; border-color: #e7eef4; border-radius: 0 0 25px 0; content: " ";}
+		&:after {display: block; position: absolute; left: 0; top: 45px; z-index: 0; width: 120px; height: 100%; border-width: 1px 1px 0 0; border-style: solid; border-color: #e7eef4; border-radius: 0 25px 0 0; content: " ";}
+		&:first-child:before {display: none;}
+		&:last-child:after {display: none;}
+		.number {position: absolute; left: 0; top: 0; z-index: 1; width: 90px; height: 90px; line-height: 90px;}
+	}
+}
+
+@media (min-width: 900px) {
+	.work-item {min-height: 205px; padding-bottom: 100px; padding-left: 460px;
+		&:before {width: 405px; height: 101px;}
+		&:after {top: 101px; width: 405px;}
+		.number {left: 259px; top: 57px;}
+		.work-item-img {display: block; position: absolute; left: 0; top: 0; z-index: 1; width: 200px; height: 200px; margin: 0; border: 1px solid #e7eef4; border-radius: 50%; background: #fff 50% 50% no-repeat; }
+		&.work-brief .work-item-img {background-image: url("../img/work-brief.svg"); background-size: 57px 77px;}
+		&.work-planning .work-item-img {background-image: url("../img/work-planning.svg"); background-size: 42px 78px;}
+		&.work-test .work-item-img {background-image: url("../img/work-test.svg"); background-size: 52px 77px;}
+		&.work-delivery .work-item-img {background-image: url("../img/work-delivery.svg"); background-size: 77px 76px;}
+		&:last-child {padding-bottom: 10px;}
+	}
+}

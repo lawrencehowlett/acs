@@ -1,0 +1,25 @@
+.lead {padding-left: 25px; border-left: 3px solid $orange; color: #24465d; font: 400 18px/1.3em $prelo;}
+
+.more {
+	a {display: inline-block; padding: 0 45px; background: $orange; color: #fff; font: 700 18px/75px $prelo; text-transform: uppercase;
+		&:hover {background: $blue;}
+	}
+}
+
+.reading {
+	h2 {color: $blue; font: 200 34px/1.5em $prelo; text-transform: uppercase;}
+	h3 {margin: 1.5em 0; color: #424e5a; font-size: 20px; font-weight: 500;}
+	h4 {margin: 1.5em 0; color: $blue; font-size: 15px; font-weight: 700; text-transform: uppercase;}
+	.lead {border-left: 0; margin-top: 0; padding-left: 0; font-size: 20px;}
+	.gallery a {
+		img {max-width: 100%; transition: all 0.3s;}
+		&:hover img {@include transformation(scale(1.05))}
+	}
+	.social-share {margin: 30px 0;}
+}
+
+@media (min-width: 800px) {
+	.reading {
+		.social-share {margin: 30px 0 0;}		
+	}
+}
