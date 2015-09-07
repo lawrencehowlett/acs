@@ -20,9 +20,23 @@
 
 <body <% if $i18nScriptDirection %>dir="$i18nScriptDirection"<% end_if %>>
 
-<% include Header %>
 
-$Layout
+<% if not $IsAdminLoginPage %>
+	<% include Header %>
+	$Layout
+<% else %>
+	<header class="ebook-header">
+		<a href="home.php">
+			<img src="$SiteConfig.Logo.Link" alt="ACS">
+		</a>
+	</header>
+	<section class="ebook-content cf">
+		<article class="ebook-descr">
+			<h1>$Title</h1>
+			$Form
+		</article>
+	</section>	
+<% end_if %>
 
 <% include Footer %>
 

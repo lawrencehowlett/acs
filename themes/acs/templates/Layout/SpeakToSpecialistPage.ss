@@ -5,6 +5,8 @@
 	</div>
 </section>
 
+<a href="#" id="sample">Click me</a>
+
 <% if $Widgets %>
 	<% loop $Widgets %>
 

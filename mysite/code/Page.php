@@ -114,6 +114,31 @@ class Page_Controller extends ContentController {
 
 		Requirements::css('themes/acs/css/main.css');
 		Requirements::css('themes/acs/css/jquery.mCustomScrollbar.min.css');
+		Requirements::customCSS(<<<CSS
+			form#MemberLoginForm_LoginForm fieldset, form#MemberLoginForm_LostPasswordForm fieldset {border: none; padding: 0;}
+			form#MemberLoginForm_LoginForm p#MemberLoginForm_LoginForm_error {
+				background: #f2dede;
+				border-color: #ebccd1;
+				color: #a94442;
+				padding:10px;
+			}
+			form#MemberLoginForm_LoginForm input[type="submit"], form#MemberLoginForm_LostPasswordForm input[type="submit"] {
+				background: #f6af16 none repeat scroll 0 0;
+				border: medium none;
+				color: #fff;
+				cursor: pointer;
+				font: 700 18px/75px "Prelo",sans-serif;
+				float: right;
+				padding: 0;
+				text-align: center;
+				text-transform: uppercase;
+				transition: all 0.3s ease 0s;
+				width:50%;
+			}
+
+			form#MemberLoginForm_LostPasswordForm input[type="submit"] {margin-top:10px;}
+CSS
+		);
 
 		Requirements::javascript('https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false');
 		Requirements::javascript('themes/acs/js/min.js');
@@ -251,4 +276,17 @@ class Page_Controller extends ContentController {
 	public function getAllResourcesPage() {
 		return ResourcesPage::get()->First()->Link();
 	}
+
+	/**
+	 * Check if page is a login page
+	 *
+	 * @return boolean
+	 */
+	public function getIsAdminLoginPage() {
+		if ($this->owner->URLSegment == 'Security') {
+			return true;
+		}
+
+		return false;
+	}	
 }
