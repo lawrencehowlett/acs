@@ -2,6 +2,9 @@
 class BlockWidgetSpeakToSpecialist extends BlockWidget {
 
 	private static $db = array(
+		'ActionBoxTitle' => 'Text', 
+		'ActionBoxContent' => 'HTMLText',
+		'ActionBoxButtonText' => 'Varchar',
 		'MailFrom' => 'Varchar', 
 		'MailToSubject' => 'Text', 
 		'MailToBody' => 'HTMLText', 
@@ -11,6 +14,7 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 
 	private static $has_one = array(
 		'RedirectPage' => 'SiteTree',
+		'ActionBoxRedirectPage' => 'SiteTree', 
 		'FeaturedImage' => 'Image'
 	);
 
@@ -38,7 +42,35 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 		$fields->insertAfter($fields->dataFieldByName('FeaturedImage'), 'RedirectPageID');
 		$fields->insertAfter($fields->dataFieldByName('ButtonText'), 'ExtraClass');
 
+		$fields = $this->getActionBoxFields($fields);
 		$fields = $this->getMailFields($fields);
+
+		return $fields;
+	}
+
+	/**
+	 * Get action box fields
+	 *
+	 * @return FieldList
+	 */
+	private function getActionBoxFields(&$fields) {
+		$fields->addFieldToTab(
+			'Root.ActionBox', 
+			TextField::create('ActionBoxTitle', 'Title')
+		);
+		$fields->addFieldToTab(
+			'Root.ActionBox', 
+			HTMLEditorField::create('ActionBoxContent', 'Content')
+				->setRows(20)
+		);
+		$fields->addFieldToTab(
+			'Root.ActionBox', 
+			TextField::create('ActionBoxButtonText', 'ButtonText')
+		);
+		$fields->addFieldToTab(
+			'Root.ActionBox', 
+			TreeDropdownField::create('ActionBoxRedirectPageID', 'Choose a redirect page', 'SiteTree')
+		);
 
 		return $fields;
 	}
@@ -50,7 +82,6 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 	 * @return FieldList
 	 */
 	private function getMailFields(&$fields) {
-
 		$fields->addFieldToTab(
 			'Root.Mail', 
 			EmailField::create('MailFrom', 'From')
