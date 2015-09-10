@@ -1,0 +1,50 @@
+.cs-showcase {
+	.slider-navigation {position: relative; z-index: 10; list-style: none; margin: 0 auto; padding: 0 8px; font-size: 0;
+		li {display: inline-block; width: 50%; box-sizing: border-box; padding: 2px; vertical-align: top;}
+		a {display: block; background: rgba(53,68,79,0.6); line-height: 70px; text-align: center; outline: none;
+			&:hover {background: rgba(53,68,79,0.9);}
+			img {vertical-align: middle;}
+			&.active {background: $blue;}
+		}
+	}
+	.viewport {overflow: hidden; max-width: 1600px; margin: 0 auto;}
+	.slider-content {position: relative; font-size: 0; white-space: nowrap;}
+	.slide-background {display: none;}
+	.slide {display: inline-block; position: relative; width: 100%; color: $gray; font-size: 14px; white-space: normal; vertical-align: top;
+		p {margin: 1.5em 0;}
+		.more {float: right; margin: 0; padding: 0;
+			a {padding: 0 30px;}
+		}
+	}
+	.slide-content {position: relative; padding: 25px 10px 0 0; background: #fff;
+		.section-title {margin-top: 0; margin-bottom: 40px;}
+	}
+	
+}
+
+@media (min-width: 800px) {
+	.cs-showcase {
+		.slider-navigation {padding: 0;
+			li {width: 25%; padding: 0 0 5px;}
+			a {position: relative;
+				&.active:after {display: block; position: absolute; left: 50%; top: 100%; width: 0; margin-left: -10px; border-style: solid; border-width: 10px; border-color: $blue transparent transparent transparent; content: " ";}
+			}
+		}
+	}
+}
+
+@media (min-width: 1000px) {
+	.cs-showcase {position: relative; max-width: 1600px; margin: 0 auto;
+		.slider-navigation {position: absolute; left: 0; top: 150px; width: 185px;
+			li {display: block; width: 100%;}
+			a {line-height: 100px;
+				&.active:after {left: 100%; top: 50%; margin-top: -10px; margin-left: 0px; border-color: transparent transparent transparent $blue;}
+			}
+		}
+		.slide {height: 715px; box-sizing: border-box; padding: 150px 0;
+			.more {margin-right: -30px;}
+		}
+		.slide-content {float: right; max-width: 695px; padding: 25px 30px 0 30px; box-sizing: border-box;}
+		.slide-background {display: block; position: absolute; left: 0; top: 0; z-index: 0; min-width: 100%; min-height: 100%;}
+	}
+}

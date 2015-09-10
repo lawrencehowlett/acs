@@ -1,0 +1,24 @@
+.cta-boxes {margin: 0 -8px; padding-top: 10px; text-align: center;}
+.cta-box {padding: 50px; border: 8px solid #F2F6F9; border-width: 0 8px 8px; background: $blue; color: #fff; font: 300 18px/1.5em $prelo; text-align: center; cursor: pointer;
+	&.box1 {background: #1d384a;}
+	&.box2 {background: #566f7f;}
+	&.box3 {background: #8b9eab;}
+	.cta-box-title {margin: 0.75em 0; font-size: 25px; font-weight: 400;
+		a {color: #fff;}
+		a:hover {color: $orange;}
+	}
+	.cta-box-img {height: 100px;
+		a img {transition: all 0.3s; vertical-align: top;}
+		
+	}
+	&:hover a img {@include transformation(scale(1.1));}
+	p {margin: 1em 0;}
+}
+
+@media (min-width: 500px) {
+	.cta-boxes {display: flex; align-items: stretch; align-content: stretch; flex-wrap: wrap; justify-content: center;}
+}
+
+@media (min-width: 1170px) {
+	.cta-boxes {margin-bottom: 60px;}
+}

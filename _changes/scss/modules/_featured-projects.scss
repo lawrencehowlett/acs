@@ -1,0 +1,63 @@
+.featured-project {position: relative; padding: 0 0 45px; border: 15px solid #fff; background: $lgray;
+	.project-thumbnail {display: block; max-width: 100%; pointer-events: none;}
+	.project-title {margin: 0; padding: 25px 30px 0 30px; color: #424e5a; font: 300 17px/1.3em $prelo; letter-spacing: 0.5px; white-space: normal;
+		a {color: #424e5a;
+			&:hover {color: $blue;}
+		}
+	}
+	.project-cat {margin: 0.75em 30px; color: $gray; font-size: 14px;
+		a {color: $gray;
+			&:hover {color: $blue;}
+		}
+	}
+	.more {position: absolute; right: 0; bottom: 0; margin: 0; padding: 0; text-align: right;
+		a {display: inline-block; width: 75px; height: 45px; padding: 0; background: $orange $arrowRight 50% 50% no-repeat; background-size: 24px 10px; font-size: 0; vertical-align: top;
+			&:hover {@include animation(infinite 0.5s more); background-color: $blue;}
+		}
+	}
+}
+
+.featured-slider {position: relative; margin-top: 40px;
+	.slider-nav {display: block; position: absolute; top: 0; z-index: 3; width: 100px; height: 100%; background: transparent 50% 30% no-repeat; background-size: 27px 120px; font-size: 0;
+		&.prev {right: -webkit-calc(100% - 100px); right: -moz-calc(100% - 100px); right: calc(100% - 100px); margin-right: 30px; background-image: $resSliderPrev;}
+		&.next {left: -webkit-calc(100% - 100px); left: -moz-calc(100% - 100px); left: calc(100% - 100px); margin-left: 30px; background-image: $resSliderNext;}
+		&:hover {background-color: rgba(255,255,255,0.5); @include animation(infinite 0.5s more);}
+	}
+	
+	.slider-items {position: relative; left: 0; list-style: none; box-sizing: border-box; width: 100%; margin: 0; padding: 0; font-size: 0; white-space: nowrap;}
+	.slider-item {display: inline-block; width: 100%; max-width: 570px; height: 100%; border: 0; white-space: pre; vertical-align: top;}
+	.resource-title {margin: 0; padding: 25px 30px 0 30px; color: #424e5a; font: 300 22px/1.3em $prelo; 
+		a {color: #424e5a;
+			&:hover {color: $blue;}
+		}
+	}
+	.resource-thumbnail {float: left; max-width: 50%; margin: 0 15px 20px 0; pointer-events: none;}
+}
+
+@media (min-width: 500px) {
+	.slider-nav {background: transparent 50% 50% no-repeat; background-size: 27px 160px;}
+}
+
+@media (min-width: 1170px) {
+	.featured-slider {position: relative;
+		&:before, &:after {display: block; position: absolute; top: 0; z-index: 2; width: 200%; height: 100%; background: rgba(255,255,255,0.75); content: " ";}
+		&:before {right: 50%; margin-right: 585px;}
+		&:after {left: 50%; margin-left: 585px;}	
+		.slider-wrapper {position: relative; left: 50%; width: 2400px; margin-left: -1200px;
+			.bx-wrapper {width: 2400px !important; margin: 0 auto; position: relative;}
+		}
+	}
+}
+
+
+@media (max-width: 500px) {
+	.featured-slider {
+		.slider-nav {height: 70%;}
+	}
+}
+
+@media (max-width: 400px) {
+	.featured-slider {
+		.slider-nav {height: 60%;}
+	}
+}

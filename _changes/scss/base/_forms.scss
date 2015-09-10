@@ -1,0 +1,29 @@
+input, textarea {width: 100%; padding: 25px; box-sizing: border-box; border: none; background: $gray; color: #fff; font: 400 14px/20px $open; transition: $transAll;
+	&:focus {outline: none;background: #A4ADB3;}
+	&::-webkit-input-placeholder {color: #fff;}
+   	&::-moz-placeholder {color: #fff;}
+   	&:-ms-input-placeholder {color: #fff;}
+   	&:-moz-placeholder {color: #fff;}
+   	&:placeholder {color: #fff;}
+}
+button {border: none; background: $orange; color: #fff; font: 700 18px/75px $prelo; text-transform: uppercase; text-align: center; transition: $transAll; cursor: pointer;
+	&:hover {background: $blue;}
+}
+.submit button {width: 100%;}
+select {padding: 21px 20px;}
+option {padding: 4px 20px; line-height: 26px;}
+.select {display: block; position: relative; border: none; background: $gray; color: #fff; line-height: 20px;
+	.value {display: block; position: relative; padding: 27px 25px;
+		&:after {position: absolute; right: 23px; top: 50%; width: 8px; height: 17px; margin-top: -8px; background: $selectArrow; content: " ";}
+	}
+	select {position: absolute; left: 0; top: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; -webkit-appearance: menulist-button;}
+}
+input[type="radio"], input[type="checkbox"] {width: auto;} 
+label {display: block; margin: 0 0 5px; font-size: 13px;}
+.check {position: relative; margin: 0; font-size: 13px; line-height: 1.3em;
+	input[type="checkbox"] {position: absolute; left: -50000px;}
+	input[type="checkbox"] + label {display: block; position: relative; padding: 15px 0; cursor: pointer; transition: all 0.3s;
+		&:before {display: inline-block; width: 20px; height: 20px; margin-right: 15px; border: 1px solid #e2e2e2; background: #fff $checkDark 50% 50% no-repeat; background-size: 0; vertical-align: middle; content: " "; transition: all 0.3s;}
+	}
+	input:checked + label:before {background-size: 9px;}	
+}

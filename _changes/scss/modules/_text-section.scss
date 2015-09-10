@@ -1,0 +1,19 @@
+.text-section {
+	.text-section-header {
+		h2 {font: 200 30px/1.3em $prelo; text-transform: uppercase;}
+	}
+	.text-section-content {
+		h3 {color: #424e5a; font: 700 20px/1.3em $prelo;}
+		h4 {color: #424e5a; font: 700 18px/1.3em $prelo;}
+		h5 {color: #424e5a; font: 700 15px/1.3em $prelo;}
+		h6 {color: #424e5a; font: 700 13px/1.3em $prelo;}
+	}
+}
+
+@media (min-width: 900px) {
+	.text-section {padding: 80px 0 60px;
+		.text-section-header {float: left; width: 43%; padding-right: 60px; box-sizing: border-box;}
+		.text-section-content {float: right; width: 57%; box-sizing: border-box;}
+	}	
+}
+

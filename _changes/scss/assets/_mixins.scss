@@ -1,0 +1,61 @@
+@mixin columns($count, $gap) {
+	-webkit-column-count: $count;
+    -moz-column-count: $count;
+    column-count: $count;
+    -webkit-column-gap: $gap;
+    -moz-column-gap: $gap;
+    column-gap: $gap;
+    page-break-inside: avoid;
+}
+
+@mixin column-rule($style) {
+    -webkit-column-rule: $style;
+    -moz-column-rule: $style;
+    column-rule: $style;
+} 
+
+
+@mixin animation($config) {
+    -webkit-animation: $config;
+    animation: $config;
+}
+
+@mixin transformation($settings) {
+    -webkit-transform-style: preserve-3d;   
+    -webkit-transform: $settings;
+    transform: $settings;
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+}
+@mixin box-sizing() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;    
+}
+
+@mixin transition($duration: 0.2s, $function: ease-in-out, $element: all) {
+   -webkit-transition: $element $duration $function;
+   -moz-transition: $element $duration $function;
+   -ms-transition: $element $duration $function;
+   -o-transition: $element $duration $function;
+   transition: $element $duration $function;
+}
+
+@mixin linearGradient($top, $bottom){
+  background-image: $top; /* Old browsers */
+  background-image: -moz-linear-gradient(to bottom,  $top 50%, $bottom 50%); /* FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%,$top), color-stop(50%,$bottom)); /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(bottom,  $top 50%,$bottom 50%); /* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(bottom,  $top 50%,$bottom 50%); /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(bottom,  $top 50%,$bottom 50%); /* IE10+ */
+  background-image: linear-gradient(to bottom,  $top 50%,$bottom 50%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}

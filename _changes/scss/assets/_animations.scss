@@ -1,0 +1,81 @@
+@-webkit-keyframes arrow-next {
+	0% {transform: translateX(0);}
+	50% {transform: translateX(5px);}
+	100% {transform: translateX(0);}
+}
+
+@-webkit-keyframes arrow-prev {
+	0% {transform: translateX(0);}
+	50% {transform: translateX(-5px);}
+	100% {transform: translateX(0);}
+}
+
+@-webkit-keyframes arrow-down {
+	0% {background-position: 50% 50%;}
+	50% {background-position: 50% 60%;}
+	100% {background-position: 50% 50%;}
+}
+
+@-webkit-keyframes arrow-up {
+	0% {background-position: 50% 50%;}
+	50% {background-position: 50% 40%;}
+	100% {background-position: 50% 50%;}
+}
+
+@-webkit-keyframes more {
+	0% {background-position: 50% 50%;}
+	25% {background-position: 60% 50%;}
+	75% {background-position: 40% 50%;}
+	100% {background-position: 50% 50%;}
+}
+
+@keyframes arrow-next {
+	0% {transform: translateX(0);}
+	50% {transform: translateX(5px);}
+	100% {transform: translateX(0);}
+}
+
+@keyframes arrow-prev {
+	0% {transform: translateX(0);}
+	50% {transform: translateX(-5px);}
+	100% {transform: translateX(0);}
+}
+
+@keyframes arrow-down {
+	0% {background-position: 50% 50%;}
+	50% {background-position: 50% 60%;}
+	100% {background-position: 50% 50%;}
+}
+
+@keyframes arrow-up {
+	0% {background-position: 50% 50%;}
+	50% {background-position: 50% 40%;}
+	100% {background-position: 50% 50%;}
+}
+
+@keyframes pager-off {
+	0% {background-size: 0 38px;}
+	100% {background-size: 34px 38px;}
+}
+
+@keyframes pager-on {
+	0% {background-size: 34px 38px;}
+	100% {background-size: 0 38px;}
+}
+
+@keyframes pager-off-before {
+	0% {background-size: 34px 38px;}
+	100% {background-size: 0 38px;}
+}
+
+@keyframes pager-on-before {
+	0% {background-size: 0 38px;}
+	100% {background-size: 34px 38px;}
+}
+
+@keyframes more {
+	0% {background-position: 50% 50%;}
+	25% {background-position: 60% 50%;}
+	75% {background-position: 40% 50%;}
+	100% {background-position: 50% 50%;}
+}

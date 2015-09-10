@@ -1,0 +1,113 @@
+.resources-section {margin-top: 30px;}
+.resource {position: relative; overflow: hidden; opacity: 1; margin: 0; padding: 0 0 45px; border: 15px solid #fff; border-width: 0 15px; background: #f7fafb; color: $gray; font-size: 14px; transition: opacity 0.3s;
+	&.hidden {opacity: 0;}
+	p {margin: 1em 30px;
+		&.more {position: absolute; right: 0; bottom: 0; margin: 0; padding: 0; text-align: right;
+			a {display: inline-block; width: 75px; height: 45px; padding: 0; background: $orange $arrowRight 50% 50% no-repeat; background-size: 24px 10px; font-size: 0;
+				&:hover {@include animation(infinite 0.5s more); background-color: $blue;}
+			}
+		}
+		&.resource-category {position: absolute; left: 5px; bottom: 5px; z-index: 2;  margin: 0; padding: 0; font-family: $prelo; text-transform: uppercase;
+			a {display: block; padding: 0 15px; background: #e1e8eb; color: #003459; line-height: 30px;
+				&:hover {background: #fff; color: $blue;}
+			}
+		}
+	}
+	.resource-title {margin: 0; padding: 25px 30px 0 30px; color: #424e5a; font: 300 16px/1.3em $prelo; 
+		a {color: #424e5a;
+			&:hover {color: $blue;}
+		}
+	}
+	.resource-thumbnail {float: left; max-width: 50%; margin: 0 15px 20px 0; pointer-events: none;}
+}
+
+.res-slider {position: relative;
+	.slider-nav {display: block; position: absolute; top: 0; z-index: 3; width: 75px; height: 45px; background: $orange 50% 50% no-repeat; background-size: 24px 10px; font-size: 0;
+		&.prev {left: 0; background-image: $arrowLeft;}
+		&.next {right: 0; background-image: $arrowRight;}
+		&:hover {background-color: $blue; @include animation(infinite 0.5s more);}
+	}
+	.slider-items {position: relative; left: 0; list-style: none; box-sizing: border-box; width: 100%; margin: 0; padding: 0; font-size: 0; white-space: nowrap;}
+	.slider-item {display: inline-block; width: 100%; max-width: 570px; height: 100%; border: 0; white-space: normal; vertical-align: top;}
+	.resource-title {margin: 0; padding: 25px 30px 0 30px; color: #424e5a; font: 300 16px/1.3em $prelo; 
+		a {color: #424e5a;
+			&:hover {color: $blue;}
+		}
+	}
+	.resource-thumbnail {float: left; max-width: 50%; margin: 0 15px 20px 0; pointer-events: none;}
+}
+
+.res-list {list-style: none; margin: 45px -5px; padding: 0;
+	.resource {border-width: 5px;}
+}
+
+.load-more {display: block; height: 55px; padding: 0 15px; background: $lgray; color: #3f5e78; font: 400 17px/55px $prelo; text-transform: uppercase; text-align: center;
+	&:hover {background: $blue; color: #fff;}
+	&.loading {background: $lgray url("../img/loader.gif") 50% 50% no-repeat; font-size: 0;}
+}
+
+@media (min-width: 400px) {
+	.res-slider .slider-item {min-width: 400px;}
+}
+
+@media (min-width: 500px) {
+	.res-slider {margin-top: 30px;
+		.slider-item p {overflow: hidden;}
+	}
+	.resource {
+		.resource-title {font-size: 16px;}
+		.resource-thumbnail {margin: 0 15px -45px 0;}
+	}
+	.res-list {margin-left: 0; margin-right: 0;
+		.resource {
+			.resource-thumbnail {margin: 0 15px 10px 0;}
+		}
+	}	
+}
+
+@media (min-width: 800px){
+	.resources-section {margin-top: 100px;}	
+}
+
+@media (min-width: 1000px) {
+	.res-slider {margin-top: 50px;}
+	.resource {
+		.resource-thumbnail {margin-right: 30px; margin-bottom: -45px;}
+	}
+	.res-list .resource {margin-bottom: 30px; border-width: 0 5px;
+		.resource-thumbnail {margin-bottom: -45px;}
+	}
+}
+
+@media (min-width: 1170px) {
+	.res-slider {
+		&:before, &:after {display: block; position: absolute; top: 0; z-index: 2; width: 200%; height: 100%; background: rgba(255,255,255,0.75); content: " ";}
+		&:before {right: 50%; margin-right: 585px;}
+		&:after {left: 50%; margin-left: 585px;}	
+		.slider-wrapper {position: relative; left: 50%; width: 2400px; margin-left: -1200px;
+			.bx-wrapper {width: 2400px !important; margin: 0 auto; position: relative;}
+		}
+	}
+	.resource {
+		.resource-title {font-size: 22px;}
+	}
+	.res-list {margin: 45px -15px 0;
+		.resource {margin-bottom: 45px; border-width: 0 15px;}
+	}
+}
+
+@media (min-width: 1360px) {
+	.res-slider {
+		.slider-nav {display: block; position: absolute; top: 0; z-index: 3; width: 100px; height: 100%; background: transparent 50% 50% no-repeat; background-size: 27px 160px; font-size: 0;
+			&.prev {right: 100%; left: auto; margin-right: 30px; background-image: $resSliderPrev;}
+			&.next {left: 100%; right: auto;  margin-left: 30px; background-image: $resSliderNext;}
+			&:hover {background-color: rgba(255,255,255,0.5); @include animation(infinite 0.5s more);}
+		}
+	}
+}
+
+@media (max-width: 1330px) {
+	.double-slider.res-slider { margin-top: 70px;
+		.slider-nav {top: -45px;}
+	}
+} 

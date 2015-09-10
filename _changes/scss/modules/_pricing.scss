@@ -1,0 +1,15 @@
+.pricing {text-align: center;}
+.pricing-plan {margin-bottom: 30px; font-size: 14px;
+	img {display: block; max-width: 100%; margin: 0 auto;}
+	.plan-title {margin: 0; background: $gray; color: #fff; font-size: 18px; line-height: 75px; text-transform: uppercase;}
+	.plan-price {margin: 0; padding: 25px 0; border-bottom: 1px solid #e6edf3;  background: #f7fafb; color: #24465d; font-size: 23px;}
+	.plan-descr {margin: 0; padding: 25px 30px; border-bottom: 1px solid #e6edf3;}
+	.plan-features {margin: 0; padding: 0; list-style: none;
+		li {padding: 14px 0; border-bottom: 1px solid #e6edf3; color: #24465d; font-weight: 500;}
+	}
+	.plan-buy {margin: 0; border-bottom: 1px solid #e6edf3;
+		a {display: block; background: #f7fafb; color: #24465d; font: 700 18px/73px $prelo; text-transform: uppercase;
+			&:hover {background: $orange; color: #fff;}
+		}
+	}
+}

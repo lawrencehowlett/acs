@@ -1,0 +1,10 @@
+.table {overflow-x: auto; max-width: 100%; margin: 40px 0; }
+table {width: 100%; border-collapse: collapse; border: 0; font-size: 14px;}
+th {padding: 10px; border-bottom: 1px solid #24465d; color: #24465d; font-weight: 700; text-transform: uppercase; text-align: left; }
+td {padding: 10px; border-bottom: 1px solid #e6edf3;}
+tr:nth-child(2n) {background: #f7fafb;}
+
+@media (min-width: 1170px) {
+	table {margin: 0;}
+	th, td {padding: 10px 30px;}
+}

@@ -1,0 +1,75 @@
+// Case study list and list items
+.case-studies {position: relative; list-style: none; margin: 40px 0; padding: 0; font-size: 0;}
+.cs-item {display: block; position: absolute; overflow: hidden; width: 100%; @include aspect-ratio(1, 1); vertical-align: top;
+	&:before {display: block; content: " "; width: 100%; padding-top: 100%;}
+	.cs-image {display: block; position: absolute; left: 50%; top: 50%; z-index: 0; max-height: 100%; @include transformation(translate(-50%, -50%)); transition: all 0.3s}
+	&:hover .cs-image {@include transformation(translate(-50%, -50%) scale(1.05));}
+	.cs-item-overlay {display: block; position: absolute; left: 0; top: 0; z-index: 5; width: 100%; height: 100%; background: rgba(0,0,0,0.25);} 
+	.cs-item-content {position: absolute; left: 0; bottom: 0; z-index: 6; width: 100%; padding: 0 20px 20px; box-sizing: border-box; color: #fff; font-size: 14px;}
+	.cs-item-title {margin: 0 0 0.5em; font: 400 18px/1.5em $prelo; text-transform: uppercase;}
+	.cs-item-descr {margin: 0.5em 0 0;}
+	a {color: #fff;
+		&:hover {color: $orange;}
+	}
+	.cs-item-pager {position: absolute; top: 20px; left: 16px; z-index: 6; margin: 0; font-size: 0;
+		a {display: inline-block; width: 8px; height: 8px; margin: 0 4px; border: 1px solid #fff; border-radius: 50%; opacity: 0.5;
+			&:hover {opacity: 1;}
+			&.active {background: #fff; opacity: 1;}
+		}
+	}
+	&.slideshow {
+		img {opacity: 0; transition: all 0.3s;}
+		img.active {opacity: 1;}
+	}
+}
+
+@media (min-width: 500px) {
+	.cs-item {width: 50%;
+		&.double {width: 100%; @include aspect-ratio(2, 1);}
+		&.large {width: 100%; @include aspect-ratio(1, 1);}
+	}
+}
+
+@media (min-width: 820px) {
+	.cs-feature {width: auto; display: block;}
+	.cs-content {float: left; width: 75%; margin-top: 0; padding-right: 65px; box-sizing: border-box;}
+	.cs-sidebar {float: right; width: 25%;}
+}
+
+@media (min-width: 900px) {
+	.cs-item {width: 33.333%;
+		&.double {width: 66.667%; @include aspect-ratio(2, 1);}
+		&.large {width: 66.667%; @include aspect-ratio(1, 1);}
+		.cs-item-content {padding: 0 50px 40px;}
+		.cs-item-pager {top: 35px; left: 46px;}
+	}
+}
+
+// Case study details view
+.cs-feature {margin: 0 0 10px; padding: 35px 30px 25px; background: $lgray; color: $gray; font-size: 14px; text-align: center;
+	.inside {display: inline;}
+	.feature-data {margin: 5px 0;}
+	.img {margin: 0 0 15px;}
+	.feature-title {margin: 5px 0; color: #424e5a; font: 700 14px/1.3em $prelo; text-transform: uppercase;}
+}
+.cs-content {margin-top: 30px;}
+
+
+
+@media (max-width: 820px) {
+	.cs-feature {@include box-sizing(); height: 185px; float: left; width: 33.33%;}
+}
+
+@media (max-width: 768px) {
+	.cs-feature {padding: 20px; display: inline-block; 
+		img {max-width: 20px;}
+		.feature-data {line-height: normal;}
+	}
+}
+
+@media (max-width: 500px) {
+	.cs-feature {padding: 20px;
+		.feature-title {font-size: 12px;}
+		.feature-data {font-size: 12px; line-height: normal;}
+	}
+}
