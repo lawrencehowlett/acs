@@ -167,19 +167,28 @@
 				</div>			
 			<% end_if %>
 
+			<% if $ClassName == 'BlockWidgetActionBox' %>
+				<div class="inside">
+					<h2 class="section-title">$Title</h2>
+					<div class="cols cta-boxes">
+						<% loop $Items %>
+							<article class="cta-box box$Pos col col3 clickable">
+								<p class="cta-box-img">
+									<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">
+										<img src="$Image.Link" alt="$Image.Title">
+									</a>
+								</p>
+								<h3 class="cta-box-title">
+									<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">$Title</a>
+								</h3>
+								$Content
+							</article>
+						<% end_loop %>
+					</div>
+				</div>			
+			<% end_if %>			
+
 		</section>	
 
 	<% end_loop %>
-<% else %>
-	<section class="page-section">
-		<article class="inside cf">
-			<header class="text-section-header">
-				<h2 class="section-title">$Title</h2>
-			</header>
-			<div class="text-section-content">
-				$Content
-				$Form
-			</div>
-		</article>
-	</section>
 <% end_if %>

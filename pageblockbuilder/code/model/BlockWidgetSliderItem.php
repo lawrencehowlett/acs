@@ -1,6 +1,17 @@
 <?php
+/**
+ * Represents the slider items
+ * 
+ * @author Julius <julius@greenbrainer.com>
+ * @copyright Copyright (c) 2015, Julius
+ */
 class BlockWidgetSliderItem extends DataObject {
 
+	/**
+	 * Set properties
+	 * 
+	 * @var array
+	 */
 	private static $db = array(
 		'Title' => 'Text', 
 		'Tagline' => 'Text', 
@@ -8,17 +19,42 @@ class BlockWidgetSliderItem extends DataObject {
 		'SortOrder' => 'Int'
 	);	
 
+	/**
+	 * Set has one
+	 * 
+	 * @var array
+	 */
 	private static $has_one = array(
 		'Parent' => 'BlockWidgetSlider', 
 		'Image' => 'Image'
 	);
 
+	/**
+	 * Set singular name
+	 * 
+	 * @var string
+	 */
 	private static $singular_name = 'Slider';
 
+	/**
+	 * Set plural name
+	 * 
+	 * @var string
+	 */
 	private static $plural_name = 'Sliders';
 
+	/**
+	 * Set default sort
+	 * 
+	 * @var string
+	 */
 	private static $default_sort = 'SortOrder';
 
+	/**
+	 * Get CMS fields
+	 * 
+	 * @return FieldList
+	 */
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
