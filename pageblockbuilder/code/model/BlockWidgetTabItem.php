@@ -46,6 +46,13 @@ class BlockWidgetTabItem extends DataObject {
 	private static $plural_name = 'Tab items';
 
 	/**
+	 * Set default sort order
+	 * 
+	 * @var string
+	 */
+	private static $default_sort = 'SortOrder';
+
+	/**
 	 * Get CMS fields
 	 * 
 	 * @return FieldList
