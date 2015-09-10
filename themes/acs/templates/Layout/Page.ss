@@ -189,7 +189,22 @@
 			<% end_if %>
 
 			<% if $ClassName == 'BlockWidgetSpeakToSpecialist' %>
-				<div class="decoration" style="background: rgba(0, 0, 0, 0) url('$FeaturedImage.Link') no-repeat scroll 100% 0;"></div>
+				<% if $ActionBoxRedirectPageID %>
+					<div class="brochure cf" style="background: rgba(0, 0, 0, 0) url('$ActionBoxBackgroundImage.Link') no-repeat scroll 100% 0">
+						<div class="brochure-content">
+							<p class="section-title">$ActionBoxTitle</p>
+							<div class="brochure-text">
+								<h2 class="brochure-title">$ActionBoxTagline</h2>
+								$ActionBoxContent
+							</div>
+							<p class="download">
+								<a href="$ActionBoxRedirectPage.Link" title="Go to $ActionBoxRedirectPage.Title" class="wire-button">$ActionBoxButtonText</a>
+							</p>
+						</div>
+					</div>
+				<% else %>
+					<div class="decoration" style="background: rgba(0, 0, 0, 0) url('$FeaturedImage.Link') no-repeat scroll 100% 0;"></div>
+				<% end_if %>
 				$Top.SpecialistsForm
 			<% end_if %>
 

@@ -14,6 +14,7 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 	 */
 	private static $db = array(
 		'ActionBoxTitle' => 'Text', 
+		'ActionBoxTagline' => 'Text', 
 		'ActionBoxContent' => 'HTMLText',
 		'ActionBoxButtonText' => 'Varchar',
 		'MailFrom' => 'Varchar', 
@@ -31,7 +32,8 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 	private static $has_one = array(
 		'RedirectPage' => 'SiteTree',
 		'ActionBoxRedirectPage' => 'SiteTree', 
-		'FeaturedImage' => 'Image'
+		'FeaturedImage' => 'Image', 
+		'ActionBoxBackgroundImage' => 'Image'
 	);
 
 	/**
@@ -81,6 +83,10 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 		);
 		$fields->addFieldToTab(
 			'Root.ActionBox', 
+			TextareaField::create('ActionBoxTagline', 'Tagline')
+		);
+		$fields->addFieldToTab(
+			'Root.ActionBox', 
 			HTMLEditorField::create('ActionBoxContent', 'Content')
 				->setRows(20)
 		);
@@ -91,6 +97,11 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 		$fields->addFieldToTab(
 			'Root.ActionBox', 
 			TreeDropdownField::create('ActionBoxRedirectPageID', 'Choose a redirect page', 'SiteTree')
+		);
+		$fields->addFieldToTab(
+			'Root.ActionBox', 
+			UploadField::create('ActionBoxBackgroundImage', 'Background image')
+				->setFolderName('SpeakToSpecialist/Images/Background')
 		);
 
 		return $fields;
