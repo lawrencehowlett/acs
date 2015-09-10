@@ -27,7 +27,7 @@ class BlockWidgetResources extends BlockWidget {
 		$fields->removeByName('Resources');
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('BackgroundImage')
+			array('BackgroundImage', 'ExtraClass')
 		);
 
 		$fields->addFieldToTab(
@@ -42,6 +42,15 @@ class BlockWidgetResources extends BlockWidget {
 		);
 
 		return $fields;
+	}
+
+	/**
+	 * Get extra class
+	 * 
+	 * @return string
+	 */
+	public function getExtraClass() {
+		return 'mt30';
 	}
 
 	/**
