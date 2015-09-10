@@ -3,15 +3,13 @@ class BlockWidgetSliderItem extends DataObject {
 
 	private static $db = array(
 		'Title' => 'Text', 
+		'Tagline' => 'Text', 
 		'Content' => 'HTMLText', 
-		'ButtonText' => 'Varchar', 
 		'SortOrder' => 'Int'
 	);	
 
 	private static $has_one = array(
 		'Parent' => 'BlockWidgetSlider', 
-		'RedirectPage' => 'SiteTree',
-		'Icon' => 'File', 
 		'Image' => 'Image'
 	);
 
@@ -19,32 +17,22 @@ class BlockWidgetSliderItem extends DataObject {
 
 	private static $plural_name = 'Sliders';
 
+	private static $default_sort = 'SortOrder';
+
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
-		$fields->removeFieldsFromTab('Root.Main', array('ParentID', 'Image', 'Icon', 'SortOrder'));
+		$fields->removeFieldsFromTab('Root.Main', array('ParentID', 'SortOrder'));
+
 		$fields->replaceField('Title', TextField::create('Title', 'Title'));
 		$fields->dataFieldByName('Content')
 			->setRows(20);
-		$fields->dataFieldByName('ButtonText')->setTitle('Redirect button title');
-		$fields->replaceField(
-			'RedirectPageID', 
-			TreedropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree')
+
+		$fields->addFieldToTab(
+			'Root.Main', 
+			UploadField::create('Image', 'Image')
+				->setFolderName('BlockWidgetSlider/' .$this->Parent()->ID. '/SliderImages/')
 		);
-
-		if ($this->ID) {
-			$fields->insertAfter(
-				UploadField::create('Icon', 'Icon')
-					->setFolderName($this->Parent()->Page()->Title . '/SliderIcons/'), 
-				'RedirectPageID'
-			);
-
-			$fields->insertAfter(
-				UploadField::create('Image', 'Image')
-					->setFolderName($this->Parent()->Page()->Title . '/SliderImages/'), 
-				'Icon'
-			);
-		}
 
 		return $fields;
 	}

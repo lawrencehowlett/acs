@@ -10,6 +10,11 @@ class BlockWidgetSlider extends BlockWidget {
 
 		$fields->removeByName('Items');
 
+		$fields->removeFieldsFromTab(
+			'Root.Main', 
+			array('BackgroundImage', 'ExtraClass')
+		);
+
 		$fields->addFieldToTab(
 			'Root.Main', 
 			GridField::create(
@@ -22,6 +27,10 @@ class BlockWidgetSlider extends BlockWidget {
 		);
 
 		return $fields;
+	}
+
+	public function getExtraClass() {
+		return '';
 	}
 
 	public function ComponentName() {
