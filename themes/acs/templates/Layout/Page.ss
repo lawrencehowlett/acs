@@ -60,25 +60,47 @@
 			<% end_if %>
 
 			<% if $ClassName == 'BlockWidgetVideo' %>
-				<div class="inside">
-					<div class="media cf">
-						<h2 class="section-title">$Title</h2>
-						<div class="media-content">
-							<div class="video-movie">
-								<div class="video-placeholder">
-									<img src="$Image.CroppedImage(586, 392).Link" alt="$Image.Title">
-									<a href="$VideoURL" class="html5lightbox play"></a>
-								</div>
+				<% if $BackgroundImage || $Tagline %>
+					<div class="inside cf">
+						<div class="video-text">
+							<h2 class="section-title">$Title</h2>
+							<p class="lead">$Tagline</p>
+							$Content
+							<% if $RedirectPage.Link %>
+								<p class="more">
+									<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">$ButtonText</a>
+								</p>
+							<% end_if %>
+
+						</div>
+						<div class="video-movie">
+							<div class="video-placeholder">
+								<img src="$Image.CroppedImage(586, 392).Link" alt="$Image.Title">
+								<a href="$VideoURL" class="html5lightbox play"></a>
 							</div>
 						</div>
-						<div class="media-description">
-							$Content
-							<p class="more">
-								<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">$ButtonText</a>
-							</p>							
+					</div>
+				<% else %>
+					<div class="inside">
+						<div class="media cf">
+							<h2 class="section-title">$Title</h2>
+							<div class="media-content">
+								<div class="video-movie">
+									<div class="video-placeholder">
+										<img src="$Image.CroppedImage(586, 392).Link" alt="$Image.Title">
+										<a href="$VideoURL" class="html5lightbox play"></a>
+									</div>
+								</div>
+							</div>
+							<div class="media-description">
+								$Content
+								<p class="more">
+									<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">$ButtonText</a>
+								</p>							
+							</div>
 						</div>
 					</div>
-				</div>			
+				<% end_if %>
 			<% end_if %>
 
 			<% if $ClassName == 'BlockWidgetImage' %>
