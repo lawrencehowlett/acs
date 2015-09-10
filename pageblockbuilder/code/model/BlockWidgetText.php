@@ -61,7 +61,7 @@ class BlockWidgetText extends BlockWidget {
 			'RedirectPageID', 
 			TreedropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree')
 		);
-		$fields->insertAfter($fields->dataFieldByName('RedirectPageID'), 'ExtraClass');
+		$fields->insertAfter($fields->dataFieldByName('RedirectPageID'), 'Content');
 		$fields->insertBefore($fields->dataFieldByName('ButtonText'), 'RedirectPageID');
 
 		return $fields;
@@ -76,6 +76,11 @@ class BlockWidgetText extends BlockWidget {
 		return 'Text widget';
 	}
 
+	/**
+	 * Set the class needed for the text widget
+	 * 
+	 * @return string
+	 */
 	public function getExtraClass() {
 		return 'shade text-section';
 	}
