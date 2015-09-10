@@ -52,6 +52,10 @@ class Page extends SiteTree {
 	 */
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
+		
+		if ($this->ClassName == 'Page') {
+			$fields->removeByName('Widgets');
+		}
 
 		$fields->insertBefore(
 			UploadField::create('Banner', 'Banner')

@@ -10,6 +10,7 @@ class ResourcesPage extends Blog {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
+		$fields->removeByName('Widgets');
 		$fields->removeByName('Resources');
 		$fields->fieldByName('Root')->fieldByName('ChildPages')->setTitle('Resources Posts');
 
