@@ -8,7 +8,7 @@
 <% if $Widgets %>
 	<% loop $Widgets %>
 
-		<section class="page-section video-section $ExtraClass" <% if $BackgroundImage %>style="background-image: url('$BackgroundImage.Link')"<% end_if %>>
+		<section class="page-section $ExtraClass" <% if $BackgroundImage %>style="background-image: url('$BackgroundImage.Link')"<% end_if %>>
 
 			<% if $ClassName == 'BlockWidgetText' %>
 				<article class="inside cf">

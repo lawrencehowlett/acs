@@ -49,7 +49,7 @@ class BlockWidgetText extends BlockWidget {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
-		$fields->removeFieldsFromTab('Root.Main', array('Title', 'BackgroundImage'));
+		$fields->removeFieldsFromTab('Root.Main', array('Title', 'BackgroundImage', 'ExtraClass'));
 		$fields->insertBefore(
 			TextField::create('Title', 'Title'), 
 			'Tagline'
@@ -74,5 +74,9 @@ class BlockWidgetText extends BlockWidget {
 	 */
 	public function ComponentName() {
 		return 'Text widget';
-	}		
+	}
+
+	public function getExtraClass() {
+		return 'shade text-section';
+	}
 }
