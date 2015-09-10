@@ -1,6 +1,17 @@
 <?php
+/**
+ * Represents the specialist widget
+ * 
+ * @author Julius <julius@greenbrainer.com>
+ * @copyright Copyright (c) 2015, Julius
+ */
 class BlockWidgetSpeakToSpecialist extends BlockWidget {
 
+	/**
+	 * Set properties
+	 * 
+	 * @var array
+	 */
 	private static $db = array(
 		'ActionBoxTitle' => 'Text', 
 		'ActionBoxContent' => 'HTMLText',
@@ -12,18 +23,28 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 		'ButtonText' => 'Varchar'
 	);
 
+	/**
+	 * Set has one
+	 * 
+	 * @var array
+	 */
 	private static $has_one = array(
 		'RedirectPage' => 'SiteTree',
 		'ActionBoxRedirectPage' => 'SiteTree', 
 		'FeaturedImage' => 'Image'
 	);
 
+	/**
+	 * Get CMS Fields
+	 * 
+	 * @return FieldList
+	 */
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('BackgroundImage')
+			array('BackgroundImage', 'ExtraClass')
 		);
 
 		$fields->dataFieldByName('FeaturedImage')
@@ -38,9 +59,9 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 			)
 		);
 
-		$fields->insertAfter($fields->dataFieldByName('RedirectPageID'), 'ExtraClass');
+		$fields->insertAfter($fields->dataFieldByName('ButtonText'), 'Title');
+		$fields->insertAfter($fields->dataFieldByName('RedirectPageID'), 'ButtonText');
 		$fields->insertAfter($fields->dataFieldByName('FeaturedImage'), 'RedirectPageID');
-		$fields->insertAfter($fields->dataFieldByName('ButtonText'), 'ExtraClass');
 
 		$fields = $this->getActionBoxFields($fields);
 		$fields = $this->getMailFields($fields);
@@ -101,7 +122,30 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 				->setRows(20)
 		);
 
+		$fields->addFieldToTab(
+			'Root.Mail', 
+			ToggleCompositeField::create(
+				'CustomMailToAdminBody', 
+				'List of variables for admin reply message', 
+				array(
+					LiteralField::create(
+						'MailToAdminBodyVariables', 
+						'<div style="padding:10px;">$CompanyName, $Name, $Email, $Telephone, $BestTimeToCall</div>'
+					)
+				)
+			)			
+		);
+
 		return $fields;
+	}
+
+	/**
+	 * Get extra class
+	 * 
+	 * @return string
+	 */
+	public function getExtraClass() {
+		return 'dark specialist cf';
 	}
 
 	/**

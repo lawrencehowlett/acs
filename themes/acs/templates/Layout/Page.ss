@@ -186,7 +186,12 @@
 						<% end_loop %>
 					</div>
 				</div>			
-			<% end_if %>			
+			<% end_if %>
+
+			<% if $ClassName == 'BlockWidgetSpeakToSpecialist' %>
+				<div class="decoration" style="background: rgba(0, 0, 0, 0) url('$FeaturedImage.Link') no-repeat scroll 100% 0;"></div>
+				$Top.SpecialistsForm
+			<% end_if %>
 
 		</section>	
 
