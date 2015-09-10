@@ -13,7 +13,7 @@ class BlockWidgetText extends BlockWidget {
 	 * @var array
 	 */
 	private static $db = array(
-		'Tagline' => 'HTMLText',
+		'Tagline' => 'Text',
 		'Content' => 'HTMLText', 
 		'ButtonText' => 'Varchar'
 	);
@@ -49,15 +49,13 @@ class BlockWidgetText extends BlockWidget {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
-		$fields->removeFieldsFromTab('Root.Main', array('Title'));
+		$fields->removeFieldsFromTab('Root.Main', array('Title', 'BackgroundImage'));
 		$fields->insertBefore(
 			TextField::create('Title', 'Title'), 
 			'Tagline'
 		);
 		$fields->dataFieldByName('Content')
 			->setRows(20);
-		$fields->dataFieldByName('Tagline')
-			->setRows(10);
 
 		$fields->replaceField(
 			'RedirectPageID', 

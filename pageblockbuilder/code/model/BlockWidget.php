@@ -84,6 +84,8 @@ class BlockWidget extends DataObject {
 
 		$this->extend('updateListComponents', $components);
 
+		asort($components);
+
 		return $components;
 	}
 }

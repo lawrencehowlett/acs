@@ -8,11 +8,20 @@
 <% if $Widgets %>
 	<% loop $Widgets %>
 
-		<section class="page-section $ExtraClass">
+		<section class="page-section video-section $ExtraClass" <% if $BackgroundImage %>style="background-image: url('$BackgroundImage.Link')"<% end_if %>>
+
 			<% if $ClassName == 'BlockWidgetText' %>
 				<article class="inside cf">
 					<header class="text-section-header">
-						$SectionTitle
+
+						<% if $Title %>
+							<h2 class="section-title">$Title</h2>
+						<% end_if %>
+						
+						<% if $Tagline %>
+							<p class="lead">$Tagline</p>
+						<% end_if %>
+
 					</header>
 					<div class="text-section-content">
 						$Content

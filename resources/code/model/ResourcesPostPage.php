@@ -11,6 +11,7 @@ class ResourcesPostPage extends BlogPost {
 		$fields = parent::getCMSFields();
 
 		$fields->removeByName('Resources');
+		$fields->removeByName('Widgets');
 
 		$fields->dataFieldByName('FeaturedImage')
 			->setFolderName('Resources/FeaturedImages/');
