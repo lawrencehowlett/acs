@@ -46,7 +46,7 @@
 				<div id="disqus_thread"></div>
 				<script type="text/javascript">
 				    /* * * CONFIGURATION VARIABLES * * */
-				    var disqus_shortname = 'newedgecutup';
+				    var disqus_shortname = 'acs365';
 				    
 				    /* * * DON'T EDIT BELOW THIS LINE * * */
 				    (function() {
