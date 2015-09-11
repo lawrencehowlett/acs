@@ -10,7 +10,7 @@ class BlockWidgetCaseStudies extends BlockWidgetSlider {
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('BackgroundImage', 'Items')
+			array('BackgroundImage', 'Items', 'Image', 'Icon')
 		);
 
 		$fields->removeByName('CaseStudies');

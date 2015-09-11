@@ -56,8 +56,20 @@
 						</div>
 					</div>
 				<% end_if %>
-
 			<% end_if %>
+
+			<% if $ClassName == 'BlockWidgetBatchIconSlider' %>
+				<div class="inside">
+					<h2 class="section-title">$Title</h2>
+					<ul class="logo-slider">
+						<% loop $Icons %>
+							<li>
+								<img src="$Image.Link" alt="$Image.Title">
+							</li>
+						<% end_loop %>
+					</ul>
+				</div>
+			<% end_if %>			
 
 			<% if $ClassName == 'BlockWidgetSimpleImage' %>
 				<div class="inside">
@@ -201,6 +213,29 @@
 					</div>
 				</div>			
 			<% end_if %>
+
+			<% if $ClassName == 'BlockWidgetTwoColumnActionBox' %>
+				<div class="inside">
+					<h2 class="section-title">$Title</h2>
+					<div class="cols item-boxes">
+						<% loop $Items %>
+							<article class="item-box col col2">
+								<div class="item-img">
+									<img src="$Image.Link" alt="$Image.Title">
+								</div>
+								<h3 class="item-title">$Title</h3>
+								$Content
+
+								<% if $RedirectPage %>
+									<p class="more">
+										<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">$ButtonText</a>
+									</p>
+								<% end_if %>
+							</article>
+						<% end_loop %>
+					</div>
+				</div>
+			<% end_if %>			
 
 			<% if $ClassName == 'BlockWidgetSpeakToSpecialist' %>
 				<% if $ActionBoxRedirectPageID %>
