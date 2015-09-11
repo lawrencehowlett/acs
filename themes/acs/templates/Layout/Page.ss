@@ -334,6 +334,41 @@
 				</div>
 			<% end_if %>
 
+			<% if $ClassName == 'BlockWidgetCaseStudies' %>
+				<section class="page-section cs-showcase navigated-slider">
+					<ul class="slider-navigation">
+						<% loop $CaseStudies %>
+						<li>
+							<a href="javascript:void(0);" class="slide-link <% if $First %>active<% end_if %>" data-slide="$Top.getListIndex($Pos)">
+								<img src="$Icon.Link" alt="$Icon.Title">
+							</a>
+						</li>
+						<% end_loop %>
+					</ul>
+					<div class="viewport">
+						<div class="slider-content">
+							<% loop $CaseStudies %>
+								<article class="slide">
+									<div class="cs-slide-bg slide-background" data-image="$Image.Link"></div>
+									<div class="inside">
+										<div class="slide-content cf">
+											<h2 class="section-title">$Title</h2>	
+											$Content
+
+											<% if $RedirectPage %>
+												<p class="more">
+													<a href="$RedirectPage.Link">$ButtonText</a>
+												</p>
+											<% end_if %>
+										</div>
+									</div>
+								</article>
+							<% end_loop %>
+						</div>
+					</div>
+				</section>			
+			<% end_if %>			
+
 		</section>	
 
 	<% end_loop %>
