@@ -26,8 +26,7 @@ class AccreditationPartner extends DataObject {
 	 */
 	private static $has_one = array(
 		'RedirectPage' => 'SiteTree', 
-		'FeaturedImage' => 'Image',
-		'Page' => 'AccreditationPage'
+		'FeaturedImage' => 'Image'
 	);
 
 	/**
