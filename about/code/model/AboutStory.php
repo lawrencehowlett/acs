@@ -17,9 +17,9 @@ class AboutStory extends BlockWidget {
 		$fields = parent::getCMSFields();
 
 		$fields->removeByName('Entries');
-		$fields->removeFieldsFromTab('Root.Main', array('YearStarted'));
+		$fields->removeFieldsFromTab('Root.Main', array('YearStarted', 'BackgroundImage', 'ExtraClass'));
 
-		$fields->insertAfter(TextField::create('YearStarted', 'Year Started'), 'ExtraClass');
+		$fields->insertAfter(TextField::create('YearStarted', 'Year Started'), 'Title');
 
 		$fields->addFieldToTab(
 			'Root.Main', 
@@ -32,6 +32,10 @@ class AboutStory extends BlockWidget {
 		);
 
 		return $fields;
+	}
+
+	public function getExtraClass() {
+		return 'mt30';
 	}
 
 	public function ComponentName() {
