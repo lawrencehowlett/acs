@@ -75,6 +75,6 @@ class BlockWidgetSimpleImage extends BlockWidget {
 	 * @return  string
 	 */
 	public function ComponentName() {
-		return 'Specialist image text widget';
+		return 'Speak to specialist image text widget';
 	}	
 }

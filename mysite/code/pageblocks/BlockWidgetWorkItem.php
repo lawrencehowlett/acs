@@ -18,7 +18,7 @@ class BlockWidgetWorkItem extends BlockWidgetSliderItem {
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('WorkHolderID', 'TabIcon', 'Image', 'Icon')
+			array('Tagline', 'WorkHolderID', 'TabIcon', 'Image', 'Icon')
 		);
 
 		$fields->insertAfter(
