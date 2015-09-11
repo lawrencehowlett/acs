@@ -220,7 +220,7 @@
 				<div class="inside">
 					<h2 class="section-title">$Title</h2>
 					<div class="cols item-boxes">
-						<% loop $Items %>
+						<% loop $TwoColumnActionBoxItems %>
 							<article class="item-box col col2">
 								<div class="item-img">
 									<img src="$Image.Link" alt="$Image.Title">

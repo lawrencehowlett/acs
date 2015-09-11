@@ -15,15 +15,21 @@ class BlockWidgetCaseStudy extends BlockWidgetSliderItem {
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('CaseStudiesHolderID', 'ExtraClass', 'TabIcon', 'Tagline')
+			array('CaseStudiesHolderID', 'ExtraClass', 'TabIcon', 'Icon', 'Image')
 		);
 
 		if ($this->ID) {
-			$fields->dataFieldByName('Icon')
-				->setFolderName('FeaturedCaseStudiesSliderWidget/' .$this->CaseStudiesHolderID. '/Icons');
-			$fields->dataFieldByName('Image')
-				->setFolderName('FeaturedCaseStudiesSliderWidget/' .$this->CaseStudiesHolderID. '/Images')
-				->setTitle('Background image');
+			$fields->addFieldToTab(
+				'Root.Main', 
+				UploadField::create('Icon', 'Icon')
+					->setFolderName('FeaturedCaseStudiesSliderWidget/' .$this->CaseStudiesHolderID. '/Icons')
+			);
+
+			$fields->addFieldToTab(
+				'Root.Main', 
+				UploadField::create('Image', 'Background Image')
+					->setFolderName('FeaturedCaseStudiesSliderWidget/' .$this->CaseStudiesHolderID. '/Images')
+			);
 		}
 
 		return $fields;

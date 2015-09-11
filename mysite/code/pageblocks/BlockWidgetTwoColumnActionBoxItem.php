@@ -21,25 +21,27 @@ class BlockWidgetTwoColumnActionBoxItem extends BlockWidgetActionBoxItem {
 	 * 
 	 * @var string
 	 */
-	private static $plural_name = 'Action boxes';
+	private static $plural_name = 'Action boxe';
 
 	/**
 	 * Get CMS Fields
 	 * 
 	 * @return FieldList
 	 */
-	public function getCSMFields() {
-		$fields = parent::getCSMFields();
+	public function getCMSFields() {
+		$fields = parent::getCMSFields();
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('Image')
+			array('Image', 'TwoColumnActionBoxParentID')
 		);
 
 		if ($this->ID) {
-			$fields->dataFieldByName('Image')
-				->setTitle('Icon')
-				->setFolderName('BlockWidgetTwoColumnActionBox/' .$this->TwoColumnActionBoxParent()->ID. '/Images');
+			$fields->addFieldToTab(
+				'Root.Main', 
+				UploadField::create('Image', 'Icon')
+					->setFolderName('BlockWidgetTwoColumnActionBox/' .$this->TwoColumnActionBoxParent()->ID. '/Images')
+			);
 		}
 
 		return $fields;

@@ -6,7 +6,7 @@ class BlockWidgetTwoColumnActionBox extends BlockWidgetActionBox {
 	 * @var array
 	 */
 	private static  $has_many = array(
-		'TwoColumnActionBoxItems' => 'BlockWidgetActionBoxItem'
+		'TwoColumnActionBoxItems' => 'BlockWidgetTwoColumnActionBoxItem'
 	);
 
 	/**
