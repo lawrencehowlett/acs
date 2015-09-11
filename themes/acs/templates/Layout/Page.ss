@@ -59,6 +59,20 @@
 
 			<% end_if %>
 
+			<% if $ClassName == 'BlockWidgetSimpleImage' %>
+				<div class="inside">
+					<article class="specialist-box cf">
+						<div class="specialist-img">
+							<img src="$Image.Link" alt="$Image.Title">
+						</div>
+						<div class="specialist-text">
+							<h2 class="specialist-title">$Title</h2>
+							$Content
+						</div>
+					</article>
+				</div>
+			<% end_if %>			
+
 			<% if $ClassName == 'BlockWidgetVideo' || $ClassName == 'BlockWidgetImage' %>
 				<% if $BackgroundImage || $Tagline %>
 					<div class="inside cf">
