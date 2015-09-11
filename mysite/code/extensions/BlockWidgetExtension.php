@@ -5,7 +5,7 @@ class BlockWidget_Extension extends DataExtension {
 		$components['BlockWidgetTable'] = 'Table widget';
 		$components['BlockWidgetResources'] = 'Resources widget';
 		$components['BlockWidgetSimpleImage'] = 'Speak to specialist image text widget';
-		$components['BlockWidgetCaseStudies'] = 'Featured case studies slider widget';
+		$components['BlockWidgetCaseStudies'] = 'Case studies showcase widget';
 		$components['BlockWidgetShowcase'] = 'Showcase widget';
 		$components['BlockWidgetProjects'] = 'Featured project gallery widget';
 		$components['BlockWidgetWork'] = 'How We Work widget';

@@ -29,10 +29,14 @@ class BlockWidgetCaseStudies extends BlockWidgetSlider {
 		return $fields;
 	}
 
+	public function getExtraClass() {
+		return 'cs-showcase navigated-slider';
+	}
+
 	/**
 	 * Get the component name
 	 */
 	public function ComponentName() {
-		return 'Featured case studies slider widget';
+		return 'Case studies showcase widget';
 	}
 }
