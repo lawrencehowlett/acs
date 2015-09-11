@@ -575,7 +575,27 @@
 						</section>
 					</section>
 				</div>
-			<% end_if %>			
+			<% end_if %>	
+
+			<% if $ClassName == 'MicroBlock' %>		
+				<div class="inside">
+					<ul class="accreditations">
+						<% loop $Blocks %>
+							<li class="acc">
+								<p class="acc-logo"><img src="$Image.Link" alt="$Image.Title"></p>
+								<div class="acc-content">
+									$Content
+									<% if $RedirectPage %>
+										<p class="more">
+											<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML">$ButtonText</a>
+										</p>
+									<% end_if %>
+								</div>
+							</li>
+						<% end_loop %>
+					</ul>
+				</div>
+			<% end_if %>
 
 		</section>	
 

@@ -1,6 +1,7 @@
 <?php
 class BlockWidget_Extension extends DataExtension {
 	public function updateListComponents(&$components) {
+		$components['MicroBlock'] = 'Micro block widget';
 		$components['BlockWidgetTeam'] = 'Team widget';
 		$components['BlockWidgetDoubleSlider'] = 'Double slider widget';
 		$components['BlockWidgetBatchIconSlider'] = 'Batch gallery slider widget';
