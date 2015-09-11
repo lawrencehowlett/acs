@@ -465,7 +465,28 @@
 						<% end_loop %>
 					</div>
 				</div>			
-			<% end_if %>			
+			<% end_if %>
+
+			<% if $ClassName == 'BlockWidgetMultipleTextImageBlock' %>
+				<div class="inside teaser-list">
+					<% loop $TextImageBlocks %>
+						<article class="article-teaser">
+
+							<div class="article-teaser-img">
+								<img src="$Image.Link" alt="$Image.Title">
+							</div>
+
+							<div class="article-teaser-text">
+								<h3 class="article-teaser-title">
+									<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML page">$Title</a>
+								</h3>
+								$Content
+							</div>
+
+						</article>
+					<% end_loop %>
+				</div>
+			<% end_if %>
 
 		</section>	
 
