@@ -165,6 +165,6 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 	 * @return String
 	 */
 	public function ComponentName() {
-		return 'Speak to specialist widget';
+		return 'Speak to specialist form widget';
 	}
 }
