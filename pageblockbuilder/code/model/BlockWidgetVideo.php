@@ -71,7 +71,7 @@ class BlockWidgetVideo extends BlockWidget {
 
 		$fields->dataFieldByName('Image')
 			->setTitle('Placeholder')
-			->setFolderName('VideoBlock/Images');
+			->setFolderName('BlockWidgetVideo/' .$this->ID. '/Images');
 
 		$fields->insertAfter($fields->dataFieldByName('Tagline'), 'Title');
 		$fields->insertAfter($fields->dataFieldByName('Content'), 'Tagline');
@@ -80,7 +80,7 @@ class BlockWidgetVideo extends BlockWidget {
 
 		$fields->insertBefore($fields->dataFieldByName('ButtonText'), 'Image');
 		$fields->insertBefore($fields->dataFieldByName('RedirectPageID'), 'Image');
-		$fields->insertAfter($fields->dataFieldByName('BackgroundImage')->setFolderName('BlockWidgetVideo/BackgrundImages/'), 'Image');
+		$fields->insertAfter($fields->dataFieldByName('BackgroundImage')->setFolderName('BlockWidgetVideo/' .$this->ID. '/BackgroundImages/'), 'Image');
 
 		return $fields;
 	}

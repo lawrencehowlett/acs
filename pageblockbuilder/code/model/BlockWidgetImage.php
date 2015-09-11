@@ -66,7 +66,7 @@ class BlockWidgetImage extends BlockWidget {
 
 		$fields->dataFieldByName('Image')
 			->setTitle('Featured Image')
-			->setFolderName('BlockWidgetImage/Images');
+			->setFolderName('BlockWidgetImage' .$this->ID. '/Images');
 
 		$fields->insertAfter($fields->dataFieldByName('Tagline'), 'Title');
 		$fields->insertAfter($fields->dataFieldByName('Content'), 'Tagline');

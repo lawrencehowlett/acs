@@ -16,6 +16,7 @@ class BlockWidgetSliderItem extends DataObject {
 		'Title' => 'Text', 
 		'Tagline' => 'Text', 
 		'Content' => 'HTMLText', 
+		'ButtonText' => 'Varchar',
 		'SortOrder' => 'Int'
 	);	
 
@@ -26,6 +27,7 @@ class BlockWidgetSliderItem extends DataObject {
 	 */
 	private static $has_one = array(
 		'Parent' => 'BlockWidgetSlider', 
+		'RedirectPage' => 'SiteTree', 
 		'Image' => 'Image'
 	);
 
@@ -68,6 +70,16 @@ class BlockWidgetSliderItem extends DataObject {
 			'Root.Main', 
 			UploadField::create('Image', 'Image')
 				->setFolderName('BlockWidgetSlider/' .$this->Parent()->ID. '/SliderImages/')
+		);
+
+		$fields->replaceField(
+			'RedirectPageID', 
+			TreeDropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree')
+		);
+
+		$fields->insertAfter(
+			$fields->dataFieldByName('RedirectPageID'), 
+			'ButtonText'
 		);
 
 		return $fields;

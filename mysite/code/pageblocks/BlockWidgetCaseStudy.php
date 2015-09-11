@@ -20,9 +20,9 @@ class BlockWidgetCaseStudy extends BlockWidgetSliderItem {
 
 		if ($this->ID) {
 			$fields->dataFieldByName('Icon')
-				->setFolderName('FeaturedCaseStudiesSliderWidget/Icons');
+				->setFolderName('FeaturedCaseStudiesSliderWidget/' .$this->CaseStudiesHolderID. '/Icons');
 			$fields->dataFieldByName('Image')
-				->setFolderName('FeaturedCaseStudiesSliderWidget/Images')
+				->setFolderName('FeaturedCaseStudiesSliderWidget/' .$this->CaseStudiesHolderID. '/Images')
 				->setTitle('Background image');
 		}
 
