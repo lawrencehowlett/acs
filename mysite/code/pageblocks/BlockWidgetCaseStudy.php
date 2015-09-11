@@ -2,7 +2,8 @@
 class BlockWidgetCaseStudy extends BlockWidgetSliderItem {
 
 	private static $has_one = array(
-		'CaseStudiesHolder' => 'BlockWidgetCaseStudies'
+		'CaseStudiesHolder' => 'BlockWidgetCaseStudies', 
+		'Icon' => 'Image'
 	);
 
 	private static $singular_name = 'Case Study';

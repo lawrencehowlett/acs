@@ -29,7 +29,10 @@ class BlockWidgetCaseStudies extends BlockWidgetSlider {
 		return $fields;
 	}
 
+	/**
+	 * Get the component name
+	 */
 	public function ComponentName() {
-		return 'Case Studies Widget';
+		return 'Featured case studies slider widget';
 	}
 }

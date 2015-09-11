@@ -16,6 +16,8 @@ class BlockWidgetProjects extends BlockWidgetSlider {
 			array('BackgroundImage')
 		);
 
+		$gridFieldBulkUpload = new GridFieldBulkUpload();
+		$gridFieldBulkUpload->setUfSetup('setFolderName', 'FeaturedProjects/' . $this->ID . '/Images');
 		$fields->addFieldToTab(
 			'Root.Main', 
 			GridField::create(
@@ -24,13 +26,18 @@ class BlockWidgetProjects extends BlockWidgetSlider {
 				$this->Projects(), 
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
+					->addComponent($gridFieldBulkUpload)
 			)
 		);
 
 		return $fields;
 	}
 
+	public function getExtraClass() {
+		return 'mt30';
+	}
+
 	public function ComponentName() {
-		return 'Projects widget';
+		return 'Featured project gallery widget';
 	}
 }

@@ -305,7 +305,34 @@
 						<% end_loop %>
 					</ul>
 				</div>
-			<% end_if %>			
+			<% end_if %>
+
+			<% if $ClassName == 'BlockWidgetProjects' %>
+				<div class="inside">
+					<h2 class="section-title">$Title</h2>
+				</div>
+				<div class="featured-slider double-slider inside">
+					<a href="javascript:void(0);" class="slider-nav next">Next</a>
+					<a href="javascript:void(0);" class="slider-nav prev">Previous</a>
+					<div class="slider-wrapper">
+						<ul class="slider-items">
+							<% loop $Projects %>
+								<li class="featured-project slider-item">
+									<img src="$Image.PaddedImage(570, 375).Link" alt="$Image.Title" class="project-thumbnail">
+									<h3 class="project-title">$Title</h3>
+									$Content
+									<p class="project-cat"><a href="#">Desking solutions</a></p>
+									<% if $RedirectPage %>
+										<p class="more">
+											<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">&nbsp;</a>
+										</p>
+									<% end_if %>
+								</li>
+							<% end_loop %>
+						</ul>
+					</div>
+				</div>
+			<% end_if %>
 
 		</section>	
 
