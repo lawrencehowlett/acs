@@ -7,15 +7,27 @@ if(class_exists("Widget")) {
 	 * @author Julius <julius@greenbrainer.com>
 	 * @copyright Copyright (c) 2015, Julius 
 	 */
-	class BlogWelcomeWidget extends Widget {
+	class BlogGuideWidget extends Widget {
 		
+		/**
+		 * Set properties
+		 * 
+		 * @var array
+		 */
 		private static $db = array(
 			'Title' => 'Text', 
-			'Text' => 'HTMLText'
+			'SubTitle' => 'Text', 
+			'Text' => 'HTMLText', 
+			'ButtonText' => 'Varchar'
 		);
 
+		/**
+		 * Set has one
+		 * 
+		 * @var array
+		 */
 		private static $has_one = array(
-			'FeaturedImage' => 'Image'
+			'RedirectPage' => 'SiteTree'
 		);
 
 		/**
@@ -23,22 +35,21 @@ if(class_exists("Widget")) {
 		 * 
 		 * @var string
 		 */
-		private static $title = 'Welcome';
+		private static $title = 'Guide';
 
 		/**
 		 * Set CMS title
 		 * 
 		 * @var string
 		 */
-		private static $cmsTitle = 'Blog Welcome';
+		private static $cmsTitle = 'Guide';
 
 		/**
 		 * Set description
 		 * 
 		 * @var string
 		 */
-		private static $description = 'A welcome message';
-
+		private static $description = 'A call to action guide on sidebar';
 
 		/**
 		 * Get CMS Fields
@@ -49,13 +60,20 @@ if(class_exists("Widget")) {
 			$fields = parent::getCMSFields();
 
 			$fields->push(
+				TextField::create('SubTitle', 'Subtitle')
+			);
+
+			$fields->push(
 				HTMLEditorField::create('Text', 'Content')
 					->setRows(20)
 			);
 
 			$fields->push(
-				UploadField::create('FeaturedImage', 'Image')
-					->setFolderName('Blog/Welcome/Image')
+				TextField::create('ButtonText', 'Button text')
+			);
+
+			$fields->push(
+				TreeDropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree')
 			);
 
 			return $fields;
@@ -68,11 +86,13 @@ if(class_exists("Widget")) {
 	 * @author Julius <julius@greenbrainer.com>
 	 * @copyright Copyright (c) 2015, Julius 
 	 */
-	class BlogWelcomeWidget_Controller extends Widget_Controller {
+	class BlogGuideWidget_Controller extends Widget_Controller {
 
+		/**
+		 * Initialise the controller
+		 */
 		public function init() {
 			parent::init();
 		}
-
 	}
 }

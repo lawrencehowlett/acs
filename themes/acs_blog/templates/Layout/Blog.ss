@@ -68,17 +68,6 @@
 		<aside class="blog-sidebar right">
 			<% include BlogSideBar %>
 
-			<div class="widget guide">
-				<h3 class="widget-title">Secret guide</h3>
-				<div class="widget-inner">
-					<p class="lead">Discover the art of Online Marketing</p>
-					<div class="text">
-						How to write headlines that get results, spread the word about your business.
-						<a href="#"><button>Start here</button></a>
-					</div>
-				</div>
-			</div>
-
 			<% if $FeaturedBlogPosts %>
 				<div class="widget featured">
 					<h3 class="widget-title">Featured posts</h3>

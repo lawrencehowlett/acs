@@ -25,6 +25,13 @@ if(class_exists("Widget")) {
 		private static $cmsTitle = 'Blog Search';
 
 		/**
+		 * Set description
+		 * 
+		 * @var string
+		 */
+		private static $description = 'Search blog posts';		
+
+		/**
 		 * Get CMS Fields
 		 * 
 		 * @return FieldList
