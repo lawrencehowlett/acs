@@ -26,6 +26,7 @@ class AccreditationPartner extends DataObject {
 	 */
 	private static $has_one = array(
 		'RedirectPage' => 'SiteTree', 
+		'Page' => 'AccreditationPage', 
 		'FeaturedImage' => 'Image'
 	);
 
@@ -35,6 +36,20 @@ class AccreditationPartner extends DataObject {
 	 * @var string
 	 */
 	private static $default_sort = 'SortOrder';
+
+	/**
+	 * Set singular name
+	 * 
+	 * @var string
+	 */
+	private static $singular_name = 'Partner';
+
+	/**
+	 * Set plural name
+	 * 
+	 * @var string
+	 */
+	private static $plural_name = 'Partner';
 
 	/**
 	 * Get CMS fields

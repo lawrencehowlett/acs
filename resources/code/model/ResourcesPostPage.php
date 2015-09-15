@@ -42,6 +42,10 @@ class ResourcesPostPage extends BlogPost {
 
 		return $fields;
 	}
+
+	public function canShowBlockBuilder() {
+		return false;
+	}	
 }
 
 class ResourcesPostPage_Controller extends BlogPost_Controller {

@@ -23,11 +23,13 @@
 					</a>
 				</li>
 
-				<li class="content-listview<% if class == 'CMSPageBlockBuilderController' %> ui-tabs-active<% end_if %>">
-					<a href="$LinkPageBlockBuilder" class="cms-panel-link" title="Form_EditForm" data-href="$LinkPageBlockBuilder">
-						Block Builder
-					</a>
-				</li>
+				<% if $ShowBlockBuilder %>
+					<li class="content-listview<% if class == 'CMSPageBlockBuilderController' %> ui-tabs-active<% end_if %>">
+						<a href="$LinkPageBlockBuilder" class="cms-panel-link" title="Form_EditForm" data-href="$LinkPageBlockBuilder">
+							Block Builder
+						</a>
+					</li>
+				<% end_if %>
 			</ul>
 		</div>
 	</div>

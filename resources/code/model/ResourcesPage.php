@@ -27,6 +27,10 @@ class ResourcesPage extends Blog {
 		return $fields;
 	}
 
+	public function canShowBlockBuilder() {
+		return false;
+	}	
+	
 }
 
 class ResourcesPage_Controller extends Blog_Controller {

@@ -108,6 +108,11 @@ class CaseStudyPage extends BlogPost {
 
 		return $fields;
 	}
+
+	public function canShowBlockBuilder() {
+		return false;
+	}	
+	
 }
 
 /**
@@ -118,6 +123,9 @@ class CaseStudyPage extends BlogPost {
  */
 class CaseStudyPage_Controller extends BlogPost_Controller {
 
+	public function init() {
+		parent::init();
+	}
 }
 
 /**

@@ -88,9 +88,13 @@ class Page extends SiteTree {
 		return $fields;
 	}
 
+	public function canShowBlockBuilder() {
+		return true;
+	}
+
     public function ActionBoxes() {
         return $this->getManyManyComponents('ActionBoxes')->sort('SortColumn');
-    }	
+    }
 }
 
 /**
