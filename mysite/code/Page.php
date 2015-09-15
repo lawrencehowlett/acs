@@ -295,7 +295,7 @@ CSS
 	}
 
 	public function getAllResourcesPage() {
-		return ResourcesPage::get()->First()->Link();
+		return ResourcesPage::get()->First();
 	}
 
 	/**

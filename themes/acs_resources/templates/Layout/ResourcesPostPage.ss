@@ -23,49 +23,41 @@
 	</div>
 </section>
 
-<% if $Widgets %>
-	<% loop $Widgets %>
-		<section class="page-section $ExtraClass">
+<section class="page-section mt30">
 
-			<% if $ClassName == 'BlockWidgetResources' %>
-				<div class="inside">
-					<h2 class="section-title">$Title</h2>
+	<div class="inside">
+		<h2 class="section-title">Related Resources</h2>
 
-					<% if $AllResourcesPage %>
-						<p class="all">
-							<a href="$AllResourcesPage.Link" title="Go to $AllResourcesPage.Title">View all resources</a>
+		<p class="all">
+			<a href="$AllResourcesPage.Link" title="Go to $AllResourcesPage.Title">View all resources</a>
+		</p>
+	</div>
+	<div class="res-slider double-slider inside">
+		<a href="javascript:void(0);" class="slider-nav next">Next</a>
+		<a href="javascript:void(0);" class="slider-nav prev">Previous</a>
+		<div class="slider-wrapper">
+			<ul class="slider-items">
+				<% loop $RelatedResources %>
+					<li class="resource slider-item">
+						<img src="$FeaturedImage.CroppedImage(220, 300).Link" alt="$FeaturedImage.Title" class="resource-thumbnail">
+						<h3 class="resource-title">$Title.XML</h3>
+						<% if $Summary %>$Summary<% else %>$Excerpt<% end_if %>
+						
+						<% if $DocumentTypes %>
+							<p class="resource-category">
+								<% loop $DocumentTypes %>
+									<a href="javascript:void(0);">$Title</a>
+								<% end_loop %>
+							</p>
+						<% end_if %>
+
+						<p class="more">
+							<a href="$Link" title="Go to $Title.XML">More info</a>
 						</p>
-					<% end_if %>
-				</div>
-				<div class="res-slider double-slider inside">
-					<a href="javascript:void(0);" class="slider-nav next">Next</a>
-					<a href="javascript:void(0);" class="slider-nav prev">Previous</a>
-					<div class="slider-wrapper">
-						<ul class="slider-items">
-							<% loop $Resources %>
-								<li class="resource slider-item">
-									<img src="$RedirectPage.FeaturedImage.CroppedImage(220, 300).Link" alt="$RedirectPage.FeaturedImage.Title" class="resource-thumbnail">
-									<h3 class="resource-title">$RedirectPage.Title.XML</h3>
-									<% if $RedirectPage.Summary %>$RedirectPage.Summary<% else %>$RedirectPage.Excerpt<% end_if %>
-									
-									<% if $RedirectPage.DocumentTypes %>
-										<p class="resource-category">
-											<% loop $RedirectPage.DocumentTypes %>
-												<a href="javascript:void(0);">$Title</a>
-											<% end_loop %>
-										</p>
-									<% end_if %>
+					</li>
+				<% end_loop %>
+			</ul>
+		</div>
+	</div>
 
-									<p class="more">
-										<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML">More info</a>
-									</p>
-								</li>
-							<% end_loop %>
-						</ul>
-					</div>
-				</div>			
-			<% end_if %>
-
-		</section>
-	<% end_loop %>
-<% end_if %>
+</section>
