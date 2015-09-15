@@ -8,15 +8,6 @@
 class Blog_Extension extends DataExtension {
 
 	/**
-	 * Set has one
-	 * 
-	 * @var array
-	 */
-	private static $has_one = array(
-		'FeaturedAuthor' => 'Member'
-	);
-
-	/**
 	 * Set man many
 	 * 
 	 * @var array
@@ -39,29 +30,8 @@ class Blog_Extension extends DataExtension {
 	 * @return FieldList
 	 */
 	public function updateCMSFields(FieldList $fields) {
-		$fields = $this->getFeaturedAuthorField($fields);
 		$fields = $this->getAuthorsListField($fields);
 		$fields = $this->getFeaturedPostsField($fields);
-	}
-
-	/**
-	 * Get Featured author
-	 * 
-	 * @param  FieldList &$fields
-	 * @return FieldList
-	 */
-	private function getFeaturedAuthorField(&$fields) {
-		$group = Group::get()->filter(array('Code' => 'content-authors'))->First();
-		$fields->addFieldToTab(
-			'Root.Authors', 
-			DropdownField::create(
-				'FeaturedAuthorID', 
-				'Featured author', 
-				$group->Members()->map('ID', 'FullName')
-			)->setEmptyString('select an author')
-		);
-
-		return $fields;
 	}
 
 	/**

@@ -68,20 +68,6 @@
 		<aside class="blog-sidebar right">
 			<% include BlogSideBar %>
 
-			<% if $FeaturedAuthor %>
-				<div class="widget welcome">
-					<h3 class="widget-title">Welcome</h3>
-					<div class="widget-inner">
-						<% if $FeaturedAuthor %>
-							<img src="$FeaturedAuthor.BlogProfileImage.Link" alt="$FeaturedAuthor.BlogProfileImage.Title">
-						<% end_if %>
-						<div class="text">
-							$FeaturedAuthor.BlogProfileSummary
-						</div>
-					</div>
-				</div>
-			<% end_if %>
-
 			<div class="widget guide">
 				<h3 class="widget-title">Secret guide</h3>
 				<div class="widget-inner">

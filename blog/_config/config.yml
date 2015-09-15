@@ -4,7 +4,7 @@ Name: blogconfig
 
 Page:
   extensions:
-    - WidgetPageExtension
+    - AdvancedWidgetPageExtension
 Member:
   extensions:
     - BlogMemberExtension
