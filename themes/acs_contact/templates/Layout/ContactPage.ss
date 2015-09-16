@@ -72,7 +72,7 @@
 				{"text": "$Title", "lat": $GoogleMapLat, "lng": $GoogleMapLong}<% if not $Last %>,<% end_if %>
 			<% end_if %>
 		<% end_loop %>
-		]' data-centerlat="52.227627" data-centerlng="-0.870941" data-marker="$ThemeDir/img/marker.png"></div>
+		]' data-centerlat="$RegionalOffices.First.GoogleMapLat" data-centerlng="$RegionalOffices.First.GoogleMapLong" data-marker="$ThemeDir/img/marker.png"></div>
 	</div>
 	
 </section>
