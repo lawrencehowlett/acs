@@ -108,11 +108,6 @@ class CaseStudyPage extends BlogPost {
 
 		return $fields;
 	}
-
-	public function canShowBlockBuilder() {
-		return false;
-	}	
-	
 }
 
 /**
