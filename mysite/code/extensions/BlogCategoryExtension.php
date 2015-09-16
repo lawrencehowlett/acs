@@ -11,13 +11,13 @@ class BlogCategory_Extension extends DataExtension {
 
 	public function updateCMSFields(FieldList $fields) {
 		$fields->push(
-			HTMLEditorField::create('SubTitle', 'SubTitle')
+			HTMLEditorField::create('SubTitle', 'Subtitle')
 				->setRows(10)
 		);
 
 		$fields->push(
 			UploadField::create('BannerImage', 'Banner image')
-				->setFolderName('Blog/Categories/BannerImages')
+				->setFolderName('Banners')
 		);
 
 		return $fields;

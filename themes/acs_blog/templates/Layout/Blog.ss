@@ -1,7 +1,21 @@
-<section class="page-section page-header" style='<% if $Banner %>background-image: url("$Banner.Link")<% end_if %>'>
+<section class="page-section page-header" style='
+	<% if $CurrentCategory %>
+		<% if $CurrentCategory.BannerImage %>
+			background-image: url("$CurrentCategory.BannerImage.Link")
+		<% end_if %>
+	<% else %>
+		<% if $Banner %>
+			background-image: url("$Banner.Link")
+		<% end_if %>
+	<% end_if %>
+'>
 	<div class="inside">
 		<h1 class="page-title"><% if $CurrentCategory %>$CurrentCategory.Title<% else %>$Title<% end_if %></h1>
-		$Description
+		<% if $CurrentCategory %>
+			$CurrentCategory.SubTitle
+		<% else %>
+			$Description
+		<% end_if %>
 	</div>
 </section>
 
