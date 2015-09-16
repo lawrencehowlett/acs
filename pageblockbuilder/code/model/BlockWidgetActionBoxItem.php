@@ -5,6 +5,7 @@ class BlockWidgetActionBoxItem extends DataObject {
 		'Title' => 'Text', 
 		'Content' => 'HTMLText', 
 		'ButtonText' => 'Varchar', 
+		'StartLiveChat' => 'Boolean', 
 		'SortOrder' => 'Int'
 	);	
 
@@ -34,9 +35,14 @@ class BlockWidgetActionBoxItem extends DataObject {
 		);
 
 		$fields->insertAfter(
+			$fields->dataFieldByName('StartLiveChat'), 
+			'RedirectPageID'
+		);		
+		
+		$fields->insertAfter(
 			UploadField::create('Image', 'Featured Image')
 				->setFolderName('ActionBoxes/Images'), 
-			'RedirectPageID'
+			'StartLiveChat'
 		);
 
 		return $fields;

@@ -14,8 +14,9 @@ class ActionBox extends DataObject {
 	private static $db = array(
 		'Title' => 'Varchar',
 		'Content' => 'HTMLText', 
-		'ButtonText' => 'Varchar',
-		'SortOrder' => 'Int'
+		'ButtonText' => 'Varchar', 
+		'SortOrder' => 'Int', 
+		'StartLiveChat' => 'Boolean', 
 	);
 
 	/**
@@ -78,6 +79,11 @@ class ActionBox extends DataObject {
 		$fields->replaceField(
 			'RedirectPageID', 
 			TreeDropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree')
+		);
+
+		$fields->insertAfter(
+			$fields->dataFieldByName('StartLiveChat'), 
+			'RedirectPageID'
 		);
 
 		return $fields;

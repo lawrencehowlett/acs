@@ -150,6 +150,7 @@ CSS
 
 		Requirements::javascript('https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false');
 		Requirements::javascript('themes/acs/js/min.js');
+		Requirements::javascript('themes/acs/js/livechat.js');
 	}
 
 	/**

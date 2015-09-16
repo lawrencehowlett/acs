@@ -6,7 +6,7 @@
 				<h3 class="footer-teaser-title">$Title</h3>
 				$Content
 				<p class="more">
-					<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML page">$ButtonText</a>
+					<a href="<% if $StartLiveChat %>javascript:void(0);<% else %>$RedirectPage.Link<% end_if %>" class="<% if $StartLiveChat %>livechat<% end_if %>" title="Go to $RedirectPage.Title.XML page">$ButtonText</a>
 				</p>
 			</article>
 		<% end_loop %>

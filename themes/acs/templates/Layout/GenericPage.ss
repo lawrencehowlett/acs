@@ -18,6 +18,7 @@
 						<% if $Title %><h2 class="section-title">$Title</h2><% end_if %>
 						<% if $Tagline %><p class="lead">$Tagline</p><% end_if %>
 						$Content
+
 						<% if $RedirectPage %>
 							<p class="more">
 								<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">$ButtonText</a>
@@ -108,6 +109,7 @@
 						</div>
 						<div class="media-description <% if $Position == 'Right' %>media-left<% end_if %>">
 							$Content
+
 							<p class="more">
 								<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">$ButtonText</a>
 							</p>							
@@ -231,12 +233,12 @@
 						<% loop $Items %>
 							<article class="cta-box box$Pos col col3 clickable">
 								<p class="cta-box-img">
-									<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">
+									<a href="<% if $StartLiveChat %>javascript:void(0);<% else %>$RedirectPage.Link<% end_if %>" <% if $StartLiveChat %>class="livechat"<% end_if %> title="Go to $RedirectPage.Title">
 										<img src="$Image.Link" alt="$Image.Title">
 									</a>
 								</p>
 								<h3 class="cta-box-title">
-									<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">$Title</a>
+									<a href="<% if $StartLiveChat %>javascript:void(0);<% else %>$RedirectPage.Link<% end_if %>" <% if $StartLiveChat %>class="livechat"<% end_if %> title="Go to $RedirectPage.Title">$Title</a>
 								</h3>
 								$Content
 							</article>
