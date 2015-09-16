@@ -22,7 +22,9 @@
 					</li>
 				<% end_loop %>
 			</ul>
-			<div class="addthis_native_toolbox"></div>			
+			<div class="social-share">
+				<div class="addthis_native_toolbox"></div>
+			</div>
 			<!--<div class="social-share">
 				<img src="$ThemeDir/img/temp/social/fb1.png" alt="">
 				<img src="$ThemeDir/img/temp/social/fb2.png" alt="">
