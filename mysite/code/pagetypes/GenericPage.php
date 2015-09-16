@@ -32,6 +32,9 @@ class GenericPage extends UserDefinedForm {
 		return $fields;
 	}
 
+	/**
+	 * Hook to on before write to db
+	 */
 	public function onBeforeWrite() {
 		parent::onBeforeWrite();
 
