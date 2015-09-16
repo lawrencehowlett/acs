@@ -7,6 +7,8 @@
 	.media {padding-top: 60px;
 		&:last-child {margin-bottom: 60px;}
 		.media-content {float: left; width: 50%;}
+		.media-right {float:right;}
+		.media-left {float:left; padding-right: 50px; padding-left: 0 !important;}
 		.media-description {float: right; width: 50%; padding-left: 50px; box-sizing: border-box;
 			& :first-child {margin-top: 0;}
 		}

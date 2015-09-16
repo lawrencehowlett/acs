@@ -15,6 +15,7 @@ class BlockWidgetImage extends BlockWidget {
 	private static $db = array(
 		'Title' => 'Text', 
 		'Tagline' => 'Text', 
+		'Position' => "Enum(array('Left', 'Right', 'Left'))",
 		'Content' => 'HTMLText',
 		'ButtonText' => 'Varchar'
 	);
@@ -54,7 +55,7 @@ class BlockWidgetImage extends BlockWidget {
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('ExtraClass')
+			array('ExtraClass', 'Tagline', 'BackgroundImage')
 		);
 
 		$fields->dataFieldByName('Content')
@@ -66,10 +67,10 @@ class BlockWidgetImage extends BlockWidget {
 
 		$fields->dataFieldByName('Image')
 			->setTitle('Featured Image')
-			->setFolderName('BlockWidgetImage' .$this->ID. '/Images');
+			->setFolderName('BlockWidgetImage/' .$this->ID. '/Images');
 
-		$fields->insertAfter($fields->dataFieldByName('Tagline'), 'Title');
-		$fields->insertAfter($fields->dataFieldByName('Content'), 'Tagline');
+		$fields->insertAfter($fields->dataFieldByName('Position')->setTitle('Image position'), 'Title');
+		$fields->insertAfter($fields->dataFieldByName('Content'), 'Position');
 		$fields->insertAfter($fields->dataFieldByName('Image'), 'Content');
 		$fields->insertBefore($fields->dataFieldByName('ButtonText'), 'Image');
 		$fields->insertBefore($fields->dataFieldByName('RedirectPageID'), 'Image');	
@@ -83,10 +84,6 @@ class BlockWidgetImage extends BlockWidget {
 	 * @return string
 	 */
 	public function getExtraClass() {
-		if (!is_dir('../' .$this->BackgroundImage()->Filename) || $this->Tagline) {
-			return 'video-section';
-		}
-
 		return 'shade mt60 mb30';
 	}
 

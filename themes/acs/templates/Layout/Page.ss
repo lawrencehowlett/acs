@@ -14,25 +14,37 @@
 
 			<% if $ClassName == 'BlockWidgetText' %>
 				<article class="inside cf">
-					<header class="text-section-header">
-
-						<% if $Title %>
-							<h2 class="section-title">$Title</h2>
-						<% end_if %>
-						
-						<% if $Tagline %>
-							<p class="lead">$Tagline</p>
-						<% end_if %>
-
-					</header>
-					<div class="text-section-content">
+					<% if $Layout == 'Standard' %>
+						<% if $Title %><h2 class="section-title">$Title</h2><% end_if %>
+						<% if $Tagline %><p class="lead">$Tagline</p><% end_if %>
 						$Content
 						<% if $RedirectPage %>
 							<p class="more">
 								<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">$ButtonText</a>
 							</p>
 						<% end_if %>
-					</div>
+
+					<% else %>
+						<header class="text-section-header">
+
+							<% if $Title %>
+								<h2 class="section-title">$Title</h2>
+							<% end_if %>
+							
+							<% if $Tagline %>
+								<p class="lead">$Tagline</p>
+							<% end_if %>
+
+						</header>
+						<div class="text-section-content">
+							$Content
+							<% if $RedirectPage %>
+								<p class="more">
+									<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">$ButtonText</a>
+								</p>
+							<% end_if %>
+						</div>
+					<% end_if %>
 				</article>
 			<% end_if %>
 
@@ -84,6 +96,23 @@
 							$Content
 						</div>
 					</article>
+				</div>
+			<% end_if %>			
+
+			<% if $ClassName == 'BlockWidgetImage' %>	
+				<div class="inside">
+					<div class="media cf">
+						<h2 class="section-title">$Title</h2>
+						<div class="media-content <% if $Position == 'Right' %>media-right<% end_if %>">
+							<img src="$Image.CroppedImage(586, 392).Link" alt="$Image.Title">
+						</div>
+						<div class="media-description <% if $Position == 'Right' %>media-left<% end_if %>">
+							$Content
+							<p class="more">
+								<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">$ButtonText</a>
+							</p>							
+						</div>
+					</div>
 				</div>
 			<% end_if %>			
 

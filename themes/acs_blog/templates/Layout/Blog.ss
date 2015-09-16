@@ -21,7 +21,7 @@
 
 <section class="page-section text-content blog posts">
 	<div class="inside cf">
-		<section class="blog-main left">
+		<section class="blog-main right">
 
 			<% if $PaginatedList.Exists %>
 				<% loop $PaginatedList %>
@@ -79,7 +79,7 @@
 
 		</section>
 
-		<aside class="blog-sidebar right">
+		<aside class="blog-sidebar left">
 			<% include BlogSideBar %>
 
 			<% if $FeaturedBlogPosts %>

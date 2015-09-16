@@ -13,7 +13,8 @@ class BlockWidgetText extends BlockWidget {
 	 * @var array
 	 */
 	private static $db = array(
-		'Tagline' => 'Text',
+		'Tagline' => 'Text', 
+		'Layout' => "Enum(array('Standard', 'Two Column'), 'Standard')", 
 		'Content' => 'HTMLText', 
 		'ButtonText' => 'Varchar'
 	);
