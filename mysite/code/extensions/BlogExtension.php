@@ -69,6 +69,17 @@ class Blog_Extension extends DataExtension {
 
 		return $fields;
 	}
+
+	public function updateGetBlogPosts(&$blogPosts) {
+		$searchKeyword = Controller::curr()->request->getVar('Search');
+		if ($searchKeyword) {
+			$blogPosts = $blogPosts->filterAny(array(
+				'Title:PartialMatch' => $searchKeyword, 
+				'Content:PartialMatch' => $searchKeyword, 
+				'Summary:PartialMatch' => $searchKeyword
+			));
+		}
+	}
 }
 /**
  * Extension to Blog post
