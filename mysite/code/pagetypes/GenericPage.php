@@ -31,6 +31,14 @@ class GenericPage extends UserDefinedForm {
 
 		return $fields;
 	}
+
+	public function onBeforeWrite() {
+		parent::onBeforeWrite();
+
+		if ($this->Content == '') {
+			$this->Content = "$UserDefinedForm";
+		}
+	}
 }
 
 /**
@@ -59,8 +67,11 @@ class GenericPage_Controller extends UserDefinedForm_Controller {
 		Requirements::customCSS(<<<CSS
 			form.userform {width: 50%;}
 			form.userform fieldset{border: none;}
+			form.userform input:focus:invalid {border: 1px solid #b03535; box-shadow: 0 0 5px #d45252;}
 CSS
 		);
+
+		Requirements::block(FRAMEWORK_DIR .'/thirdparty/jquery/jquery.js');
 	}
 
 	/**
@@ -73,17 +84,19 @@ CSS
 		$form->addExtraClass('col col2 contact-form');
 		$form->setTemplate('BlockWidgetForm');
 
-		$fields = $form->Fields();
-		foreach ($fields as $field) {
-			echo $field . "<br>";
-		}
-		exit();
-
 		$actions = $form->Actions();
 		foreach ($actions as $action) {
 			$action->useButtonTag = true;
 		}
 
 		return $form;
+	}
+
+	public function IsFinished() {
+		if ($this->request->param('Action') == 'finished') {
+			return true;
+		}
+
+		return false;
 	}
 }

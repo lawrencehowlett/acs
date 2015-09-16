@@ -1,6 +1,6 @@
 <section class="page-section page-header" style='<% if $Banner %>background-image: url("$Banner.Link")<% end_if %>'>
 	<div class="inside">
-		<h1 class="page-title">$Title</h1>
+		<h1 class="page-title"><% if $CurrentCategory %>$CurrentCategory.Title<% else %>$Title<% end_if %></h1>
 		$Description
 	</div>
 </section>

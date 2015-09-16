@@ -47,3 +47,6 @@ Image:
 BlockWidget:
   extensions:
     - BlockWidget_Extension
+
+UserDefinedForm:
+  email_template_directory: themes/acs/templates/email

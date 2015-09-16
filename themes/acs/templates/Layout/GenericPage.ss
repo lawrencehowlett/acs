@@ -580,11 +580,15 @@
 			<% if $ClassName == 'BlockWidgetForm' %>
 				<div class="inside">
 					<div class="cols separated">
-						<div class="col col2 contact-content">
-							<h2>$Title</h2>
-							$Content
-						</div>
-						$Top.Content
+						<% if $Top.IsFinished %>
+							$Top.Content
+						<% else %>
+							<div class="col col2 contact-content">
+								<h2>$Title</h2>
+								$Content
+							</div>
+							$Top.Content
+						<% end_if %>
 					</div>
 				</div>
 				<% end_if %>

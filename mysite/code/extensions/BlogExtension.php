@@ -77,5 +77,4 @@ class Blog_Extension extends DataExtension {
  * @copyright Copyright (c) 2015, Julius
  */
 class Blog_Controller_Extension extends Extension {
-
 }
