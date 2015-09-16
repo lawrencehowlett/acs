@@ -3,8 +3,9 @@
 		<p class="post-date">$PublishDate.Full</p>
 		$Description
 		<ul class="post-meta">
-			<% if $Authors %><li>Article by <a href="#">$Authors.First.FirstName $Authors.First.Surname</a></li><% end_if %>
-			<% if $Categories %><li>Posted in <% loop $Categories %><a href="$Link">$Title</a> <% end_loop %></li><% end_if %>
+			<% if $Authors %><li>Article by <a href="javascript:void(0);">$Authors.First.FirstName $Authors.First.Surname</a></li><% end_if %>
+			<% if $Categories %><li>Posted in <% loop $Categories %><a href="$Link">$Title</a><% if not $Last %>&nbsp;&nbsp;&nbsp;<% end_if %><% end_loop %></li><% end_if %>
+			<% if $Tags %><li>Tags <% loop $Tags %><a href="$Link">$Title</a><% if not $Last %>&nbsp;&nbsp;&nbsp;<% end_if %><% end_loop %></li><% end_if %>
 		</ul>
 	</div>
 </section>
