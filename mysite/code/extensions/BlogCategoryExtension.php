@@ -2,12 +2,15 @@
 class BlogCategory_Extension extends DataExtension {
 
 	private static $db = array(
-		'SubTitle' => 'HTMLText'
+		'SubTitle' => 'HTMLText', 
+		'SortOrder' => 'Int'
 	);
 
 	private static $has_one = array(
 		'BannerImage' => 'Image'
 	);
+
+	private static $default_sort = 'SortOrder';
 
 	public function updateCMSFields(FieldList $fields) {
 		$fields->push(

@@ -32,6 +32,10 @@ class Blog_Extension extends DataExtension {
 	public function updateCMSFields(FieldList $fields) {
 		$fields = $this->getAuthorsListField($fields);
 		$fields = $this->getFeaturedPostsField($fields);
+
+		$fields->dataFieldByName('Categories')
+			->getConfig()
+			->addComponent(new GridFieldSortableRows('SortOrder'));
 	}
 
 	/**
