@@ -5,14 +5,14 @@
  * @author Julius <julius@greenbrainer.com>
  * @copyright Copyright (c) 2015, Julius
  */
-class ManagedServicesPage extends Page {
+class ServicesPage extends Page {
 
 	/**
 	 * Set icon
 	 * 
 	 * @var string
 	 */
-	private static $icon = 'mysite/images/network-icon.png';
+	private static $icon = 'mysite/images/tools-icon.png';
 
 	/**
 	 * Get CMS fields
@@ -34,7 +34,7 @@ class ManagedServicesPage extends Page {
  * @author Julius <julius@greenbrainer.com>
  * @copyright Copyright (c) 2015, Julius
  */
-class ManagedServicesPage_Controller extends Page_Controller {
+class ServicesPage_Controller extends Page_Controller {
 
 	/**
 	 * Initialise the controller
