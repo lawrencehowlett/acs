@@ -622,7 +622,27 @@
 						<% end_if %>
 					</div>
 				</div>
+			<% end_if %>
+
+			<% if $ClassName == 'BlockWidgetScrollingNumbers' %>
+				<% if $Items %>
+				<div class="inside">
+					<div class="cols numbers">
+						<% loop $Items %>
+							<div class="number-box col col4">
+								<p class="number-img">
+									<% if $Image %>
+										<img src="$Image.Link" width="57" height="77" alt="$Image.Title">
+									<% end_if %>
+								</p>
+								<p class="number" data-value="$Value" data-decimal="$Decimal" data-suffix=" $Suffix">$Value</p>
+								$Content
+							</div>
+						<% end_loop %>
+					</div>
+				</div>
 				<% end_if %>
+			<% end_if %>			
 
 		</section>	
 

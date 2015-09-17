@@ -1,6 +1,7 @@
 <?php
 class BlockWidget_Extension extends DataExtension {
 	public function updateListComponents(&$components) {
+		$components['BlockWidgetScrollingNumbers'] = 'Scrolling numbers widget';
 		$components['BlockWidgetForm'] = 'Form widget';
 		$components['BlockWidgetTeam'] = 'Team widget';
 		$components['BlockWidgetDoubleSlider'] = 'Double slider widget';
