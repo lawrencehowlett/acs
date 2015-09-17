@@ -625,7 +625,36 @@
 					</div>
 				</div>
 				<% end_if %>
-			<% end_if %>	
+			<% end_if %>
+
+			<% if $ClassName == 'BlockWidgetPriceTable' %>
+				<div class="inside">
+					<div class="cols separated tight pricing">
+						<% loop $PricingTables %>
+							<div class="pricing-plan col col3">
+								<img src="$FeaturedImage.Link" alt="$FeaturedImage.Title">
+								<h3 class="plan-title">$Title</h3>
+								<p class="plan-price">$Price</p>
+								<p class="plan-descr">$Description</p>
+								
+								<% if $Features %>
+									<ul class="plan-features">
+										<% loop $Features %>
+											<li>$Title</li>
+										<% end_loop %>
+									</ul>
+								<% end_if %>
+
+								<% if $RedirectPage %>
+									<p class="plan-buy">
+										<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML">$ButtonText</a>
+									</p>
+								<% end_if %>
+							</div>
+						<% end_loop %>
+					</div>
+				</div>
+			<% end_if %>		
 
 		</section>	
 

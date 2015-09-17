@@ -17,9 +17,9 @@ class BlockWidgetScrollingNumbersItem extends DataObject {
 
 	private static $default_sort = 'SortOrder';
 
-	private static $singular_name = 'Scolling number';
+	private static $singular_name = 'Scrolling number';
 
-	private static $plural_name = 'Scolling numbers';
+	private static $plural_name = 'Scrolling numbers';
 
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
