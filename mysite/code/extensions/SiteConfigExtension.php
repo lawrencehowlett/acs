@@ -46,6 +46,26 @@ class SiteConfig_Extension extends DataExtension {
 	);
 
 	/**
+	 * Set many many
+	 * 
+	 * @var array
+	 */
+	private static $many_many = array(
+		'ActionBoxes' => 'ActionBox'
+	);
+
+	/**
+	 * Set many many extra fields
+	 * 
+	 * @var array
+	 */
+    public static $many_many_extraFields=array(
+        'ActionBoxes' => array(
+            'SortColumn' => 'Int'
+        )
+    );	
+
+	/**
 	 * Update CMS Fields
 	 * 
 	 * @param  FieldList $fields
@@ -75,6 +95,7 @@ class SiteConfig_Extension extends DataExtension {
 		$fields = $this->getSocialFields($fields);
 		$fields = $this->getFooterMenuField($fields);
 		$fields = $this->getActionBoxFields($fields);
+		$fields = $this->getTeasersFields($fields);
 	}
 
 	/**
@@ -150,6 +171,37 @@ class SiteConfig_Extension extends DataExtension {
 
 		return $fields;
 	}
+
+	/**
+	 * Get teasers field
+	 * 
+	 * @param  FieldList &$fields
+	 * @return FieldList
+	 */
+	private function getTeasersFields(&$fields) {
+		$fields->addFieldToTab(
+			'Root.Teasers', 
+			GridField::create(
+				'ActionBoxes', 
+				'Teasers', 
+				$this->ActionBoxes(), 
+				GridFieldConfig_RelationEditor::create()
+					->addComponent(new GridFieldSortableRows('SortColumn'))
+			)
+		);
+
+		return $fields;
+	}
+
+	/**
+	 * GEt action boxes
+	 *
+	 * @return  string
+	 */
+    public function ActionBoxes() {
+        return $this->owner->getManyManyComponents('ActionBoxes')->sort('SortColumn');
+    }
+
 
 	/**
 	 * Get full contact number

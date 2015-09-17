@@ -13,7 +13,8 @@ class Page extends SiteTree {
 	 * @var array
 	 */
 	private static $db = array(
-		'Description' => 'HTMLText'
+		'Description' => 'HTMLText', 
+		'UseGlobalActionBoxes' => 'Boolean'
 	);
 
 	/**
@@ -72,6 +73,11 @@ class Page extends SiteTree {
 				)
 			),
 			'Content'
+		);
+
+		$fields->addFieldToTab(
+			'Root.Teasers', 
+			CheckboxField::create('UseGlobalActionBoxes', 'Use global teasers? (Global teasers are managed under Settings > Teasers tab)')
 		);
 
 		$fields->addFieldToTab(
@@ -314,5 +320,18 @@ CSS
 		}
 
 		return false;
-	}	
+	}
+
+	/**
+	 * Get teasers 
+	 * 
+	 * @return DataList
+	 */
+	public function getTeasers() {
+		if ($this->UseGlobalActionBoxes) {
+			return SiteConfig::current_site_config()->ActionBoxes()->sort('SortColumn');
+		}
+
+		return $this->ActionBoxes();
+	}
 }

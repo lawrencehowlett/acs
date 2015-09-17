@@ -35,7 +35,8 @@ class ActionBox extends DataObject {
 	 * @var array
 	 */
 	private static $belongs_many_many = array(
-		'Page' => 'Page'
+		'Page' => 'Page', 
+		'SiteConfig' => 'SiteConfig'
 	);
 
 	/**
@@ -67,6 +68,7 @@ class ActionBox extends DataObject {
 		$fields = parent::getCMSFields();
 
 		$fields->removeByName('Page');
+		$fields->removeByName('SiteConfig');
 
 		$fields->removeFieldsFromTab('Root.Main', array('SortOrder', 'PageID'));
 

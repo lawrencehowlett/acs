@@ -1,7 +1,7 @@
 <footer class="footer">
-	<% if $ActionBoxes %>
+	<% if $Teasers %>
 	<div class="inside cols teasers">
-		<% loop $ActionBoxes %>
+		<% loop $Teasers %>
 			<article class="col col3 footer-teaser" style="background-image: url('$Background.Link');">
 				<h3 class="footer-teaser-title">$Title</h3>
 				$Content
