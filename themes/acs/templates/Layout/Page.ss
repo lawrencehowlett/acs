@@ -248,26 +248,26 @@
 
 			<% if $ClassName == 'BlockWidgetTwoColumnActionBox' %>
 				<div class="inside">
-					<h2 class="section-title">$Title</h2>
 					<div class="cols item-boxes">
 						<% loop $TwoColumnActionBoxItems %>
 							<article class="item-box col col2">
-								<div class="item-img">
-									<img src="$Image.Link" alt="$Image.Title">
-								</div>
+								<% if $Image %>
+									<div class="item-img">
+										<img src="$Image.Link" alt="$Image.Title">
+									</div>
+								<% end_if %>
 								<h3 class="item-title">$Title</h3>
 								$Content
-
 								<% if $RedirectPage %>
 									<p class="more">
-										<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">$ButtonText</a>
+										<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">More info</a>
 									</p>
 								<% end_if %>
 							</article>
 						<% end_loop %>
 					</div>
 				</div>
-			<% end_if %>			
+			<% end_if %>
 
 			<% if $ClassName == 'BlockWidgetSpeakToSpecialist' %>
 				<% if $ActionBoxRedirectPageID %>

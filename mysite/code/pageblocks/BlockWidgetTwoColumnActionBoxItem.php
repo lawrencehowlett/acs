@@ -21,7 +21,7 @@ class BlockWidgetTwoColumnActionBoxItem extends BlockWidgetActionBoxItem {
 	 * 
 	 * @var string
 	 */
-	private static $plural_name = 'Action boxe';
+	private static $plural_name = 'Action boxes';
 
 	/**
 	 * Get CMS Fields
@@ -36,13 +36,11 @@ class BlockWidgetTwoColumnActionBoxItem extends BlockWidgetActionBoxItem {
 			array('Image', 'TwoColumnActionBoxParentID')
 		);
 
-		if ($this->ID) {
-			$fields->addFieldToTab(
-				'Root.Main', 
-				UploadField::create('Image', 'Icon')
-					->setFolderName('BlockWidgetTwoColumnActionBox/' .$this->TwoColumnActionBoxParent()->ID. '/Images')
-			);
-		}
+		$fields->addFieldToTab(
+			'Root.Main', 
+			UploadField::create('Image', 'Icon')
+				->setFolderName('BlockWidgetTwoColumnActionBox/Images')
+		);
 
 		return $fields;
 	}
