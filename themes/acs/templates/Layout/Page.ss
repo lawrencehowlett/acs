@@ -117,7 +117,7 @@
 				</div>
 			<% end_if %>			
 
-			<% if $ClassName == 'BlockWidgetVideo' || $ClassName == 'BlockWidgetImage' %>
+			<% if $ClassName == 'BlockWidgetVideo' %>
 				<% if $BackgroundImage || $Tagline %>
 					<div class="inside cf">
 						<div class="video-text">
