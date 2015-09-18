@@ -69,7 +69,7 @@ class BlockWidgetSliderItem extends DataObject {
 		$fields->addFieldToTab(
 			'Root.Main', 
 			UploadField::create('Image', 'Image')
-				->setFolderName('BlockWidgetSlider/' .$this->Parent()->ID. '/SliderImages/')
+				->setFolderName('BlockWidgetSlider/SliderImages/')
 		);
 
 		$fields->replaceField(
