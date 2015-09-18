@@ -317,9 +317,9 @@
 				<div class="inside">
 					<h2 class="section-title">$Title</h2>
 
-					<% if $AllResourcesPage %>
+					<% if $Top.AllResourcesPage %>
 						<p class="all">
-							<a href="$AllResourcesPage.Link" title="Go to $AllResourcesPage.Title">View all resources</a>
+							<a href="$Top.AllResourcesPage.Link" title="Go to $Top.AllResourcesPage.Title">View all resources</a>
 						</p>
 					<% end_if %>
 				</div>
@@ -330,21 +330,21 @@
 						<ul class="slider-items">
 							<% loop $Resources %>
 								<li class="resource slider-item">
-									<img src="$RedirectPage.FeaturedImage.CroppedImage(220, 300).Link" alt="$RedirectPage.FeaturedImage.Title" class="resource-thumbnail">
-									<h3 class="resource-title">$RedirectPage.Title.XML</h3>
-									<% if $RedirectPage.Summary %>$RedirectPage.Summary<% else %>$RedirectPage.Excerpt<% end_if %>
+									<img src="$FeaturedImage.CroppedImage(220, 300).Link" alt="$FeaturedImage.Title" class="resource-thumbnail">
+									<h3 class="resource-title">$Title</h3>
+									$Content
 									
-									<% if $RedirectPage.DocumentTypes %>
+									<% if $DocumentType %>
 										<p class="resource-category">
-											<% loop $RedirectPage.DocumentTypes %>
-												<a href="javascript:void(0);">$Title</a>
-											<% end_loop %>
+											<a href="javascript:void(0);">$DocumentType.Title</a>
 										</p>
 									<% end_if %>
 
-									<p class="more">
-										<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML">More info</a>
-									</p>
+									<% if $RedirectPage %>
+										<p class="more">
+											<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML">More info</a>
+										</p>
+									<% end_if %>
 								</li>
 							<% end_loop %>
 						</ul>

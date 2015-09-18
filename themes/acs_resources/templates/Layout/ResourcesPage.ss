@@ -12,7 +12,7 @@
 				<li class="tab">
 					<a href="javascript:void(0);" class="filter active" data-criteria="">All</a>
 				</li>
-				<% loop $Categories %>
+				<% loop $ResourcesCategories %>
 					<li class="tab">
 						<a href="javascript:void(0);" class="filter" data-criteria="$CodeIdentifier">$Title</a>
 					</li>
@@ -20,40 +20,44 @@
 			</ul>
 			<form class="content-search col col2" method="get" action="">
 				<span class="field select">
-					<span class="select-val">Filter by document type</span>
-					<select name="doc-type">
+					<span class="select-val"><% if $CurrentDocumentType %>$CurrentDocumentType.Title<% else %>Filter by document type<% end_if %></span>
+					<select name="DocumentType">
 						<option value="0">All</option>
-						<% loop $DocumentTypes %>
-							<option value="$ID">$Title</option>
+						<% loop $ResourcesDocumentTypes %>
+							<option value="$ID" <% if $Top.ParamDocumentType == $ID %>selected<% end_if %>>$Title</option>
 						<% end_loop %>
 					</select>
 				</span>
 				<label class="field searchbox">
-					<input type="text" name="phrase" placeholder="Search..."> <button type="submit" name="search" value="1">Search</button></span>
+					<input type="text" name="Keyword" placeholder="Search..." <% if $ParamKeyword %>value="$ParamKeyword"<% end_if %>> 
+					<button type="submit" name="search" value="1">Search</button>
 				</label>
 			</form>
 		</div>
 
 		<ul class="res-list cols" id="resourceList">
-			<% loop $PaginatedList %>
-				<li class="resource col col2 <% if $Categories %><% loop $Categories %> $CodeIdentifier<% end_loop %><% end_if %>">
+			<% loop $Resources %>
+				<li class="resource col col2 $Category.CodeIdentifier">
 					<img src="$FeaturedImage.CroppedImage(220, 300).Link" alt="$FeaturedImage.Title" class="resource-thumbnail">
 
-					<h3 class="resource-title">$Title.XML</h3>
+					<h3 class="resource-title">$Title</h3>
 
-					<% if $Summary %>$Summary<% else %>$Excerpt<% end_if %>
+					$Content
 
-					<% if $DocumentTypes %>
+					<% if $DocumentType %>
 					<p class="resource-category">
-						<% loop $DocumentTypes %><a href="javascript:void(0);">$Title</a><% end_loop %>
+						<a href="javascript:void(0);">$DocumentType.Title</a>
 					</p>
 					<% end_if %>
-					<p class="more">
-						<a href="$Link" title="Go to $Title.XML page">More info</a>
-					</p>
+
+					<% if $RedirectPage %>
+						<p class="more">
+							<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML page">More info</a>
+						</p>
+					<% end_if %>
 				</li>
 			<% end_loop %>
 		</ul>
-		<a href="ajax/resources.json" class="load-more" data-target="resourceList">Load more resources</a>
+		<!--<a href="{$Link}LoadMore" class="load-more" data-target="resourceList">Load more resources</a>-->
 	</div>
 </section>

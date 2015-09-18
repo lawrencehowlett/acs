@@ -49,9 +49,11 @@ class BlockWidgetPriceTableItem extends DataObject {
 			TreeDropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree')
 		);
 
-		$fields->dataFieldByName('Features')
-			->getConfig()
-			->addComponent(new GridFieldSortableRows('SortOrder'));
+		if ($this->ID) {
+			$fields->dataFieldByName('Features')
+				->getConfig()
+				->addComponent(new GridFieldSortableRows('SortOrder'));
+		}
 
 		return $fields;
 	}

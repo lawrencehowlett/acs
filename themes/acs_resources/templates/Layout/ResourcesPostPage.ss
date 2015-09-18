@@ -41,20 +41,20 @@
 					<% loop $RelatedResources %>
 						<li class="resource slider-item">
 							<img src="$FeaturedImage.CroppedImage(220, 300).Link" alt="$FeaturedImage.Title" class="resource-thumbnail">
-							<h3 class="resource-title">$Title.XML</h3>
-							<% if $Summary %>$Summary<% else %>$Excerpt<% end_if %>
+							<h3 class="resource-title">$Title</h3>
+							$Content
 							
-							<% if $DocumentTypes %>
+							<% if $DocumentType %>
 								<p class="resource-category">
-									<% loop $DocumentTypes %>
-										<a href="javascript:void(0);">$Title</a>
-									<% end_loop %>
+									<a href="javascript:void(0);">$DocumentType.Title</a>
 								</p>
 							<% end_if %>
 
-							<p class="more">
-								<a href="$Link" title="Go to $Title.XML">More info</a>
-							</p>
+							<% if $RedirectPage %>
+								<p class="more">
+									<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML">More info</a>
+								</p>
+							<% end_if %>
 						</li>
 					<% end_loop %>
 				</ul>
