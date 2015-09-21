@@ -642,7 +642,46 @@
 					</div>
 				</div>
 				<% end_if %>
-			<% end_if %>			
+			<% end_if %>
+
+			<% if $ClassName == 'BlockWidgetMap' %>
+				<div class="inside">
+					<h2>$Title</h2>
+					<div class="address-box slider">
+						<a href="javascript:void(0);" class="slider-nav prev">previous</a>
+						<a href="javascript:void(0);" class="slider-nav next">next</a>
+						<ul class="slider-content">
+							<% loop $RegionalOffices %>
+								<li class="address slider-item" data-lat="$GoogleMapLat" data-lng="$GoogleMapLong">
+									<h3 class="address-title">$Title</h3>
+									$Content
+								</li>
+							<% end_loop %>
+						</ul>
+					</div>
+					<div class="address-slider slider" data-ipp="2">
+						<a href="javascript:void(0);" class="slider-nav prev">Back</a>
+						<a href="javascript:void(0);" class="slider-nav next">Forward</a>
+						<ul class="slider-content">
+							<% loop $RegionalOffices %>
+								<li class="slider-item">
+									<h4 class="slide-title">$Title</h4>
+									<p><a href="javascript:void(0);" data-slide="$Top.getListIndex($Pos)" class="find-location">show more</a></p>
+								</li>
+							<% end_loop %>
+						</ul>
+					</div>
+				</div>
+				<div class="map-holder">
+					<div class="map" id="gmap" data-markers='[
+					<% loop $RegionalOffices %>
+						<% if $GoogleMapLat && $GoogleMapLong %>
+							{"text": "$Title", "lat": $GoogleMapLat, "lng": $GoogleMapLong}<% if not $Last %>,<% end_if %>
+						<% end_if %>
+					<% end_loop %>
+					]' data-centerlat="$RegionalOffices.First.GoogleMapLat" data-centerlng="$RegionalOffices.First.GoogleMapLong" data-marker="$ThemeDir/img/marker.png"></div>
+				</div>
+			<% end_if %>
 
 		</section>	
 
