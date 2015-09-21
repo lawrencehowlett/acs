@@ -9,7 +9,7 @@
 		<div class="video-movie">
 			<div class="video-placeholder">
 				<img src="img/temp/photos/video-placeholder01.jpg" alt="">
-				<a href="https://www.youtube.com/embed/065nvadr58Q" class="html5lightbox play"></a>
+				<a href="https://player.vimeo.com/video/129723622" class="html5lightbox play"></a>
 			</div>
 		</div>
 	</div>

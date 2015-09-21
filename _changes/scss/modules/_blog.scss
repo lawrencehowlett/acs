@@ -27,7 +27,7 @@
 		}
 	}
 }
-.blog-sidebar {margin: 30px 0; text-align: center; overflow: hidden;
+.blog-sidebar {margin: 30px 0; text-align: center;  overflow: visible; 
 	.widget {display: inline-block; width: 280px; margin: 0 0 10px; vertical-align: top; text-align: left;
 		&.search {width: 100%;}
 		.widget-title {margin: 0; padding: 20px 30px; background: $gray; color: #fff; font: 400 14px/20px $prelo; text-transform: uppercase;}
@@ -111,11 +111,11 @@
 	&.comments {margin-bottom: 60px;}
 }
 
-.blog-social {position: relative; z-index: 5; margin: 1.5em 0 0; padding: 0; list-style: none; text-align: center;
-	li {position: relative; z-index: 5; display: inline-block; width: 60px; height: 60px; margin: 0 10px 10px; vertical-align: top;
-		.button-layer {position: absolute; left: 0; top: 0; z-index: 4; overflow: hidden; width: 0; height: 60px; padding: 0 25px; background: #f7fafb; line-height: 60px; transition: all 0.3s;}
-		&:hover, &.active {z-index: 6;
-			.button-layer {top: 60px; width: auto; }
+.blog-social {overflow-x: hidden; position: relative; margin: 1.5em 0 0; padding: 0; list-style: none; text-align: center;
+	li {position: relative;  display: inline-block; width: 60px; height: 60px; margin: 0 10px 10px; vertical-align: top;
+		.button-layer {z-index: 20;position: absolute; left: -999px; top: 0; overflow: hidden; width: 0; height: 60px; padding: 0 25px; background: #f7fafb; line-height: 60px; transition: all 0.3s;}
+		&:hover, &.active {
+			.button-layer {left: 0;top: 60px; width: auto; }
 		}
 	}
 	.social {display: block; position: relative; z-index: 5; width: 60px; height: 60px; font-size: 0;
@@ -189,7 +189,7 @@
 	}
 	.pagination,
 	.blog-content {padding-right: 120px;}
-	.blog-social {position: absolute; right: 0; top: 0;}
+	.blog-social {/* position: absolute; right: 0; top: 0; */}
 
 	.blog-section {margin-top: 60px;
 		&.comments {margin-bottom: 100px;}
@@ -201,9 +201,9 @@
 		.bx-wrapper .bx-pager {bottom: -70px;}
 	}
 	.blog-social {margin: 0;
-		li {display: block; margin: 0 0 10px;
+		li {display: inline-block; margin: 0 0 10px;
 			.button-layer {padding: 0; text-align: center;}
-			&:hover .button-layer, &.active .button-layer {top: 0; left: -125px; width: 125px;}
+			&:hover .button-layer, &.active .button-layer {/* top: 0; left: -125px; */ width: 125px;}
 		}
 	}
 }
@@ -223,7 +223,7 @@
 @media (min-width: 1300px) {
 	.blog-social {
 		li {
-			&:hover .button-layer, &.active .button-layer {left: 60px;}
+			&:hover .button-layer, &.active .button-layer {left: 0; top: 60px;}
 		}
 	}
 }

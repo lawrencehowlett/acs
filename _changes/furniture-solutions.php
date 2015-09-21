@@ -147,28 +147,28 @@
 		<ul class="work">
 			<li class="work-item work-brief">
 				<p class="number">1</p>
-				<p class="work-item-img"></p>
+				<div class="work-item-img"><div class="img"><img src="img/work-brief.png" alt=""></div></div>
 				<h3 class="work-title">Brief &amp; Measure</h3>
 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
 				<p class="more"><a href="#">Find out more</a></p>
 			</li>
 			<li class="work-item work-planning">
 				<p class="number">2</p>
-				<p class="work-item-img"></p>
+				<div class="work-item-img"><div class="img"><img src="img/work-planning.png" alt=""></div></div>
 				<h3 class="work-title">Space Planning</h3>
 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
 				<p class="more"><a href="#">Find out more</a></p>
 			</li>
 			<li class="work-item work-test">
 				<p class="number">3</p>
-				<p class="work-item-img"></p>
+				<div class="work-item-img"><div class="img"><img src="img/work-test.png" alt=""></div></div>
 				<h3 class="work-title">Test Drive</h3>
 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
 				<p class="more"><a href="#">Find out more</a></p>
 			</li>
 			<li class="work-item work-delivery">
 				<p class="number">4</p>
-				<p class="work-item-img"></p>
+				<div class="work-item-img"><div class="img"><img src="img/work-delivery.png" alt=""></div></div>
 				<h3 class="work-title">Delivery &amp; Install</h3>
 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
 				<p class="more"><a href="#">Find out more</a></p>
