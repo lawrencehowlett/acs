@@ -1,7 +1,7 @@
 .work {margin: 60px 0 0; padding: 0; list-style: none;}
 .work-item {margin: 0; padding: 0 0 30px; font-size: 14px; cursor: pointer;
 	&:hover {
-		.work-item-img {background-color: #f7fafb; background-repeat: no-repeat; background-size: 47px 77px !important;}
+		.work-item-img {background-color: #f7fafb;}
 		.number {background-color: #0079C2; color: #fff; width: 100px; height: 100px; line-height: 100px;}
 	}
 	.work-title {margin: 0 0 20px; color: #424e5a; font: 400 22px/1.3em $prelo;}
@@ -28,11 +28,9 @@
 		&:before {width: 405px; height: 101px;}
 		&:after {top: 101px; width: 405px;}
 		.number {left: 259px; top: 57px;}
-		.work-item-img {display: block; position: absolute; left: 0; top: 0; z-index: 1; width: 200px; height: 200px; margin: 0; border: 1px solid #e7eef4; border-radius: 50%; background: #fff 50% 50% no-repeat; }
-		&.work-brief .work-item-img {background-image: url("../img/work-brief.svg"); background-size: 57px 77px;}
-		&.work-planning .work-item-img {background-image: url("../img/work-planning.svg"); background-size: 42px 78px;}
-		&.work-test .work-item-img {background-image: url("../img/work-test.svg"); background-size: 52px 77px;}
-		&.work-delivery .work-item-img {background-image: url("../img/work-delivery.svg"); background-size: 77px 76px;}
-		&:last-child {padding-bottom: 10px;}
+		.work-item-img {display: block; position: absolute; left: 0; top: 0; z-index: 1; width: 200px; height: 200px; margin: 0; border: 1px solid #e7eef4; border-radius: 50%; background: #fff 50% 50% no-repeat; 
+			.img {text-align: center;height: 200px; line-height: 20;}
+			&:last-child {padding-bottom: 10px;}
+		}
 	}
 }
