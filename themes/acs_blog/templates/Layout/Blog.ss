@@ -1,13 +1,27 @@
-<section class="page-section page-header" style='<% if $Banner %>background-image: url("$Banner.Link")<% end_if %>'>
+<section class="page-section page-header" style='
+	<% if $CurrentCategory %>
+		<% if $CurrentCategory.BannerImage %>
+			background-image: url("$CurrentCategory.BannerImage.Link")
+		<% end_if %>
+	<% else %>
+		<% if $Banner %>
+			background-image: url("$Banner.Link")
+		<% end_if %>
+	<% end_if %>
+'>
 	<div class="inside">
-		<h1 class="page-title">$Title</h1>
-		$Description
+		<h1 class="page-title"><% if $CurrentCategory %>$CurrentCategory.Title<% else %>$Title<% end_if %></h1>
+		<% if $CurrentCategory %>
+			$CurrentCategory.SubTitle
+		<% else %>
+			$Description
+		<% end_if %>
 	</div>
 </section>
 
 <section class="page-section text-content blog posts">
 	<div class="inside cf">
-		<section class="blog-main left">
+		<section class="blog-main right">
 
 			<% if $PaginatedList.Exists %>
 				<% loop $PaginatedList %>
@@ -65,33 +79,8 @@
 
 		</section>
 
-		<aside class="blog-sidebar right">
+		<aside class="blog-sidebar left">
 			<% include BlogSideBar %>
-
-			<% if $FeaturedAuthor %>
-				<div class="widget welcome">
-					<h3 class="widget-title">Welcome</h3>
-					<div class="widget-inner">
-						<% if $FeaturedAuthor %>
-							<img src="$FeaturedAuthor.BlogProfileImage.Link" alt="$FeaturedAuthor.BlogProfileImage.Title">
-						<% end_if %>
-						<div class="text">
-							$FeaturedAuthor.BlogProfileSummary
-						</div>
-					</div>
-				</div>
-			<% end_if %>
-
-			<div class="widget guide">
-				<h3 class="widget-title">Secret guide</h3>
-				<div class="widget-inner">
-					<p class="lead">Discover the art of Online Marketing</p>
-					<div class="text">
-						How to write headlines that get results, spread the word about your business.
-						<a href="#"><button>Start here</button></a>
-					</div>
-				</div>
-			</div>
 
 			<% if $FeaturedBlogPosts %>
 				<div class="widget featured">

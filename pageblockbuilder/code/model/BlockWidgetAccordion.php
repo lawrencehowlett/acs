@@ -8,4 +8,8 @@ class BlockWidgetAccordion extends BlockWidget {
 	private static $has_many = array(
 		'Items' => 'BlockWidgetAccordionItem'
 	);
+
+	public function ComponentName() {
+		return 'Accordion widget';
+	}
 }

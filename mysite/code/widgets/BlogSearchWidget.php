@@ -25,6 +25,13 @@ if(class_exists("Widget")) {
 		private static $cmsTitle = 'Blog Search';
 
 		/**
+		 * Set description
+		 * 
+		 * @var string
+		 */
+		private static $description = 'Search blog posts';		
+
+		/**
 		 * Get CMS Fields
 		 * 
 		 * @return FieldList
@@ -64,18 +71,20 @@ if(class_exists("Widget")) {
 		 * @return Form
 		 */
 		public function BlogSearchForm() {
-			$fields = new FieldList(
-				TextField::create('Keyword', false)
-					->setAttribute('placeholder', 'Type & search')
-			);
+			$searchField = 	TextField::create('Keyword', false)
+					->setAttribute('placeholder', 'Search');
+			$keyword = Controller::curr()->request->getVar('Search');
+			if ($keyword) {
+				$searchField->setValue($keyword);
+			}
+
+			$fields = new FieldList($searchField);
 
 			$formAction = FormAction::create('doSearch');
 			$formAction->useButtonTag = true;
 			$actions = new FieldList($formAction);
 
-			$required = new RequiredFields('Keyword');
-
-			$form = new Form($this, 'BlogSearchForm', $fields, $actions, $required);
+			$form = new Form($this, 'BlogSearchForm', $fields, $actions);
 			$form->addExtraClass('blog-search');
 			$form->setTemplate('BlogSearchForm');
 
@@ -90,7 +99,7 @@ if(class_exists("Widget")) {
 		 * @return FieldList
 		 */
 		public function doSearch(Array $data, FieldList $fields) {
-			exit();
+			$this->redirect(Blog::get()->First()->Link() . '?Search=' . $data['Keyword']);
 		}
 	}
 }

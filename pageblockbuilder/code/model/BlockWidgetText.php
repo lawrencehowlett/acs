@@ -13,7 +13,8 @@ class BlockWidgetText extends BlockWidget {
 	 * @var array
 	 */
 	private static $db = array(
-		'Tagline' => 'HTMLText',
+		'Tagline' => 'Text', 
+		'Layout' => "Enum(array('Standard', 'Two Column'), 'Standard')", 
 		'Content' => 'HTMLText', 
 		'ButtonText' => 'Varchar'
 	);
@@ -49,21 +50,19 @@ class BlockWidgetText extends BlockWidget {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
-		$fields->removeFieldsFromTab('Root.Main', array('Title'));
+		$fields->removeFieldsFromTab('Root.Main', array('Title', 'BackgroundImage', 'ExtraClass'));
 		$fields->insertBefore(
 			TextField::create('Title', 'Title'), 
 			'Tagline'
 		);
 		$fields->dataFieldByName('Content')
 			->setRows(20);
-		$fields->dataFieldByName('Tagline')
-			->setRows(10);
 
 		$fields->replaceField(
 			'RedirectPageID', 
 			TreedropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree')
 		);
-		$fields->insertAfter($fields->dataFieldByName('RedirectPageID'), 'ExtraClass');
+		$fields->insertAfter($fields->dataFieldByName('RedirectPageID'), 'Content');
 		$fields->insertBefore($fields->dataFieldByName('ButtonText'), 'RedirectPageID');
 
 		return $fields;
@@ -76,5 +75,14 @@ class BlockWidgetText extends BlockWidget {
 	 */
 	public function ComponentName() {
 		return 'Text widget';
-	}		
+	}
+
+	/**
+	 * Set the class needed for the text widget
+	 * 
+	 * @return string
+	 */
+	public function getExtraClass() {
+		return 'shade text-section';
+	}
 }

@@ -13,7 +13,8 @@ class Page extends SiteTree {
 	 * @var array
 	 */
 	private static $db = array(
-		'Description' => 'HTMLText'
+		'Description' => 'HTMLText', 
+		'UseGlobalActionBoxes' => 'Boolean'
 	);
 
 	/**
@@ -52,6 +53,10 @@ class Page extends SiteTree {
 	 */
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
+		
+		if ($this->ClassName == 'Page') {
+			$fields->removeByName('Widgets');
+		}
 
 		$fields->insertBefore(
 			UploadField::create('Banner', 'Banner')
@@ -72,6 +77,11 @@ class Page extends SiteTree {
 
 		$fields->addFieldToTab(
 			'Root.Teasers', 
+			CheckboxField::create('UseGlobalActionBoxes', 'Use global teasers? (Global teasers are managed under Settings > Teasers tab)')
+		);
+
+		$fields->addFieldToTab(
+			'Root.Teasers', 
 			GridField::create(
 				'ActionBoxes', 
 				'Teasers', 
@@ -84,9 +94,13 @@ class Page extends SiteTree {
 		return $fields;
 	}
 
+	public function canShowBlockBuilder() {
+		return true;
+	}
+
     public function ActionBoxes() {
         return $this->getManyManyComponents('ActionBoxes')->sort('SortColumn');
-    }	
+    }
 }
 
 /**
@@ -142,6 +156,7 @@ CSS
 
 		Requirements::javascript('https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false');
 		Requirements::javascript('themes/acs/js/min.js');
+		Requirements::javascript('themes/acs/js/livechat.js');
 	}
 
 	/**
@@ -291,7 +306,7 @@ CSS
 	}
 
 	public function getAllResourcesPage() {
-		return ResourcesPage::get()->First()->Link();
+		return ResourcesPage::get()->First();
 	}
 
 	/**
@@ -305,5 +320,18 @@ CSS
 		}
 
 		return false;
-	}	
+	}
+
+	/**
+	 * Get teasers 
+	 * 
+	 * @return DataList
+	 */
+	public function getTeasers() {
+		if ($this->UseGlobalActionBoxes) {
+			return SiteConfig::current_site_config()->ActionBoxes()->sort('SortColumn');
+		}
+
+		return $this->ActionBoxes();
+	}
 }

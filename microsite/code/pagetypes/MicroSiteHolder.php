@@ -11,6 +11,15 @@ class MicroSiteHolder extends Page {
 	);
 
 	/**
+	 * Set has one
+	 * 
+	 * @var array
+	 */
+	private static $has_one = array(
+		'Logo' => 'Image'
+	);
+
+	/**
 	 * Set icon
 	 * 
 	 * @var string
@@ -34,8 +43,14 @@ class MicroSiteHolder extends Page {
 		);
 
 		$fields->insertAfter(
-			TextField::create('Telephone', 'Telephone'), 
+			UploadField::create('Logo', 'Logo')
+				->setFolderName('Microsite/Logos'), 
 			'Banner'
+		);
+
+		$fields->insertAfter(
+			TextField::create('Telephone', 'Telephone'), 
+			'Logo'
 		);
 
 		return $fields;

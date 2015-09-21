@@ -126,7 +126,7 @@
 		&.plus {background: #9ca5ab url("../img/blog-social.png") no-repeat -240px 0;}
 	}
 }
-.blog-search {position: relative; z-index: -1; background: $blue;
+.blog-search {position: relative; background: $blue;
 	input {width: 100%; padding: 10px 60px 10px 30px; background: $blue; color: #fff; font: 300 14px/30px $prelo; transition: $transAll;
 		&:focus {background: #0567AE;}
 	}

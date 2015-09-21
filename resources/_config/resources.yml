@@ -1,6 +1,6 @@
-Page:
-  extensions:
-    - FeaturedResources_Page_Extension
+#Page:
+#  extensions:
+#    - FeaturedResources_Page_Extension
 
 Blog:
   extensions:

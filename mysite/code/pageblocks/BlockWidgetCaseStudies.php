@@ -10,7 +10,7 @@ class BlockWidgetCaseStudies extends BlockWidgetSlider {
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('BackgroundImage', 'Items')
+			array('BackgroundImage', 'Items', 'Image', 'Icon')
 		);
 
 		$fields->removeByName('CaseStudies');
@@ -29,7 +29,14 @@ class BlockWidgetCaseStudies extends BlockWidgetSlider {
 		return $fields;
 	}
 
+	public function getExtraClass() {
+		return 'cs-showcase navigated-slider';
+	}
+
+	/**
+	 * Get the component name
+	 */
 	public function ComponentName() {
-		return 'Case Studies Widget';
+		return 'Case studies showcase widget';
 	}
 }

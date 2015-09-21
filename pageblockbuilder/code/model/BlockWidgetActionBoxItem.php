@@ -5,6 +5,7 @@ class BlockWidgetActionBoxItem extends DataObject {
 		'Title' => 'Text', 
 		'Content' => 'HTMLText', 
 		'ButtonText' => 'Varchar', 
+		'StartLiveChat' => 'Boolean', 
 		'SortOrder' => 'Int'
 	);	
 
@@ -23,20 +24,25 @@ class BlockWidgetActionBoxItem extends DataObject {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
-		$fields->removeFieldsFromTab('Root.Main', array('ParentID', 'Image', 'SortOrder'));
+		$fields->removeFieldsFromTab('Root.Main', array('ParentID', 'Image', 'SortOrder', 'ButtonText'));
 		$fields->replaceField('Title', TextField::create('Title', 'Title'));
 		$fields->dataFieldByName('Content')
 			->setRows(20);
-		$fields->dataFieldByName('ButtonText')->setTitle('Redirect button title');
+
 		$fields->replaceField(
 			'RedirectPageID', 
 			TreedropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree')
 		);
 
 		$fields->insertAfter(
+			$fields->dataFieldByName('StartLiveChat'), 
+			'RedirectPageID'
+		);		
+		
+		$fields->insertAfter(
 			UploadField::create('Image', 'Featured Image')
 				->setFolderName('ActionBoxes/Images'), 
-			'RedirectPageID'
+			'StartLiveChat'
 		);
 
 		return $fields;

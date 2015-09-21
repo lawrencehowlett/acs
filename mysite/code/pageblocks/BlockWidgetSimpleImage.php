@@ -50,12 +50,7 @@ class BlockWidgetSimpleImage extends BlockWidget {
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('BackgroundImage')
-		);
-
-		$fields->insertBefore(
-			$fields->dataFieldByName('ExtraClass'), 
-			'Image'
+			array('BackgroundImage', 'ExtraClass')
 		);
 
 		$fields->dataFieldByName('Image')
@@ -66,11 +61,20 @@ class BlockWidgetSimpleImage extends BlockWidget {
 	}
 
 	/**
+	 * Get extra class
+	 * 
+	 * @return string
+	 */
+	public function getExtraClass() {
+		return 'shade spaced';
+	}
+
+	/**
 	 * Get component name
 	 *
 	 * @return  string
 	 */
 	public function ComponentName() {
-		return 'Simple image text widget';
+		return 'Speak to specialist image text widget';
 	}	
 }

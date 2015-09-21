@@ -12,9 +12,21 @@ class BlockWidgetResources extends BlockWidget {
 	 * 
 	 * @var array
 	 */
-	private static $has_many = array(
-		'Resources' => 'BlockWidgetResourcesItem'
+	private static $many_many = array(
+		'Resources' => 'ResourcesActionBox'
 	);
+
+	/**
+	 * Set many many extra field
+	 * 
+	 * @var array
+	 */
+    public static $many_many_extraFields=array(
+        'Resources' => array(
+            'SortColumn' => 'Int'
+        )
+    );
+
 
 	/**
 	 * Get CMS Fields
@@ -27,7 +39,7 @@ class BlockWidgetResources extends BlockWidget {
 		$fields->removeByName('Resources');
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('BackgroundImage')
+			array('BackgroundImage', 'ExtraClass')
 		);
 
 		$fields->addFieldToTab(
@@ -36,12 +48,25 @@ class BlockWidgetResources extends BlockWidget {
 				'Resources', 
 				'Resources', 
 				$this->Resources(),
-				GridFieldConfig_RecordEditor::create()
-					->addComponent(new GridFieldSortableRows('SortOrder'))
+				GridFieldConfig_RelationEditor::create()
+					->addComponent(new GridFieldSortableRows('SortColumn'))
 			)
 		);
 
 		return $fields;
+	}
+
+    public function Resources() {
+        return $this->getManyManyComponents('Resources')->sort('SortColumn');
+    }	
+
+	/**
+	 * Get extra class
+	 * 
+	 * @return string
+	 */
+	public function getExtraClass() {
+		return 'mt30';
 	}
 
 	/**

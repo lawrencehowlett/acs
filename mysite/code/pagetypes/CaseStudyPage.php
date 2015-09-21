@@ -118,6 +118,11 @@ class CaseStudyPage extends BlogPost {
  */
 class CaseStudyPage_Controller extends BlogPost_Controller {
 
+	public function init() {
+		parent::init();
+
+		Requirements::javascript('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55e553c7254e446a');
+	}
 }
 
 /**

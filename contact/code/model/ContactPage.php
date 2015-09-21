@@ -47,6 +47,8 @@ class ContactPage extends Page {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
+		$fields->removeByName('Widgets');
+
 		$fields = $this->getOnSubissionFields($fields);
 		$fields = $this->getRegionalOfficesFields($fields);
 		$fields = $this->getConfigFields($fields);

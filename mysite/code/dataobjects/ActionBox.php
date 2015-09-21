@@ -14,8 +14,9 @@ class ActionBox extends DataObject {
 	private static $db = array(
 		'Title' => 'Varchar',
 		'Content' => 'HTMLText', 
-		'ButtonText' => 'Varchar',
-		'SortOrder' => 'Int'
+		'ButtonText' => 'Varchar', 
+		'SortOrder' => 'Int', 
+		'StartLiveChat' => 'Boolean', 
 	);
 
 	/**
@@ -34,7 +35,8 @@ class ActionBox extends DataObject {
 	 * @var array
 	 */
 	private static $belongs_many_many = array(
-		'Page' => 'Page'
+		'Page' => 'Page', 
+		'SiteConfig' => 'SiteConfig'
 	);
 
 	/**
@@ -66,6 +68,7 @@ class ActionBox extends DataObject {
 		$fields = parent::getCMSFields();
 
 		$fields->removeByName('Page');
+		$fields->removeByName('SiteConfig');
 
 		$fields->removeFieldsFromTab('Root.Main', array('SortOrder', 'PageID'));
 
@@ -78,6 +81,11 @@ class ActionBox extends DataObject {
 		$fields->replaceField(
 			'RedirectPageID', 
 			TreeDropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree')
+		);
+
+		$fields->insertAfter(
+			$fields->dataFieldByName('StartLiveChat'), 
+			'RedirectPageID'
 		);
 
 		return $fields;

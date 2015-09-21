@@ -27,7 +27,7 @@ class BlockWidgetMultipleTextImageBlock extends BlockWidget {
 		$fields->removeByName('TextImageBlocks');
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('BackgroundImage')
+			array('BackgroundImage', 'ExtraClass')
 		);
 
 		$fields->addFieldToTab(
@@ -44,6 +44,20 @@ class BlockWidgetMultipleTextImageBlock extends BlockWidget {
 		return $fields;
 	}
 
+	/**
+	 * Get extra class
+	 * 
+	 * @return string
+	 */
+	public function getExtraClass() {
+		return 'mt60 mb30';
+	}
+
+	/**
+	 * Get component name
+	 *
+	 * @return string
+	 */
 	public function ComponentName() {
 		return 'Multiple Text Image Block widget';
 	}

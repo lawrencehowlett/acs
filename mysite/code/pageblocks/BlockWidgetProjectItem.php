@@ -1,27 +1,83 @@
 <?php
-class BlockWidgetProjectItem extends BlockWidgetSliderItem {
+/**
+ * Represents the item for the project block
+ * 
+ * @author Julius <julius@greenbrainer.com>
+ * @copyright Copyright (c) 2015, Julius
+ */
+class BlockWidgetProjectItem extends DataObject {
 
-	private static $has_one = array(
-		'ProjectHolder' => 'BlockWidgetProjects'
+	/**
+	 * Set properties
+	 * 
+	 * @var array
+	 */
+	private static $db = array(
+		'Title' => 'Text', 
+		'SortOrder' => 'Int'
 	);
 
-	private static $singular_name = 'Project';
+	/**
+	 * Set has one
+	 * 
+	 * @var array
+	 */
+	private static $has_one = array(
+		'ProjectHolder' => 'BlockWidgetProjects', 
+		'RedirectPage' => 'SiteTree'
+	);
 
-	private static $plural_name = 'Projects';
+	/**
+	 * Set singular name
+	 * 
+	 * @var string
+	 */
+	private static $singular_name = 'Case Study';
 
+	/**
+	 * Set plural name
+	 * 
+	 * @var string
+	 */
+	private static $plural_name = 'Case Studies';
+
+	/**
+	 * Set default sort
+	 * 
+	 * @var string
+	 */
+	private static $default_sort = 'SortOrder';
+
+	/**
+	 * Get CMS Fields
+	 * 
+	 * @return FieldList
+	 */
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('ProjectHolderID', 'ExtraClass', 'TabIcon', 'ButtonText', 'Icon')
+			array('ProjectHolderID', 'SortOrder', 'Title')
 		);
 
-		if ($this->ID) {
-			$fields->dataFieldByName('Image')
-				->setFolderName('BlockWidgetProjects/Images');
-		}
+		$fields->replaceField(
+			'RedirectPageID', 
+			TreeDropdownField::create(
+				'RedirectPageID', 
+				'Choose a case study page', 
+				'SiteTree'
+			)
+		);
 
 		return $fields;
+	}
+
+	/**
+	 * hook on before write to db
+	 */
+	public function onBeforeWrite() {
+		parent::onBeforeWrite();
+		$this->Title = $this->RedirectPage()->Title;
 	}
 }

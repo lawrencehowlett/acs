@@ -13,7 +13,8 @@ class BlockWidgetVideo extends BlockWidget {
 	 * @var array
 	 */
 	private static $db = array(
-		'Title' => 'Varchar',
+		'Title' => 'Text', 
+		'Tagline' => 'Text', 
 		'Content' => 'HTMLText',
 		'VideoURL' => 'Text', 
 		'ButtonText' => 'Varchar'		
@@ -51,31 +52,50 @@ class BlockWidgetVideo extends BlockWidget {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
+		$fields->removeFieldsFromTab(
+			'Root.Main', 
+			array('ExtraClass')
+		);
+
 		$fields->dataFieldByName('Content')
 			->setRows(20);
 		$fields->replaceField(
 			'VideoURL', 
 			TextField::create('VideoURL', 'Video URL')
 		);
+
 		$fields->replaceField(
 			'RedirectPageID', 
 			TreedropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree')
 		);		
 
-		if ($this->ID) {
-			$fields->dataFieldByName('Image')
-				->setTitle('Placeholder')
-				->setFolderName($this->Page()->Title . '/VideoImages');
-		}
+		$fields->dataFieldByName('Image')
+			->setTitle('Placeholder')
+			->setFolderName('BlockWidgetVideo/' .$this->ID. '/Images');
 
-		$fields->insertAfter($fields->dataFieldByName('Content'), 'ExtraClass');
-		$fields->insertAfter($fields->dataFieldByName('VideoURL'), 'Title');
+		$fields->insertAfter($fields->dataFieldByName('Tagline'), 'Title');
+		$fields->insertAfter($fields->dataFieldByName('Content'), 'Tagline');
+		$fields->insertAfter($fields->dataFieldByName('VideoURL'), 'Content');
 		$fields->insertAfter($fields->dataFieldByName('Image'), 'Content');
+
 		$fields->insertBefore($fields->dataFieldByName('ButtonText'), 'Image');
 		$fields->insertBefore($fields->dataFieldByName('RedirectPageID'), 'Image');
-		$fields->insertAfter($fields->dataFieldByName('BackgroundImage')->setFolderName('BlockWidgetVideo/BackgrundImages/'), 'Image');
+		$fields->insertAfter($fields->dataFieldByName('BackgroundImage')->setFolderName('BlockWidgetVideo/' .$this->ID. '/BackgroundImages/'), 'Image');
 
 		return $fields;
+	}
+
+	/**
+	 * Get extra class
+	 * 
+	 * @return string
+	 */
+	public function getExtraClass() {
+		if (!is_dir('../' .$this->BackgroundImage()->Filename) || $this->Tagline) {
+			return 'video-section';
+		}
+
+		return 'shade mt60 mb30';
 	}
 
 	/**

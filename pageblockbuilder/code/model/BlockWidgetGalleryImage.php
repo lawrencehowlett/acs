@@ -1,21 +1,59 @@
 <?php
+/**
+ * Represents the gallery images
+ * 
+ * @author Julius <julius@greenbrainer.com>
+ * @copyright Copyright (c) 2015, Julius
+ */
 class BlockWidgetGalleryImage extends DataObject {
 
+	/**
+	 * Set properties
+	 * 
+	 * @var array
+	 */
 	private static $db = array(
 		'Title' => 'Text', 
 		'Content' => 'HTMLText', 
 		'SortOrder' => 'Int'
 	);
 
+	/**
+	 * Set has one
+	 * 
+	 * @var array
+	 */
 	private static $has_one = array(
 		'Gallery' => 'BlockWidgetGallery', 
 		'Image' => 'Image'
 	);
 
+	/**
+	 * Set singular name
+	 * 
+	 * @var string
+	 */
 	private static $singular_name = 'Gallery image';
 
+	/**
+	 * Set plural name
+	 * 
+	 * @var string
+	 */
 	private static $plural_name = 'Gallery images';
 
+	/**
+	 * Set default sort
+	 * 
+	 * @var string
+	 */
+	private static $default_sort = 'SortOrder';
+
+	/**
+	 * Get CMS Fields
+	 * 
+	 * @return FieldList
+	 */
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 

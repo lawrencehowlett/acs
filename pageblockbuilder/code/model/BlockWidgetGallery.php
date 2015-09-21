@@ -8,24 +8,6 @@
 class BlockWidgetGallery extends BlockWidget {
 
 	/**
-	 * Set properties
-	 * 
-	 * @var array
-	 */
-	private static $db = array(
-		'RedirectButtonText' => 'Varchar'
-	);
-
-	/**
-	 * Set properties
-	 * 
-	 * @var array
-	 */
-	private static $has_one = array(
-		'RedirectPage' => 'SiteTree'
-	);
-
-	/**
 	 * Set has one
 	 * 
 	 * @var array
@@ -45,19 +27,11 @@ class BlockWidgetGallery extends BlockWidget {
 		$fields->removeByName('Images');
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('RedirectPageID', 'RedirectButtonText')
+			array('ExtraClass', 'BackgroundImage')
 		);
 
-		$fields->insertBefore(
-			TreeDropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree'), 
-			'BackgroundImage'
-		);
-
-		$fields->insertAfter(
-			TextField::create('RedirectButtonText', 'Redirect page button text'), 
-			'RedirectPageID'
-		);
-
+		$gridFieldBulkUpload = new GridFieldBulkUpload();
+		$gridFieldBulkUpload->setUfSetup('setFolderName', 'GalleryImages/' . $this->ID);
 		$fields->addFieldToTab(
 			'Root.Main', 
 			GridField::create(
@@ -66,11 +40,21 @@ class BlockWidgetGallery extends BlockWidget {
 				$this->Images(), 
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
+					->addComponent($gridFieldBulkUpload)
 
 			)
 		);
 
 		return $fields;
+	}
+
+	/**
+	 * Get the extra class
+	 * 
+	 * @return string
+	 */
+	public function getExtraClass() {
+		return 'mt60 mb30';
 	}
 
 	/**

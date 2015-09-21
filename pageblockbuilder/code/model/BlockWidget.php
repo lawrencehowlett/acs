@@ -72,17 +72,19 @@ class BlockWidget extends DataObject {
 
 	public function getListComponents() {
 		$components = array(
-			'BlockWidgetText' => 'Text',
-			'BlockWidgetImage' => 'Image',
-			'BlockWidgetVideo' => 'Video',
-			'BlockWidgetTab' => 'Tabs',
-			'BlockWidgetGallery' => 'Gallery',
-			'BlockWidgetAccordion' => 'Accordion', 
-			'BlockWidgetSlider' => 'Slider', 
-			'BlockWidgetActionBox' => 'Action Box'
+			'BlockWidgetText' => 'Text widget',
+			'BlockWidgetImage' => 'Image widget',
+			'BlockWidgetVideo' => 'Video widget',
+			'BlockWidgetTab' => 'Tabs widget',
+			'BlockWidgetGallery' => 'Gallery widget',
+			'BlockWidgetAccordion' => 'Accordion widget', 
+			'BlockWidgetSlider' => 'Slider widget', 
+			'BlockWidgetActionBox' => 'Action Box widget'
 		);
 
 		$this->extend('updateListComponents', $components);
+
+		asort($components);
 
 		return $components;
 	}

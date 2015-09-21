@@ -7,6 +7,11 @@
  */
 class BlogPost_Extension extends DataExtension {
 
+	/**
+	 * Set many many
+	 * 
+	 * @var array
+	 */
 	private static $many_many = array(
 		'RelatedBlogPosts' => 'BlogPost'
 	);

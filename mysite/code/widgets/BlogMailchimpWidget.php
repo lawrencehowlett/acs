@@ -25,6 +25,14 @@ if(class_exists("Widget")) {
 		private static $cmsTitle = 'Blog Newsletter';
 
 		/**
+		 * Set description
+		 * 
+		 * @var string
+		 */
+		private static $description = 'Newsletter widget to sign up to get latest updates';
+
+
+		/**
 		 * Get CMS Fields
 		 * 
 		 * @return FieldList

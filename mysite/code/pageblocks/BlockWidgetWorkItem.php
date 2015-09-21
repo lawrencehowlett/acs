@@ -2,11 +2,13 @@
 class BlockWidgetWorkItem extends BlockWidgetSliderItem {
 
 	private static $db = array(
-		'ExtraClass' => 'Varchar'
+		'ExtraClass' => 'Varchar', 
+		'ButtonText' => 'Varchar'
 	);
 
 	private static $has_one = array(
-		'WorkHolder' => 'BlockWidgetWork'
+		'WorkHolder' => 'BlockWidgetWork', 
+		'RedirectPage' => 'SiteTree'
 	);
 
 	private static $singular_name = 'Work';
@@ -18,12 +20,17 @@ class BlockWidgetWorkItem extends BlockWidgetSliderItem {
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('WorkHolderID', 'TabIcon', 'Image', 'Icon')
+			array('Tagline', 'WorkHolderID', 'TabIcon', 'Image', 'Icon')
 		);
 
 		$fields->insertAfter(
 			TextField::create('ExtraClass', 'Extra Class'), 
 			'Content'
+		);
+
+		$fields->replaceField(
+			'RedirectPageID', 
+			TreeDropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree')
 		);
 
 		return $fields;

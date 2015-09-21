@@ -32,6 +32,7 @@ class AccreditationPage extends Page {
 		$fields = parent::getCMSFields();
 
 		$fields->removeByName('Widgets');
+		$fields->removeByName('BlockBuilder');
 
 		$fields->addFieldToTab(
 			'Root.Partners', 
@@ -39,12 +40,16 @@ class AccreditationPage extends Page {
 				'Partners', 
 				'Partners', 
 				$this->Partners(), 
-				GridFieldConfig_RecordEditor::create()
-					->addComponent(new GridFieldSortableRows('SortOrder'))
+					GridFieldConfig_RecordEditor::create()
+						->addComponent(new GridFieldSortableRows('SortOrder'))
 			)
 		);
 
 		return $fields;
+	}
+
+	public function canShowBlockBuilder() {
+		return false;
 	}
 }
 
