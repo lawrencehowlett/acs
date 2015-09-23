@@ -44,7 +44,7 @@ class AboutStory extends BlockWidget {
 
 	public function getTimeLine() {
 		$list = new ArrayList();
-		for ($year=date('Y'); $year >= $this->YearStarted; $year--) { 
+		for ($year=$this->YearStarted; $year <= date('Y'); $year++) { 
 			for ($month=12; $month >=1 ; $month--) { 
 
 				$query = DB::query("SELECT ID FROM AboutStoryEntry WHERE Month(`Date`) = $month AND Year(`Date`) = $year");
