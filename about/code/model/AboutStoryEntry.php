@@ -21,7 +21,7 @@ class AboutStoryEntry extends DataObject {
 		'Title'
 	);
 
-	private static $default_sort = 'Date DESC';
+	private static $default_sort = 'Date ASC';
 
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();

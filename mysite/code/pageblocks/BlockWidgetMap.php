@@ -11,24 +11,20 @@ class BlockWidgetMap extends BlockWidget {
 		$fields->removeByName('RegionalOffices');
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('BackgroundImage', 'ExtraClass')
+			array('BackgroundImage')
 		);
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'RegionalOffices', 
 				'Regional Offices', 
 				$this->RegionalOffices(), 
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;
-	}
-
-	public function getExtraClass() {
-		return 'address-section last-section';
 	}
 
 	public function ComponentName() {

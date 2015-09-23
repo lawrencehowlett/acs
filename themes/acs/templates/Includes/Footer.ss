@@ -40,7 +40,7 @@
 			<% if $SiteConfig.SocialServices %>
 				<ul class="social">
 					<% loop $SiteConfig.SocialServices %>
-						<li><a href="$Link" title="Go to $Title" class="$CSS">$Title</a></li>
+						<li><a href="$ExternalURL" title="Go to $Title" class="$CSS" target="_blank">$Title</a></li>
 					<% end_loop %>
 				</ul>
 			<% end_if %>

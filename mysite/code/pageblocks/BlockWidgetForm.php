@@ -26,7 +26,7 @@ class BlockWidgetForm extends BlockWidget {
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('BackgroundImage', 'ExtraClass')
+			array('BackgroundImage')
 		);
 
 		$fields->insertAfter(
@@ -35,15 +35,6 @@ class BlockWidgetForm extends BlockWidget {
 		);
 
 		return $fields;
-	}
-
-	/**
-	 * Get extra class
-	 * 
-	 * @return string
-	 */
-	public function getExtraClass() {
-		return 'shade contact last-section';
 	}
 
 	/**

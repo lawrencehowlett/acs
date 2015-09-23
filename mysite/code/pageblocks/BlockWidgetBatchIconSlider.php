@@ -22,8 +22,7 @@ class BlockWidgetBatchIconSlider extends BlockWidgetGallery {
 
 		$gridFieldBulkUpload = new GridFieldBulkUpload();
 		$gridFieldBulkUpload->setUfSetup('setFolderName', 'BatchIconSlider/' . $this->ID . '/Images');
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'Icons', 
 				'Icons', 
@@ -32,19 +31,11 @@ class BlockWidgetBatchIconSlider extends BlockWidgetGallery {
 					->addComponent(new GridFieldSortableRows('SortOrder'))
 					->addComponent($gridFieldBulkUpload)
 
-			)
+			),
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;
-	}
-
-	/**
-	 * Get extra class
-	 * 
-	 * @return string
-	 */
-	public function getExtraClass() {
-		return 'nospace';
 	}
 
 	public function ComponentName() {

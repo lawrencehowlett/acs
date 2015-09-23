@@ -32,15 +32,15 @@ class BlockWidgetWork extends BlockWidgetSlider {
 			array('BackgroundImage')
 		);
 
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'Works', 
 				'Works', 
 				$this->Works(), 
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;

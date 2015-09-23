@@ -27,13 +27,13 @@ class BlockWidgetGallery extends BlockWidget {
 		$fields->removeByName('Images');
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('ExtraClass', 'BackgroundImage')
+			array('BackgroundImage')
 		);
 
 		$gridFieldBulkUpload = new GridFieldBulkUpload();
 		$gridFieldBulkUpload->setUfSetup('setFolderName', 'GalleryImages/' . $this->ID);
-		$fields->addFieldToTab(
-			'Root.Main', 
+
+		$fields->insertBefore(
 			GridField::create(
 				'Images', 
 				'Images', 
@@ -42,25 +42,17 @@ class BlockWidgetGallery extends BlockWidget {
 					->addComponent(new GridFieldSortableRows('SortOrder'))
 					->addComponent($gridFieldBulkUpload)
 
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;
 	}
 
 	/**
-	 * Get the extra class
-	 * 
-	 * @return string
-	 */
-	public function getExtraClass() {
-		return 'mt60 mb30';
-	}
-
-	/**
 	 * Get component name
 	 */
 	public function ComponentName() {
-		return 'Gallery widget';
+		return 'Gallery sliding widget';
 	}
 }

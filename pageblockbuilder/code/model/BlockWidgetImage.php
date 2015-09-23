@@ -55,7 +55,7 @@ class BlockWidgetImage extends BlockWidget {
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('ExtraClass', 'Tagline', 'BackgroundImage')
+			array('Tagline', 'BackgroundImage')
 		);
 
 		$fields->dataFieldByName('Content')
@@ -77,16 +77,6 @@ class BlockWidgetImage extends BlockWidget {
 
 		return $fields;
 	}
-
-	/**
-	 * Get extra class
-	 * 
-	 * @return string
-	 */
-	public function getExtraClass() {
-		return 'shade mt60 mb30';
-	}
-
 
 	/**
 	 * Get component name

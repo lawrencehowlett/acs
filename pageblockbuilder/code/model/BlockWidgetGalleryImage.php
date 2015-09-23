@@ -49,6 +49,11 @@ class BlockWidgetGalleryImage extends DataObject {
 	 */
 	private static $default_sort = 'SortOrder';
 
+	private static $summary_fields = array(
+		'Thumbnail' => 'Image', 
+		'Title' => 'Title'
+	);
+
 	/**
 	 * Get CMS Fields
 	 * 
@@ -74,5 +79,9 @@ class BlockWidgetGalleryImage extends DataObject {
 		}
 
 		return $fields;
+	}
+
+	public function Thumbnail() {
+		return $this->Image()->CMSThumbnail();
 	}
 }

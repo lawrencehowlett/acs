@@ -20,28 +20,19 @@ class BlockWidgetTwoColumnActionBox extends BlockWidgetActionBox {
 		$fields->removeByName('Items');
 		$fields->removeByName('TwoColumnActionBoxItems');
 
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'TwoColumnActionBoxItems', 
 				'Action Boxes', 
 				$this->TwoColumnActionBoxItems(), 
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 		
 
 		return $fields;
-	}
-
-	/**
-	 * Get Extra Class
-	 * 
-	 * @return string
-	 */
-	public function getExtraClass() {
-		return 'mt60';
 	}
 
 	/**

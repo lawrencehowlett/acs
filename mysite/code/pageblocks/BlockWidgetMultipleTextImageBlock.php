@@ -27,30 +27,21 @@ class BlockWidgetMultipleTextImageBlock extends BlockWidget {
 		$fields->removeByName('TextImageBlocks');
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('BackgroundImage', 'ExtraClass')
+			array('BackgroundImage')
 		);
 
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'TextImageBlocks', 
 				'Text Image Blocks', 
 				$this->TextImageBlocks(), 
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;
-	}
-
-	/**
-	 * Get extra class
-	 * 
-	 * @return string
-	 */
-	public function getExtraClass() {
-		return 'mt60 mb30';
 	}
 
 	/**

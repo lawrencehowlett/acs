@@ -17,25 +17,21 @@ class AboutStory extends BlockWidget {
 		$fields = parent::getCMSFields();
 
 		$fields->removeByName('Entries');
-		$fields->removeFieldsFromTab('Root.Main', array('YearStarted', 'BackgroundImage', 'ExtraClass'));
+		$fields->removeFieldsFromTab('Root.Main', array('YearStarted', 'BackgroundImage'));
 
 		$fields->insertAfter(TextField::create('YearStarted', 'Year Started'), 'Title');
 
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'Entries', 
 				'Story', 
 				$this->Entries(), 
 				GridFieldConfig_RecordEditor::create()
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;
-	}
-
-	public function getExtraClass() {
-		return 'mt30';
 	}
 
 	public function ComponentName() {
@@ -44,7 +40,7 @@ class AboutStory extends BlockWidget {
 
 	public function getTimeLine() {
 		$list = new ArrayList();
-		for ($year=date('Y'); $year >= $this->YearStarted; $year--) { 
+		for ($year=$this->YearStarted; $year <= date('Y'); $year++) { 
 			for ($month=12; $month >=1 ; $month--) { 
 
 				$query = DB::query("SELECT ID FROM AboutStoryEntry WHERE Month(`Date`) = $month AND Year(`Date`) = $year");

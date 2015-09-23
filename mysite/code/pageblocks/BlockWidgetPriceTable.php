@@ -11,18 +11,18 @@ class BlockWidgetPriceTable extends BlockWidget {
 		$fields->removeByName('PricingTables');
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('ExtraClass', 'BackgroundImage')
+			array('BackgroundImage')
 		);
 
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'PricingTables', 
 				'Pricing Tables', 
 				$this->PricingTables(), 
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;

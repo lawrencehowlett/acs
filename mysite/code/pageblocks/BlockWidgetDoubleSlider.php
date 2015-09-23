@@ -29,13 +29,12 @@ class BlockWidgetDoubleSlider extends BlockWidget {
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('BackgroundImage', 'ExtraClass')
+			array('BackgroundImage')
 		);
 
 		$gridFieldBulkUpload = new GridFieldBulkUpload();
 		$gridFieldBulkUpload->setUfSetup('setFolderName', 'DoubleSlider/' . $this->ID . '/Images');
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'DoubleSliderItems', 
 				'Sliders', 
@@ -43,19 +42,11 @@ class BlockWidgetDoubleSlider extends BlockWidget {
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
 					->addComponent($gridFieldBulkUpload)
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;
-	}
-
-	/**
-	 * Get extra class
-	 * 
-	 * @return string
-	 */
-	public function getExtraClass() {
-		return 'mt60';
 	}
 
 	/**

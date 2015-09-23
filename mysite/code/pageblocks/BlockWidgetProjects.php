@@ -32,27 +32,18 @@ class BlockWidgetProjects extends BlockWidgetSlider {
 			array('BackgroundImage')
 		);
 
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'Projects', 
 				'Projects', 
 				$this->Projects(), 
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;
-	}
-
-	/**
-	 * Get extra class
-	 * 
-	 * @return string
-	 */
-	public function getExtraClass() {
-		return 'mt30';
 	}
 
 	/**
@@ -61,6 +52,6 @@ class BlockWidgetProjects extends BlockWidgetSlider {
 	 * @return string
 	 */
 	public function ComponentName() {
-		return 'Featured case studies gallery widget';
+		return 'Featured slider widget';
 	}
 }

@@ -15,15 +15,15 @@ class BlockWidgetCaseStudies extends BlockWidgetSlider {
 
 		$fields->removeByName('CaseStudies');
 
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'CaseStudies', 
 				'CaseStudies', 
 				$this->CaseStudies(), 
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;
