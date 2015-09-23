@@ -120,9 +120,13 @@ class BlockWidget extends DataObject {
 									<td style="padding:5px; border:1px solid #333;">Add 30 pixels margin top.</td>
 								</tr>
 								<tr>
-									<td style="padding:5px; border:1px solid #333;">m430</td>
+									<td style="padding:5px; border:1px solid #333;">mt40</td>
 									<td style="padding:5px; border:1px solid #333;">Add 40 pixels margin top.</td>
 								</tr>
+								<tr>
+									<td style="padding:5px; border:1px solid #333;">mt60</td>
+									<td style="padding:5px; border:1px solid #333;">Add 60 pixels margin top.</td>
+								</tr>																
 								<tr>
 									<td style="padding:5px; border:1px solid #333;">mb30</td>
 									<td style="padding:5px; border:1px solid #333;">Add 30 pixels margin bottom.</td>
@@ -131,10 +135,6 @@ class BlockWidget extends DataObject {
 									<td style="padding:5px; border:1px solid #333;">mb40</td>
 									<td style="padding:5px; border:1px solid #333;">Add 40 pixels margin bottom.</td>
 								</tr>
-								<tr>
-									<td style="padding:5px; border:1px solid #333;">mt60</td>
-									<td style="padding:5px; border:1px solid #333;">Add 60 pixels margin top.</td>
-								</tr>								
 								<tr>
 									<td style="padding:5px; border:1px solid #333;">mb60</td>
 									<td style="padding:5px; border:1px solid #333;">Add 60 pixels margin bottom.</td>

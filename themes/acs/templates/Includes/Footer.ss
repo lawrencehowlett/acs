@@ -54,6 +54,7 @@
 			<% end_if %>
 
 			<p class="copyright">$SiteConfig.Copyright</p>
+			<p class="copyright">Responsive Web Design by <a href="https://www.newedge.co.uk/">Newedge</a></p>
 		</section>
 	</div>
 </footer>

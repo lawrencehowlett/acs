@@ -105,14 +105,30 @@
 
 		<aside class="blog-sidebar">
 			<% include BlogSideBar %>
-		</aside>
 
-		<ul class="blog-social">
-			<li><span class='social facebook st_facebook_custom' displayText='Facebook'></span></li>
-			<li><span class='social googleplus st_twitter_custom' displayText='Tweet'></span></li>
-			<li><span class='social twitter st_linkedin_custom' displayText='LinkedIn'></span></li>
-			<li><span class='social linkedin st_googleplus_custom' displayText='Google +'></span></li>
-		</ul>
+			<div class="widget">
+<ul class="blog-social">
+					<li>
+						<a href="#" class="social facebook"></a>
+						<div class="button-layer"><img src="html/img/temp/social/fb1.png" alt=""></div>
+					</li>
+					<li>
+						<a href="#" class="social googleplus"></a>
+						<div class="button-layer"><img src="html/img/temp/social/google.png" alt=""></div>
+					</li>
+					<li>
+						<a href="#" class="social twitter"></a>
+						<div class="button-layer"><img src="html/img/temp/social/twitter.png" alt=""></div>
+					</li>
+					<li>
+						<a href="#" class="social linkedin"></a>
+						<div class="button-layer"><img src="html/img/temp/social/linkedin.png" alt=""></div>
+					</li>
+					<li>
+						<a href="#" class="social plus">+</a>
+					</li>
+				</ul>			</div>
+		</aside>
 
 	</div>
 </section>
