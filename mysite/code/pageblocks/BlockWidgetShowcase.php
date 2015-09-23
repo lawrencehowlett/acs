@@ -31,27 +31,18 @@ class BlockWidgetShowcase extends BlockWidgetTab {
 
 		$fields->removeByName('ShowcaseItems');
 
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'ShowcaseItems', 
 				'Showcase', 
 				$this->ShowcaseItems(), 
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;
-	}
-
-	/**
-	 * Get extra class
-	 * 
-	 * @return string
-	 */
-	public function getExtraClass() {
-		return 'mt30 big-slider navigated-slider';
 	}
 
 	/**

@@ -11,11 +11,10 @@ class BlockWidgetScrollingNumbers extends BlockWidget {
 		$fields->removeByName('Items');
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('ExtraClass', 'BackgroundImage')
+			array('BackgroundImage')
 		);
 
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'Items', 
 				'Scrolling Numbers', 
@@ -23,14 +22,11 @@ class BlockWidgetScrollingNumbers extends BlockWidget {
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
 
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;
-	}
-
-	public function getExtraClass() {
-		return 'mt60 mb30';
 	}
 
 	public function ComponentName() {

@@ -17,25 +17,21 @@ class AboutStory extends BlockWidget {
 		$fields = parent::getCMSFields();
 
 		$fields->removeByName('Entries');
-		$fields->removeFieldsFromTab('Root.Main', array('YearStarted', 'BackgroundImage', 'ExtraClass'));
+		$fields->removeFieldsFromTab('Root.Main', array('YearStarted', 'BackgroundImage'));
 
 		$fields->insertAfter(TextField::create('YearStarted', 'Year Started'), 'Title');
 
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'Entries', 
 				'Story', 
 				$this->Entries(), 
 				GridFieldConfig_RecordEditor::create()
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;
-	}
-
-	public function getExtraClass() {
-		return 'mt30';
 	}
 
 	public function ComponentName() {

@@ -46,7 +46,7 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('BackgroundImage', 'ExtraClass')
+			array('BackgroundImage')
 		);
 
 		$fields->dataFieldByName('FeaturedImage')
@@ -148,15 +148,6 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 		);
 
 		return $fields;
-	}
-
-	/**
-	 * Get extra class
-	 * 
-	 * @return string
-	 */
-	public function getExtraClass() {
-		return 'dark specialist cf';
 	}
 
 	/**

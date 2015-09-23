@@ -28,30 +28,21 @@ class BlockWidgetSlider extends BlockWidget {
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('BackgroundImage', 'ExtraClass')
+			array('BackgroundImage')
 		);
 
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'Items', 
 				'Sliders', 
 				$this->Items(), 
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;
-	}
-
-	/**
-	 * Get extra class
-	 * 
-	 * @return string
-	 */
-	public function getExtraClass() {
-		return '';
 	}
 
 	/**

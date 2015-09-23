@@ -52,11 +52,6 @@ class BlockWidgetVideo extends BlockWidget {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
-		$fields->removeFieldsFromTab(
-			'Root.Main', 
-			array('ExtraClass')
-		);
-
 		$fields->dataFieldByName('Content')
 			->setRows(20);
 		$fields->replaceField(
@@ -76,26 +71,12 @@ class BlockWidgetVideo extends BlockWidget {
 		$fields->insertAfter($fields->dataFieldByName('Tagline'), 'Title');
 		$fields->insertAfter($fields->dataFieldByName('Content'), 'Tagline');
 		$fields->insertAfter($fields->dataFieldByName('VideoURL'), 'Content');
-		$fields->insertAfter($fields->dataFieldByName('Image'), 'Content');
-
-		$fields->insertBefore($fields->dataFieldByName('ButtonText'), 'Image');
-		$fields->insertBefore($fields->dataFieldByName('RedirectPageID'), 'Image');
+		$fields->insertAfter($fields->dataFieldByName('ButtonText'), 'VideoURL');
+		$fields->insertAfter($fields->dataFieldByName('RedirectPageID'), 'ButtonText');
+		$fields->insertAfter($fields->dataFieldByName('Image'), 'RedirectPageID');
 		$fields->insertAfter($fields->dataFieldByName('BackgroundImage')->setFolderName('BlockWidgetVideo/' .$this->ID. '/BackgroundImages/'), 'Image');
 
 		return $fields;
-	}
-
-	/**
-	 * Get extra class
-	 * 
-	 * @return string
-	 */
-	public function getExtraClass() {
-		if (!is_dir('../' .$this->BackgroundImage()->Filename) || $this->Tagline) {
-			return 'video-section';
-		}
-
-		return 'shade mt60 mb30';
 	}
 
 	/**

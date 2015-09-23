@@ -39,18 +39,18 @@ class BlockWidgetResources extends BlockWidget {
 		$fields->removeByName('Resources');
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('BackgroundImage', 'ExtraClass')
+			array('BackgroundImage')
 		);
 
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'Resources', 
 				'Resources', 
 				$this->Resources(),
 				GridFieldConfig_RelationEditor::create()
 					->addComponent(new GridFieldSortableRows('SortColumn'))
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;
@@ -59,15 +59,6 @@ class BlockWidgetResources extends BlockWidget {
     public function Resources() {
         return $this->getManyManyComponents('Resources')->sort('SortColumn');
     }	
-
-	/**
-	 * Get extra class
-	 * 
-	 * @return string
-	 */
-	public function getExtraClass() {
-		return 'mt30';
-	}
 
 	/**
 	 * Get Component name

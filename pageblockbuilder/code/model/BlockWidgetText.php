@@ -50,7 +50,7 @@ class BlockWidgetText extends BlockWidget {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
-		$fields->removeFieldsFromTab('Root.Main', array('Title', 'BackgroundImage', 'ExtraClass'));
+		$fields->removeFieldsFromTab('Root.Main', array('Title', 'BackgroundImage'));
 		$fields->insertBefore(
 			TextField::create('Title', 'Title'), 
 			'Tagline'

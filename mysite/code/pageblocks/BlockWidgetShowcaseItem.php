@@ -64,16 +64,14 @@ class BlockWidgetShowcaseItem extends BlockWidgetTabItem {
 		$fields->insertAfter(TextField::create('TabTitle', 'Tab Title'), 'Title');
 		$fields->insertAfter(TextField::create('ExtraClass', 'Extra class'), 'Content');
 
-		if ($this->ID) {
-			$fields->insertAfter(
-				UploadField::create('BackgroundImage', 'Background Image')
-					->setFolderName('Showcase/BackgroundImages/'), 
-				'RedirectPageID'
-			);
+		$fields->insertAfter(
+			UploadField::create('BackgroundImage', 'Background Image')
+				->setFolderName('Showcase/BackgroundImages/'), 
+			'Image'
+		);
 
-			$fields->dataFieldByName('Image')
-				->setFolderName('Showcase/Images/');
-		}
+		$fields->dataFieldByName('Image')
+			->setFolderName('Showcase/Images/');
 
 		return $fields;
 	}

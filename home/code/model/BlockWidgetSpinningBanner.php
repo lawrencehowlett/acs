@@ -31,27 +31,18 @@ class BlockWidgetSpinningBanner extends BlockWidgetTab {
 
 		$fields->removeByName('SpinningBanners');
 
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'SpinningBanners', 
 				'Spinning Banners', 
 				$this->SpinningBanners(), 
 				GridFieldConfig_RecordEditor::create()
 					->addComponent(new GridFieldSortableRows('SortOrder'))
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);
 
 		return $fields;
-	}
-
-	/**
-	 * Get extra class
-	 * 
-	 * @return string
-	 */
-	public function getExtraClass() {
-		return 'main-showcase navigated-slider';
 	}
 
 	/**

@@ -12,13 +12,12 @@ class BlockWidgetTeam extends BlockWidget {
 
 		$fields->removeFieldsFromTab(
 			'Root.Main',
-			array('BackgroundImage', 'ExtraClass')
+			array('BackgroundImage')
 		);
 
 		$gridFieldBulkUpload = new GridFieldBulkUpload();
 		$gridFieldBulkUpload->setUfSetup('setFolderName', 'Teams/' . $this->ID . '/Images');
-		$fields->addFieldToTab(
-			'Root.Main', 
+		$fields->insertBefore(
 			GridField::create(
 				'Members', 
 				'Members', 
@@ -27,7 +26,8 @@ class BlockWidgetTeam extends BlockWidget {
 					->addComponent(new GridFieldSortableRows('SortOrder'))
 					->addComponent($gridFieldBulkUpload)
 
-			)
+			), 
+			'ExtraClassDescriptionContainer'
 		);		
 
 		return $fields;
