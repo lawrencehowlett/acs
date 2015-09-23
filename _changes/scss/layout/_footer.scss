@@ -42,7 +42,9 @@
 		&:hover {border-color: $orange; background: $orange; color: #fff;}
 	}
 	.copyright {margin: 0 0 0 20px; padding: 6px 0; font-size: 12px; text-align: center;}
-	.legal {text-align: center;}
+	.legal {text-align: center;
+		li {}
+	}
 }
 
 .footer-nav {font-size: 0; text-align: center;}

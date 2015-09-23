@@ -20,18 +20,18 @@
 				&:before {display: block; width: 40px; height: 30px; margin: 0 auto; background: 50% 0 no-repeat; background-size: auto 60px; content: " "; transition: all 0.3s;}
 				&:hover {border-left-color: $gray; background: $gray;}
 				&:hover:before {background-position: 50% 100%;}
-				&.team:before {background-image: $bsTeam;}
-				&.knowledge:before {background-image: $bsKnowledge;}
-				&.experience:before {background-image: $bsExperience;}
-				&.passion:before {background-image: $bsPassion;}
-				&.trust:before {background-image: $bsTrust;}
-				&.awards:before {background-image: $bsAwards;}
-				&.desking:before {background-image: $bsDesking;}
-				&.seating:before {background-image: $bsSeating;}
-				&.storage:before {background-image: $bsStorage;}
-				&.reception:before {background-image: $bsReception;}
-				&.breakout:before {background-image: $bsBreakout;}
-				&.conference:before {background-image: $bsConference;}
+				&.team:before {background-image: url(../img/temp/slider-team.png);}
+				&.knowledge:before {background-image: url(../img/temp/slider-knowledge.png);}
+				&.experience:before {background-image: url(../img/temp/slider-experience.png);}
+				&.passion:before {background-image: url(../img/temp/slider-passion.png);}
+				&.trust:before {background-image: url(../img/temp/slider-trust.png);}
+				&.awards:before {background-image: url(../img/temp/slider-awards.png);}
+				&.desking:before {background-image: url(../img/temp/slider-desking.png);}
+				&.seating:before {background-image: url(../img/temp/slider-seating.png);}
+				&.storage:before {background-image: url(../img/temp/slider-storage.png);}
+				&.reception:before {background-image: url(../img/temp/slider-reception.png);}
+				&.breakout:before {background-image: url(../img/temp/slider-breakout.png);}
+				&.conference:before {background-image: url(../img/temp/slider-conference.png);}
 				&.active {background: rgba(0,114,198,0.9); color: #fff;
 					&:before {background-position: 50% 100%;}
 					&:after {display: block; position: absolute; left: 50%; top: 100%; width: 0; margin-left: -10px; border-style: solid; border-width: 10px; border-color: rgba(0,114,198,0.9) transparent transparent transparent; content: " ";}
