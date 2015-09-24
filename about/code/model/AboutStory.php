@@ -35,7 +35,7 @@ class AboutStory extends BlockWidget {
 	}
 
 	public function ComponentName() {
-		return 'Stories widget';
+		return 'Timeline widget';
 	}
 
 	public function getTimeLine() {
