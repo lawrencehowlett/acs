@@ -5,7 +5,7 @@
 		$SearchForm
 		<% if $TopMenus %>
 			<nav class="sec-nav">
-				<a class="menu-toggle" href="#"></a>
+				<a class="menu-toggle" href="javascript:void(0);"></a>
 				<ul class="menu">
 					<% loop $TopMenus %>
 						<li class="<% if $Children %>has-dropdown<% end_if %>">
