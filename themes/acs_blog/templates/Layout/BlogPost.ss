@@ -105,14 +105,8 @@
 
 		<aside class="blog-sidebar">
 			<% include BlogSideBar %>
-		</aside>
 
-		<ul class="blog-social">
-			<li><span class='social facebook st_facebook_custom' displayText='Facebook'></span></li>
-			<li><span class='social googleplus st_twitter_custom' displayText='Tweet'></span></li>
-			<li><span class='social twitter st_linkedin_custom' displayText='LinkedIn'></span></li>
-			<li><span class='social linkedin st_googleplus_custom' displayText='Google +'></span></li>
-		</ul>
+		</aside>
 
 	</div>
 </section>

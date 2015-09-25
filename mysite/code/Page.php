@@ -226,6 +226,7 @@ CSS
 			$callSpecialistBlock->MailToSubject,
 			$callSpecialistBlock->MailToBody
 		);
+		$emailLead->addCustomHeader('Reply-To', $callSpecialistBlock->MailFrom);
 		$emailLead->send();
 
         $arrData = array(
