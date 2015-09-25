@@ -469,6 +469,11 @@
 					<ul class="slider-navigation">
 						<% loop $ShowcaseItems %>
 						<li>
+							<% if $TabIcon %>
+								<div class="img">
+									<img alt="$TabIcon.Title" src="$TabIcon.link">
+								</div>
+							<% end_if %>
 							<a href="javascript:void(0);" data-slide="$Top.getListIndex($Pos)" class="slide-link $ExtraClass <% if $First %>active<% end_if%>">$TabTitle</a>
 						</li>
 						<% end_loop %>

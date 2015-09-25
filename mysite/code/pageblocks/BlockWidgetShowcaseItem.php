@@ -58,7 +58,7 @@ class BlockWidgetShowcaseItem extends BlockWidgetTabItem {
 
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('ShowcaseHolderID', 'ExtraClass', 'TabIcon', 'BackgroundImage', 'TabTitle')
+			array('ShowcaseHolderID', 'ExtraClass', 'BackgroundImage', 'TabTitle')
 		);
 
 		$fields->insertAfter(TextField::create('TabTitle', 'Tab Title'), 'Title');
@@ -69,6 +69,8 @@ class BlockWidgetShowcaseItem extends BlockWidgetTabItem {
 				->setFolderName('Showcase/BackgroundImages/'), 
 			'Image'
 		);
+		$fields->dataFieldByName('TabIcon')
+			->setFolderName('Showcase/TabIcons/');
 
 		$fields->dataFieldByName('Image')
 			->setFolderName('Showcase/Images/');
