@@ -51,12 +51,12 @@
 	</div>
 	<div class="viewport">
 		<ul class="slider-navigation">
-			<li><a href="#" data-slide="0" class="slide-link team active">Great team</a></li>
-			<li><a href="#" data-slide="1" class="slide-link knowledge">Knowledge</a></li>
-			<li><a href="#" data-slide="2" class="slide-link experience">20 years experience</a></li>
-			<li><a href="#" data-slide="3" class="slide-link passion">Passion</a></li>
-			<li><a href="#" data-slide="4" class="slide-link trust">Trust and loyalty</a></li>
-			<li><a href="#" data-slide="5" class="slide-link awards">15 awards and honors</a></li>
+			<li><div class="img"><img src="img/temp/slider-team.png" alt="Team"></div><a href="#" data-slide="0" class="slide-link team active">Great team</a></li>
+			<li><div class="img"><img src="img/temp/slider-knowledge.png" alt="Knowledge"></div><a href="#" data-slide="1" class="slide-link knowledge">Knowledge</a></li>
+			<li><div class="img"><img src="img/temp/slider-experience.png" alt="Experience"></div><a href="#" data-slide="2" class="slide-link experience">20 years experience</a></li>
+			<li><div class="img"><img src="img/temp/slider-passion.png" alt="Passion"></div><a href="#" data-slide="3" class="slide-link passion">Passion</a></li>
+			<li><div class="img"><img src="img/temp/slider-trust.png" alt="Trust"></div><a href="#" data-slide="4" class="slide-link trust">Trust and loyalty</a></li>
+			<li><div class="img"><img src="img/temp/slider-awards.png" alt="Awards"></div><a href="#" data-slide="5" class="slide-link awards">15 awards and honors</a></li>
 		</ul>
 		<div class="slider-content">
 			<article class="slide">
