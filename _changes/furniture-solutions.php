@@ -13,12 +13,12 @@
 	</div>
 	<div class="viewport">
 		<ul class="slider-navigation">
-			<li><a href="#" data-slide="0" class="slide-link desking active">Desking</a></li>
-			<li><a href="#" data-slide="1" class="slide-link seating">Seating</a></li>
-			<li><a href="#" data-slide="2" class="slide-link storage">Storage</a></li>
-			<li><a href="#" data-slide="3" class="slide-link reception">Reception</a></li>
-			<li><a href="#" data-slide="4" class="slide-link breakout">Breakout</a></li>
-			<li><a href="#" data-slide="5" class="slide-link conference">Conference &amp; meetings</a></li>
+			<li><div class="img"><img src="img/temp/slider-desking.png" alt="Desking"></div><a href="#" data-slide="0" class="slide-link desking active">Desking</a></li>
+			<li><div class="img"><img src="img/temp/slider-seating.png" alt="Seating"></div><a href="#" data-slide="1" class="slide-link seating">Seating</a></li>
+			<li><div class="img"><img src="img/temp/slider-storage.png" alt="Storage"></div><a href="#" data-slide="2" class="slide-link storage">Storage</a></li>
+			<li><div class="img"><img src="img/temp/slider-reception.png" alt="Reception"></div><a href="#" data-slide="3" class="slide-link reception">Reception</a></li>
+			<li><div class="img"><img src="img/temp/slider-breakout.png" alt="Breakout"></div><a href="#" data-slide="4" class="slide-link breakout">Breakout</a></li>
+			<li><div class="img"><img src="img/temp/slider-conference.png" alt="Conference"></div><a href="#" data-slide="5" class="slide-link conference">Conference &amp; meetings</a></li>
 		</ul>
 		<div class="slider-content">
 			<article class="slide">

@@ -15,29 +15,22 @@
 		.slide-title, p {padding: 0 10px;}
 	}
 	.slider-navigation {position: relative; z-index: 5; list-style: none; max-width: 1170px; margin: 0 auto -50px; padding: 0; font-size: 0;
-		li {display: inline-block; width: 16.667%; vertical-align: top;
+		li {transition: $transAll; position: relative; display: inline-block; width: 16.667%; vertical-align: top;
+			.img {pointer-events: none;height: 25px;top: 11px;transition: $transAll; width: 100%; text-align: center; overflow: hidden; margin: 0 auto; position: absolute; z-index: 1;/*  left: 30%; top: 30px; */}
+			img {transition: $transAll;max-width: 30px; height: 50px;}
 			a {display: block; position: relative; box-sizing: border-box; min-width: 50px; height: 50px; padding: 10px 0; border-left: 1px solid #e6edf3; background: #fff; line-height: 0; text-align: center; outline: none;
 				&:before {display: block; width: 40px; height: 30px; margin: 0 auto; background: 50% 0 no-repeat; background-size: auto 60px; content: " "; transition: all 0.3s;}
-				&:hover {border-left-color: $gray; background: $gray;}
-				&:hover:before {background-position: 50% 100%;}
-				&.team:before {background-image: url(../img/temp/slider-team.png);}
-				&.knowledge:before {background-image: url(../img/temp/slider-knowledge.png);}
-				&.experience:before {background-image: url(../img/temp/slider-experience.png);}
-				&.passion:before {background-image: url(../img/temp/slider-passion.png);}
-				&.trust:before {background-image: url(../img/temp/slider-trust.png);}
-				&.awards:before {background-image: url(../img/temp/slider-awards.png);}
-				&.desking:before {background-image: url(../img/temp/slider-desking.png);}
-				&.seating:before {background-image: url(../img/temp/slider-seating.png);}
-				&.storage:before {background-image: url(../img/temp/slider-storage.png);}
-				&.reception:before {background-image: url(../img/temp/slider-reception.png);}
-				&.breakout:before {background-image: url(../img/temp/slider-breakout.png);}
-				&.conference:before {background-image: url(../img/temp/slider-conference.png);}
 				&.active {background: rgba(0,114,198,0.9); color: #fff;
-					&:before {background-position: 50% 100%;}
 					&:after {display: block; position: absolute; left: 50%; top: 100%; width: 0; margin-left: -10px; border-style: solid; border-width: 10px; border-color: rgba(0,114,198,0.9) transparent transparent transparent; content: " ";}
 				}
 			}
 			&:first-child a {border-left: 0;}
+			&:hover {
+				a {border-left-color: $gray; background: $gray; color: #fff;
+				&:after {border-color: $gray transparent transparent transparent;}
+				}
+				img {@include transformation(translateY(-25px));}
+			}
 		}
 	}
 }
@@ -55,9 +48,17 @@
 		}
 		.section-title {font-size: 35px;}
 		.slider-navigation {height: 150px; margin-bottom: -150px;
-			li a {height: 150px; padding: 30px 10px 0; color: $gray; font: 400 14px /1.3em $prelo; text-transform: uppercase;
-				&:before {width: 56px; height: 45px; margin-bottom: 25px; background-size: auto 90px;}
-				&:hover {color: #fff;}
+			li {
+				.img { top: 30px; height: 40px;
+					img { height: 80px;}
+				}
+				a {height: 150px; padding: 30px 10px 0; color: $gray; font: 400 14px /1.3em $prelo; text-transform: uppercase;
+					&:before {width: 56px; height: 45px; margin-bottom: 25px; background-size: auto 90px;}
+					&:hover {color: #fff;}
+				}	
+				&:hover {
+					img {@include transformation(translateY(-40px));}		
+				}	
 			}
 		}
 	}
