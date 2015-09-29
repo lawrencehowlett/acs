@@ -6,8 +6,9 @@
 				<% if $ClassName == 'MicroPage' %>$MicroHolder.Telephone<% else %>$Telephone<% end_if %>
 			</a>
 		</p>
+		<form class="searchform"></form>
 		<nav class="sec-nav">
-			<a class="menu-toggle" href="#"></a>
+			<a class="menu-toggle" href="javascript:void(0);"></a>
 			<ul class="menu">
 				<li><a href="/">Go to ACS365.co.uk</a></li>
 			</ul>
