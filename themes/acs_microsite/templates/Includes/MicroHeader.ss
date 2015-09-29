@@ -6,7 +6,7 @@
 				<% if $ClassName == 'MicroPage' %>$MicroHolder.Telephone<% else %>$Telephone<% end_if %>
 			</a>
 		</p>
-		<form class="searchform"></form>
+		$SearchForm
 		<nav class="sec-nav">
 			<a class="menu-toggle" href="javascript:void(0);"></a>
 			<ul class="menu">
