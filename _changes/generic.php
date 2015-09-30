@@ -191,8 +191,8 @@
 			</article>
 		</div>
 		<div class="testimonial-nav">
-			<a href="javascript:void(0);" class="prev"></a>
-			<a href="javascript:void(0);" class="next"></a>
+			<a href="#" class="prev"></a>
+			<a href="#" class="next"></a>
 		</div>
 	</div>	
 </section>
