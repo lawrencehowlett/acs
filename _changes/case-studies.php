@@ -118,8 +118,8 @@
 					<p class="author-position">Blog manager</p>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id pharetra neque, a facilisis risus. Vestibulum erat tortor, hendrerit non neque id, gravida tempus mauris. Donec nec ipsum ornare, porta quam sed, porttitor ligula vergalas undor. </p>
 					<div class="testimonial-nav">
-						<a href="#" class="prev"></a>
-						<a href="#" class="next"></a>
+						<a href="javascript:void(0);" class="prev"></a>
+						<a href="javascript:void(0);" class="next"></a>
 					</div>
 				</div>
 			</article>

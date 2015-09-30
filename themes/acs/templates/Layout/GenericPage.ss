@@ -194,36 +194,31 @@
 			<% end_if %>
 
 			<% if $ClassName == 'BlockWidgetSlider' %>
-				<div class="inside">
+				<div class="inside relative testimonial-slider">
 					<h2 class="section-title">$Title</h2>
-					<% if $Items %>
-						<div class="testimonials">
-							<% loop $Items %>
-								<article class="testimonial">
-									<div class="testimonial-image">
-										<% if $Image %>
-											<img src="$Image.Link" alt="$Image.Title">
-										<% end_if %>
-									</div>
-									<div class="testimonial-text">
-										<h3 class="author-name">$Title</h3>
-										
-										<% if $Tagline %>
-											<p class="author-position">$Tagline</p>
-										<% end_if %>
-
-										$Content
-
-										<div class="testimonial-nav">
-											<a href="javascript:void(0);" class="prev"></a>
-											<a href="javascript:void(0);" class="next"></a>
-										</div>
-									</div>
-								</article>
-							<% end_loop %>
-						</div>
-					<% end_if %>
-				</div>			
+					<div class="testimonials">
+						<% loop $Items %>
+							<article class="testimonial">
+								<div class="testimonial-image">
+									<% if $Image %>
+										<img src="$Image.Link" alt="$Image.Title">
+									<% end_if %>
+								</div>
+								<div class="testimonial-text">
+									<h3 class="author-name">$Title</h3>
+									<% if $Tagline %>
+										<p class="author-position">$Tagline</p>
+									<% end_if %>
+									$Content
+								</div>
+							</article>
+						<% end_loop %>
+					</div>
+					<div class="testimonial-nav">
+						<a href="javascript:void(0);" class="prev"></a>
+						<a href="javascript:void(0);" class="next"></a>
+					</div>
+				</div>	
 			<% end_if %>
 
 			<% if $ClassName == 'BlockWidgetActionBox' %>
