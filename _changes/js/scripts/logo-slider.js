@@ -8,7 +8,8 @@ $(".logo-slider").each(function() {
 		auto: true,
 		minSlides: 2,
 		maxSlides: maxSlides,
-		slideWidth: slideWidth
+		slideWidth: slideWidth,
+		slideMargin: 10
 	});
 
 	$(window).resize(function() {

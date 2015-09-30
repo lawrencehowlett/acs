@@ -71,12 +71,14 @@ $(".history").each(function(){
     currentItem++;
     checkCurrentItem();
     moveSlider(currentItem);
+
   }
 
   function checkingCurrentBackward() {
     currentItem--;
-    checkCurrentItem();   
+    checkCurrentItem(); 
     moveSlider(currentItem);
+
   }
 
   function checkCurrentItem(){
@@ -95,13 +97,10 @@ $(".history").each(function(){
     var year = $(obj).data('month').slice(0,4);
     var month = $(obj).data('month').slice(5,7);
     var slide = sliderContent.find('.slider-item[data-year="' + year + '"][data-month="' + month + '"]');
-    var slideToGo = slide.index(); 
-    if(slideToGo) {
-      var distance = items.width() + 30;
-      var pos = -(slideToGo * distance);
-      sliderContent.animate({left: pos + "px"}, 1000, function(){
-        animating = true;
-      }); 
+    var slideToGo = slide.index();
+    if( slideToGo ){
+      currentItem = slideToGo;
+      moveSlider(currentItem);
     }
   }
 

@@ -84,7 +84,7 @@
 </section>
 
 <section class="page-section">
-	<div class="inside">
+	<div class="inside testimonial-slider">
 		<h2 class="section-title">Testimonials</h2>
 		<div class="testimonials">
 			<article class="testimonial">
