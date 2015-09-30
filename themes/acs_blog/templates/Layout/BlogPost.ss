@@ -22,7 +22,10 @@
 					<h2 class="section-title">Author</h2>
 					<article class="blog-post-author cf">
 						<div class="author-portrait">
-							<img src="$Authors.First.BlogProfileImage.Link" alt="$Authors.First.BlogProfileImage.Title">
+							<% if $Authors.First %>
+								<img src="$Authors.First.BlogProfileImage.Link" alt="$Authors.First.BlogProfileImage.Title">
+							<% end_if %>
+
 							<ul class="author-contact">
 								<li><a href="mailto:$Authors.First.Email" class="mail">E-mail</a></li>
 								<% if $Authors.First.Twitter %>

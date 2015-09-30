@@ -1,4 +1,18 @@
 <footer class="footer">
+
+	<% if $Teasers %>
+	<div class="inside cols teasers">
+		<% loop $Teasers %>
+			<article class="col col3 footer-teaser" style="background-image: url('$Background.Link');">
+				<h3 class="footer-teaser-title">$Title</h3>
+				$Content
+				<p class="more">
+					<a href="<% if $StartLiveChat %>javascript:void(0);<% else %>$RedirectPage.Link<% end_if %>" class="<% if $StartLiveChat %>livechat<% end_if %>" title="Go to $RedirectPage.Title.XML page">$ButtonText</a>
+				</p>
+			</article>
+		<% end_loop %>
+	</div>
+	<% end_if %>
 	
 	<div class="inside cf">
 		<% if $MicroMenus %>
