@@ -13,6 +13,31 @@
 
 <section class="page-section text-content blog">
 	<div class="inside cf">
+		<aside class="left">
+			<div class="widget">
+				<ul class="blog-social">
+					<li>
+						<a href="#" class="social facebook"></a>
+						<div class="button-layer"><img src="img/temp/social/fb1.png" alt=""></div>
+					</li>
+					<li>
+						<a href="#" class="social googleplus"></a>
+						<div class="button-layer"><img src="img/temp/social/google.png" alt=""></div>
+					</li>
+					<li>
+						<a href="#" class="social twitter"></a>
+						<div class="button-layer"><img src="img/temp/social/twitter.png" alt=""></div>
+					</li>
+					<li>
+						<a href="#" class="social linkedin"></a>
+						<div class="button-layer"><img src="img/temp/social/linkedin.png" alt=""></div>
+					</li>
+					<li>
+						<a href="#" class="social plus">+</a>
+					</li>
+				</ul>				
+			</div>
+		</aside>
 		<section class="blog-main">
 			<article class="blog-content reading">
 				<p class="lead">Sonangol enlisted our help to redesign their current Knightsbridge office in order to create a brand new, blue chip corporate London HQ.</p>
@@ -141,29 +166,6 @@
 					<input name="name" type="text" required placeholder="Your name">
 					<input name="email" type="email" required placeholder="Your e-mail"><button type="submit" name="subscribe" value="1">Sign Up</button>
 				</form>
-			</div>
-			<div class="widget">
-				<ul class="blog-social">
-					<li>
-						<a href="#" class="social facebook"></a>
-						<div class="button-layer"><img src="img/temp/social/fb1.png" alt=""></div>
-					</li>
-					<li>
-						<a href="#" class="social googleplus"></a>
-						<div class="button-layer"><img src="img/temp/social/google.png" alt=""></div>
-					</li>
-					<li>
-						<a href="#" class="social twitter"></a>
-						<div class="button-layer"><img src="img/temp/social/twitter.png" alt=""></div>
-					</li>
-					<li>
-						<a href="#" class="social linkedin"></a>
-						<div class="button-layer"><img src="img/temp/social/linkedin.png" alt=""></div>
-					</li>
-					<li>
-						<a href="#" class="social plus">+</a>
-					</li>
-				</ul>				
 			</div>
 		</aside>
 

@@ -27,7 +27,7 @@
 		}
 	}
 }
-.blog-sidebar {margin: 30px 0; text-align: center;  overflow: visible; 
+.blog-sidebar {margin: 30px 0; text-align: center; overflow: hidden;
 	.widget {display: inline-block; width: 280px; margin: 0 0 10px; vertical-align: top; text-align: left;
 		&.search {width: 100%;}
 		.widget-title {margin: 0; padding: 20px 30px; background: $gray; color: #fff; font: 400 14px/20px $prelo; text-transform: uppercase;}
@@ -41,7 +41,7 @@
 			}
 		}
 		&.newsletter {padding: 50px 30px 30px; box-sizing: border-box; background: #24465d url("../img/temp/newsletter-bg.jpg") 100% 0 no-repeat; color: #fff;
-			input {width: 100%; margin-bottom: 10px; padding: 25px 30px; background: #1d384a; color: #fff;transition: $transAll;
+			input {width: 100%; margin-bottom: 10px; padding: 25px 30px; background: #1d384a; color: #fff; transition: $transAll;
 			&:focus {background: #294151;}
 			}
 			button {width: 100%;}
@@ -111,11 +111,18 @@
 	&.comments {margin-bottom: 60px;}
 }
 
-.blog-social {overflow-x: hidden; position: relative; margin: 1.5em 0 0; padding: 0; list-style: none; text-align: center;
-	li {position: relative;  display: inline-block; width: 60px; height: 60px; margin: 0 10px 10px; vertical-align: top;
-		.button-layer {z-index: 20;position: absolute; left: -999px; top: 0; overflow: hidden; width: 0; height: 60px; padding: 0 25px; background: #f7fafb; line-height: 60px; transition: all 0.3s;}
+aside.left {
+	.widget {text-align: center;
+		.blog-social {display: inline-block;}
+	}
+}
+.blog-social {position: relative; margin: 1.5em 0 1.5em; padding: 0; list-style: none; text-align: center;
+	li {position: relative;  display: inline-block; width: 60px; height: 60px; margin: 0 10px 10px; vertical-align: top; transition: $transAll;
+		.button-layer {position: absolute; left: -999px; top: 0; overflow: hidden; height: 60px; padding: 0 10px; background: #f7fafb; line-height: 60px; transition: $transAll;}
+		&:last-of-type:hover {margin-bottom: 10px;}
 		&:hover, &.active {
-			.button-layer {left: 0;top: 60px; width: auto; }
+			margin: 0 10px 60px 10px;
+			.button-layer {left: 0;top: 60px;}
 		}
 	}
 	.social {display: block; position: relative; z-index: 5; width: 60px; height: 60px; font-size: 0;
@@ -126,7 +133,7 @@
 		&.plus {background: #9ca5ab url("../img/blog-social.png") no-repeat -240px 0;}
 	}
 }
-.blog-search {position: relative; z-index: -1; background: $blue;
+.blog-search {position: relative; background: $blue;
 	input {width: 100%; padding: 10px 60px 10px 30px; background: $blue; color: #fff; font: 300 14px/30px $prelo; transition: $transAll;
 		&:focus {background: #0567AE;}
 	}
@@ -173,23 +180,23 @@
 @media (min-width: 320px) {
 	.blog-sidebar {
 		.widget.newsletter {
-			width: 300px;
+			width: 100%;
 		}
 	}
 }
 
 @media (min-width: 820px) {
-	.page-section.blog .inside {position: relative;}
-	.blog-sidebar {float: left; width: 25%; margin: 0;
+	.page-section.blog .inside {position: relative; overflow: hidden;}
+	.blog-sidebar {float: right; width: 25%; margin: 0;
 		&.right {float: right;}
 		.widget {display: block; width: auto; margin: 0 0 10px;}
 	}
-	.blog-main {float: right; width: 75%; padding: 0 0 0 50px; box-sizing: border-box;
+	aside.left {width: 10%; float: left;}
+	.blog-main {float: left; width: 65%; padding: 0 0 0 50px; box-sizing: border-box;
 	&.left {float: left;}
 	}
 	.pagination,
 	.blog-content {padding-right: 120px;}
-	.blog-social {/* position: absolute; right: 0; top: 0; */}
 
 	.blog-section {margin-top: 60px;
 		&.comments {margin-bottom: 100px;}
@@ -201,9 +208,9 @@
 		.bx-wrapper .bx-pager {bottom: -70px;}
 	}
 	.blog-social {margin: 0;
-		li {display: inline-block; margin: 0 0 10px;
-			.button-layer {padding: 0; text-align: center;}
-			&:hover .button-layer, &.active .button-layer {/* top: 0; left: -125px; */ width: 125px;}
+		li {margin: 0 0 10px; transition: $transAll;
+			.button-layer {padding: 0; text-align: center; opacity: 0;}
+			&:hover .button-layer, &.active .button-layer {/* top: 0; left: -125px; */ width: 100px; opacity: 1;}
 		}
 	}
 }
