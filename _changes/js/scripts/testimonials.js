@@ -1,6 +1,6 @@
 $(".testimonials").each(function(){
 	var el = $(this);
-	var prevLink = el.next().find(".prev");console.log(prevLink);
+	var prevLink = el.next().find(".prev");
 	var nextLink = el.next().find(".next");
 
 	var sliderOptions = {

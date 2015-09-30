@@ -125,4 +125,10 @@ $(window).resize(function() {
 
 $(".comments-toggle").click(function(event) {
   event.preventDefault();
-})
+});
+
+//accordion
+$('.accordion-title').click(function(event) {
+  event.preventDefault();
+  $(this).next($('.content')).slideToggle();
+});

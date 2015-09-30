@@ -1,0 +1,32 @@
+.accordions {
+  background: #fff;
+  padding: 45px 50px;
+}
+
+.accordion {
+  h2 {
+    color: #24465d;
+    margin-top: 0;
+    font: 300 30px/1.3em "Prelo",sans-serif;
+  }
+  .content {
+    display: none;
+    padding: 20px 0;
+  }
+}  
+.accordion-title {
+  width: 100%;
+  text-align: center;
+  color: #24465d;
+  padding: 15px 0;
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+  transition: $transAll;
+  cursor: pointer;
+  border-bottom: 1px solid #838e96;
+  &:last-of-type {border-bottom: none;}
+  &:hover {
+    color: #f6af16;
+  }
+}
