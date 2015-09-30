@@ -4,15 +4,16 @@
 	.testimonial-text {padding: 20px; background: $lgray; font-size: 14px;}		
 	.author-name {margin: 0; color: #24465d; font: 900 25px/1.5em $prelo;}
 	.author-position {margin: 5px 0 25px; color: #24465d; font: 400 18px/1.5em $prelo; text-transform: uppercase;}
-	.testimonial-nav {margin: 30px 0 0; font-size: 0;
-		a {display: inline-block; width: 73px; height: 43px; margin-right: -1px; border: 1px solid #e6edf3; background: $lgray 50% 50% no-repeat; background-size: 24px 10px; vertical-align: top;
-			&.prev {background-image: url("../img/arrowDarkLeft.svg");}
-			&.next {background-image: url("../img/arrowDarkRight.svg");}
-			&:hover {background-color: #fff;}
-		}
+}
+.bx-loading {display: none;}
+.testimonials {overflow: hidden;}
+.testimonial-nav {margin: 30px 0 0; font-size: 0; position: absolute; bottom: 30px; left: 30px;
+	a {display: inline-block; width: 73px; height: 43px; margin-right: -1px; border: 1px solid #e6edf3; background: $lgray 50% 50% no-repeat; background-size: 24px 10px; vertical-align: top;
+		&.prev {background-image: url("../img/arrowDarkLeft.svg");}
+		&.next {background-image: url("../img/arrowDarkRight.svg");}
+		&:hover {background-color: #fff;}
 	}
 }
-
 @media (min-width: 800px) {
 	.testimonial {display: -webkit-flex; display: flex; align-items: stretch; align-content: stretch;
 		.testimonial-image {order: 1; width: 40%; margin: 0 0 0 10px; box-sizing: border-box;}
