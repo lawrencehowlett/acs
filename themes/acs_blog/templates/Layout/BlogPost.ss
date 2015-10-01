@@ -25,13 +25,14 @@
 		<section class="blog-main">
 			<article class="blog-content reading">
 				$Content
-			</article>	
+			</article>
+
 			<% if $Authors %>
 				<section class="blog-section">
 					<h2 class="section-title">Author</h2>
 					<article class="blog-post-author cf">
 						<div class="author-portrait">
-							<% if $Authors.First %>
+							<% if $Authors.First.BlogProfileImage %>
 								<img src="$Authors.First.BlogProfileImage.Link" alt="$Authors.First.BlogProfileImage.Title">
 							<% end_if %>
 
