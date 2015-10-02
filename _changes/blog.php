@@ -46,6 +46,10 @@
 				<p>Our overall design concept was created to reflect their heritage and their progressive future as a leading oil producer in Africa.</p>
 				<h3>Peldon Rose restaurant opening</h2>
 				<p>In order to carry out the work, we refurbished all three buildings whilst Sonangol were in occupancy – which is a particular skill which we have within Peldon Rose. Our client remained working without any disruption throughout the construction process. And each member of staff only moved desks once.</p>
+				<ul class="checked-list">
+					<li>bb</li>
+					<li>aa</li>
+				</ul>
 				<h4>Reception</h4>
 				<p>Not only this, but we created a luxurious reception area that previously didn’t exist alongside a new front of shop on Brompton Road. All in all providing a quality of service to their clients. As you enter reception, a stainless steel and glass staircase sweeps up to their first floor boardroom, holding 24 people, with a gracious outlook onto Knightsbridge.</p>
 				<h4>Floor</h4>

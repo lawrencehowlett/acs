@@ -1,4 +1,21 @@
 .inside {padding: 0 10px;}
+ul.checked-list {
+	li {
+		padding: 5px 0 5px 30px;
+		list-style-type: none;
+		position: relative;
+		&:before {
+			content: '';
+			top: 8px;
+			position: absolute;
+			background: url(../img/temp/tick.png) no-repeat;
+			width: 30px;
+			height: 20px;
+			left: 0;
+		}
+	}		
+}
+
 
 .cols {font-size: 0;}
 .col {box-sizing: border-box; font-size: 15px;}
