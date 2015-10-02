@@ -42,7 +42,7 @@
 						
 						<% if $FeaturedImage %>
 							<div class="post-image">
-								<img src="$FeaturedImage.CroppedImage(584, 380).Link" alt="$FeaturedImage.Title">
+								<a href="$Link" title="Go to $Title page"><img src="$FeaturedImage.CroppedImage(584, 380).Link" alt="$FeaturedImage.Title"></a>
 							</div>
 						<% end_if %>
 
