@@ -69,7 +69,7 @@
 		<div class="map" id="gmap" data-markers='[
 		<% loop $RegionalOffices %>
 			<% if $GoogleMapLat && $GoogleMapLong %>
-				{"text": "$Title", "lat": $GoogleMapLat, "lng": $GoogleMapLong}<% if not $Last %>,<% end_if %>
+				{"text": "$Title <% if $Address %><br>$Address<% end_if %>", "lat": $GoogleMapLat, "lng": $GoogleMapLong}<% if not $Last %>,<% end_if %>
 			<% end_if %>
 		<% end_loop %>
 		]' data-centerlat="$RegionalOffices.First.GoogleMapLat" data-centerlng="$RegionalOffices.First.GoogleMapLong" data-marker="$ThemeDir/img/marker.png"></div>

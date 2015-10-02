@@ -352,19 +352,25 @@
 					<h2 class="section-title">$Title</h2>
 					<ul class="work">
 						<% loop $Works %>
-							<li class="work-item $ExtraClass">
-								<p class="number">$Pos</p>
-								<p class="work-item-img"></p>
-								<h3 class="work-title">$Title</h3>
-								$Content
+						<li class="work-item $ExtraClass">
+							<p class="number">$Pos</p>
+							<div class="work-item-img">
+								<div class="img">
+									<% if $TabIcon %>
+										<img src="$TabIcon.Link" alt="$TabIcon.Title">
+									<% end_if %>
+								</div>
+							</div>
+							<h3 class="work-title">$Title</h3>
+							$Content
 
-								<% if $RedirectPage %>
-									<p class="more">
-										<a href="$RedirectPage.Link" title="Go to $RedirectPage.TItle">$ButtonText</a>
-									</p>
-								<% end_if %>
+							<% if $RedirectPage %>
+								<p class="more">
+									<a href="$RedirectPage.Link" title="Go to $RedirectPage.TItle">$ButtonText</a>
+								</p>
+							<% end_if %>
 
-							</li>
+						</li>
 						<% end_loop %>
 					</ul>
 				</div>

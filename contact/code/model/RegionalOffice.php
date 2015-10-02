@@ -14,6 +14,7 @@ class RegionalOffice extends DataObject {
 	 */
 	private static $db = array(
 		'Title' => 'Varchar', 
+		'Address' => 'Text', 
 		'Content' => 'HTMLText',
 		'GoogleMapLat' => 'Text',
 		'GoogleMapLong' => 'Text',
@@ -64,6 +65,11 @@ class RegionalOffice extends DataObject {
 			'Root.GoogleMap', 
 			TextField::create('GoogleMapLong', 'Longitude')
 		);
+
+        $fields->replaceField(
+        	'Address', 
+        	TextField::create('Address', 'Address')
+        );		
 
 		return $fields;
 	}

@@ -47,15 +47,6 @@ class BlockWidgetWork extends BlockWidgetSlider {
 	}
 
 	/**
-	 * Get extra class
-	 * 
-	 * @return string
-	 */
-	public function getExtraClass() {
-		return 'mt40 mb60';
-	}
-
-	/**
 	 * Get component name
 	 *
 	 * @return string
