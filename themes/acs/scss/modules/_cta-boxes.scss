@@ -1,8 +1,8 @@
 .cta-boxes {margin: 0 -8px; padding-top: 10px; text-align: center;}
 .cta-box {padding: 50px; border: 8px solid #F2F6F9; border-width: 0 8px 8px; background: $blue; color: #fff; font: 300 18px/1.5em $prelo; text-align: center; cursor: pointer;
-	&.box1 {background: #1d384a;}
-	&.box2 {background: #566f7f;}
-	&.box3 {background: #8b9eab;}
+	&.box1, &.box4, &.box7 {background: #1d384a;}
+	&.box2, &.box5, &.box8 {background: #566f7f;}
+	&.box3, &.box6, &.box9 {background: #8b9eab;}
 	.cta-box-title {margin: 0.75em 0; font-size: 25px; font-weight: 400;
 		a {color: #fff;}
 		a:hover {color: $orange;}
