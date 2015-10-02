@@ -356,7 +356,9 @@
 							<p class="number">$Pos</p>
 							<div class="work-item-img">
 								<div class="img">
-									<img src="$TabIcon.Link" alt="$TabIcon.Title">
+									<% if $TabIcon %>
+										<img src="$TabIcon.Link" alt="$TabIcon.Title">
+									<% end_if %>
 								</div>
 							</div>
 							<h3 class="work-title">$Title</h3>
