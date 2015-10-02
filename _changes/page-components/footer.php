@@ -52,11 +52,11 @@
 		</section>
 		<section class="footer-section social-section cf">
 			<ul class="social">
-				<li><a href="#" class="google-plus">Google+</a></li>
-				<li><a href="#" class="youtube">YouTube</a></li>
-				<li><a href="#" class="twitter">Twitter</a></li>
-				<li><a href="#" class="linkedin">LinkedIn</a></li>
-				<li><a href="#" class="flickr">Flickr</a></li>
+				<li><a href="#" class="google-plus"><div class="img"><img src="img/temp/social-googleplus.png" alt=""></div>Google+</a></li>
+				<li><a href="#" class="youtube"><div class="img"><img src="img/temp/social-youtube.png" alt=""></div>YouTube</a></li>
+				<li><a href="#" class="twitter"><div class="img"><img src="img/temp/social-twitter.png" alt=""></div>Twitter</a></li>
+				<li><a href="#" class="linkedin"><div class="img"><img src="img/temp/social-linkedin.png" alt=""></div>LinkedIn</a></li>
+				<li><a href="#" class="vine"><div class="img"><img src="img/temp/social-vine.png" alt=""></div>Flickr</a></li>
 			</ul>
 			<ul class="menu legal">
 				<li><a href="#">Privacy</a></li>
