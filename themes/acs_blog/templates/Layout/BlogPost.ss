@@ -12,17 +12,27 @@
 
 <section class="page-section text-content blog">
 	<div class="inside cf">
+		<aside class="left">
+			<div class="widget">
+				<ul class="blog-social">
+					<li><span class='social facebook st_facebook_custom' displayText='Facebook'></span></li>
+					<li><span class='social googleplus st_twitter_custom' displayText='Tweet'></span></li>
+					<li><span class='social twitter st_linkedin_custom' displayText='LinkedIn'></span></li>
+					<li><span class='social linkedin st_googleplus_custom' displayText='Google +'></span></li>
+				</ul>				
+			</div>
+		</aside>
 		<section class="blog-main">
 			<article class="blog-content reading">
-				$Content 
-			</article>	
+				$Content
+			</article>
 
 			<% if $Authors %>
 				<section class="blog-section">
 					<h2 class="section-title">Author</h2>
 					<article class="blog-post-author cf">
 						<div class="author-portrait">
-							<% if $Authors.First %>
+							<% if $Authors.First.BlogProfileImage %>
 								<img src="$Authors.First.BlogProfileImage.Link" alt="$Authors.First.BlogProfileImage.Title">
 							<% end_if %>
 
@@ -33,13 +43,11 @@
 								<% end_if %>
 							</ul>
 						</div>
-						
 						<div class="author-descr">
 							<h3 class="author-name">$Authors.First.FirstName $Authors.First.Surname</h3>
 							<p class="author-position">$Authors.First.Position</p>
 							<p>$Authors.First.BlogProfileSummary</p>
-						</div>
-
+						</div>					
 					</article>
 				</section>
 			<% end_if %>
@@ -103,12 +111,10 @@
 					</ul>
 				</section>
 			<% end_if %>
-
 		</section>
 
 		<aside class="blog-sidebar">
 			<% include BlogSideBar %>
-
 		</aside>
 
 	</div>

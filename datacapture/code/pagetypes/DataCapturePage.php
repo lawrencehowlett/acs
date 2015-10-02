@@ -15,6 +15,7 @@ class DataCapturePage extends Page {
 	private static $db = array(
 		'FormTitle' => 'Text', 
 		'FormDescription' => 'Text', 
+		'ListID' => 'Text', 
 		'MergeTag' => 'Varchar',
 		'FormButtonTitle' => 'Varchar'
 	);	
@@ -67,6 +68,11 @@ class DataCapturePage extends Page {
 		$fields->addFieldToTab(
 			'Root.Form', 
 			TextareaField::create('FormDescription', 'Description')
+		);
+
+		$fields->addFieldToTab(
+			'Root.Form', 
+			TextField::create('ListID', 'List ID')
 		);
 
 		$fields->addFieldToTab(
@@ -181,7 +187,7 @@ JS
 		$MailChimp = new \Drewm\MailChimp($settings->APIKey);
 		
 		$apiData = array(
-			'id'                => $settings->MailChimpList()->filter(array('Code' => 'RESOURCES'))->First()->ListID,
+			'id'                => $this->ListID,
 			'email'             => array('email' => $data['Email']),
 			'merge_vars'        => array(
 									'Name' => $data['Name'], 
