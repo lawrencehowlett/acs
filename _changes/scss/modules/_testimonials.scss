@@ -7,7 +7,8 @@
 }
 .bx-loading {display: none;}
 .testimonials {overflow: hidden;}
-.testimonial-nav {margin: 30px 0 0; font-size: 0; position: absolute; bottom: -45px; left: calc(50% - 30px); -webkit-calc(50% - 30px); -ms-calc(50% - 30px); -moz-calc(50% - 30px); -o-calc(50% - 30px);
+.testimonial-nav {margin: 30px 0 0; font-size: 0; position: absolute; bottom: -45px; left: calc(50% - 30px); 
+	left: -webkit-calc(50% - 30px); left: -ms-calc(50% - 30px); left: -moz-calc(50% - 30px); left: -o-calc(50% - 30px);
 	a {display: inline-block; width: 73px; height: 43px; margin-right: -1px; border: 1px solid #e6edf3; background: $lgray 50% 50% no-repeat; background-size: 24px 10px; vertical-align: top;
 		&.prev {background-image: url("../img/arrowDarkLeft.svg");}
 		&.next {background-image: url("../img/arrowDarkRight.svg");}
