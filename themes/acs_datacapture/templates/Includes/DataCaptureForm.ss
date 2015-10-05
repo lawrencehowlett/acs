@@ -15,7 +15,7 @@
 	</p>
 
 	<p class="field">
-		$Fields.dataFieldByName(Business)
+		$Fields.dataFieldByName(CompanyName)
 	</p>
 
 	<p class="check">
