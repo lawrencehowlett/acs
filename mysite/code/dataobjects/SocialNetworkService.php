@@ -9,7 +9,8 @@ class SocialNetworkService extends DataObject {
 	);
 
 	private static $has_one = array(
-		'SiteConfig' => 'SiteConfig'
+		'SiteConfig' => 'SiteConfig', 
+		'Icon' => 'Image'
 	);
 
 	public function getCMSFields() {
@@ -19,6 +20,9 @@ class SocialNetworkService extends DataObject {
 			'Root.Main', 
 			array('SortOrder', 'SiteConfigID')
 		);
+
+		$fields->dataFieldByName('Icon')
+			->setFolderName('SocialIcons');
 
 		return $fields;
 	}
