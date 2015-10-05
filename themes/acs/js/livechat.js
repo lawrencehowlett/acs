@@ -2,6 +2,11 @@ window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=d.crea
 $zopim(function(){
 	$zopim.livechat.window.hide();
 	$zopim.livechat.window.setTitle('Live Chat');
+
+	$zopim.livechat.setGreetings({
+		'online': 'Chat with us',
+		'offline': 'Chat with us'
+	});
 });
 
 $('a.livechat').click(function(e){
