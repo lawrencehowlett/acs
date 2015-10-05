@@ -170,7 +170,7 @@ JS
 	}
 
 	/**
-	 * Send to mailchimp api
+	 * Send to mailchimp api 
 	 * 
 	 * @param  Array  $data
 	 * @param  Form   $form
