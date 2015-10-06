@@ -537,10 +537,10 @@
 							<% loop $DoubleSliderItems %>
 								<li class="slider-item">
 									<h3 class="slide-title">
-										<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML">$Title</a>
+										<a href="<% if $RedirectPage %>$RedirectPage.Link<% else %>javascript:void(0);<% end_if %>" title="Go to $RedirectPage.Title.XML">$Title</a>
 									</h3>
 									<p class="slide-img">
-										<a href="$RedirectPage.Link">
+										<a href="<% if $RedirectPage %>$RedirectPage.Link<% else %>javascript:void(0);<% end_if %>">
 											<img src="$Image.Link" alt="$Image.Title">
 										</a>
 									</p>
