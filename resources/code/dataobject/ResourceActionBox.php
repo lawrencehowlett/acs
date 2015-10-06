@@ -18,10 +18,13 @@ class ResourcesActionBox extends DataObject {
 	 * @var array
 	 */
 	private static $has_one = array(
-		'Category' => 'ResourceCategory',
 		'DocumentType' => 'ResourceDocumentType',
 		'RedirectPage' => 'SiteTree', 
 		'FeaturedImage' => 'Image'
+	);
+
+	private static $many_many = array(
+		'Categories' => 'ResourceCategory'
 	);
 
 	private static $belongs_many_many = array(
@@ -60,6 +63,7 @@ class ResourcesActionBox extends DataObject {
 		$fields = parent::getCMSFields();
 
 		$fields->removeByName('ResourcesPage');
+		$fields->removeByName('Categories');
 		$fields->removeByName('ResourcePostPages');
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
@@ -69,6 +73,15 @@ class ResourcesActionBox extends DataObject {
 		$fields->replaceField(
 			'Title', 
 			TextField::create('Title', 'Title')
+		);
+
+		$fields->insertBefore(
+			TagField::create(
+				'Categories',
+				'Categories',
+				ResourceCategory::get()->map('ID', 'Title')
+			), 
+			'DocumentTypeID'
 		);
 
 		$fields->replaceField(
