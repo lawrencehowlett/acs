@@ -137,7 +137,7 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 			'Root.Mail', 
 			ToggleCompositeField::create(
 				'CustomMailToAdminBody', 
-				'List of variables for admin reply message', 
+				'List of variables for reply messages', 
 				array(
 					LiteralField::create(
 						'MailToAdminBodyVariables', 

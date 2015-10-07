@@ -220,11 +220,20 @@ CSS
 	 */
 	public function doCallSpecialist(Array $data, Form $form) {
 		$callSpecialistBlock = $this->getCallSpecialistBlock();
+        $arrLeadData = array(
+            '$CompanyName' => $data['CompanyName'],
+            '$Name' => $data['Name'],
+            '$Email' => $data['Email'],
+            '$Telephone' => $data['Telephone'],
+            '$BestTimeToCall' => $data['BestTimeToCall']
+        );
+        $leadEmailMessage = str_replace(array_keys($arrLeadData), array_values($arrLeadData), $callSpecialistBlock->MailToBody);
+
 		$emailLead = new Email(
 			$callSpecialistBlock->MailFrom,
 			$data['Email'], 
 			$callSpecialistBlock->MailToSubject,
-			$callSpecialistBlock->MailToBody
+			$leadEmailMessage
 		);
 		$emailLead->addCustomHeader('Reply-To', $callSpecialistBlock->MailFrom);
 		$emailLead->send();
