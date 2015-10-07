@@ -228,12 +228,12 @@
 						<% loop $Items %>
 							<article class="cta-box box$Pos col col3 clickable">
 								<p class="cta-box-img">
-									<a href="<% if $StartLiveChat %>javascript:void(0);<% else %>$RedirectPage.Link<% end_if %>" <% if $StartLiveChat %>class="livechat"<% end_if %> title="Go to $RedirectPage.Title">
+									<a href="<% if $StartLiveChat %>javascript:void(0);<% else_if $RedirectPage %>$RedirectPage.Link<% else %>javascript:void(0);<% end_if %>" <% if $StartLiveChat %>class="livechat"<% end_if %> title="Go to $RedirectPage.Title">
 										<img src="$Image.Link" alt="$Image.Title">
 									</a>
 								</p>
 								<h3 class="cta-box-title">
-									<a href="<% if $StartLiveChat %>javascript:void(0);<% else %>$RedirectPage.Link<% end_if %>" <% if $StartLiveChat %>class="livechat"<% end_if %> title="Go to $RedirectPage.Title">$Title</a>
+									<a href="<% if $StartLiveChat %>javascript:void(0);<% else_if $RedirectPage %>$RedirectPage.Link<% else %>javascript:void(0);<% end_if %>" <% if $StartLiveChat %>class="livechat"<% end_if %> title="Go to $RedirectPage.Title">$Title</a>
 								</h3>
 								$Content
 							</article>
