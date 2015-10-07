@@ -689,6 +689,21 @@
 				</div>
 			<% end_if %>
 
+			<% if $ClassName == 'BlockWidgetAccordion' %>
+				<div class="inside">
+					<div class="accordions">
+						<% loop $Items %>
+						<div class="accordion">
+							<div class="accordion-title">$Title</div>
+							<div class="content">
+								<div class="accordian-content">$Content</div>     
+							</div>
+						</div>
+						<% end_loop %>
+					</div>  
+				</div>
+			<% end_if %>			
+
 		</section>	
 
 	<% end_loop %>
