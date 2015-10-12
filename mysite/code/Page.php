@@ -247,13 +247,11 @@ CSS
         );
         $adminEmailMessage = str_replace(array_keys($arrData), array_values($arrData), $callSpecialistBlock->MailToAdminBody);
 
-		$adminGroup = Group::get()->filter(array('Code' => 'administrators'))->First();
-		if ($adminGroup) {
-			$admins = $adminGroup->DirectMembers();
-			foreach ($admins as $admin) {
+		if ($callSpecialistBlock->MailToAdminRecipients()) {
+			foreach ($callSpecialistBlock->MailToAdminRecipients() as $recipients) {
 				$emailAdmin = new Email(
 					$callSpecialistBlock->MailFrom, 
-					$admin->Email, 
+					$recipients->Title, 
 					'Call request from ' . $data['CompanyName'],
 					$adminEmailMessage,
 					null,
@@ -262,7 +260,7 @@ CSS
 				$emailAdmin->addCustomHeader('Reply-To', $data['Email']);
 				$emailAdmin->send();
 			}
-		}		
+		}
 
 		if (isset($data['Newsletter'])) {
 			$settings = SiteConfig::current_site_config();
