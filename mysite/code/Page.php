@@ -220,11 +220,20 @@ CSS
 	 */
 	public function doCallSpecialist(Array $data, Form $form) {
 		$callSpecialistBlock = $this->getCallSpecialistBlock();
+        $arrLeadData = array(
+            '$CompanyName' => $data['CompanyName'],
+            '$Name' => $data['Name'],
+            '$Email' => $data['Email'],
+            '$Telephone' => $data['Telephone'],
+            '$BestTimeToCall' => $data['BestTimeToCall']
+        );
+        $leadEmailMessage = str_replace(array_keys($arrLeadData), array_values($arrLeadData), $callSpecialistBlock->MailToBody);
+
 		$emailLead = new Email(
 			$callSpecialistBlock->MailFrom,
 			$data['Email'], 
 			$callSpecialistBlock->MailToSubject,
-			$callSpecialistBlock->MailToBody
+			$leadEmailMessage
 		);
 		$emailLead->addCustomHeader('Reply-To', $callSpecialistBlock->MailFrom);
 		$emailLead->send();
@@ -238,13 +247,11 @@ CSS
         );
         $adminEmailMessage = str_replace(array_keys($arrData), array_values($arrData), $callSpecialistBlock->MailToAdminBody);
 
-		$adminGroup = Group::get()->filter(array('Code' => 'administrators'))->First();
-		if ($adminGroup) {
-			$admins = $adminGroup->DirectMembers();
-			foreach ($admins as $admin) {
+		if ($callSpecialistBlock->MailToAdminRecipients()) {
+			foreach ($callSpecialistBlock->MailToAdminRecipients() as $recipients) {
 				$emailAdmin = new Email(
 					$callSpecialistBlock->MailFrom, 
-					$admin->Email, 
+					$recipients->Title, 
 					'Call request from ' . $data['CompanyName'],
 					$adminEmailMessage,
 					null,
@@ -253,7 +260,7 @@ CSS
 				$emailAdmin->addCustomHeader('Reply-To', $data['Email']);
 				$emailAdmin->send();
 			}
-		}		
+		}
 
 		if (isset($data['Newsletter'])) {
 			$settings = SiteConfig::current_site_config();

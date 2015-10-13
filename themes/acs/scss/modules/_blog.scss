@@ -183,6 +183,8 @@ aside.left {
 			width: 100%;
 		}
 	}
+
+	.blog-content img {display:block;max-width:100%;height:auto;}
 }
 
 @media (min-width: 820px) {
@@ -197,6 +199,8 @@ aside.left {
 	}
 	.pagination,
 	.blog-content {padding-right: 120px;}
+
+	/*.blog-content img {display:block;max-width:100%;height:auto;}*/
 
 	.blog-section {margin-top: 60px;
 		&.comments {margin-bottom: 100px;}

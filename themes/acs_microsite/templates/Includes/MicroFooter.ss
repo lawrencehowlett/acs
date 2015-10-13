@@ -37,7 +37,15 @@
 			<% if $SiteConfig.SocialServices %>
 				<ul class="social">
 					<% loop $SiteConfig.SocialServices %>
-						<li><a href="$ExternalURL" title="Go to $Title" class="$CSS" target="_blank">$Title</a></li>
+						<li>
+							<a href="$ExternalURL" title="Go to $Title" class="$CSS" target="_blank">
+							<% if $Icon %>
+								<div class="img">
+									<img src="$Icon.Link" alt="$Icon.Title">
+								</div>
+							<% end_if %>
+							$Title</a>
+						</li>
 					<% end_loop %>
 				</ul>
 			<% end_if %>

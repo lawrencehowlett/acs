@@ -23,8 +23,11 @@ class ResourceCategory extends DataObject {
 	 * @var array
 	 */
 	private static $has_one = array(
-		'Resources' => 'ResourcesActionBox', 
 		'ResourcePage' => 'ResourcesPage'
+	);
+
+	private static $belongs_many_many = array(
+		'Resources' => 'ResourcesActionBox'
 	);
 
 	/**

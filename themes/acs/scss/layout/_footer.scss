@@ -7,22 +7,22 @@
 	}
 
 	.social {margin: 0 0 20px; padding: 0; list-style: none; font-size: 0; text-align: center;
-		li {display: inline-block; margin: 0 0 0 10px; background-size: 100% 200%; @include transition();
+		li {display: inline-block; margin: 0 0 0 10px; background-size: 100% 200%; @include transition(); height: 56px; width: 56px;
 			&:first-child {margin: 0;}
 			&:hover {background-position: 0 -100%;}
+			.img {
+				line-height: 56px;
+			  img {
+			  	vertical-align: middle;
+			  	max-height: 22px;
+			  }
+			}
 		}
 		li:nth-of-type(1)  {@include linearGradient(#838e96, #D44132);} //g+
 		li:nth-of-type(2)  {@include linearGradient(#838e96, #B62025);} //youtube
 		li:nth-of-type(3)  {@include linearGradient(#838e96, #00ACED);} //twitter
 		li:nth-of-type(4)  {@include linearGradient(#838e96, #1D87BD);} //linkedin
-		li:nth-of-type(5)  {@include linearGradient(#838e96, #f6af16);}
-		a {display: block; width: 40px; height: 40px; background: 50% 50% no-repeat;
-			&.google-plus {background-image: $socGooglePlus;}
-			&.youtube {background-image: $socYouTube;}
-			&.twitter {background-image: $socTwitter;}
-			&.linkedin {background-image: $socLinkedIn;}
-			&.flickr {background-image: $socFlickr;}
-		}
+		li:nth-of-type(5)  {@include linearGradient(#838e96, #00BD8E);} //vine
 	}
 }
 
@@ -42,7 +42,9 @@
 		&:hover {border-color: $orange; background: $orange; color: #fff;}
 	}
 	.copyright {margin: 0 0 0 20px; padding: 6px 0; font-size: 12px; text-align: center;}
-	.legal {text-align: center;}
+	.legal {text-align: center;
+		li {}
+	}
 }
 
 .footer-nav {font-size: 0; text-align: center;}

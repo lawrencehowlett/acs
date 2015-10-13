@@ -37,7 +37,7 @@
 
 		<ul class="res-list cols" id="resourceList">
 			<% loop $Resources %>
-				<li class="resource col col2 $Category.CodeIdentifier">
+				<li class="resource col col2 <% loop $Categories %>$CodeIdentifier <% end_loop %>">
 					<img src="$FeaturedImage.CroppedImage(220, 300).Link" alt="$FeaturedImage.Title" class="resource-thumbnail">
 
 					<h3 class="resource-title">$Title</h3>

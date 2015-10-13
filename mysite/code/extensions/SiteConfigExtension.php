@@ -13,14 +13,15 @@ class SiteConfig_Extension extends DataExtension {
 	 * @var array
 	 */
 	private static $db = array(
-		'EmailAddress' => 'Varchar',
-		'ContactNumber' => 'Varchar',
+		'EmailAddress' => 'Varchar', 
+		'ContactNumber' => 'Varchar', 
 		'SocialGooglePlus' => 'Text', 
 		'SocialFacebook' => 'Text', 
 		'SocialTwitter' => 'Text', 
 		'SocialYoutube' => 'Text', 
 		'SocialLinkedIn' => 'Text', 
 		'FooterActionBoxButtonText' => 'Varchar', 
+		'GoogleAnalyticsUANumber' => 'Text', 
 		'Copyright' => 'Text'
 	);
 
@@ -80,6 +81,11 @@ class SiteConfig_Extension extends DataExtension {
 		$fields->addFieldToTab(
 			'Root.Contact', 
 			TextField::create('ContactNumber', 'Contact Number')
+		);
+
+		$fields->addFieldToTab(
+			'Root.Main', 
+			TextField::create('GoogleAnalyticsUANumber', 'Google Analytics UA number')
 		);
 
 		$fields->addFieldToTab(

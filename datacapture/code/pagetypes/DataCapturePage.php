@@ -150,8 +150,8 @@ JS
 				->setAttribute('placeholder', 'Email'),
 			TextField::create('Phone', false, Cookie::get('DataCaptureFormPhone'))
 				->setAttribute('placeholder', 'Phone'),
-			DropdownField::create('Business', 'Primary business type', array('outsourcing' => 'Outsourcing', 'restaurant' => 'Restaurant'), Cookie::get('DataCaptureFormBusiness'))
-				->setEmptyString('Primary business type'), 
+			TextField::create('CompanyName', false, Cookie::get('DataCaptureFormCompanyName'))
+				->setAttribute('placeholder', 'Company Name'),
 			CheckboxField::create('Newsletter', 'Yes I want your monthly newsletter with great tips to improve my business')
 		);
 
@@ -160,7 +160,7 @@ JS
 		$formAction->useButtonTag = true;
 		$actions = new FieldList($formAction);
 
-		$required = new RequiredFields('Name', 'Email', 'Phone', 'Phone', 'Business');
+		$required = new RequiredFields('Name', 'Email', 'Phone', 'Phone', 'CompanyName');
 
 		$form = new Form($this, 'Form', $fields, $actions, $required);
 		$form->addExtraClass('ebook-form');
@@ -170,7 +170,7 @@ JS
 	}
 
 	/**
-	 * Send to mailchimp api
+	 * Send to mailchimp api 
 	 * 
 	 * @param  Array  $data
 	 * @param  Form   $form
@@ -180,19 +180,19 @@ JS
 		Cookie::set('DataCaptureFormName', $data['Name'], 365);
 		Cookie::set('DataCaptureFormEmail', $data['Email'], 365);
 		Cookie::set('DataCaptureFormPhone', $data['Phone'], 365);
-		Cookie::set('DataCaptureFormBusiness', $data['Business'], 365);
+		Cookie::set('DataCaptureFormCompanyName', $data['CompanyName'], 365);
 
 		$settings = SiteConfig::current_site_config();
 
 		$MailChimp = new \Drewm\MailChimp($settings->APIKey);
-		
+
 		$apiData = array(
 			'id'                => $this->ListID,
 			'email'             => array('email' => $data['Email']),
 			'merge_vars'        => array(
 									'Name' => $data['Name'], 
 									'Phone' => $data['Phone'], 
-									'Business' => $data['Business'], 
+									'Business' => $data['CompanyName'], 
 									$this->MergeTag => 1
 								),
 			'double_optin'      => false,

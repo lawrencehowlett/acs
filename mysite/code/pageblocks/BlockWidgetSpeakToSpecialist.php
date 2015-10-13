@@ -36,6 +36,10 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 		'ActionBoxBackgroundImage' => 'Image'
 	);
 
+	private static $many_many = array(
+		'MailToAdminRecipients' => 'SpeakToSpecialistsMailToAdminRecipients'
+	);
+
 	/**
 	 * Get CMS Fields
 	 * 
@@ -44,6 +48,7 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
+		$fields->removeByName('MailToAdminRecipients');
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
 			array('BackgroundImage')
@@ -129,6 +134,15 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 		);
 		$fields->addFieldToTab(
 			'Root.Mail', 
+			TagField::create(
+				'MailToAdminRecipients', 
+				'Admin reply recipients', 
+				SpeakToSpecialistsMailToAdminRecipients::get()->map(), 
+				$this->MailToAdminRecipients()->map()
+			)
+		);
+		$fields->addFieldToTab(
+			'Root.Mail', 
 			HTMLEditorField::create('MailToAdminBody', 'Admin reply message')
 				->setRows(20)
 		);
@@ -137,7 +151,7 @@ class BlockWidgetSpeakToSpecialist extends BlockWidget {
 			'Root.Mail', 
 			ToggleCompositeField::create(
 				'CustomMailToAdminBody', 
-				'List of variables for admin reply message', 
+				'List of variables for reply messages', 
 				array(
 					LiteralField::create(
 						'MailToAdminBodyVariables', 

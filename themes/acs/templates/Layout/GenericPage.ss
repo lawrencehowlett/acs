@@ -228,12 +228,12 @@
 						<% loop $Items %>
 							<article class="cta-box box$Pos col col3 clickable">
 								<p class="cta-box-img">
-									<a href="<% if $StartLiveChat %>javascript:void(0);<% else %>$RedirectPage.Link<% end_if %>" <% if $StartLiveChat %>class="livechat"<% end_if %> title="Go to $RedirectPage.Title">
+									<a href="<% if $StartLiveChat %>javascript:void(0);<% else_if $RedirectPage %>$RedirectPage.Link<% else %>javascript:void(0);<% end_if %>" <% if $StartLiveChat %>class="livechat"<% end_if %> title="Go to $RedirectPage.Title">
 										<img src="$Image.Link" alt="$Image.Title">
 									</a>
 								</p>
 								<h3 class="cta-box-title">
-									<a href="<% if $StartLiveChat %>javascript:void(0);<% else %>$RedirectPage.Link<% end_if %>" <% if $StartLiveChat %>class="livechat"<% end_if %> title="Go to $RedirectPage.Title">$Title</a>
+									<a href="<% if $StartLiveChat %>javascript:void(0);<% else_if $RedirectPage %>$RedirectPage.Link<% else %>javascript:void(0);<% end_if %>" <% if $StartLiveChat %>class="livechat"<% end_if %> title="Go to $RedirectPage.Title">$Title</a>
 								</h3>
 								$Content
 							</article>
@@ -537,10 +537,10 @@
 							<% loop $DoubleSliderItems %>
 								<li class="slider-item">
 									<h3 class="slide-title">
-										<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML">$Title</a>
+										<a href="<% if $RedirectPage %>$RedirectPage.Link<% else %>javascript:void(0);<% end_if %>" title="Go to $RedirectPage.Title.XML">$Title</a>
 									</h3>
 									<p class="slide-img">
-										<a href="$RedirectPage.Link">
+										<a href="<% if $RedirectPage %>$RedirectPage.Link<% else %>javascript:void(0);<% end_if %>">
 											<img src="$Image.Link" alt="$Image.Title">
 										</a>
 									</p>
@@ -688,6 +688,21 @@
 					]' data-centerlat="$RegionalOffices.First.GoogleMapLat" data-centerlng="$RegionalOffices.First.GoogleMapLong" data-marker="$ThemeDir/img/marker.png"></div>
 				</div>
 			<% end_if %>
+
+			<% if $ClassName == 'BlockWidgetAccordion' %>
+				<div class="inside">
+					<div class="accordions">
+						<% loop $Items %>
+						<div class="accordion">
+							<div class="accordion-title">$Title</div>
+							<div class="content">
+								<div class="accordian-content">$Content</div>     
+							</div>
+						</div>
+						<% end_loop %>
+					</div>  
+				</div>
+			<% end_if %>			
 
 		</section>	
 
