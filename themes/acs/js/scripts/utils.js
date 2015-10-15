@@ -125,4 +125,19 @@ $(window).resize(function() {
 
 $(".comments-toggle").click(function(event) {
   event.preventDefault();
-})
+});
+
+//accordion
+$('.accordion-title').click(function(event) {
+  event.preventDefault();
+  $(this).next($('.content')).slideToggle();
+});
+
+//menu toggle on tablets
+$('li.has-dropdown').on('click', function(e){
+  console.log('fff');
+  if(!($(this)).hasClass('opened')) {
+  e.preventDefault();}
+  $(this).toggleClass('opened');
+  $(this).find('.dropdown-menu').slideDown();
+});
