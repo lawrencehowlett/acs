@@ -39,6 +39,7 @@ module.exports = function(grunt) {
             '../js/scripts/tabs.js',
             '../js/scripts/gallery-slider.js',
             '../js/scripts/double-slider.js',
+            '../js/scripts/team-slider.js',
             '../js/scripts/history.js',
             '../js/scripts/testimonials.js',
             '../js/scripts/case-studies.js',

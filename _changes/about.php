@@ -56,22 +56,44 @@
 <section class="page-section">
 	<div class="inside">
 		<h2 class="section-title">About Us</h2>
-		<div class="team cols separated super-tight">
-			<div class="col col4 member">
-				<p class="member-photo"><a href="#"><img src="img/temp/photos/team01.jpg" alt=""></a></p>
-				<p class="member-name"><strong>Roger Maryflow</strong><br>Office Manager</p>
-			</div>
-			<div class="col col4 member">
-				<p class="member-photo"><a href="#"><img src="img/temp/photos/team02.jpg" alt=""></a></p>
-				<p class="member-name"><a href="#"><strong>Kristen Durst</strong><br>Founder</a></p>
-			</div>
-			<div class="col col4 member">
-				<p class="member-photo"><a href="#"><img src="img/temp/photos/team03.jpg" alt=""></a></p>
-				<p class="member-name"><strong>Stevie Ogilvy</strong><br>CEO</p>
-			</div>
-			<div class="col col4 member">
-				<p class="member-photo"><a href="#"><img src="img/temp/photos/team04.jpg" alt=""></a></p>
-				<p class="member-name"><strong>Julius Moore</strong><br>Project Manager</p>
+	</div>
+	<div class="team-slider inside">
+		<a href="#" class="slider-nav next">Next</a>
+		<a href="#" class="slider-nav prev">Previous</a>
+		<div class="team slider-wrapper">
+			<div class="slider-items">
+				<div class="slide"><div class="member">
+					<p class="member-photo"><a href="#"><img src="img/temp/photos/team01.jpg" alt=""></a></p>
+					<p class="member-name"><strong>Roger Maryflow</strong><br>Office Manager</p>
+				</div></div>
+				<div class="slide"><div class="member">
+					<p class="member-photo"><a href="#"><img src="img/temp/photos/team02.jpg" alt=""></a></p>
+					<p class="member-name"><a href="#"><strong>Kristen Durst</strong><br>Founder</a></p>
+				</div></div>
+				<div class="slide"><div class="member">
+					<p class="member-photo"><a href="#"><img src="img/temp/photos/team03.jpg" alt=""></a></p>
+					<p class="member-name"><strong>Stevie Ogilvy</strong><br>CEO</p>
+				</div></div>
+				<div class="slide"><div class="member">
+					<p class="member-photo"><a href="#"><img src="img/temp/photos/team04.jpg" alt=""></a></p>
+					<p class="member-name"><strong>Julius Moore</strong><br>Project Manager</p>
+				</div></div>
+				<div class="slide"><div class="member">
+					<p class="member-photo"><a href="#"><img src="img/temp/photos/team01.jpg" alt=""></a></p>
+					<p class="member-name"><strong>Roger Maryflow</strong><br>Office Manager</p>
+				</div></div>
+				<div class="slide"><div class="member">
+					<p class="member-photo"><a href="#"><img src="img/temp/photos/team02.jpg" alt=""></a></p>
+					<p class="member-name"><a href="#"><strong>Kristen Durst</strong><br>Founder</a></p>
+				</div></div>
+				<div class="slide"><div class="member">
+					<p class="member-photo"><a href="#"><img src="img/temp/photos/team03.jpg" alt=""></a></p>
+					<p class="member-name"><strong>Stevie Ogilvy</strong><br>CEO</p>
+				</div></div>
+				<div class="slide"><div class="member">
+					<p class="member-photo"><a href="#"><img src="img/temp/photos/team04.jpg" alt=""></a></p>
+					<p class="member-name"><strong>Julius Moore</strong><br>Project Manager</p>
+				</div></div>
 			</div>
 		</div>
 	</div>
