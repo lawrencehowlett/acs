@@ -38,10 +38,6 @@ class CaseStudiesPage extends Blog {
 
 		return $fields;
 	}
-
-	public function canShowBlockBuilder() {
-		return false;
-	}	
 }
 
 /**
