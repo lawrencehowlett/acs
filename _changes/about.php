@@ -11,44 +11,44 @@
 	<div class="inside">
 		<h2 class="section-title">Our values</h2>
 	</div>
-	<div class="about-slider double-slider">
+	<div class="inside about-slider double-slider">
 		<a href="#" class="slider-nav prev"></a>
 		<a href="#" class="slider-nav next"></a>
 		<div class="slider-wrapper">
-			<ul class="slider-items">
-				<li class="slider-item">
+			<div class="slider-items">
+				<div class="slide"><div class="slider-item">
 					<h3 class="slide-title"><a href="#">Teamwork</a></h3>
 					<p class="slide-img"><a href="#"><img src="img/temp/photos/about-slider01.jpg" alt=""></a></p>
-				</li>
-				<li class="slider-item">
+				</div></div>
+				<div class="slide"><div class="slider-item">
 					<h3 class="slide-title"><a href="#">Passion</a></h3>
 					<p class="slide-img"><a href="#"><img src="img/temp/photos/about-slider02.jpg" alt=""></a></p>
-				</li>
-				<li class="slider-item">
+				</div></div>
+				<div class="slide"><div class="slider-item">
 					<h3 class="slide-title"><a href="#">Ideas</a></h3>
 					<p class="slide-img"><a href="#"><img src="img/temp/photos/about-slider03.jpg" alt=""></a></p>
-				</li>
-				<li class="slider-item">
+				</div></div>
+				<div class="slide"><div class="slider-item">
 					<h3 class="slide-title"><a href="#">Creativity</a></h3>
 					<p class="slide-img"><a href="#"><img src="img/temp/photos/about-slider04.jpg" alt=""></a></p>
-				</li>
-				<li class="slider-item">
+				</div></div>
+				<div class="slide"><div class="slider-item">
 					<h3 class="slide-title"><a href="#">Process</a></h3>
 					<p class="slide-img"><a href="#"><img src="img/temp/photos/about-slider05.jpg" alt=""></a></p>
-				</li>
-				<li class="slider-item">
+				</div></div>
+				<div class="slide"><div class="slider-item">
 					<h3 class="slide-title"><a href="#">Solutions</a></h3>
 					<p class="slide-img"><a href="#"><img src="img/temp/photos/about-slider06.jpg" alt=""></a></p>
-				</li>
-				<li class="slider-item">
+				</div></div>
+				<div class="slide"><div class="slider-item">
 					<h3 class="slide-title"><a href="#">Open Mind</a></h3>
 					<p class="slide-img"><a href="#"><img src="img/temp/photos/about-slider07.jpg" alt=""></a></p>
-				</li>
-				<li class="slider-item">
+				</div></div>
+				<div class="slide"><div class="slider-item">
 					<h3 class="slide-title"><a href="#">Whatever</a></h3>
 					<p class="slide-img"><a href="#"><img src="img/temp/photos/about-slider08.jpg" alt=""></a></p>
-				</li>
-			</ul>
+				</div></div>
+			</div>
 		</div>
 	</div>
 </section>
