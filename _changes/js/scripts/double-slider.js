@@ -16,8 +16,8 @@ $(window).load(function() {
 		var sliderOptions = {
 			slideMargin: slideMargin,
 			pager: false,
-			minSlides: 2,
-			maxSlides: 2,
+			minSlides: minSlides,
+			maxSlides: maxSlides,
 			moveSlides: 1,
 			slideWidth: slideW,
 			startSlide: 0
