@@ -36,14 +36,11 @@ $(window).load(function() {
 		prevLink.click(function(event) {
 			event.preventDefault();
 			slider.goToPrevSlide();
-
-			// console.log('slider.goToPrevSlide();');
 		});
+		
 		nextLink.click(function(event) {
 			event.preventDefault();
 			slider.goToNextSlide();
-
-			// console.log('slider.goToNextSlide();');
 		});
 	});
 });
