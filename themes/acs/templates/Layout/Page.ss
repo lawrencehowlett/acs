@@ -528,26 +528,28 @@
 				<div class="inside">
 					<h2 class="section-title">$Title</h2>
 				</div>
-				<div class="about-slider double-slider">
+				<div class="inside about-slider double-slider">
 					<a href="javascript:void(0);" class="slider-nav prev"></a>
 					<a href="javascript:void(0);" class="slider-nav next"></a>
 					<div class="slider-wrapper">
-						<ul class="slider-items">
+						<div class="slider-items">
 							<% loop $DoubleSliderItems %>
-								<li class="slider-item">
-									<h3 class="slide-title">
-										<a href="<% if $RedirectPage %>$RedirectPage.Link<% else %>javascript:void(0);<% end_if %>" title="Go to $RedirectPage.Title.XML">$Title</a>
-									</h3>
-									<p class="slide-img">
-										<a href="<% if $RedirectPage %>$RedirectPage.Link<% else %>javascript:void(0);<% end_if %>">
-											<img src="$Image.Link" alt="$Image.Title">
-										</a>
-									</p>
-								</li>
+								<div class="slide">
+									<div class="slider-item">
+										<h3 class="slide-title">
+											<a href="<% if $RedirectPage %>$RedirectPage.Link<% else %>javascript:void(0);<% end_if %>" title="Go to $RedirectPage.Title.XML">$Title</a>
+										</h3>
+										<p class="slide-img">
+											<a href="<% if $RedirectPage %>$RedirectPage.Link<% else %>javascript:void(0);<% end_if %>">
+												<img src="$Image.Link" alt="$Image.Title">
+											</a>
+										</p>
+									</div>
+								</div>
 							<% end_loop %>
-						</ul>
+						</div>
 					</div>
-				</div>
+				</div>	
 			<% end_if %>	
 
 			<% if $ClassName == 'BlockWidgetTeam' %>
