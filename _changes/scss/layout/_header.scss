@@ -71,6 +71,9 @@
 
 @media (min-width: 400px) {
 	.header .logo {margin: 20px;}
+	.menu {
+		li li {width: auto;}
+	}
 }
 
 @media (min-width: 835px) {
@@ -93,6 +96,7 @@
 				}	
 			}
 		}
+		li li {width: 100%;}
 	}	
 }
 
