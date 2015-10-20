@@ -553,21 +553,27 @@
 			<% if $ClassName == 'BlockWidgetTeam' %>
 				<div class="inside">
 					<h2 class="section-title">$Title</h2>
-					<div class="team cols separated super-tight">
-						<% loop $Members %>
-							<div class="col col4 member">
-								<p class="member-photo">
-									<a href="javascript:void(0);">
-										<img src="$Image.Link" alt="$Image.Title">
-									</a>
-								</p>
-								<p class="member-name">
-									<strong>$Title</strong><br>$Position
-								</p>
-							</div>
-						<% end_loop %>
-					</div>
 				</div>
+				<div class="team-slider inside">
+					<a href="javascript:void(0);" class="slider-nav next">Next</a>
+					<a href="javascript:void(0);" class="slider-nav prev">Previous</a>
+					<div class="team slider-wrapper">
+						<div class="slider-items">
+							<% loop $Members %>
+								<div class="slide">
+									<div class="member">
+										<p class="member-photo">
+											<a href="javascript:void(0);" title="$Title">
+												<img src="$Image.Link" alt="$Image.Title">
+											</a>
+										</p>
+										<p class="member-name"><strong>$Title</strong><br>$Position</p>
+									</div>
+								</div>
+							<% end_loop %>
+						</div>
+					</div>
+				</div>				
 			<% end_if %>
 
 			<% if $ClassName == 'AboutStory' %>

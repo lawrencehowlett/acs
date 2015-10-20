@@ -28,7 +28,7 @@
 
 	<section class="main-header cf">
 		<p class="logo">
-			<a href="home.php" title="ACS">
+			<a href="/" title="ACS">
 				<img src="$SiteConfig.Logo.Link" alt="$SiteConfig.Logo.Title">
 			</a>
 		</p>
