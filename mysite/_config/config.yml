@@ -10,6 +10,7 @@ SSViewer:
 SiteConfig:
   extensions:
     - SiteConfig_Extension
+    - JobSetting
 
 SiteTree:
   extensions:
