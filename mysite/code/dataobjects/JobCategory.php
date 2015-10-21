@@ -1,6 +1,11 @@
 <?php
 class JobCategory extends DataObject {
 
+	/**
+	 * Set properties
+	 * 
+	 * @var array
+	 */
 	private static $db = array(
 		'Title' => 'Varchar', 
 		'URLSegment' => 'Varchar', 
@@ -8,16 +13,41 @@ class JobCategory extends DataObject {
 		'SortOrder' => 'Int'
 	);
 
+	/**
+	 * Set belongs many many
+	 * 
+	 * @var array
+	 */
 	private static $belongs_many_many = array(
 		'Jobs' => 'Job'
 	);
 
+	/**
+	 * Set default sort
+	 * 
+	 * @var string
+	 */
 	private static $default_sort = 'SortOrder';
 
+	/**
+	 * Set singular name
+	 * 
+	 * @var string
+	 */
 	private static $singular_name = 'Category';
 
+	/**
+	 * Set plural name
+	 * 
+	 * @var string
+	 */
 	private static $plural_name = 'Categories';
 
+	/**
+	 * Get cms fields
+	 * 
+	 * @return Fieldlist
+	 */
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
@@ -86,6 +116,9 @@ class JobCategory extends DataObject {
 		return false;
 	}	
 
+	/**
+	 * Hook to on before write
+	 */
 	public function onBeforeWrite() {
 		parent::onBeforeWrite();
 
@@ -100,6 +133,11 @@ class JobCategory extends DataObject {
 		}		
 	}
 
+	/**
+	 * RSS absolute link to category page job listing
+	 *
+	 * @return  Request
+	 */
 	public function AbsoluteLink() {
 		$productListingPage = JobListingPage::get()->First();
 

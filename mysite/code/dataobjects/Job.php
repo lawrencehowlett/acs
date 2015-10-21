@@ -163,6 +163,11 @@ class Job extends DataObject {
 		}		
 	}
 
+	/**
+	 * RSS absolute link to job page
+	 *
+	 * @return  Request
+	 */
 	public function AbsoluteLink() {
 		$jobPage = JobPage::get()->First();
 
