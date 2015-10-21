@@ -41,23 +41,27 @@
 	</section>
 	<section class="main-header cf">
 		<p class="logo"><a href="home.php" title="ACS"><img src="img/logo.png" alt="ACS"></a></p>
-		<nav class="main-nav">
-			<ul class="menu">
-				<li class="has-dropdown"><a href="it-solutions.php">IT Solutions</a>
-					<ul class="dropdown-menu">
-						<li><a href="furniture-solutions.php">Furniture solutions</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Cloud solutions</a></li>
-				<li class="has-dropdown"><a href="workplace.php">Workplace</a>
-					<ul class="dropdown-menu">
-						<li><a href="case-study.php">Case Study</a></li>
-						<li><a href="furniture-procurement.php">Furniture Procurement</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Recruitment</a></li>
-				<li><a href="#">Education</a></li>
-			</ul>
-		</nav>
+		<div class="main-nav-container">
+			<nav class="main-nav">
+				<ul class="menu">
+					<li class="has-dropdown"><a href="it-solutions.php">IT Solutions</a>
+						<ul class="dropdown-menu">
+							<li><a href="furniture-solutions.php">Furniture solutions</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Cloud solutions</a></li>
+					<li class="has-dropdown"><a href="workplace.php">Workplace</a>
+						<ul class="dropdown-menu">
+							<li><a href="case-study.php">Case Study</a></li>
+							<li><a href="furniture-procurement.php">Furniture Procurement</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Recruitment</a></li>
+					<li><a href="#">Case Studies</a></li>
+					<li><a href="#">Book A Meeting</a></li>
+					<li><a href="#">ACS Recruitment</a></li>
+				</ul>
+			</nav>
+		</div>
 	</section>
 </header>
