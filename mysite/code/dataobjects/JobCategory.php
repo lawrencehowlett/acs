@@ -24,7 +24,7 @@ class JobCategory extends DataObject {
 		$fields->removeByName('Jobs');
 		$fields->removeFieldsFromTab(
 			'Root.Main', 
-			array('SortOrder')
+			array('SortOrder', 'URLSegment')
 		);
 
 		return $fields;

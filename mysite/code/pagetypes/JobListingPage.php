@@ -47,9 +47,9 @@ class JobListingPage_Controller extends Page_Controller {
 	public function init() {
 		parent::init();
 
-		RSSFeed::linkToFeed($this->Link() . "rss", "10 Most Recently Updated Pages");
+		RSSFeed::linkToFeed($this->Link() . "rss", "ACS Recruitment");
 
-		$link = $this->URLSegment;
+		$link = $this->Link();
 		Requirements::customScript(<<<JS
 			(function($) {
 				$(document).ready(function(){

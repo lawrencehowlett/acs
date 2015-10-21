@@ -45,7 +45,7 @@
 			<% if $CurrentCategory %>
 				<h2>No jobs found with category &lsquo;$CurrentCategory.Title&rsquo;</h2>
 			<% else %>
-				<h3>No jobs found</h3>
+				<h2>No jobs found</h2>
 			<% end_if %>
 		<% end_if %>
 	</div>
