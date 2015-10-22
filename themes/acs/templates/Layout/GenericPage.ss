@@ -408,7 +408,7 @@
 						</div>
 					</div>
 				</div>			
-			<% end_if %>
+			<% end_if %> 
 
 			<% if $ClassName == 'BlockWidgetCaseStudies' %>
 				<ul class="slider-navigation">
