@@ -96,47 +96,47 @@
 		<h2 class="section-title">Featured projects</h2>
 	</div>
 	<div class="featured-slider double-slider inside">
-		<a href="#" class="slider-nav next">Next</a>
-		<a href="#" class="slider-nav prev">Previous</a>
+		<?php /*<a href="#" class="slider-nav next">Next</a>*/ ?>
+		<?php /*<a href="#" class="slider-nav prev">Previous</a>*/ ?>
 		<div class="slider-wrapper">
-			<ul class="slider-items">
-				<li class="featured-project slider-item">
-					<img src="img/temp/photos/feat-project01.jpg" alt="" class="project-thumbnail">
+			<div class="slider-items">
+				<div class="slide"><div class="featured-project slider-item">
+					<a href="#"><img src="img/temp/photos/feat-project01.jpg" alt="" class="project-thumbnail"></a>
 					<h3 class="project-title">Saatchi&amp;Saatchi office sport &amp; entertainment</h3>
 					<p class="project-cat"><a href="#">Desking solutions</a></p>
 					<p class="more"><a href="#">More info</a></p>
-				</li>
-				<li class="featured-project slider-item">
-					<img src="img/temp/photos/feat-project02.jpg" alt="" class="project-thumbnail">
+				</div></div>
+				<div class="slide"><div class="featured-project slider-item">
+					<a href="#"><img src="img/temp/photos/feat-project02.jpg" alt="" class="project-thumbnail"></a>
 					<h3 class="project-title"><a href="#">Cool office in wood and white</a></h3>
 					<p class="project-cat"><a href="#">Seating solutions</a></p>
 					<p class="more"><a href="#">More info</a></p>
-				</li>
-				<li class="featured-project slider-item">
-					<img src="img/temp/photos/feat-project03.jpg" alt="" class="project-thumbnail">
+				</div></div>
+				<div class="slide"><div class="featured-project slider-item">
+					<a href="#"><img src="img/temp/photos/feat-project03.jpg" alt="" class="project-thumbnail"></a>
 					<h3 class="project-title">Smart design studio</h3>
 					<p class="project-cat"><a href="#">Desking solutions</a></p>
 					<p class="more"><a href="#">More info</a></p>
-				</li>
-				<li class="featured-project slider-item">
-					<img src="img/temp/photos/feat-project04.jpg" alt="" class="project-thumbnail">
+				</div></div>
+				<div class="slide"><div class="featured-project slider-item">
+					<a href="#"><img src="img/temp/photos/feat-project04.jpg" alt="" class="project-thumbnail"></a>
 					<h3 class="project-title">Modern architecture atelier</h3>
 					<p class="project-cat"><a href="#">Breakout solutions</a></p>
 					<p class="more"><a href="#">More info</a></p>
-				</li>
-				<li class="featured-project slider-item">
-					<img src="img/temp/photos/feat-project05.jpg" alt="" class="project-thumbnail">
+				</div></div>
+				<div class="slide"><div class="featured-project slider-item">
+					<a href="#"><img src="img/temp/photos/feat-project05.jpg" alt="" class="project-thumbnail"></a>
 					<h3 class="project-title">A typical call centre</h3>
 					<p class="project-cat"><a href="#">Seating solutions</a></p>
 					<p class="more"><a href="#">More info</a></p>
-				</li>
-				<li class="featured-project slider-item">
-					<img src="img/temp/photos/feat-project06.jpg" alt="" class="project-thumbnail">
+				</div></div>
+				<div class="slide"><div class="featured-project slider-item">
+					<a href="#"><img src="img/temp/photos/feat-project06.jpg" alt="" class="project-thumbnail"></a>
 					<h3 class="project-title">Ultimate advertising agency office project</h3>
 					<p class="project-cat"><a href="#">Conference &amp; meetings solutions</a></p>
 					<p class="more"><a href="#">More info</a></p>
-				</li>
-			</ul>
+				</div></div>
+			</div>
 		</div>
 	</div>
 </section>
