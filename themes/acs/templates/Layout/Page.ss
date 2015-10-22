@@ -310,7 +310,6 @@
 			<% if $ClassName == 'BlockWidgetResources' %>
 				<div class="inside">
 					<h2 class="section-title">$Title</h2>
-
 					<% if $Top.AllResourcesPage %>
 						<p class="all">
 							<a href="$Top.AllResourcesPage.Link" title="Go to $Top.AllResourcesPage.Title">View all resources</a>
@@ -321,29 +320,32 @@
 					<a href="javascript:void(0);" class="slider-nav next">Next</a>
 					<a href="javascript:void(0);" class="slider-nav prev">Previous</a>
 					<div class="slider-wrapper">
-						<ul class="slider-items">
+						<div class="slider-items">
 							<% loop $Resources %>
-								<li class="resource slider-item">
-									<img src="$FeaturedImage.CroppedImage(220, 300).Link" alt="$FeaturedImage.Title" class="resource-thumbnail">
-									<h3 class="resource-title">$Title</h3>
-									$Content
-									
-									<% if $DocumentType %>
-										<p class="resource-category">
-											<a href="javascript:void(0);">$DocumentType.Title</a>
-										</p>
-									<% end_if %>
+								<div class="slide">
+									<div class="resource slider-item">
+										<img src="$FeaturedImage.CroppedImage(220, 300).Link" alt="$FeaturedImage.Link" class="resource-thumbnail">
+										<h3 class="resource-title">$Title</h3>
+										
+										$Content
 
-									<% if $RedirectPage %>
-										<p class="more">
-											<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML">More info</a>
-										</p>
-									<% end_if %>
-								</li>
+										<% if $DocumentType %>
+											<p class="resource-category">
+												<a href="javascript:void(0);">$DocumentType.Title</a>
+											</p>
+										<% end_if %>
+
+										<% if $RedirectPage %>
+											<p class="more">
+												<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title page">More info</a>
+											</p>
+										<% end_if %>
+									</div>
+								</div>
 							<% end_loop %>
-						</ul>
+						</div>
 					</div>
-				</div>			
+				</div>
 			<% end_if %>
 
 			<% if $ClassName == 'BlockWidgetWork' %>
