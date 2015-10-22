@@ -71,19 +71,17 @@ class BlockWidgetTabItem extends DataObject {
 			TreedropdownField::create('RedirectPageID', 'Choose a redirect page', 'SiteTree')
 		);
 
-		if ($this->ID) {
-			$fields->insertAfter(
-				UploadField::create('TabIcon', 'Tab icon')
-					->setFolderName($this->Parent()->Page()->Title . '/TabImages/'), 
-				'RedirectPageID'
-			);
+		$fields->insertAfter(
+			UploadField::create('TabIcon', 'Tab icon')
+				->setFolderName('/TabImages/'), 
+			'RedirectPageID'
+		);
 
-			$fields->insertAfter(
-				UploadField::create('Image', 'Image')
-					->setFolderName($this->Parent()->Page()->Title . '/TabImages/'), 
-				'TabIcon'
-			);
-		}
+		$fields->insertAfter(
+			UploadField::create('Image', 'Image')
+				->setFolderName('/TabImages/'), 
+			'TabIcon'
+		);
 
 		return $fields;
 	}

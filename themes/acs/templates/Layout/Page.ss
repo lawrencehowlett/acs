@@ -386,7 +386,7 @@
 						<ul class="slider-items">
 							<% loop $Projects %>
 								<li class="featured-project slider-item">
-									<img src="$RedirectPage.FeaturedImages.First.PaddedImage(570, 375, B3BABF).Link" alt="$RedirectPage.FeaturedImages.First.Title" class="project-thumbnail">
+									<img src="$RedirectPage.FeaturedImages.First.Link" alt="$RedirectPage.FeaturedImages.First.Title" class="project-thumbnail">
 									<h3 class="project-title">$RedirectPage.Title</h3>
 										<% if $RedirectPage.Categories %>
 											<p class="project-cat"><% loop $RedirectPage.Categories %><a href="javascript:void(0);">$Title</a><% if not $Last %>, <% end_if %><% end_loop %></p>

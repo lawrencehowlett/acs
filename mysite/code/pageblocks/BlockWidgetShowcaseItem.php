@@ -69,6 +69,7 @@ class BlockWidgetShowcaseItem extends BlockWidgetTabItem {
 				->setFolderName('Showcase/BackgroundImages/'), 
 			'Image'
 		);
+
 		$fields->dataFieldByName('TabIcon')
 			->setFolderName('Showcase/TabIcons/');
 
