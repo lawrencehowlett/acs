@@ -29,7 +29,7 @@ class JobPage_Controller extends Page_Controller {
 	 * @var array
 	 */
 	private static $allowed_actions = array(
-		'job'
+		'job', 'JobApplicationForm'
 	);
 
 	/**
@@ -48,16 +48,74 @@ class JobPage_Controller extends Page_Controller {
 		parent::init();
 	}
 
+	public function JobApplicationForm() {
+        $fields = new FieldList(
+            TextField::create('FirstName', false)
+            	->setAttribute('placeholder', 'First name'), 
+            TextField::create('Surname', false)
+            	->setAttribute('placeholder', 'Surname'),
+            EmailField::create('Email', false)
+            	->setAttribute('placeholder', 'E-mail'), 
+            TextField::create('Telephone', false)
+            	->setAttribute('placeholder', 'Telephone'), 
+            TextField::create('Address1', false)
+            	->setAttribute('placeholder', 'Address'), 
+            TextField::create('City', false)
+            	->setAttribute('placeholder', 'City'), 
+            TextField::create('Postcode', false)
+            	->setAttribute('placeholder', 'Postcode'), 
+			FileAttachmentField::create('CoverLetter', 'Upload your cover letter')
+				->setThumbnailHeight(180)
+				->setThumbnailWidth(180)
+				->setAutoProcessQueue(false)
+				->setMaxFilesize(5)
+				->setAcceptedFiles(array('.pdf','.doc','.docx'))
+				->setAttribute('style', 'width:100%;'), 
+			FileAttachmentField::create('CV', 'Upload your CV')
+				->setThumbnailHeight(180)
+				->setThumbnailWidth(180)
+				->setAutoProcessQueue(false)
+				->setMaxFilesize(5)
+				->setAcceptedFiles(array('.pdf','.doc','.docx'))
+				->setAttribute('style', 'width:100%;')
+        );
+
+        $formAction = FormAction::create("doSubmitFormApplication")
+        	->setTitle("Send");
+        $formAction->useButtonTag = true;
+        $actions = new FieldList($formAction);
+
+        $required = new RequiredFields('FirstName');
+
+        $form = new Form($this, 'JobApplicationForm', $fields, $actions, $required);
+        $form->addExtraClass('col col2 contact-form');
+        $form->setTemplate('JobApplicationForm');
+
+        return $form;
+	}
+
+	public function doSubmitFormApplication($data, Form $form) {
+		exit();
+	}
+
 	/**
 	 * Set the title to as the job title
 	 *
 	 * @return  string
 	 */
 	public function Title() {
-		return $this->getJobDetails()->Title;
+		if ($this->getJobDetails()) {
+			return $this->getJobDetails()->Title;
+		}
+
+		return null;
 	}
 
 	public function job(SS_HTTPRequest $request) {
+
+		if ($request->param('Action') == 'JobApplicationForm') {
+			return $this->renderWith(array('JobPage','Page'));
+		}
 
 		if (!$this->getJobDetails()) {
 			$this->redirect(JobListingPage::get()->First()->Link());
@@ -101,10 +159,12 @@ class JobPage_Controller extends Page_Controller {
 	 * @param [type] $id [description]
 	 */
 	public function IsCurrentCategory($id) {
-		$categories = $this->getJobDetails()->Categories();
-		$categories = $categories->column('ID');
-		if (in_array($id, $categories)) {
-			return 'active';
+		if ($this->getJobDetails()) {
+			$categories = $this->getJobDetails()->Categories();
+			$categories = $categories->column('ID');
+			if (in_array($id, $categories)) {
+				return 'active';
+			}
 		}
 
 		return null;
