@@ -113,7 +113,7 @@ $(window).resize(function() {
   var width = $('.timeline .box').width();
   width--;
   timeline.css('width', width);
-  console.log(width);
+  // console.log(width);
   timeline.mCustomScrollbar("update");
   $('.mCSB_scrollTools.mCSB_scrollTools_horizontal').css('height', '11px');
 
@@ -135,7 +135,7 @@ $('.accordion-title').click(function(event) {
 
 //menu toggle on tablets
 $('li.has-dropdown').on('click', function(e){
-  console.log('fff');
+  // console.log('fff');
   if(!($(this)).hasClass('opened')) {
   e.preventDefault();}
   $(this).toggleClass('opened');

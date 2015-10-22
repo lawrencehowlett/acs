@@ -90,7 +90,10 @@
 		}
 	}
 .menu {
-		li { position: relative; list-style-type : none;
+		li {
+			position: relative;
+			list-style-type: none;
+			text-align: left;
 			&:hover {
 				.dropdown-menu {z-index: 9999; position: absolute; display: block; background: #fff; left: 0; box-shadow: 0px 2px 4px 0px rgba(50, 50, 50, 0.3); -moz-box-shadow: 0px 2px 4px 0px rgba(50, 50, 50, 0.3); -webkit-box-shadow: 0px 2px 4px 0px rgba(50, 50, 50, 0.3);
 				}	
@@ -106,13 +109,53 @@
 // 	}
 // }
 
+.header {
+	.logo {width: 60px;}
+	.main-nav {float: right; width: calc(100% - 100px); width: -webkit-calc(100% - 100px); width: -moz-calc(100% - 100px);}
+}
+
 @media (min-width: 960px) {
-	.main-nav {
-		.menu a {padding: 0 25px; font-size: 16px;}
+	// absolute menu table start
+	.header .main-header {
+		position: relative;
 	}
-	.main-nav {float: right;
-		.menu {padding: 20px 0;
-			a {padding: 0 20px; line-height: 60px}
+	.main-nav-container {
+		position: absolute;
+		top: 20px;
+		left: 110px;
+		right: 10px;
+	}
+	.header .main-nav {
+		float: none;
+		width: 100%;
+		display: table;
+	}
+	.main-nav > .menu {
+		display: table-row;
+	}
+	.main-nav .menu > li {
+		display: table-cell;
+		text-align: center;
+	}
+	.main-nav .menu > li > a {
+		padding: 0;
+	}
+	// absolute menu table end
+
+	.main-nav {
+		.menu a {
+			padding: 0 25px;
+			font-size: 15px;
+		}
+	}
+	.main-nav {
+		// float: right;
+		.menu {
+			padding: 20px 0;
+			a {
+				padding: 0 20px;
+				line-height: 60px;
+			}
 		}
 	}
 }
@@ -121,7 +164,9 @@
 	.header {position: fixed; top: 0; left: 50%; z-index: 50; width: 1230px; box-sizing: border-box; margin-left: -615px; transition: top 0.3s;
 		.top, .main-header {padding: 0 10px;}
 		.logo {transition: margin 0.3s;}
-		.main-nav .menu {transition: padding 0.3s;}
+		.main-nav .menu {transition: padding 0.3s;
+			a {font-size: 16px;}
+		}
 		&.sticky {top: -51px;
 			.main-nav .menu {padding: 10px 0;
 				a {line-height: 40px;}
@@ -141,12 +186,12 @@
 		}
 	}
 }
-/* @media (max-width: 834px) { */
-	.header {
-		.logo {width: 60px;}
-		.main-nav {float: right; width: calc(100% - 100px); width: -webkit-calc(100% - 100px); width: -moz-calc(100% - 100px);}
-	}
-/* } */
+// @media (max-width: 834px) {
+// 	.header {
+// 		.logo {width: 60px;}
+// 		.main-nav {float: right; width: calc(100% - 100px); width: -webkit-calc(100% - 100px); width: -moz-calc(100% - 100px);}
+// 	}
+// }
 @media (max-width: 400px) {
 	.menu li:hover {
 		.dropdown-menu {display: none;}
