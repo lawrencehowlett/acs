@@ -142,7 +142,7 @@ var desktopDropdown = function() {
     $('li.has-dropdown').removeClass('desktop');
   }
 
-  console.log('desktopDropdown');
+  // console.log('desktopDropdown');
 };
 desktopDropdown();
 $(window).resize(function() {
