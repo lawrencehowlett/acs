@@ -36,8 +36,27 @@ class CaseStudiesPage extends Blog {
 			->fieldByName('ChildPages')
 			->setTitle('Case Studies');
 
+		$source = CaseStudyPage::get();
+		$list = $fields->dataFieldByName('ChildPages')
+			->setList($source);
+
+		$fields->dataFieldByName('ChildPages')
+			->getConfig()
+			->addComponent(new GridFieldSortableRows('SortOrder'));
+
+		$fields->dataFieldByName('ChildPages')
+			->setTitle('Case Studies')
+			->getConfig()
+			->getComponentByType('GridFieldPaginator')
+			->setItemsPerPage(100);
+
 		return $fields;
 	}
+
+	public function getBlogPosts() {
+		$caseStudyPage = CaseStudyPage::get()->filter("ParentID", $this->ID);
+		return $caseStudyPage;
+	}	
 }
 
 /**

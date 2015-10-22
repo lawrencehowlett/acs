@@ -14,7 +14,8 @@ class CaseStudyPage extends BlogPost {
 	 */
 	private static $db = array(
 		'GalleryImagesTitle' => 'Text',
-		'FeaturedImageExtraClass' => 'Text'
+		'FeaturedImageExtraClass' => 'Text', 
+		'SortOrder' => 'Int'
 	);
 
 	/**
@@ -51,6 +52,13 @@ class CaseStudyPage extends BlogPost {
 	 * @var string
 	 */
 	private static $icon = 'mysite/images/search-document-icon.png';
+
+	/**
+	 * Set default sort
+	 * 
+	 * @var string
+	 */
+	private static $default_sort = 'SortOrder';
 
 	/**
 	 * GEt CMS Fields
