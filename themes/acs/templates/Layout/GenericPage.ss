@@ -387,15 +387,15 @@
 						<ul class="slider-items">
 							<% loop $Projects %>
 								<li class="featured-project slider-item">
-									<img src="$Image.PaddedImage(570, 375).Link" alt="$Image.Title" class="project-thumbnail">
-									<h3 class="project-title">$Title</h3>
-									$Content
-									<p class="project-cat"><a href="#">Desking solutions</a></p>
-									<% if $RedirectPage %>
-										<p class="more">
-											<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">&nbsp;</a>
-										</p>
-									<% end_if %>
+									<img src="$RedirectPage.FeaturedImages.First.CroppedImage(570, 375).Link" alt="$RedirectPage.FeaturedImages.First.Title" class="project-thumbnail">
+									<h3 class="project-title">$RedirectPage.Title</h3>
+										<% if $RedirectPage.Categories %>
+											<p class="project-cat"><% loop $RedirectPage.Categories %><a href="javascript:void(0);">$Title</a><% if not $Last %>, <% end_if %><% end_loop %></p>
+										<% end_if %>
+
+									<p class="more">
+										<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML">More info</a>
+									</p>
 								</li>
 							<% end_loop %>
 						</ul>
