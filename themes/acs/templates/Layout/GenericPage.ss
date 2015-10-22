@@ -383,26 +383,31 @@
 					<h2 class="section-title">$Title</h2>
 				</div>
 				<div class="featured-slider double-slider inside">
-					<a href="javascript:void(0);" class="slider-nav next">Next</a>
-					<a href="javascript:void(0);" class="slider-nav prev">Previous</a>
-					<div class="slider-wrapper">
-						<ul class="slider-items">
-							<% loop $Projects %>
-								<li class="featured-project slider-item">
-									<img src="$RedirectPage.FeaturedImages.First.CroppedImage(570, 375).Link" alt="$RedirectPage.FeaturedImages.First.Title" class="project-thumbnail">
-									<h3 class="project-title">$RedirectPage.Title</h3>
-										<% if $RedirectPage.Categories %>
-											<p class="project-cat"><% loop $RedirectPage.Categories %><a href="javascript:void(0);">$Title</a><% if not $Last %>, <% end_if %><% end_loop %></p>
-										<% end_if %>
+				<a href="javascript:void(0);" class="slider-nav next">Next</a>
+				<a href="javascript:void(0);" class="slider-nav prev">Previous</a>
 
-									<p class="more">
-										<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title.XML">More info</a>
-									</p>
-								</li>
+					<div class="slider-wrapper">
+						<div class="slider-items">
+							<% loop $Projects %>
+								<div class="slide">
+									<div class="featured-project slider-item">
+										<a href="<% if $RedirectPage %>$RedirectPage.Link<% else %>javascript:void(0);<% end_if %>">
+											<img src="$RedirectPage.FeaturedImages.First.CroppedImage(570, 375).Link" alt="$RedirectPage.FeaturedImages.First.Link" class="project-thumbnail">
+										</a>
+										<h3 class="project-title">$Title</h3>
+
+										<% if $RedirectPage.Categories %>
+										<p class="project-cat"><% loop $RedirectPage.Categories %><a href="javascript:void(0);">$Title</a><% if not $Last %>, <% end_if %><% end_loop %></p>
+										<% end_if %>
+										
+										<% if $RedirectPage %><p class="more"><a href="$RedirectPage.Link" title="Go to $RedirectPage.Title">More info</a></p><% end_if %>
+
+									</div>
+								</div>
 							<% end_loop %>
-						</ul>
+						</div>
 					</div>
-				</div>
+				</div>			
 			<% end_if %>
 
 			<% if $ClassName == 'BlockWidgetCaseStudies' %>
