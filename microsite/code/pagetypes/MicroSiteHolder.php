@@ -1,5 +1,5 @@
 <?php
-class MicroSiteHolder extends Page {
+class MicroSiteHolder extends GenericPage {
 
 	/**
 	 * Set properties
@@ -57,7 +57,7 @@ class MicroSiteHolder extends Page {
 	}
 }
 
-class MicroSiteHolder_Controller extends Page_Controller {
+class MicroSiteHolder_Controller extends GenericPage_Controller {
 
 	public function init() {
 		parent::init();

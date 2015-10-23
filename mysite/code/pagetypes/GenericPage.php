@@ -39,7 +39,7 @@ class GenericPage extends UserDefinedForm {
 		parent::onBeforeWrite();
 
 		if ($this->Content == '') {
-			$this->Content = "$UserDefinedForm";
+			$this->Content = '$UserDefinedForm';
 		}
 	}
 }
