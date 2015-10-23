@@ -46,7 +46,7 @@
 	}
 } */
 .main-nav {margin: 0; line-height: 100px;
-	.menu {display: inline-block; vertical-align: middle; list-style: none; margin: 0; padding: 15px 0 15px; font-size: 0; text-align: left; line-height: 1.3em;
+	.menu {display: inline-block; vertical-align: middle; list-style: none; margin: 0; padding: 10px 0 15px; font-size: 0; text-align: left; line-height: 1.3em;
 		li {display: inline-block;}
 		a {display: block; padding: 5px 10px; color: #003459; font: 700 12px/1.3em $prelo; text-transform: uppercase;
 			&:hover {color: $orange;}
@@ -71,95 +71,46 @@
 
 @media (min-width: 400px) {
 	.header .logo {margin: 20px;}
-	.menu {
-		li li {width: auto;}
-	}
 }
 
-@media (min-width: 835px) {
+@media (min-width: 960px) {
 	.header .call {margin-left: 20px;}
-	// .main-nav {float: right;
-	// 	.menu {padding: 20px 0;
-	// 		a {padding: 0 20px; line-height: 60px}
-	// 	}
-	// }
+	.main-nav {float: right;
+		.menu {padding: 20px 0;
+			a {padding: 0 20px; line-height: 60px}
+		}
+	}
 	.sec-nav {width: auto;
 		.menu-toggle {display: none;}
 		.menu {display: block; width: auto; margin: 0; font-size: 0; white-space: nowrap;
 			li {display: inline-block;}
 		}
 	}
-.menu {
-		li {
-			position: relative;
-			list-style-type: none;
-			text-align: left;
+	.menu {
+		li { position: relative; list-style-type : none;
 			&:hover {
 				.dropdown-menu {z-index: 9999; position: absolute; display: block; background: #fff; left: 0; box-shadow: 0px 2px 4px 0px rgba(50, 50, 50, 0.3); -moz-box-shadow: 0px 2px 4px 0px rgba(50, 50, 50, 0.3); -webkit-box-shadow: 0px 2px 4px 0px rgba(50, 50, 50, 0.3);
 				}	
 			}
 		}
-		li li {width: 100%;}
 	}	
 }
 
-// @media (min-width: 800px) {
-// 	.main-nav {
-// 		.menu a {font-size: 14px;}
-// 	}
-// }
-
-.header {
-	.logo {width: 60px;}
-	.main-nav {float: right; width: calc(100% - 100px); width: -webkit-calc(100% - 100px); width: -moz-calc(100% - 100px);}
+@media (min-width: 640px) {
+	.main-nav {
+		.menu a {font-size: 14px;}
+	}
 }
 
 @media (min-width: 960px) {
-	// absolute menu table start
-	.header .main-header {
-		position: relative;
+	.main-nav {
+		.menu a {padding: 0 12px; font-size: 13px;}
 	}
-	.main-nav-container {
-		position: absolute;
-		top: 20px;
-		left: 110px;
-		right: 10px;
-	}
-	.header .main-nav {
-		float: none;
-		width: 100%;
-		display: table;
-	}
-	.main-nav > .menu {
-		display: table-row;
-	}
-	.main-nav .menu > li {
-		display: table-cell;
-		text-align: center;
-	}
-	.main-nav .menu > li > a {
-		padding: 0;
-	}
-	.main-nav .menu .dropdown-menu a {
-		font-size: 16px;
-	}
-	// absolute menu table end
+}
 
+@media (min-width: 1024px) {
 	.main-nav {
-		.menu a {
-			padding: 0 25px;
-			font-size: 15px;
-		}
-	}
-	.main-nav {
-		// float: right;
-		.menu {
-			padding: 20px 0;
-			a {
-				padding: 0 20px;
-				line-height: 60px;
-			}
-		}
+		.menu a {padding: 0 10px; font-size: 15px;}
 	}
 }
 
@@ -167,41 +118,42 @@
 	.header {position: fixed; top: 0; left: 50%; z-index: 50; width: 1230px; box-sizing: border-box; margin-left: -615px; transition: top 0.3s;
 		.top, .main-header {padding: 0 10px;}
 		.logo {transition: margin 0.3s;}
-		.main-nav .menu {transition: padding 0.3s;
-			a {font-size: 16px;}
-		}
+		.main-nav .menu {transition: padding 0.3s;}
 		&.sticky {top: -51px;
 			.main-nav .menu {padding: 10px 0;
 				a {line-height: 40px;}
 			}
 		}
 	}
+	.main-nav {
+		.menu a {padding: 0 20px; font-size: 16px;}
+	}
 }
 
 
-@media (max-width: 835px) {
+@media (max-width: 960px) {
 	.sec-nav .has-dropdown {
 		.dropdown-menu {display: none;
 			li {float: none;}
-			li a {
+			li a{
 				background: #ededed;
 			}
 		}
 	}
 }
-// @media (max-width: 834px) {
-// 	.header {
-// 		.logo {width: 60px;}
-// 		.main-nav {float: right; width: calc(100% - 100px); width: -webkit-calc(100% - 100px); width: -moz-calc(100% - 100px);}
-// 	}
-// }
+
+.header {
+	.logo {width: 60px;}
+	.main-nav {float: right; width: calc(100% - 100px); width: -webkit-calc(100% - 100px); width: -moz-calc(100% - 100px); text-align: right;}
+}
+
 @media (max-width: 400px) {
 	.menu li:hover {
 		.dropdown-menu {display: none;}
 	}
 	.header {
 		.main-nav {width: calc(100% - 70px); width: -webkit-calc(100% - 70px); width: -moz-calc(100% - 70px);}
-	 .sec-nav .has-dropdown:hover {
+		.sec-nav .has-dropdown:hover {
 			.dropdown-menu {display: block;position: relative;box-shadow: initial;-webkit-box-shadow:initial;-moz-box-shadow:initial;}
 		}
 	}

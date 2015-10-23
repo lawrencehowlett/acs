@@ -28,25 +28,21 @@
 		</p>
 		<% end_if %>
 
-		<div class="main-nav-container">
-			<nav class="main-nav">
-				<% if $MicroMenus %>
+		<nav class="main-nav">
+			<% if $MicroMenus %>
 				<ul class="menu">
 					<% loop $MicroMenus %>
 						<li class="<% if $Children %>has-dropdown<% end_if %>">
 							<a href="$Link" title="Go to $Title.XML">$MenuTitle.XML</a>
 							<% if $Children %>
-							<ul class="dropdown-menu">
-								<% loop $Children %>
+								<ul class="dropdown-menu">
 									<li><a href="$Link" title="Go to $Title.XML">$MenuTitle.XML</a></li>
-								<% end_loop %>
-							</ul>
+								</ul>
 							<% end_if %>
 						</li>
 					<% end_loop %>
 				</ul>
-				<% end_if %>
-			</nav>			
-		</div>
+			<% end_if %>
+		</nav>		
 	</section>
 </header>

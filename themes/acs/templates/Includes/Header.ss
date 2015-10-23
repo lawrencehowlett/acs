@@ -33,24 +33,22 @@
 			</a>
 		</p>
 
-		<div class="main-nav-container">
-			<nav class="main-nav">
+		<nav class="main-nav">
+			<% if $Menu(1) %>
 				<ul class="menu">
 					<% loop $Menu(1) %>
 						<li class="<% if $Children %>has-dropdown<% end_if %>">
-							<a href="$Link" title="Go to $Title.XML page">$MenuTitle.XML</a>
+							<a href="$Link" title="Go to $Title.XML">$MenuTitle.XML</a>
 							<% if $Children %>
 								<ul class="dropdown-menu">
-									<% loop $Children %>
-										<li><a href="$Link" title="Go to $Title.XML">$MenuTitle.XMl</a></li>
-									<% end_loop %>
+									<li><a href="$Link" title="Go to $Title.XML">$MenuTitle.XML</a></li>
 								</ul>
 							<% end_if %>
 						</li>
 					<% end_loop %>
 				</ul>
-			</nav>
-		</div>
+			<% end_if %>
+		</nav>		
 
 	</section>
 </header>
