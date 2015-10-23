@@ -41,7 +41,7 @@
 	</section>
 	<section class="main-header cf">
 		<p class="logo"><a href="home.php" title="ACS"><img src="img/logo.png" alt="ACS"></a></p>
-		<div class="main-nav-container">
+		<!-- <div class="main-nav-container"> -->
 			<nav class="main-nav">
 				<ul class="menu">
 					<li class="has-dropdown"><a href="it-solutions.php">IT Solutions</a>
@@ -62,6 +62,6 @@
 					<li><a href="#">ACS Recruitment</a></li>
 				</ul>
 			</nav>
-		</div>
+		<!-- </div> -->
 	</section>
 </header>
