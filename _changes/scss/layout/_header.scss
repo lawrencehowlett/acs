@@ -69,6 +69,11 @@
 	}
 }
 
+.header {
+	.logo {width: 60px;}
+	.main-nav {float: right; width: calc(100% - 100px); width: -webkit-calc(100% - 100px); width: -moz-calc(100% - 100px);text-align: right;}
+}
+
 @media (min-width: 400px) {
 	.header .logo {margin: 20px;}
 	.menu {
@@ -78,18 +83,13 @@
 
 @media (min-width: 835px) {
 	.header .call {margin-left: 20px;}
-	// .main-nav {float: right;
-	// 	.menu {padding: 20px 0;
-	// 		a {padding: 0 20px; line-height: 60px}
-	// 	}
-	// }
 	.sec-nav {width: auto;
 		.menu-toggle {display: none;}
 		.menu {display: block; width: auto; margin: 0; font-size: 0; white-space: nowrap;
 			li {display: inline-block;}
 		}
 	}
-.menu {
+	.menu {
 		li {
 			position: relative;
 			list-style-type: none;
@@ -103,60 +103,17 @@
 	}	
 }
 
-// @media (min-width: 800px) {
-// 	.main-nav {
-// 		.menu a {font-size: 14px;}
-// 	}
-// }
-
-.header {
-	.logo {width: 60px;}
-	.main-nav {float: right; width: calc(100% - 100px); width: -webkit-calc(100% - 100px); width: -moz-calc(100% - 100px);}
-}
-
 @media (min-width: 960px) {
-	// absolute menu table start
-	.header .main-header {
-		position: relative;
+	.main-nav .menu {
+		text-align: right;
 	}
-	.main-nav-container {
-		position: absolute;
-		top: 20px;
-		left: 110px;
-		right: 10px;
-	}
-	.header .main-nav {
-		float: none;
-		width: 100%;
-		display: table;
-	}
-	.main-nav > .menu {
-		display: table-row;
-	}
-	.main-nav .menu > li {
-		display: table-cell;
-		text-align: center;
-	}
-	.main-nav .menu > li > a {
-		padding: 0;
-	}
-	.main-nav .menu .dropdown-menu a {
-		font-size: 16px;
-	}
-	// absolute menu table end
 
 	.main-nav {
-		.menu a {
-			padding: 0 25px;
-			font-size: 15px;
-		}
-	}
-	.main-nav {
-		// float: right;
+		float: right;
 		.menu {
 			padding: 20px 0;
 			a {
-				padding: 0 20px;
+				padding: 0 15px;
 				line-height: 60px;
 			}
 		}
@@ -178,7 +135,6 @@
 	}
 }
 
-
 @media (max-width: 835px) {
 	.sec-nav .has-dropdown {
 		.dropdown-menu {display: none;
@@ -189,19 +145,14 @@
 		}
 	}
 }
-// @media (max-width: 834px) {
-// 	.header {
-// 		.logo {width: 60px;}
-// 		.main-nav {float: right; width: calc(100% - 100px); width: -webkit-calc(100% - 100px); width: -moz-calc(100% - 100px);}
-// 	}
-// }
+
 @media (max-width: 400px) {
 	.menu li:hover {
 		.dropdown-menu {display: none;}
 	}
 	.header {
 		.main-nav {width: calc(100% - 70px); width: -webkit-calc(100% - 70px); width: -moz-calc(100% - 70px);}
-	 .sec-nav .has-dropdown:hover {
+		.sec-nav .has-dropdown:hover {
 			.dropdown-menu {display: block;position: relative;box-shadow: initial;-webkit-box-shadow:initial;-moz-box-shadow:initial;}
 		}
 	}
