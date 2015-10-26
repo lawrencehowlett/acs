@@ -45,6 +45,18 @@
 								<td>$JobDetails.ConsultantReference</td>
 							</tr>
 						<% end_if %>
+						<% if $JobDetails.StartDate %>
+							<tr>
+								<td style="padding-left:0;"><strong>Job Start Date:</strong></td>
+								<td>$JobDetails.StartDate</td>
+							</tr>
+						<% end_if %>
+						<% if $JobDetails.EndDate %>
+							<tr>
+								<td style="padding-left:0;"><strong>Job End Date:</strong></td>
+								<td>$JobDetails.EndDate</td>
+							</tr>
+						<% end_if %>
 
 					</tbody>
 				</table>

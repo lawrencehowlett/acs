@@ -36,7 +36,9 @@
 							<a href="$Link" title="Go to $Title.XML">$MenuTitle.XML</a>
 							<% if $Children %>
 								<ul class="dropdown-menu">
-									<li><a href="$Link" title="Go to $Title.XML">$MenuTitle.XML</a></li>
+									<% loop $Children %>
+										<li><a href="$Link" title="Go to $Title.XML">$MenuTitle.XML</a></li>
+									<% end_loop %>
 								</ul>
 							<% end_if %>
 						</li>
