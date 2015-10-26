@@ -1,4 +1,10 @@
 <?php
+/**
+ * Represents the microsite parent page
+ * 
+ * @author Julius <julius@greenbrainer.com>
+ * @copyright Copyright (c) 2015, Julius
+ */
 class MicroSiteHolder extends GenericPage {
 
 	/**
@@ -64,6 +70,6 @@ class MicroSiteHolder_Controller extends GenericPage_Controller {
 	}
 
 	public function getMicroMenus() {
-		return MicroPage::get()->filter(array('ParentID' => $this->ID));
+		return SiteTree::get()->filter(array('ParentID' => $this->ID));
 	}
 }

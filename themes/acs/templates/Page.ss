@@ -29,7 +29,11 @@
 <body <% if $i18nScriptDirection %>dir="$i18nScriptDirection"<% end_if %>>
 
 <% if not $IsAdminLoginPage %>
-	<% include Header %>
+	<% if $MicroMenus %>
+		<% include MicroHeader %>
+	<% else %>
+		<% include Header %>
+	<% end_if %>
 	$Layout
 <% else %>
 	<header class="ebook-header">
@@ -45,7 +49,11 @@
 	</section>	
 <% end_if %>
 
-<% include Footer %>
+<% if $MicroMenus %>
+	<% include MicroFooter %>
+<% else %>
+	<% include Footer %>
+<% end_if %>
 
 </body>
 </html>

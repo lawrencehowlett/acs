@@ -316,6 +316,7 @@
 						</p>
 					<% end_if %>
 				</div>
+
 				<div class="res-slider double-slider inside">
 					<a href="javascript:void(0);" class="slider-nav next">Next</a>
 					<a href="javascript:void(0);" class="slider-nav prev">Previous</a>
@@ -324,9 +325,8 @@
 							<% loop $Resources %>
 								<div class="slide">
 									<div class="resource slider-item">
-										<img src="$FeaturedImage.CroppedImage(220, 300).Link" alt="$FeaturedImage.Link" class="resource-thumbnail">
+										<img src="$FeaturedImage.CroppedImage(220, 300).Link" alt="$FeaturedImage.Title" class="resource-thumbnail">
 										<h3 class="resource-title">$Title</h3>
-										
 										$Content
 
 										<% if $DocumentType %>
@@ -340,12 +340,13 @@
 												<a href="$RedirectPage.Link" title="Go to $RedirectPage.Title page">More info</a>
 											</p>
 										<% end_if %>
+
 									</div>
 								</div>
 							<% end_loop %>
 						</div>
 					</div>
-				</div>
+				</div>				
 			<% end_if %>
 
 			<% if $ClassName == 'BlockWidgetWork' %>

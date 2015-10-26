@@ -25,10 +25,37 @@ class Job extends DataObject {
 		'Categories' => 'JobCategory'
 	);
 
+	/**
+	 * Set singular name
+	 * 
+	 * @var string
+	 */
 	private static $singular_name = 'Job';
 
+	/**
+	 * Set plural name
+	 * 
+	 * @var string
+	 */
 	private static $plural_name = 'Jobs';
 
+	/**
+	 * Summary fields
+	 * 
+	 * @var array
+	 */
+	private static $summary_fields = array(
+		'ConsultantReference', 
+		'Title', 
+		'Location', 
+		'Salary'
+	);
+
+	/**
+	 * Get CMS fields
+	 * 
+	 * @return FieldList
+	 */
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
@@ -155,6 +182,7 @@ class Job extends DataObject {
 
 		if (!$this->URLSegment) {
 			$urlSegment = str_replace(' ', '-', strtolower($this->Title));
+			$urlSegment = str_replace('/', '-', $urlSegment);
 			$job = Job::get()->filter(array('URLSegment' => $urlSegment))->First();
 			if ($job) {
 				$this->URLSegment .= $urlSegment . '-' . substr(md5(microtime()),rand(0,26),5);

@@ -36,8 +36,13 @@ class MicroPage_Controller extends MicroSiteHolder_Controller {
 		parent::init();
 	}
 
+	/**
+	 * Get micro menus
+	 * 
+	 * @return SiteTree
+	 */
 	public function getMicroMenus() {
-		return MicroPage::get()->filter(array('ParentID' => $this->getMicroHolder()->ID));
+		return SiteTree::get()->filter(array('ParentID' => $this->getMicroHolder()->ID));
 	}
 
 	/**

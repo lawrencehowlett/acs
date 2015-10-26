@@ -316,5 +316,35 @@ JS
 	 */
 	public function getFeaturedJobs() {
 		return Job::get()->filter(array('FeaturedJob' => true));
+	}
+
+	/**
+	 * Get micro menus
+	 * 
+	 * @return SiteTree
+	 */
+	public function getMicroMenus() {
+		if ($this->getMicroHolder()) {
+			return SiteTree::get()->filter(array('ParentID' => $this->getMicroHolder()->ID));
+		}
+
+		return null;
+	}
+
+	/**
+	 * Get Micro holder page
+	 * 
+	 * @return MicroPage
+	 */
+	public function getMicroHolder() {
+		if ($this->Parent()->ClassName == 'MicroSiteHolder') {
+			return $this->Parent();
+		}
+
+		if ($this->Parent()->Parent()->ClassName == 'MicroSiteHolder') {
+			return $this->Parent()->Parent();
+		}
+
+		return null;
 	}	
 }
