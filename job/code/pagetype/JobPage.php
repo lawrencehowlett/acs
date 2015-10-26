@@ -13,7 +13,9 @@ class JobPage extends Page {
 	 * @var array
 	 */
 	private static $db = array(
-		'SubmitText' => 'HTMLText'
+		'SubmitText' => 'HTMLText', 
+		'FormTitle' => 'Text', 
+		'FormText' => 'HTMLText'
 	);
 
 	/**
@@ -32,7 +34,18 @@ class JobPage extends Page {
 		$fields = parent::getCMSFields();
 
 		$fields->addFieldToTab(
-			'Root.Submission', 
+			'Root.Form', 
+			TextField::create('FormTitle', 'Title')
+		);
+
+		$fields->addFieldToTab(
+			'Root.Form', 
+			HTMLEditorField::create('FormText', 'Text')
+				->setRows(20)
+		);
+
+		$fields->addFieldToTab(
+			'Root.Form', 
 			HTMLEditorField::create('SubmitText', 'Text on submission')
 				->setRows(20)
 		);

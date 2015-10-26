@@ -106,9 +106,8 @@
 	<div class="inside">
 		<div class="cols separated">
 			<div class="col col2 contact-content">
-				<h2>Apply Now</h2>
-				<p>To apply for this job, please complete the form.</p>
-				<p>One of our recruitment consultants will be in touch.</p>
+				<h2>$FormTitle</h2>
+				$FormText
 			</div>		
 			$JobApplicationForm
 		</div>
