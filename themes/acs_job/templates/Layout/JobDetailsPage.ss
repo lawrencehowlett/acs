@@ -10,7 +10,13 @@
 		</h1>
 
 		<% if $JobDetails %>
-			<p>$JobDetails.Summary</p>
+			<% if $JobDetails.Salary %>
+				<li>Salary <a href="javascript:void(0);" title="Salary">$JobDetails.Salary</a></li>
+			<% end_if %>
+
+			<% if $JobDetails.Location %>
+				<li>Location <a href="javascript:void(0);" title="Location">$JobDetails.Location</a></li>
+			<% end_if %>
 		<% else %>
 			$Description
 		<% end_if %>
@@ -20,7 +26,6 @@
 <section class="page-section text-content">
 	<div class="inside cf">
 		<article class="reading cs-content job-details">
-			<h4>Description</h4>
 			$JobDetails.Content
 			<div class="table">
 				<table>
@@ -48,13 +53,13 @@
 						<% if $JobDetails.StartDate %>
 							<tr>
 								<td style="padding-left:0;"><strong>Job Start Date:</strong></td>
-								<td>$JobDetails.StartDate</td>
+								<td>$JobDetails.StartDate.Long</td>
 							</tr>
 						<% end_if %>
 						<% if $JobDetails.EndDate %>
 							<tr>
 								<td style="padding-left:0;"><strong>Job End Date:</strong></td>
-								<td>$JobDetails.EndDate</td>
+								<td>$JobDetails.EndDate.Long</td>
 							</tr>
 						<% end_if %>
 
@@ -99,7 +104,8 @@
 		<div class="cols separated">
 			<div class="col col2 contact-content">
 				<h2>Apply Now</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquastorul. Dorunasto ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				<p>To apply for this job, please complete the form.</p>
+				<p>One of our recruitment consultants will be in touch.</p>
 			</div>		
 			$JobApplicationForm
 		</div>
