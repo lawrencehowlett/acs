@@ -24,21 +24,23 @@
 		<% if $Jobs %>
 		<ul class="jobs">
 			<% loop $Jobs %>
-				<li class="job">
-					<h3 class="job-title">$Title</h3>
-					<ul class="job-data">
-						<li class="place">$Location</li>
-						<li class="salary">$Salary</li>
-					</ul>
+				<% if $IsActive %>
+					<li class="job">
+						<h3 class="job-title">$Title</h3>
+						<ul class="job-data">
+							<li class="place">$Location</li>
+							<li class="salary">$Salary</li>
+						</ul>
 
-					<div style="width:80%;">
-						$Summary
-					</div>
+						<div style="width:80%;">
+							$Summary
+						</div>
 
-					<p class="more">
-						<a href="{$Top.Link}position/{$URLSegment}" title="Apply now">Apply now</a>
-					</p>
-				</li>
+						<p class="more">
+							<a href="{$Top.Link}position/{$URLSegment}" title="Apply now">Apply now</a>
+						</p>
+					</li>
+				<% end_if %>
 			<% end_loop %>
 		</ul>
 		<% else %>

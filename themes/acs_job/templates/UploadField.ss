@@ -27,25 +27,9 @@
 </ul>
 <% if $canUpload || $canAttachExisting %>
 	<div class="ss-uploadfield-item ss-uploadfield-addfile<% if $CustomisedItems %> borderTop<% end_if %>">
-		<% if canUpload %>
-		<div class="ss-uploadfield-item-preview ss-uploadfield-dropzone ui-corner-all">
-				<% if $multiple %>
-					<% _t('UploadField.DROPFILES', 'drop files') %>
-				<% else %>
-					<% _t('UploadField.DROPFILE', 'drop a file') %>
-				<% end_if %>
-		</div>
-		<% end_if %>
 		<div class="ss-uploadfield-item-info">
 			<label class="ss-uploadfield-item-name">
-				<% if $multiple %>
-					<b><% _t('UploadField.ATTACHFILES', 'Attach files') %></b>
-				<% else %>
-					<b><% _t('UploadField.ATTACHFILE', 'Attach a file') %></b>
-				<% end_if %>
-				<% if $canPreviewFolder %>
-					<small>(<%t UploadField.UPLOADSINTO 'saves into /{path}' path=$FolderName %>)</small>
-				<% end_if %>
+				<b>$Title</b> <small>(allowed formats: .doc, .docx &amp; .pdf)</small>
 			</label>
 			<% if $canUpload %>
 				<label class="ss-uploadfield-fromcomputer ss-ui-button ui-corner-all" title="<% _t('UploadField.FROMCOMPUTERINFO', 'Upload from your computer') %>" data-icon="drive-upload">

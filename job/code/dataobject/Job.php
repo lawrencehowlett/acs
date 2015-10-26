@@ -165,6 +165,26 @@ class Job extends DataObject {
 	}
 
 	/**
+	 * Check if job entry is active
+	 *
+	 * @return  boolean
+	 */
+	public function IsActive() {
+		$datenow = date('Y-m-d');
+
+		$valid = true;
+		if ($this->AdStartDate && (strtotime($datenow . ' 00:00:00') < strtotime($this->AdStartDate . " 00:00:00"))) {
+			$valid = false;
+		}
+
+		if ($this->AdEndDate && (strtotime($datenow . ' 00:00:00') > strtotime($this->AdEndDate . " 00:00:00"))) {
+			$valid = false;
+		}
+
+		return $valid;
+	}
+
+	/**
 	 * RSS absolute link to job page
 	 *
 	 * @return  Request
@@ -173,8 +193,8 @@ class Job extends DataObject {
 		$jobPage = JobPage::get()->First();
 
         return Controller::join_links(
-            Director::absoluteBaseUrl(),
-            $jobPage->URLSegment,
+            $jobPage->Link(),
+            'position',
             $this->URLSegment
         );
     }

@@ -1,55 +1,55 @@
 <section class="page-section page-header" style='<% if $Banner %>background-image: url("$Banner.Link")<% end_if %>'>
 	<div class="inside">
-		<h1 class="page-title">$Title</h1>
-		$Description
+
+		<h1 class="page-title">
+			<% if $JobDetails %>
+				$JobDetails.Title
+			<% else %>
+				$Title
+			<% end_if %>
+		</h1>
+
+		<% if $JobDetails %>
+			<p>$JobDetails.Summary</p>
+		<% else %>
+			$Description
+		<% end_if %>
 	</div>
 </section>
 
-<section class="page-section text-content blog">
+<section class="page-section text-content">
 	<div class="inside cf">
-		<section class="blog-main" style="padding-left:0;">
-			<article class="blog-content reading">
-				<h2>$JobDetails.Title</h2>
-				<div class="table">
-					<table>
-						<tbody>
-							<% if $JobDetails.Salary %>
-								<tr>
-									<td style="padding-left:0;"><strong>Salary:</strong></td>
-									<td>$JobDetails.Salary</td>
-								</tr>
-							<% end_if %>
+		<article class="reading cs-content">
+			<h4>Description</h4>
+			$JobDetails.Content
+			<div class="table">
+				<table>
+					<tbody>
+						<% if $JobDetails.Salary %>
+							<tr>
+								<td style="padding-left:0;"><strong>Salary:</strong></td>
+								<td>$JobDetails.Salary</td>
+							</tr>
+						<% end_if %>
 
-							<% if $JobDetails.Location %>
-								<tr>
-									<td style="padding-left:0;"><strong>Location:</strong></td>
-									<td>$JobDetails.Location</td>
-								</tr>
-							<% end_if %>
+						<% if $JobDetails.Location %>
+							<tr>
+								<td style="padding-left:0;"><strong>Location:</strong></td>
+								<td>$JobDetails.Location</td>
+							</tr>
+						<% end_if %>
 
-							<% if $JobDetails.ConsultantReference %>
-								<tr>
-									<td style="padding-left:0;"><strong>Job ref:</strong></td>
-									<td>$JobDetails.ConsultantReference</td>
-								</tr>
-							<% end_if %>
+						<% if $JobDetails.ConsultantReference %>
+							<tr>
+								<td style="padding-left:0;"><strong>Job ref:</strong></td>
+								<td>$JobDetails.ConsultantReference</td>
+							</tr>
+						<% end_if %>
 
-						</tbody>
-					</table>
-				</div>
-				<h4>Description</h4>
-				$JobDetails.Content
-
-				<section class="page-section contact last-section">
-					<div class="inside">
-						<h2 class="section-title">Apply Now</h2>
-						<div class="cols separated">
-							$JobApplicationForm
-						</div>
-					</div>
-				</section>
-			</article>
-		</section>	
+					</tbody>
+				</table>
+			</div>
+		</article>
 
 		<aside class="blog-sidebar">
 			<div class="widget">
@@ -79,6 +79,17 @@
 				</div>		
 			<% end_if %>			
 		</aside>
+	</div>
+</section>
 
+<section class="page-section shade contact last-section">
+	<div class="inside">
+		<div class="cols separated">
+			<div class="col col2 contact-content">
+				<h2>Apply Now</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquastorul. Dorunasto ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			</div>		
+			$JobApplicationForm
+		</div>
 	</div>
 </section>

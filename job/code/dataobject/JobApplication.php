@@ -47,6 +47,17 @@ class JobApplication extends DataObject {
 	 */
 	private static $plural_name = 'Applications';
 
+	public function getCMSFields() {
+		$fields = parent::getCMSFields();
+
+		$fields->dataFieldByName('CoveringLetter')
+			->setFolderName('JobApplications/');
+		$fields->dataFieldByName('CV')
+			->setFolderName('JobApplications/');
+
+		return $fields;
+	}
+
 	/**
 	 * Check can create permission 
 	 * 
@@ -102,4 +113,17 @@ class JobApplication extends DataObject {
 
 		return false;
 	}
+
+    /**
+     * Get admin link to the job application
+     *
+     * @return string
+     */
+    public function AdminAbsoluteLink() {
+		return Controller::join_links(
+            Director::absoluteBaseUrl(),
+            'admin/Jobs/JobApplication/EditForm/field/JobApplication/item',
+            $this->ID . '/edit'
+        );
+	}	
 }

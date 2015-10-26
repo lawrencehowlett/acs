@@ -145,12 +145,12 @@ class JobCategory extends DataObject {
 	 * @return  Request
 	 */
 	public function AbsoluteLink() {
-		$productListingPage = JobListingPage::get()->First();
+		$jobPage = JobPage::get()->First();
 
         return Controller::join_links(
-            Director::absoluteBaseUrl(),
-            $productListingPage->URLSegment,
-            'category/' . $this->URLSegment
+            $jobPage->Link(),
+            'category',
+            $this->URLSegment
         );
     }    
 
