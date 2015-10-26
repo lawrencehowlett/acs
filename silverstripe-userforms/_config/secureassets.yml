@@ -13,4 +13,4 @@ Except:
   ModuleExists: secureassets
 ---
 EditableFileField:
-  hidden: true
+  hidden: false
