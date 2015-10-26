@@ -33,6 +33,13 @@ class JobApplication extends DataObject {
 		'CV' => 'File'
 	);
 
+	private static $summary_fields = array(
+		'Job.Title' => 'Job Position',
+		'FirstName' => 'First Name', 
+		'Surname' => 'First Name', 
+		'Email' => 'Email'
+	);
+
 	/**
 	 * Set singular name
 	 * 
@@ -47,6 +54,11 @@ class JobApplication extends DataObject {
 	 */
 	private static $plural_name = 'Applications';
 
+	/**
+	 * Get CMS fields
+	 * 
+	 * @return FieldList
+	 */
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
