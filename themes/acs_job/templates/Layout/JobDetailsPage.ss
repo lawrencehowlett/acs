@@ -10,6 +10,7 @@
 		</h1>
 
 		<% if $JobDetails %>
+			<br>
 			<ul class="post-meta">
 			<% if $JobDetails.Salary %>
 				<li>Salary <a href="javascript:void(0);" title="Salary">$JobDetails.Salary</a></li>
