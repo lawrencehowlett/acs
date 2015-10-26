@@ -50,10 +50,12 @@ class JobApplication extends DataObject {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
-		$fields->dataFieldByName('CoveringLetter')
-			->setFolderName('JobApplications/');
-		$fields->dataFieldByName('CV')
-			->setFolderName('JobApplications/');
+		if ($this->ID) {
+			$fields->dataFieldByName('CoveringLetter')
+				->setFolderName('JobApplications/Application_' . $this->ID);
+			$fields->dataFieldByName('CV')
+				->setFolderName('JobApplications/Application_' . $this->ID);
+		}
 
 		return $fields;
 	}

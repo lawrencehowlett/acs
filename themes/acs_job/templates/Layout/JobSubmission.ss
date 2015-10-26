@@ -10,7 +10,16 @@
 		</h1>
 
 		<% if $JobDetails %>
-			<p>$JobDetails.Summary</p>
+			<br>
+			<ul class="post-meta">
+			<% if $JobDetails.Salary %>
+				<li>Salary <a href="javascript:void(0);" title="Salary">$JobDetails.Salary</a></li>
+			<% end_if %>
+
+			<% if $JobDetails.Location %>
+				<li>Location <a href="javascript:void(0);" title="Location">$JobDetails.Location</a></li>
+			<% end_if %>
+			</ul>
 		<% else %>
 			$Description
 		<% end_if %>
