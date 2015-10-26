@@ -19,7 +19,7 @@
 
 <section class="page-section text-content">
 	<div class="inside cf">
-		<article class="reading cs-content">
+		<article class="reading cs-content job-details">
 			<h4>Description</h4>
 			$JobDetails.Content
 			<div class="table">
