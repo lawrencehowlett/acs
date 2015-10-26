@@ -33,6 +33,11 @@ class JobApplication extends DataObject {
 		'CV' => 'File'
 	);
 
+	/**
+	 * Add summary field
+	 * 
+	 * @var array
+	 */
 	private static $summary_fields = array(
 		'Job.Title' => 'Job Position',
 		'FirstName' => 'First Name', 
