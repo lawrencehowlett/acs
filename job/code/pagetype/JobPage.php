@@ -15,7 +15,10 @@ class JobPage extends Page {
 	private static $db = array(
 		'SubmitText' => 'HTMLText', 
 		'FormTitle' => 'Text', 
-		'FormText' => 'HTMLText'
+		'FormText' => 'HTMLText', 
+		'EmailFrom' => 'Varchar', 
+		'EmailSubject' => 'Text', 
+		'EmailText' => 'HTMLText'
 	);
 
 	/**
@@ -33,6 +36,13 @@ class JobPage extends Page {
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
+		$fields = $this->getFormFields($fields);
+		$fields = $this->getEmailFields($fields);
+
+		return $fields;
+	}
+
+	private function getFormFields(&$fields) {
 		$fields->addFieldToTab(
 			'Root.Form', 
 			TextField::create('FormTitle', 'Title')
@@ -47,6 +57,26 @@ class JobPage extends Page {
 		$fields->addFieldToTab(
 			'Root.Form', 
 			HTMLEditorField::create('SubmitText', 'Text on submission')
+				->setRows(20)
+		);
+
+		return $fields;
+	}
+
+	private function getEmailFields(&$fields) {
+		$fields->addFieldToTab(
+			'Root.Email', 
+			TextField::create('EmailFrom', 'From')
+		);
+
+		$fields->addFieldToTab(
+			'Root.Email', 
+			TextField::create('EmailSubject', 'Subject')
+		);
+
+		$fields->addFieldToTab(
+			'Root.Email', 
+			HTMLEditorField::create('EmailText', 'Text')
 				->setRows(20)
 		);
 
@@ -161,11 +191,12 @@ JS
 	 * @return Form
 	 */
 	public function JobApplicationForm() {
+		$randGen = new RandomGenerator();
 		$cvUploadField =  UploadField::create('CV', 'Upload your CV')
 				->setCanAttachExisting(false)
 				->setCanPreviewFolder(false)
 				->setConfig('replaceFile', false)
-				->setFolderName('JobApplications/');
+				->setFolderName('JobApplications/' . $randGen->randomToken());
 		$cvUploadField->setAllowedMaxFileNumber(1);
 		$cvUploadField->relationAutoSetting = false;
 
@@ -173,7 +204,7 @@ JS
 				->setCanAttachExisting(false)
 				->setCanPreviewFolder(false)
 				->setConfig('replaceFile', false)
-				->setFolderName('JobApplications/');
+				->setFolderName('JobApplications/' . $randGen->randomToken());
 		$coverLetterUploadField->setAllowedMaxFileNumber(1);
 		$coverLetterUploadField->relationAutoSetting = false;
 
@@ -231,11 +262,6 @@ JS
 		$application = new JobApplication();
 		$application->write();
 
-		$form->Fields()->dataFieldByName('CoveringLetter')
-			->setFolderName('JobApplications/Application_' . $application->ID);
-		$form->Fields()->dataFieldByName('CV')
-			->setFolderName('JobApplications/Application_' . $application->ID);
-
 		$form->saveInto($application);
 		$application->write();
 
@@ -246,16 +272,25 @@ JS
 				$siteConfig = SiteConfig::current_site_config();
 				$recipient = ($job->ApplicationEmail) ? $job->ApplicationEmail : $siteConfig->JobAdminEmail;
 		        $email = new Email(
-		            'info@acs365.co.uk',
+		            $this->EmailFrom,
 		            $recipient, 
-		            'Job application for ' . $job->Title . ' position'
+		            $this->EmailSubject
 		        );
 		        $email->setTemplate('JobApplicationEmail');
-		        $email->populateTemplate($data);
-		        $email->populateTemplate($job);
 		        $email->populateTemplate(array(
-		        	'AdminLink' => $application->AdminAbsoluteLink()
+		        	'AdminLink' => $application->AdminAbsoluteLink(), 
+		        	'Body' => $this->EmailText, 
+		        	'Application' => $application
 		        ));
+		        
+		        if ($application->CoveringLetter()->ID) {
+			        $email->attachFile($application->CoveringLetter()->Filename);
+		        }
+
+		        if ($application->CV()->ID) {
+			        $email->attachFile($application->CV()->Filename);
+		        }
+
 		        $email->send();
 
 				Controller::curr()->redirect($this->Link("/submission/" . $job->URLSegment));

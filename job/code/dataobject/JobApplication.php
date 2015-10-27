@@ -39,7 +39,8 @@ class JobApplication extends DataObject {
 	 * @var array
 	 */
 	private static $summary_fields = array(
-		'Job.Title' => 'Job Position',
+		'Created.Nice24' => 'Date', 
+		'Job.Title' => 'Position',
 		'FirstName' => 'First Name', 
 		'Surname' => 'First Name', 
 		'Email' => 'Email'
@@ -58,6 +59,8 @@ class JobApplication extends DataObject {
 	 * @var string
 	 */
 	private static $plural_name = 'Applications';
+
+	private static $default_sort = 'Created DESC';
 
 	/**
 	 * Get CMS fields
