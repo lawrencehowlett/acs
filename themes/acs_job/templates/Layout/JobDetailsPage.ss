@@ -12,13 +12,22 @@
 		<% if $JobDetails %>
 			<br>
 			<ul class="post-meta">
-			<% if $JobDetails.Salary %>
-				<li>Salary <a href="javascript:void(0);" title="Salary">$JobDetails.Salary</a></li>
-			<% end_if %>
+				<% if $JobDetails.Salary %>
+					<li>Salary <a href="javascript:void(0);" title="Salary">$JobDetails.Salary</a></li>
+				<% end_if %>
 
-			<% if $JobDetails.Location %>
-				<li>Location <a href="javascript:void(0);" title="Location">$JobDetails.Location</a></li>
-			<% end_if %>
+				<% if $JobDetails.Location %>
+					<li>Location <a href="javascript:void(0);" title="Location">$JobDetails.Location</a></li>
+				<% end_if %>
+				
+				<% if $JobDetails.Categories %>
+					<li>Category 
+						<% loop $JobDetails.Categories %>
+							<a href="{$Top.Link}category/$URLSegment" title="$Title">$Title</a><% if not $Last %>, <% end_if %>
+						<% end_loop %>
+					</li>
+				<% end_if %>
+
 			</ul>
 		<% else %>
 			$Description
@@ -77,7 +86,7 @@
 				<ul class="side-menu">
 					<% loop $Categories %>
 						<li>
-							<a href="${Link}category/$URLSegment" class="$Top.IsCurrentCategory($ID)">$Title</a>
+							<a href="{$Top.Link}category/$URLSegment" class="$Top.IsCurrentCategory($ID)">$Title</a>
 						</li>
 					<% end_loop %>
 				</ul>
