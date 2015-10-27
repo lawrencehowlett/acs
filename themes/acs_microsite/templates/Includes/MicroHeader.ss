@@ -2,8 +2,8 @@
 	<section class="top cf">
 		<p class="call">
 			Call us: 
-			<a href="call:<% if $ClassName == 'MicroPage' %>$MicroHolder.Telephone<% else %>$Telephone<% end_if %>">
-				<% if $ClassName == 'MicroPage' %>$MicroHolder.Telephone<% else %>$Telephone<% end_if %>
+			<a href="call:<% if $ClassName == 'MicroPage' || $ClassName == 'JobPage' %>$MicroHolder.Telephone<% else %>$Telephone<% end_if %>">
+				<% if $ClassName == 'MicroPage' || $ClassName == 'JobPage' %>$MicroHolder.Telephone<% else %>$Telephone<% end_if %>
 			</a>
 		</p>
 		$SearchForm
