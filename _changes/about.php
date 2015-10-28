@@ -1,9 +1,11 @@
 <?php include("page-components/header.php"); ?>
 <section class="page-section page-header shade" style='background-image: url("img/photos/headers/header-about.jpg")'>
 	<div class="inside">
-		<h1 class="page-title">About ACS</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit vorgular.</p>
-		<p>Curabitur dapibus dolor a viverra convallis.</p>
+<h1 class="page-title">About ACS</h1>
+<div class="cf"></div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit vorgular.</p>
+<div class="cf"></div>
+<p>Curabitur dapibus dolor a viverra convallis.</p>
 	</div>
 </section>
 

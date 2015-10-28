@@ -8,25 +8,13 @@
 	}
 	.page-title {
 		display: block; margin: 0; padding: 15px 30px; background:rgba(53,68,79,0.6); color: #fff; font-size: 30px; text-transform: uppercase; white-space: normal;
-
-		&:before {
-	    	display: block;
-	    	clear: both;
-	    	content: '';
-	    }
 	}
 	p {
 		display: inline-block; clear: left; margin: 0 0 5px; padding: 10px 30px; background: rgba(255,255,255,0.85); color: #003459; font: 200 20px/1.5em $prelo; vertical-align: bottom;
 	
 		&.no-background {background: transparent;}
-
-		&:before {
-	    	display: block;
-	    	clear: both;
-	    	content: '';
-	    }
 	}
-	.page-title + p {margin-top: 12px;}
+	.page-title + p, .page-title + .cf + p {margin-top: 12px;}
 }
 
 .page-header-nav {margin: 15px 0; font-size: 0; text-align: center; white-space: nowrap;
