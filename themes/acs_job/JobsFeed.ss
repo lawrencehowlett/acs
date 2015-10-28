@@ -2,8 +2,8 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>$Title</title>
-        <link>{$Link}feeds</link>
-        <atom:link href="{$Link}feeds" rel="self" type="application/rss+xml" />
+        <link>{$Link}</link>
+        <atom:link href="{$Link}" rel="self" type="application/rss+xml" />
         <language>en-UK</language>
 
         <% loop $Entries %>

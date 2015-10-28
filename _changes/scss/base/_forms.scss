@@ -1,4 +1,4 @@
-input, textarea {width: 100%; padding: 25px; box-sizing: border-box; border: none; background: $gray; color: #fff; font: 400 14px/20px $open; transition: $transAll;
+input, textarea, select {width: 100%; padding: 25px; box-sizing: border-box; border: none; background: $gray; color: #fff; font: 400 14px/20px $open; transition: $transAll;
 	&:focus {outline: none;background: #A4ADB3;}
 	&::-webkit-input-placeholder {color: #fff;}
    	&::-moz-placeholder {color: #fff;}
