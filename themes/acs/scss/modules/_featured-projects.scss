@@ -57,7 +57,15 @@
 		padding: 0 15px;
 	}
 	.slider-items {position: relative; left: 0; list-style: none; box-sizing: border-box; width: 100%; margin: 0; padding: 0; font-size: 0; white-space: nowrap;}
-	.slider-item {display: inline-block; width: 100%; max-width: 570px; height: 100%; border: 0; white-space: pre; vertical-align: top;}
+	.slider-item {
+		display: inline-block;
+		width: 100%;
+		max-width: 570px;
+		height: 100%;
+		border: 0;
+		// white-space: pre;
+		vertical-align: top;
+	}
 	.resource-title {margin: 0; padding: 25px 30px 0 30px; color: #424e5a; font: 300 22px/1.3em $prelo; 
 		a {color: #424e5a;
 			&:hover {color: $blue;}
