@@ -342,4 +342,13 @@ CSS
 
 		return $this->ActionBoxes();
 	}
+
+	/**
+	 * Get the canonical url
+	 *
+	 * @return string
+	 */
+	public function CanonicalURL() {
+		return Director::protocolAndHost() . $this->Link();
+	}
 }
