@@ -37,7 +37,7 @@ class MicroSiteHolder extends GenericPage {
 	 * 
 	 * @var array
 	 */
-	private static $allowed_children = array('MicroPage', 'JobPage');
+	private static $allowed_children = array('MicroPage', 'JobPage', 'RedirectorPage');
 
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
