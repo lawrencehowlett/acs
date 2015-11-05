@@ -23,12 +23,12 @@
 		</p>
 
 		<% if $MicroHolder.Logo || $Logo %>
-		<p class="logo">
-			<img src="<% if $ClassName == 'MicroPage' %>$MicroHolder.Logo.PaddedImage(60, 60).Link<% else %>$Logo.PaddedImage(60, 60).Link<% end_if %>" alt="<% if $ClassName == 'MicroPage' %>$MicroHolder.Logo.Title<% else %>$Logo.Title<% end_if %>">
+		<p class="logo" style="width: auto;">
+			<img src="<% if $ClassName == 'MicroPage' %>$MicroHolder.Logo.Link<% else %>$Logo.Link<% end_if %>" alt="<% if $ClassName == 'MicroPage' %>$MicroHolder.Logo.Title<% else %>$Logo.Title<% end_if %>">
 		</p>
 		<% end_if %>
 
-		<nav class="main-nav">
+		<nav class="main-nav" style="width: auto;">
 			<% if $MicroMenus %>
 				<ul class="menu">
 					<% loop $MicroMenus %>
