@@ -28,10 +28,14 @@
 					<% end_if %>
 				</div>
 			</nav>
-		<% end_if %>		
-		<!--<section class="footer-section">
-			<p>Microsite Footer Text</p>
-		</section>-->
+		<% end_if %>
+
+		<section class="footer-section">
+			<p class="cta">
+				<img src="$ThemeDir/img/IIP_LOGO_BLACK.png"> 
+				<img src="$ThemeDir/img/ISO2011.png">
+			</p>
+		</section>
 
 		<section class="footer-section social-section cf">
 			<% if $SiteConfig.SocialServices %>

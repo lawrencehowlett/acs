@@ -33,6 +33,9 @@
 			<p class="cta">
 				<a href="$SiteConfig.FooterActionBoxRedirectPage.Link" title="Go to $SiteConfig.FooterActionBoxRedirectPage.Title" class="cta-btn">$SiteConfig.FooterActionBoxButtonText</a>
 			</p>
+			<p class="cta">
+				<img src="$ThemeDir/img/IIP_LOGO_BLACK.png"> <img src="$ThemeDir/img/ISO2011.png">
+			</p>
 		</section>
 
 		<section class="footer-section social-section cf">
@@ -56,7 +59,9 @@
 			<% if $SiteConfig.FooterLegalMenus %>
 				<ul class="menu legal">
 					<% loop $SiteConfig.FooterLegalMenus %>
-						<li><a href="$Page.Link" title="Go to $Page.Title.XML">$Page.Title</a></li>
+						<% if $Page %>
+							<li><a href="$Page.Link" title="Go to $Page.Title.XML">$Page.Title</a></li>
+						<% end_if %>
 					<% end_loop %>
 				</ul>
 			<% end_if %>
