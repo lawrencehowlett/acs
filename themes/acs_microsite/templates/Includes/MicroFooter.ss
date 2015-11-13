@@ -32,8 +32,7 @@
 
 		<section class="footer-section">
 			<p class="cta">
-				<img src="$ThemeDir/img/IIP_LOGO_BLACK.png"> 
-				<img src="$ThemeDir/img/ISO2011.png">
+				<img src="$ThemeDir/img/ipp_iso.png"> 
 			</p>
 		</section>
 

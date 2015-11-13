@@ -34,7 +34,7 @@
 				<a href="$SiteConfig.FooterActionBoxRedirectPage.Link" title="Go to $SiteConfig.FooterActionBoxRedirectPage.Title" class="cta-btn">$SiteConfig.FooterActionBoxButtonText</a>
 			</p>
 			<p class="cta">
-				<img src="$ThemeDir/img/IIP_LOGO_BLACK.png"> <img src="$ThemeDir/img/ISO2011.png">
+				<img src="$ThemeDir/img/ipp_iso.png">
 			</p>
 		</section>
 
