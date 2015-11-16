@@ -53,18 +53,26 @@ class CaseStudiesPage extends Blog {
 		return $fields;
 	}
 
+	/*public function getBlogPosts() {
+		$caseStudyPage = CaseStudyPage::get()->filter("ParentID", $this->ID);
+		return $caseStudyPage;
+	}*/
+
 	public function getBlogPosts() {
 		$result = new ArrayList();
 		$caseStudies = CaseStudyPage::get()->filter("ParentID", $this->ID);
 		$caseStudies = DB::query("SELECT * FROM CaseStudyPage ORDER BY SortOrder ASC");
 		if ($caseStudies->numRecords() > 0) {
 			foreach ($caseStudies as $caseStudy) {
-				$result->push(CaseStudyPage::get()->byID($caseStudy['ID']));
+				$row = CaseStudyPage::get()->byID($caseStudy['ID']);
+				if ($row) {
+					$result->push($row);
+				}
 			}
 		}
 
 		return $result;
-	}	
+	}
 }
 
 /**
