@@ -74,6 +74,31 @@
 					</div>
 				</article>
 			</section>
+			<aside class="bottom">
+				<div class="widget">
+					<ul class="blog-social">
+						<li>
+							<a href="#" class="social facebook"></a>
+							<div class="button-layer"><img src="img/temp/social/fb1.png" alt=""></div>
+						</li>
+						<li>
+							<a href="#" class="social googleplus"></a>
+							<div class="button-layer"><img src="img/temp/social/google.png" alt=""></div>
+						</li>
+						<li>
+							<a href="#" class="social twitter"></a>
+							<div class="button-layer"><img src="img/temp/social/twitter.png" alt=""></div>
+						</li>
+						<li>
+							<a href="#" class="social linkedin"></a>
+							<div class="button-layer"><img src="img/temp/social/linkedin.png" alt=""></div>
+						</li>
+						<li>
+							<a href="#" class="social plus">+</a>
+						</li>
+					</ul>				
+				</div>
+			</aside>
 			<section class="blog-section comments">
 				<a href="#" class="comments-toggle">Comments</a>
 
