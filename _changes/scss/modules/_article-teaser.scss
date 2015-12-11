@@ -24,9 +24,9 @@
 			padding: 45px;
 			float: left;
 
-			position: absolute;
-			top: 50%;
-			@include transformation(translateY(-50%));
+			// position: absolute;
+			// top: 50%;
+			// @include transformation(translateY(-50%));
 		}
 		.article-teaser-img {
 			width: 50%;
