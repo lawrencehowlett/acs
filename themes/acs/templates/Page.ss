@@ -25,6 +25,10 @@
 		</script>
 	<% end_if %>
 
+	<% if $AdditionalJavascript %>
+		$AdditionalJavascript.RAW
+	<% end_if %>
+
 </head>
 
 <body <% if $i18nScriptDirection %>dir="$i18nScriptDirection"<% end_if %>>

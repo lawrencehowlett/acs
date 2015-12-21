@@ -14,7 +14,8 @@ class Page extends SiteTree {
 	 */
 	private static $db = array(
 		'Description' => 'HTMLText', 
-		'UseGlobalActionBoxes' => 'Boolean'
+		'UseGlobalActionBoxes' => 'Boolean', 
+		'AdditionalJavascript' => 'Text'
 	);
 
 	/**
@@ -89,6 +90,15 @@ class Page extends SiteTree {
 				GridFieldConfig_RelationEditor::create()
 					->addComponent(new GridFieldSortableRows('SortColumn'))
 			)
+		);
+
+		$fields->insertBefore(
+			ToggleCompositeField::create(
+				'AdditionalJavascriptPanel', 
+				'Additional Javascript', 
+				array(TextareaField::create('AdditionalJavascript', 'Code'))
+			)->setHeadingLevel(4), 
+			'Metadata'
 		);
 
 		return $fields;
